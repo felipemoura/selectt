@@ -4,7 +4,7 @@
 <div class="container animated fadeInDown" id="register">
     <?php echo $this->session->flashdata('verify_msg'); ?>
 
-    <form class="form-signin" role="form" method="post" action="<?= base_url('index.php/register/registerCheck') ?>">
+    <form class="form-signin" role="form" method="post" action="<?= base_url('register/registerCheck') ?>">
         <h2 class="form-signin-heading">Register Account</h2>
 
         <!-- check -->

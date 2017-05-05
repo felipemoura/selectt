@@ -10,11 +10,11 @@
   <meta name="description" content="">
   <meta name="author" content="Felipe Moura">
     
-  <link rel="stylesheet" type="text/css" href="<? echo base_url("sources/css/bootstrap.min.css");?>">
-  <link rel="stylesheet" type="text/css" href="<? echo base_url("sources/css/animate.css");?>">
-  <link rel="stylesheet" type="text/css" href="<? echo base_url("sources/css/custom.css");?>">
+  <link rel="stylesheet" type="text/css" href="<? echo base_url("assets/css/bootstrap.min.css");?>">
+  <link rel="stylesheet" type="text/css" href="<? echo base_url("assets/css/animate.css");?>">
+  <link rel="stylesheet" type="text/css" href="<? echo base_url("assets/css/custom.css");?>">
 
-  <link rel="manifest" href="<? echo base_url("sources/fav/manifest.json");?>">
+  <link rel="manifest" href="<? echo base_url("assets/fav/manifest.json");?>">
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="msapplication-TileImage" content="<? echo base_url("fav/ms-icon-144x144.png");?>">
   <meta name="theme-color" content="#ffffff">
@@ -35,28 +35,28 @@
             <span class="icon-bar"></span>
         </button>
 
-        <a class="navbar-brand" href="<?= base_url('index.php/logged');?>">
-          <img alt="Brand" src="<? echo base_url("sources/assets/selectt.png");?>" style="max-width:100px; margin-top: -7px;">
+        <a class="navbar-brand" href="<?= base_url('logged');?>">
+          <img alt="Brand" src="<? echo base_url("assets/photos/selectt.png");?>" style="max-width:100px; margin-top: -7px;">
         </a>
       </div>
 
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
           <li <?php if($this->uri->segment(1)=="insert_test") {  echo 'class="active"';   }?>>
-            <a href="<?= base_url('index.php/insert_test');?>">Insert Technique
+            <a href="<?= base_url('insert_test');?>">Insert Technique
             </a>
           </li>
 
           <li <?php if($this->uri->segment(1)=="form") {   echo 'class="active"';     }?>>
-            <a href="<?= base_url('index.php/form');?>">Fill Form</a>
+            <a href="<?= base_url('form');?>">Fill Form</a>
           </li>
 
           <li <?php if($this->uri->segment(1)=="results") {  echo 'class="active"';   }?>>
-            <a href="<?= base_url('index.php/results');?>">Results</a>
+            <a href="<?= base_url('results');?>">Results</a>
           </li>
         </ul>
       
-        <button onclick="location.href='<?= base_url('index.php/login/logout');?>'" class="btn btn-danger pull-right" type="submit" id="btnLogout">Logout</button>
+        <button onclick="location.href='<?= base_url('login/logout');?>'" class="btn btn-danger pull-right" type="submit" id="btnLogout">Logout</button>
      
       </div>
 
