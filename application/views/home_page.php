@@ -1,0 +1,8 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+<div class="container animated fadeInDown">
+<h1>Home</h1>
+
+<p>O projeto a ser desenvolvido tem como objetivo desenvolver uma infraestrutura computacional para automatizar o processo de seleção de técnicas de teste de software concorrente. Baseadas em informações contidas em um repositório com características das técnicas de teste que influenciam no processo de tomada de decisão. O repositório é desenvolvido no projeto de doutorado ao qual esse projeto está vinculado. A estrutura computacional é definida como um sistema web que requer como entrada informações a respeito do projeto de software a ser desenvolvido (tipo de plataforma a ser utilizada, linguagem de programação do software, etc) fornecida pelo usuário (equipe de teste) e compara à informações extraídas do repositório (características das técnicas de teste) a fim de comparar e estabelecer um ranking sobre quais as técnicas mais adequadas para o projeto em questão. Para o cálculo da técnica adequada ao projeto devem ser estabelecidos pesos as características (critérios de adequação) e cálculos matemáticos a fim de obter uma lista das técnicas mais adequadas, facilitando a tomada de decisão da equipe de teste. Em síntese, o propósito deste projeto é o desenvolvimento de um site web que recebe como entradas informações a respeito de um projeto de teste e busca em um banco de dados de técnicas de teste, qual técnica apresenta características mais adequadas a este projeto. A decisão final sobre qual técnica de teste usar no projeto cabe ao projetista de teste, que usa como apoio o resultado obtido pelo site.</p>
+
+</div>
