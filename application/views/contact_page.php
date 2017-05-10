@@ -10,12 +10,14 @@
     <div class="form-group">
       <label for="InputName">Name</label>
       <input type="name" class="form-control" id="InputName" aria-describedby="NameHelp" placeholder="Name">
+      <small class="form-text text-muted">* Required</small>
     </div>
 
     <div class="form-group">
       <label for="InputEmail1">Email address</label>
       <input type="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp" placeholder="Enter a valid email">
-      <small id="emailHelp" class="form-text text-muted" style="color:black">I'll never share your email with anyone else. I promisse!</small>
+      <small id="emailHelp" class="form-text text-muted" style="color:black">* Required,fe We'll never share your email with anyone else. I promisse!</small>
+
     </div>
 
     <div class="form-group">
@@ -31,6 +33,7 @@
    <div class="form-group">
       <label for="exampleTextarea">Text</label>
       <textarea class="form-control" id="exampleTextarea" rows="4" placeholder="Enter Text"></textarea>
+      <small class="form-text text-muted">* Required</small>
    </div>
 
   <button type="submit" class="btn btn-primary">Submit</button>

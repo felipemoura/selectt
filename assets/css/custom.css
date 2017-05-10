@@ -11,7 +11,7 @@ body { padding-top: 70px; }
 .container {
   min-height: 100%;
   /* equal to footer height */
-  margin-bottom: -82px; 
+  margin-bottom: -100px; 
 }
 
 .container:after {
@@ -19,7 +19,7 @@ body { padding-top: 70px; }
   display: block;
 }
 .footer, .container:after {
-  height: 82px; 
+  height: 100px; 
 }
 
 .form-signin {

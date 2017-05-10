@@ -3,7 +3,7 @@
 
 <!-- Login container -->
 <!-- Login FORM -->
-<div class="container form-signin animated fadeInDown">
+<div class="container animated fadeInDown">
 
 	<form class="form-signin" role="form" method="post" action="<?= base_url('login/loginCheck') ?>">
 

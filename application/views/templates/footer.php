@@ -1,3 +1,4 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
 
 <footer class="footer">
   <div class="container">
@@ -8,6 +9,10 @@
 
 <script src="<? echo base_url("assets/js/jquery.min.js");?>" 	type="text/javascript"></script>
 <script src="<? echo base_url("assets/js/bootstrap.min.js");?>" type="text/javascript"></script>
+
+<?php if($this->uri->segment(1)=="insert_test"){
+	echo '<script src="' . base_url("assets/js/insert_custom.js") . '" type="text/javascript"></script>';
+}?>
 
 </body>
 </html>

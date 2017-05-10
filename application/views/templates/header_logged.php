@@ -54,6 +54,10 @@
           <li <?php if($this->uri->segment(1)=="results") {  echo 'class="active"';   }?>>
             <a href="<?= base_url('results');?>">Results</a>
           </li>
+
+          <li <?php if($this->uri->segment(1)=="admin") {  echo 'class="active"';   }?>>
+            <a href="<?= base_url('admin');?>">Admin</a>
+          </li>
         </ul>
       
         <button onclick="location.href='<?= base_url('login/logout');?>'" class="btn btn-danger pull-right" type="submit" id="btnLogout">Logout</button>
