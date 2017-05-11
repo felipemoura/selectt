@@ -10,7 +10,7 @@
 
   <div class="panel panel-default">
 	<div style="margin:7px; padding: 15px;">
-        <div class="col-xs-6">
+        <div class="col-md-6 col-lg-6 col-xs-6">
         	<div class="btn-group">
 		        <a class="btn btn-primary"><span>New</span></a>
 		        <a class="btn btn-warning"><span>Edit</span></a>
@@ -18,7 +18,7 @@
         	</div>
       	</div>
         	
-    	<div class="col-xs-6 pull-right form-group">
+    	<div class="col-md-6 col-lg-6 col-xs-6 pull-right form-group">
             <input type="text" class="form-control" style="border-radius:0px" placeholder="Search">
         </div>
 	    
@@ -38,14 +38,13 @@
 			</thead>
 
 			<tbody>
-
 			<? if (isset($info)): ?>
 				<?php foreach($info as $temp) { ?>
 					<tr>
-						<?php foreach ($temp as $var) { ?>
-							<td><?php echo $var; ?></td>
-						<?php } ?>
-
+						<td><?php echo $temp['id']; ?></td>
+						<td><?php echo $temp['name']; ?></td>
+						<td><?php echo $temp['title']; ?></td>
+						<td><?php echo $temp['year']; ?></td>
 						<td>
 						 	<!-- Edit button -->
 						    <button type="button" class="btn btn-xs btn-default">
@@ -53,9 +52,11 @@
 							</button>
 
 							<!-- Delete button -->
-							<button type="button" data-bind="click: $parent.remove" class="remove-news btn btn-xs btn-danger" data-toggle="tooltip" data-placement="top" data-original-title="Delete">
-							    <span class="glyphicon glyphicon-trash"></span>
-							</button>
+							<a href="admin/deleteRecord/<?php echo $temp['id']; ?>">
+								<button onclick="return confirm('Are you sure you want to delete?');" type="button" data-bind="click: $parent.remove" class="remove-news btn btn-xs btn-danger" data-toggle="tooltip" data-placement="top" data-original-title="Delete">
+							    	<span class="glyphicon glyphicon-trash"></span>
+								</button>
+							</a>
 
 							<!-- Approve button -->
 							<button type="button" class="enabledisable-news btn btn-xs btn-success">
@@ -65,8 +66,6 @@
 					</tr>
 				<?php } ?>
 			<? endif; ?>
-
-
 			</tbody> 
 	    </table>
 	</div>
@@ -76,7 +75,7 @@
 			<div class="dataTables_info" id="example_info">Showing <?php echo $count." of ".$count ?> total results</div>
 		</div>
 
-	    <div class="col-xs-6">
+	    <div class="col-md-6 col-lg-6 col-xs-6">
 			<div class="dataTables_paginate paging_bootstrap">
 				<ul class="pagination pagination-sm" style="margin:0 !important">
 					<li class="prev disabled">
@@ -107,7 +106,7 @@
 			    10 <span class="caret"></span>
 			</button>
 
-			<ul class="dropdown-menu" role="menu" style="min-width: 10px ">
+			<ul class="dropdown-menu" role="menu" style="min-width: 100px ">
 
 			    <li><a href="#">5 </a></li>
 			    <li class="active"><a href="#">10</a></li>

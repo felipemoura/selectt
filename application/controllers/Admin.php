@@ -18,6 +18,11 @@ class Admin extends MY_Controller {
 		$this->load->view('logged/admin_page', $data);
 		$this->load->view('templates/footer');
 	}
+
+	public function deleteRecord ($id) {
+		$this->admin_model->deleteRegister($id);
+		redirect(base_url('admin'));
+	}
 }
 
 ?>

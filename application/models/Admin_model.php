@@ -18,15 +18,20 @@ class Admin_model extends CI_Model
       $count = 0;
 
       foreach ($query->result() as $row) {
-        $data['info'][$count++] = array ( "id"    => $row->ID, 
-                                          "name"  => $row->Approach,
-                                          "title" => $row->Title, 
-                                          "year"  => $row->Year
+        $data['info'][$count++] = array ( 'id'    => $row->ID, 
+                                          'name'  => $row->Approach,
+                                          'title' => $row->Title, 
+                                          'year'  => $row->Year
                                           );
       }
       
       $data['count'] = $query->num_rows();
       return $data;  
+    }
+
+    function deleteRegister ($id) 
+    {
+      $this->db->delete ('caracterization', array('ID' =>  $id));
     }
 
 
