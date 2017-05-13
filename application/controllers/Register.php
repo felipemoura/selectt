@@ -17,8 +17,8 @@ class Register extends CI_Controller {
     function registerCheck()
     {
         //set validation rules
-        $this->form_validation->set_rules('inputName', 'Full Name', 'trim|required|alpha|min_length[3]|max_length[255]');
-        $this->form_validation->set_rules('inputUsername', 'Username', 'trim|required|alpha|min_length[3]|max_length[45]');
+        $this->form_validation->set_rules('inputName', 'Full Name', 'trim|required|alpha_numeric_spaces|min_length[3]|max_length[255]');
+        $this->form_validation->set_rules('inputUsername', 'Username', 'trim|required|alpha_dash|min_length[3]|max_length[45]');
 
         $this->form_validation->set_rules('inputEmail', 'Email', 'trim|required|valid_email|is_unique[user.EMAIL]|matches[inputEmailConfirm]');
         $this->form_validation->set_rules('inputEmailConfirm', 'Confirm Email', 'trim|required|valid_email');
@@ -26,7 +26,7 @@ class Register extends CI_Controller {
         $this->form_validation->set_rules('inputPassword', 'Password', 'trim|required|matches[inputPasswordConfirm]');
         $this->form_validation->set_rules('inputPasswordConfirm', 'Confirm Password', 'trim|required');
 
-        $this->form_validation->set_rules('inputInstitution', 'Institution', 'trim|alpha|max_length[255]');
+        $this->form_validation->set_rules('inputInstitution', 'Institution', 'trim|alpha_numeric_spaces|max_length[255]');
         
         //validate form input
         if ($this->form_validation->run() == FALSE) {

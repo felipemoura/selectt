@@ -35,6 +35,12 @@ class Admin_model extends CI_Model
       $this->db->delete ('caracterization', array('ID' =>  $id));
     }
 
+    function approveRegister ($id) 
+    {
+      $data = array( 'NeedApproval' => 0 );
+      $this->db->where('ID', $id);
+      $this->db->update('caracterization', $data); 
+    }
 
 }
 ?>

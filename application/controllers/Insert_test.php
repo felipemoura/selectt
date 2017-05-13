@@ -14,8 +14,11 @@ class Insert_test extends MY_Controller {
 	} 
 
     public function loadAll ($arg) {
-        if ($arg != null)   $data['error'] = $arg;
-        $data['id'] = $this->insert_model->buildId();
+        if ($arg != null) {
+            $data['error'] = $arg;
+        }   
+
+        $data['id']   = $this->insert_model->buildId();
         $data['name'] = $this->insert_model->buildName();
 
         $this->load->view('templates/header_logged');
@@ -40,33 +43,32 @@ class Insert_test extends MY_Controller {
         $field  = $this->insert_model->buildFields();
 
         //set validation rules
-        $this->form_validation->set_rules('inputApproachTechniqueName', 'Technique Name', 'trim|required|alpha|min_length[3]|max_length[700]');        
-        $this->form_validation->set_rules('inputTitle', 'Title', 'trim|required|alpha|min_length[3]|max_length[1023]');
-        $this->form_validation->set_rules('inputYear', 'Year', 'trim|alpha|max_length[4]');
+        $this->form_validation->set_rules('inputApproachTechniqueName', 'Technique Name', 'trim|required|alpha_dash|min_length[3]|max_length[700]');        
+        $this->form_validation->set_rules('inputTitle', 'Title', 'trim|required|alpha_dash|min_length[3]|max_length[1023]');
+        $this->form_validation->set_rules('inputYear', 'Year', 'trim|alpha_dash|max_length[4]');
 
         // validate all other forms
         foreach ($id as $key => $value) {
-            $this->form_validation->set_rules( $value, $name[$key], 'trim|alpha|max_length[1023]');
+            $this->form_validation->set_rules( $value, $name[$key], 'trim|alpha_dash|max_length[1023]');
         }
 
         // prepare sql
         $sql = array(
                     'Title'      => $this->input->post("inputTitle"),
-                    'Year'       => ($this->input->post('checkinputYear') == 1 ) ? '' : ''.$this->input->post("inputYear"),
+                    'Year'       => ($this->input->post('checkinputYear') == 1 ) ? '-1' : ''.$this->input->post("inputYear"),
                     // 'PDF_File'   => $this->upload->data("file_name"),
                     'Approach'   => $this->input->post("inputApproachTechniqueName"));
 
         foreach ($field as $key => $value) {
-            $sql[$value] = ($this->input->post('checkinput'.$value) == 1) ? '' : ''.$this->input->post('input'.$value);
+            $sql[$value] = ($this->input->post('checkinput'.$value) == 1) ? 'No information' : ''.$this->input->post('input'.$value);
         }
 
         // no file uploaded
         if ($this->input->post('checkinputArticlePDF') == 1 ) {
-            $sql['PDF_File'] = '';
+            $sql['PDF_File'] = 'No information';
             $this->insert_model->insertRecordTechnique($sql);
             $this->loadAll ('Success update' );
         }
-
 
         // test if uploaded file
         // error

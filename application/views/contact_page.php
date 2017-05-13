@@ -5,18 +5,18 @@
 
 <h1>Contact</h1>
 
- <!-- Form -->
-  <form>
+  <!-- Contact Form -->
+  <form role="form" method="post" action="contact/">
     <div class="form-group">
       <label for="InputName">Name</label>
-      <input type="name" class="form-control" id="InputName" aria-describedby="NameHelp" placeholder="Name">
-      <small class="form-text text-muted">* Required</small>
+      <input type="name" class="form-control" id="InputName" aria-describedby="NameHelp" placeholder="Name" required focus>
+      <small class="form-text text-muted" style="color:black">* Required</small>
     </div>
 
     <div class="form-group">
       <label for="InputEmail1">Email address</label>
-      <input type="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp" placeholder="Enter a valid email">
-      <small id="emailHelp" class="form-text text-muted" style="color:black">* Required,fe We'll never share your email with anyone else. I promisse!</small>
+      <input type="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp" placeholder="Enter a valid email" required focus>
+      <small id="emailHelp" class="form-text text-muted" style="color:black">* Required. We'll never share your email with anyone else. We promisse!</small>
 
     </div>
 
@@ -30,13 +30,14 @@
       <input class="form-control" id="Company" aria-describedby="companyHelp" placeholder="Company">
     </div>
 
-   <div class="form-group">
+    <div class="form-group">
       <label for="exampleTextarea">Text</label>
-      <textarea class="form-control" id="exampleTextarea" rows="4" placeholder="Enter Text"></textarea>
-      <small class="form-text text-muted">* Required</small>
-   </div>
+      <textarea class="form-control" id="exampleTextarea" rows="4" placeholder="Enter Text" required focus></textarea>
+      <small class="form-text text-muted" style="color:black">* Required</small>
+    </div>
 
-  <button type="submit" class="btn btn-primary">Submit</button>
-  
+    <button type="submit" class="btn btn-block btn-primary">Submit</button>
+
+  </form>
 </div>
 

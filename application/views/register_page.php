@@ -64,7 +64,7 @@
             <span class="text-danger"><?php echo form_error('inputInstitution'); ?></span>
         </div>
 
-        <a href="login"><button class="btn btn-danger btn-block" id="btnConfirm" type="submit">Confirm</button></a>
+        <button class="btn btn-danger btn-block" id="btnConfirm" type="submit">Confirm</button>
   </form>
 </div>
 

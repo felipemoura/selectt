@@ -23,6 +23,11 @@ class Admin extends MY_Controller {
 		$this->admin_model->deleteRegister($id);
 		redirect(base_url('admin'));
 	}
+
+	public function approveRecord ($id) {
+		$this->admin_model->approveRegister($id);
+		redirect(base_url('admin'));
+	}
 }
 
 ?>

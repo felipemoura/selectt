@@ -49,6 +49,7 @@
               <input type="file" class="form-control-file" id="inputArticlePDF" name="inputArticlePDF" aria-describedby="fileHelp">
 
               <small id="fileHelp" class="form-text text-muted">Max file size, 2 MB</small>
+              <span class="text-danger"><?php echo form_error('inputArticlePDF'); ?></span>
             </div>
         </div>
 
