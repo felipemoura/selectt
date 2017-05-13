@@ -5,7 +5,7 @@
 <!-- Login FORM -->
 <div class="container animated fadeInDown">
 
-	<form class="form-signin" role="form" method="post" action="<?= base_url('login/loginCheck') ?>">
+	<form class="form-signin" role="form" method="post" action="login/loginCheck">
 
 		<h2 class="form-signin-heading">Log in</h2>
 

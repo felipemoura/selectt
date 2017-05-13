@@ -2,178 +2,101 @@
 
 <div class="container animated fadeInDown">
 
-  <?php echo $error;?>
+  <? if (isset($error)): ?>
+      <div class="alert alert-danger" role="alert" style="margin-top: 10px;"><?= $error; ?></div>
+  <? endif; ?>
 
   <?php echo form_open_multipart('Insert_test/do_upload');?>
+  
+
+
+  <!-- Technique name -->
+  <div class="form-group">
+    <label for="inputApproachTechniqueName">Technique name:</label>
+    <input type="text" class="form-control" id="inputApproachTechniqueName" name="inputApproachTechniqueName" aria-describedby="titleHelp" placeholder="Enter Technique name" required focus>
+  </div>
 
   <!-- Title -->
   <div class="form-group">
     <label for="inputTitle">Title:</label>
-    <input type="text" class="form-control" id="inputTitle" aria-describedby="titleHelp" placeholder="Enter project Title" required focus>
+    <input type="text" class="form-control" id="inputTitle" name="inputTitle" aria-describedby="titleHelp" placeholder="Enter project Title" required focus>
   </div>
 
-  <!-- Year -->
-  <div class="form-group">
-    <label for="inputYear">Select year of publication:</label>
-    <select class="form-control" id="inputYear">
-    	<!-- JS of years here -->
-    </select>
-  </div>
+  <div class="row">
+        <div class="col-lg-4 col-md-4 cold-sm-12 cold-xs-12">
+          <!-- Year -->
+          <div class="form-group">
+            <label for="inputYear">Select year of publication:</label>
+            <select class="form-control" id="inputYear" name="inputYear"></select>
+          </div>
+        </div>
 
-  <!-- Bibliografic Reference -->
-  <div class="form-group">
-    <label for="inputBibliograficReference">Bibliografic Reference</label>
-    <textarea class="form-control" id="inputBibliograficReference" rows="5"></textarea>
-  </div>
+        <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+          <div class="form-check pull-right" style="margin: auto;  padding: 30px 0; text-align: center;">
+            <label class="form-check-label">
+              <input type="checkbox" name="checkinputYear" id="checkinputYear" class="form-check-input" onchange="toggleCheckbox(this)" value="1">
+              No information
+            </label>
+          </div>
+        </div>
 
-  <!-- PDF file -->
-  <div class="form-group">
-    <label for="inputArticlePDF">Paper PDF file</label>
-    <input type="file" class="form-control-file" id="inputArticlePDF" aria-describedby="fileHelp">
-    <small id="fileHelp" class="form-text text-muted">Max file size, 2 MB</small>
-  </div>
+        <div class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 cold-sm-12 cold-xs-12">
+            <!-- PDF file -->
+            <div class="form-group">
+              <label for="inputArticlePDF">Paper PDF file</label>
+              <input type="file" class="form-control-file" id="inputArticlePDF" name="inputArticlePDF" aria-describedby="fileHelp">
 
+              <small id="fileHelp" class="form-text text-muted">Max file size, 2 MB</small>
+            </div>
+        </div>
 
-  <!-- Development paradigm   -->
-  <div class="form-group">
-    <label for="inputDevelopmentParadigm">Development Paradigm</label>
-    <textarea class="form-control" id="inputDevelopmentParadigm" rows="5"></textarea>
-  </div>
-
-  <!--  Software Execution Platform  -->
-  <div class="form-group">
-    <label for="inputSoftwareExecutionPlatform">Software Execution Platform</label>
-    <textarea class="form-control" id="inputSoftwareExecutionPlatform" rows="5"></textarea>
-  </div>
-
-  <!--  Software Language	  -->
-  <div class="form-group">
-    <label for="inputSoftwareLanguage">Software Language</label>
-    <textarea class="form-control" id="inputSoftwareLanguage" rows="5"></textarea>
-  </div>
-
-  <!--  Type of Testing technique - Family	  -->
-  <div class="form-group">
-    <label for="inputTypeofTestingTechnique">Type of Testing technique - Family</label>
-    <textarea class="form-control" id="inputTypeofTestingTechnique" rows="5"></textarea>
-  </div>
-
-  <!--  Testing level  -->
-  <div class="form-group">
-    <label for="inputTestingLevel">Testing level</label>
-    <textarea class="form-control" id="inputTestingLevel" rows="5"></textarea>
-  </div>
-
-  <!--  Approach  -->
-  <div class="form-group">
-    <label for="inputApproach">Approach (Technique name)</label>
-    <textarea class="form-control" id="inputApproach" rows="5"></textarea>
-  </div>
-
-  <!--  Test case generation criteria  -->
-  <div class="form-group">
-    <label for="inputTestCaseGenerationCriteria">Test case generation criteria</label>
-    <textarea class="form-control" id="inputTestCaseGenerationCriteria" rows="5"></textarea>
-  </div>
-
-  <!--  Inputs required	  -->
-  <div class="form-group">
-    <label for="inputInputsRequired">Inputs required</label>
-    <textarea class="form-control" id="inputInputsRequired" rows="5"></textarea>
-  </div>
-
-  <!--  Results generated/Response variable  -->
-  <div class="form-group">
-    <label for="inputResultsGenerated">Results generated/Response variable</label>
-    <textarea class="form-control" id="inputResultsGenerated" rows="5"></textarea>
-  </div>
-
-  <!--  Failures revealed  -->
-  <div class="form-group">
-    <label for="inputFailuresRevealed">Failures revealed</label>
-    <textarea class="form-control" id="inputFailuresRevealed" rows="5"></textarea>
-  </div>
-
-  <!--   Quality attributes	 -->
-  <div class="form-group">
-    <label for="inputQualityAttributes"></label>
-    <textarea class="form-control" id="inputQualityAttributes" rows="5"></textarea>
-  </div>
-
-  <!--  Concurrent bug pattern  -->
-  <div class="form-group">
-    <label for="inputConcurrentBugPattern">Concurrent bug pattern</label>
-    <textarea class="form-control" id="inputConcurrentBugPattern" rows="5"></textarea>
-  </div>
-
-  <!--  Representation of concurrent program/Graphical representation  -->
-  <div class="form-group">
-    <label for="inputGraphicalRepresentation">Representation of concurrent program/Graphical representation</label>
-    <textarea class="form-control" id="inputGraphicalRepresentation" rows="5"></textarea>
-  </div>
-
-  <!--  Type of analysis  -->
-  <div class="form-group">
-    <label for="inputTypeofanalysis">Type of analysis</label>
-    <textarea class="form-control" id="inputTypeofanalysis" rows="5"></textarea>
-  </div>
-
-
-  <!--  Paradigm for process interaction  -->
-  <div class="form-group">
-    <label for="inputParadigm">Paradigm for process interaction</label>
-    <textarea class="form-control" id="inputParadigm" rows="5"></textarea>
-  </div>
-
-  <!--   Mechanism of Replay/Non-deterministic/Deterministic-execution  -->
-  <div class="form-group">
-    <label for="inputMechanismOfReplay">Mechanism of Replay/Non-deterministic/Deterministic-execution</label>
-    <textarea class="form-control" id="inputMechanismofReplay" rows="5"></textarea>
-  </div>
-
-  <!--  Instrumentation	  -->
-  <div class="form-group">
-    <label for="inputInstrumentation">Instrumentation</label>
-    <textarea class="form-control" id="inputInstrumentation" rows="5"></textarea>
-  </div>
-
-  <!--  State space explosion problem  -->
-  <div class="form-group">
-    <label for="inputStateSpace">State space explosion problem</label>
-    <textarea class="form-control" id="inputStateSpace" rows="5"></textarea>
+        <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+          <div class="form-check pull-right" style="margin: auto;  padding: 30px 0; text-align: center;">
+            <label class="form-check-label">
+              <input type="checkbox" name="checkinputArticlePDF" id="checkinputArticlePDF" class="form-check-input" onchange="toggleCheckbox(this)" value="1">
+              No information
+            </label>
+          </div>
+        </div>
   </div>
   
-  <!--  Tool  -->
-  <div class="form-group">
-    <label for="inputTool">Tool</label>
-    <textarea class="form-control" id="inputTool" rows="5"></textarea>
-  </div>
+  <?php foreach ($id as $key => $item): ?>
+    <div class="row">
+      <div class="col-lg-9 col-md-8 cold-sm-12 cold-xs-12">
+        <!-- <?= $item; ?> -->
+        <div class="form-group">
+          <label for="<?= $item; ?>"><?= $name[$key]; ?>:</label>
+          <textarea class="form-control" id="<?= $item; ?>" name="<?= $item; ?>" placeholder="Enter <?= $name[$key]; ?>" rows="5"></textarea>
+        </div>
+      </div>
 
-  <!--  Tool Ref Catalog  -->
-  <div class="form-group">
-    <label for="inputToolRefCatalog">Tool Ref Catalog</label>
-    <textarea class="form-control" id="inputToolRefCatalog" rows="5"></textarea>
-  </div>
+      <!--  <?= $item; ?> checkbox  -->
+      <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
+          <div class="form-check pull-right" style="margin: auto;  padding: 30px 0; text-align: center;">
+            <label class="form-check-label">
+              <input type="checkbox" name="check<?= $item; ?>" id="check<?= $item; ?>" class="form-check-input" onchange="toggleCheckbox(this)" value="1">No information
+            </label>
+          </div>
+      </div>
+    </div>
 
-  <!--  Automation level  -->
-  <div class="form-group">
-    <label for="inputAutomationLevel">Automation level</label>
-    <textarea class="form-control" id="inputAutomationLevel" rows="5"></textarea>
-  </div>
+  <?php endforeach; ?>
 
-  <!--  Platform that the tool operate  -->
-  <div class="form-group">
-    <label for="inputPlatformOperation">Platform that the tool operate</label>
-    <textarea class="form-control" id="inputPlatformOperation" rows="5"></textarea>
-  </div>
-
-  <!--  Tool Cost  -->
-  <div class="form-group">
-    <label for="inputToolCost">Tool Cost</label>
-    <textarea class="form-control" id="inputToolCost" rows="5"></textarea>
-  </div>
 
   <!-- Submit Form -->
   <button type="submit" class="btn btn-block btn-success">Insert Technique into Database</button>
 
 </div>
+
+
+<script type="text/javascript">
+    function toggleCheckbox(el) {
+      var theId = el.id.replace("check","");
+
+      if( el.checked ){
+         $("#" + theId).prop('disabled', true);
+      }else{
+         $("#" + theId).prop('disabled', false);
+      }
+    }
+</script>

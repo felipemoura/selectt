@@ -6,13 +6,19 @@ class Insert_test extends MY_Controller {
     {
         // Call the Model constructor
         parent::__construct();
+        $this->load->model('insert_model');
     }
 
 	public function index()
 	{
-        // $this->checkForm();
+
+        $data['id'] = $this->insert_model->buildId();
+        $data['name'] = $this->insert_model->buildName();
+        // $data['error'] = ' ';
+
+
 		$this->load->view('templates/header_logged');
-		$this->load->view('logged/insert_page', array('error' => ' ' ));
+		$this->load->view('logged/insert_page', $data);
 		$this->load->view('templates/footer');
 	}
 
