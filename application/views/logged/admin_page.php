@@ -58,10 +58,13 @@
 								</button>
 							</a>
 
-							<!-- Approve button -->
-							<button type="button" class="enabledisable-news btn btn-xs btn-success">
-								<span class="glyphicon glyphicon-ok"></span>
-							</button>
+							
+							<?php if($temp['approval'] == 1) : ?>
+								<!-- Approve button -->
+								<button type="button" class="enabledisable-news btn btn-xs btn-success">
+									<span class="glyphicon glyphicon-ok"></span>
+								</button>
+							<?php endif; ?>
 						</td>   
 					</tr>
 				<?php } ?>

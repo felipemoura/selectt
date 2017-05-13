@@ -16,14 +16,41 @@ class Insert_model extends CI_Model
     }
     
 
+
+    function buildFields () {
+        $field = array( 'BibliograficReference' ,
+                        'DevelopmentParadigm' ,
+                        'SoftwareExecutionPlatform' ,
+                        'SoftwareLanguage' ,
+                        'TypeofTestingTechnique' ,
+                        'TestingLevel' ,
+                        'TestCaseGenerationCriteria' ,
+                        'InputsRequired' ,
+                        'ResultsGenerated' ,
+                        'FailuresRevealed' ,
+                        'QualityAttributes' ,
+                        'ConcurrentBugPattern' ,
+                        'GraphicalRepresentation' ,
+                        'Typeofanalysis' ,
+                        'Paradigm' ,
+                        'MechanismofReplay' ,
+                        'Instrumentation' ,
+                        'StateSpace' ,
+                        'Tool' ,
+                        'ToolRefCatalog' ,
+                        'AutomationLevel' ,
+                        'PlatformOperation' ,
+                        'ToolCost' );
+        return $field;
+    }
+
     function buildId () {
-        $id = array(   'inputBibliograficReference' ,
+        $id = array(    'inputBibliograficReference' ,
                         'inputDevelopmentParadigm' ,
                         'inputSoftwareExecutionPlatform' ,
                         'inputSoftwareLanguage' ,
                         'inputTypeofTestingTechnique' ,
                         'inputTestingLevel' ,
-                        //'inputApproach' ,
                         'inputTestCaseGenerationCriteria' ,
                         'inputInputsRequired' ,
                         'inputResultsGenerated' ,
@@ -51,7 +78,6 @@ class Insert_model extends CI_Model
                         'Software Language' ,
                         'Type of Testing Technique - Family' ,
                         'Testing Level' ,
-                        //'Approach (Technique name)' ,
                         'Test Case Generation Criteria' ,
                         'Inputs Required' ,
                         'Results generated/Response variable' ,

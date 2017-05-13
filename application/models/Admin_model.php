@@ -11,17 +11,18 @@ class Admin_model extends CI_Model
     //insert into user table
     function loadRegisters ()
     {
-      $this->db->select ('ID, Approach, Title, Year');
+      $this->db->select ('ID, Approach, Title, Year, NeedApproval');
       $this->db->from('caracterization');
 
       $query = $this->db->get();
       $count = 0;
 
       foreach ($query->result() as $row) {
-        $data['info'][$count++] = array ( 'id'    => $row->ID, 
-                                          'name'  => $row->Approach,
-                                          'title' => $row->Title, 
-                                          'year'  => $row->Year
+        $data['info'][$count++] = array ( 'id'        => $row->ID, 
+                                          'name'      => $row->Approach,
+                                          'title'     => $row->Title, 
+                                          'year'      => $row->Year,
+                                          'approval'  => $row->NeedApproval
                                           );
       }
       
