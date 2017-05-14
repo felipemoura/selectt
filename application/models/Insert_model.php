@@ -15,6 +15,49 @@ class Insert_model extends CI_Model
         return $this->db->insert('caracterization', $data);
     }
     
+    function getAllFieldInfo ($id) {
+        $this->db->select ('*');
+        $this->db->from('caracterization');
+        $this->db->where('ID', $id);
+        $this->db->limit(1);
+
+        $query = $this->db->get();
+        $row = $query->row_array();
+
+        // prepare data
+        $buildField = array(
+                    'inputTitle'                        => $row['Title'],
+                    'inputYear'                         => $row['Year'],
+                    'inputPDF_File'                     => $row['PDF_File'],
+                    'inputApproach'                     => $row['Approach'],
+                    'inputBibliograficReference'        => $row['BibliograficReference'] ,
+                    'inputDevelopmentParadigm'          => $row['DevelopmentParadigm'] ,
+                    'inputSoftwareExecutionPlatform'    => $row['SoftwareExecutionPlatform'] ,
+                    'inputSoftwareLanguage'             => $row['SoftwareLanguage'] ,
+                    'inputTypeofTestingTechnique'       => $row['TypeofTestingTechnique'] ,
+                    'inputTestingLevel'                 => $row['TestingLevel'] ,
+                    'inputTestCaseGenerationCriteria'   => $row['TestCaseGenerationCriteria'] ,
+                    'inputInputsRequired'               => $row['InputsRequired'] ,
+                    'inputResultsGenerated'             => $row['ResultsGenerated'] ,
+                    'inputFailuresRevealed'             => $row['FailuresRevealed'] ,
+                    'inputQualityAttributes'            => $row['QualityAttributes'] ,
+                    'inputConcurrentBugPattern'         => $row['ConcurrentBugPattern'] ,
+                    'inputGraphicalRepresentation'      => $row['GraphicalRepresentation'] ,
+                    'inputTypeofanalysis'               => $row['Typeofanalysis'] ,
+                    'inputParadigm'                     => $row['Paradigm'] ,
+                    'inputMechanismOfReplay'            => $row['MechanismOfReplay'] ,
+                    'inputInstrumentation'              => $row['Instrumentation'] ,
+                    'inputStateSpace'                   => $row['StateSpace'] ,
+                    'inputTool'                         => $row['Tool'] ,
+                    'inputToolRefCatalog'               => $row['ToolRefCatalog'] ,
+                    'inputAutomationLevel'              => $row['AutomationLevel'] ,
+                    'inputPlatformOperation'            => $row['PlatformOperation'] ,
+                    'inputToolCost'                     => $row['ToolCost']
+                );
+
+
+        return $buildField;
+    }
 
 
     function buildFields () {
@@ -33,7 +76,7 @@ class Insert_model extends CI_Model
                         'GraphicalRepresentation' ,
                         'Typeofanalysis' ,
                         'Paradigm' ,
-                        'MechanismofReplay' ,
+                        'MechanismOfReplay' ,
                         'Instrumentation' ,
                         'StateSpace' ,
                         'Tool' ,
@@ -60,7 +103,7 @@ class Insert_model extends CI_Model
                         'inputGraphicalRepresentation' ,
                         'inputTypeofanalysis' ,
                         'inputParadigm' ,
-                        'inputMechanismofReplay' ,
+                        'inputMechanismOfReplay' ,
                         'inputInstrumentation' ,
                         'inputStateSpace' ,
                         'inputTool' ,

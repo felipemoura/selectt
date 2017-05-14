@@ -42,5 +42,31 @@ class Admin_model extends CI_Model
       $this->db->update('caracterization', $data); 
     }
 
+    function updateRegister ($id, $data) 
+    {
+      $this->db->where('ID', $id);
+      $this->db->update('caracterization', $data); 
+    }
+
+    function checkIfFileExists ($id) 
+    {
+      $this->db->select('PDF_File');
+      $this->db->from('caracterization');
+      $this->db->where('ID', $id);
+      $this->db->limit(1);
+
+      $query = $this->db->get();
+
+      if($query->num_rows() == 1)
+      {
+        $row = $query->row_array();
+        return $row['PDF_File'];
+      }
+      else
+      {
+       return null;
+      }  
+
+    }
 }
 ?>
