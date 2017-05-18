@@ -14,5 +14,11 @@
 	echo '<script src="' . base_url("assets/js/insert_custom.js") . '" type="text/javascript"></script>';
 }?>
 
+
+<?php if($this->uri->segment(2)=="showInfo"){
+	echo '<script src="' . base_url("assets/js/available_technique.js") . '" type="text/javascript"></script>';
+}?>
+	
+
 </body>
 </html>

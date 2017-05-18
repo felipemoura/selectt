@@ -53,6 +53,10 @@
           <li <?php if($this->uri->segment(1)=="publication"){echo 'class="active"';}?>>
             <a href="<?= base_url('publication');?>">Publication</a>
           </li>
+          
+          <li <?php if($this->uri->segment(1)=="available-techniques"){echo 'class="active"';}?>>
+            <a href="<?= base_url('available-techniques');?>">Available Techniques</a>
+          </li>
 
           <li <?php if($this->uri->segment(1)=="contact"){echo 'class="active"';}?>>
             <a href="<?= base_url('contact');?>">Contact</a>
