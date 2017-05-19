@@ -51,7 +51,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $route['default_controller'] = 'home';
 $route['available-techniques'] = 'available_techniques';
-$route['available-techniques/showInfo/([0-9]+)/(:any)'] = 'available-techniques/showInfo/$2';
+$route['available-techniques/(:any)'] = 'available_techniques';
 
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = TRUE;

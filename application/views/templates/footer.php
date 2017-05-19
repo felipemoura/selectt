@@ -1,5 +1,6 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
 
+<!-- FOOTER -->
 <footer class="footer">
   <div class="container">
 	<hr>
@@ -7,6 +8,7 @@
   </div>
 </footer>
 
+<!-- SCRIPTS -->
 <script src="<? echo base_url("assets/js/jquery.min.js");?>" 	type="text/javascript"></script>
 <script src="<? echo base_url("assets/js/bootstrap.min.js");?>" type="text/javascript"></script>
 
@@ -15,10 +17,13 @@
 }?>
 
 
-<?php if($this->uri->segment(2)=="showInfo"){
+<?php if($this->uri->segment(1)=="available-techniques"){
+	echo '<script src="' . base_url("assets/media/js/jquery.dataTables.min.js") . '" type="text/javascript"></script>';
+	echo '<script src="' . base_url("assets/media/js/dataTables.bootstrap.min.js") . '" type="text/javascript"></script>';
 	echo '<script src="' . base_url("assets/js/available_technique.js") . '" type="text/javascript"></script>';
 }?>
 	
-
+<!-- END OF IT  -->
 </body>
 </html>
+
