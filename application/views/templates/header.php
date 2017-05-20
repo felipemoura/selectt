@@ -13,9 +13,10 @@
 	<link rel="stylesheet" type="text/css" href="<? echo base_url("assets/css/bootstrap.min.css");?>">
 	<link rel="stylesheet" type="text/css" href="<? echo base_url("assets/css/animate.css");?>">
 	<link rel="stylesheet" type="text/css" href="<? echo base_url("assets/css/custom.css");?>">
+  
   <?php if($this->uri->segment(1)=="available-techniques"){
-    echo '<link rel="stylesheet" type="text/css" href="' . base_url("assets/media/css/dataTables.bootstrap.min.css") . '">';
-    echo '<link rel="stylesheet" type="text/css" href="' . base_url("assets/css/available_technique.css") . '">';
+  echo '<link rel="stylesheet" type="text/css" href="' . base_url("assets/media/css/dataTables.bootstrap.min.css") . '">';
+  echo '<link rel="stylesheet" type="text/css" href="' . base_url("assets/css/available_technique.css") . '">';
   }?>
 
   <link rel="manifest" href="<? echo base_url("assets/fav/manifest.json");?>">

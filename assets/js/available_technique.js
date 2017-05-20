@@ -2,10 +2,12 @@
 $(document).ready(function() {
     $('#techniquesTable').DataTable( {
     	"order": [[ 0, "asc" ]],
-    	stateSave: true,
     	"pagingType": "full_numbers",
     	responsive: true,
         processing: true,
+        "dom" : '<"col-lg-12 col-md-12 col-sm-12 col-xs-12"f>rt<"#footerTable.row"<"col-lg-3 col-md-3 col-sm-3 col-xs-3"i><"col-lg-3 col-md-3 col-sm-3 col-xs-3"l><"col-lg-6 col-md-6 col-sm-6 col-xs-6" <"pull-right">p>><"clear">',
+
+            
 
         initComplete: function () {
         	var count = 0;
