@@ -4,9 +4,9 @@
 
   <h1>Available Techniques</h1>
 
-  <h6>Here you can view the available techniques.</h6>
-
-  <br><br>
+  <h5>Here you can view the available techniques.</h5>
+  <br>
+  <br>
 
   <div class="panel panel-default">
 	<div class="col-md-12 col-lg-12 col-sm-12 col-xs-12" style="margin:7px; padding: 15px;">
@@ -27,19 +27,20 @@
 			        <th>Title</th>
 			        <th>Technique</th>
 			        <th>Language</th>
-			        <th style="width: 80px">Actions</th>
+			        <th>Actions</th>
 		        </tr>
 			</thead>
-<!-- 		  	<tfoot>
+		
+		  	<!-- <tfoot>
 	            <tr>
-	                <th></th>
-			        <th></th>
+	                <th>Technique name</th>
+			        <th>Title</th>
 			        <th>Technique</th>
 			        <th>Language</th>
-			        <th></th>
+			        <th>Actions</th>
 	            </tr>
-	        </tfoot> -->
-
+	        </tfoot>
+ 			-->
 			<tbody>
 
 			<? if (isset($info)): ?>
@@ -66,7 +67,7 @@
 
 <?php foreach ($info as $var) { ?>
 <!-- Modal -->
-<div class="modal fade in" data-backdrop="static" id="<?php echo $var['ID']; ?>myInfo" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal fade in" data-backdrop="static" id="<?php echo $var['ID']; ?>myInfo" data-keyboard="true" tabindex="-1" role="dialog" aria-hidden="true">
 
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">

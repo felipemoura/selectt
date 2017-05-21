@@ -25,14 +25,14 @@
   <meta name="theme-color" content="#ffffff">
 
 
-<link rel="apple-touch-icon" sizes="180x180" href="<? echo base_url('assets/fav/apple-touch-icon.png') ?>">
-<link rel="icon" type="image/png" sizes="32x32" href="<? echo base_url('assets/fav/favicon-32x32.png') ?>">
-<link rel="icon" type="image/png" sizes="16x16" href="<? echo base_url('assets/fav/favicon-16x16.png') ?>">
-<link rel="manifest" href="<? echo base_url('assets/fav/manifest.json') ?>">
-<link rel="mask-icon" href="<? echo base_url('assets/fav/safari-pinned-tab.svg') ?>" color="#5bbad5">
-<link rel="shortcut icon" href="<? echo base_url('assets/fav/favicon.ico') ?>">
-<meta name="msapplication-config" content="<? echo base_url('assets/fav/browserconfig.xml') ?>">
-<meta name="theme-color" content="#ffffff">
+  <link rel="apple-touch-icon" sizes="180x180" href="<? echo base_url('assets/fav/apple-touch-icon.png') ?>">
+  <link rel="icon" type="image/png" sizes="32x32" href="<? echo base_url('assets/fav/favicon-32x32.png') ?>">
+  <link rel="icon" type="image/png" sizes="16x16" href="<? echo base_url('assets/fav/favicon-16x16.png') ?>">
+  <link rel="manifest" href="<? echo base_url('assets/fav/manifest.json') ?>">
+  <link rel="mask-icon" href="<? echo base_url('assets/fav/safari-pinned-tab.svg') ?>" color="#5bbad5">
+  <link rel="shortcut icon" href="<? echo base_url('assets/fav/favicon.ico') ?>">
+  <meta name="msapplication-config" content="<? echo base_url('assets/fav/browserconfig.xml') ?>">
+  <meta name="theme-color" content="#ffffff">
 
 	<title>Selectt</title>
 </head>

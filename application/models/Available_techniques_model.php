@@ -17,7 +17,7 @@ class Available_techniques_model extends CI_Model
       $count = 0;
 
       foreach ($query->result() as $row) {
-                                            $data['info'][$count++] = array ( 
+          $data['info'][$count++] = array ( 
                                             'ID'                    => $row->ID,                                   
                                             'Title'                 => $row->Title,
                                             'Reference'             => $row->Reference,
