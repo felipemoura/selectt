@@ -1,7 +1,7 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
 
 <!-- Register Container -->
-<div class="container animated fadeInDown" id="register">
+<div class="container animated fadeIn" id="register">
     <?php echo $this->session->flashdata('verify_msg'); ?>
 
     <form class="form-signin" role="form" method="post" action="<?= base_url('register/registerCheck') ?>">

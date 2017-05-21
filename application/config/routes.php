@@ -49,9 +49,66 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
+
+// home
 $route['default_controller'] = 'home';
+$route['home/(.*)'] = 'home';
+// people
+$route['people'] = 'people';
+$route['people/(.*)'] = 'people';
+// publication
+$route['publication'] = 'publication';
+$route['publication/(.*)'] = 'publication';
+// available techniques
 $route['available-techniques'] = 'available_techniques';
-$route['available-techniques/(:any)'] = 'available_techniques';
+$route['available-techniques/(.*)'] = 'available_techniques';
+// contact
+$route['contact'] = 'contact';
+$route['contact/(.*)'] = 'contact';
+
+// login
+$route['login'] = 'login';
+$route['login/loginCheck'] = 'login/loginCheck';
+$route['login/(.*)'] = 'login';
+
+// register
+$route['register'] = 'register';
+$route['register/registerCheck'] = 'register/registerCheck';
+$route['register/(.*)'] = 'register';
+
+
+
+// logged now
+$route['logged'] = 'logged';
+$route['logged/(.*)'] = 'logged';
+
+// inserting now
+$route['insert_test'] = 'insert_test';
+$route['insert_test/insert_database'] = 'insert_test/insert_database';
+$route['insert_test/(.*)'] = 'insert_test';
+
+//  results now 
+$route['results'] = 'results';
+$route['results/(.*)'] = 'results';
+
+// form now
+$route['form'] = 'form';
+$route['form/(.*)'] = 'form';
+
+// admin now
+$route['admin'] = 'admin';
+$route['admin/editInfo/(:num)'] = 'admin/editInfo/$1';
+$route['admin/editInfo/(:any)'] = 'admin';
+$route['admin/deleteRecord/(:num)'] = 'admin/deleteRecord/$1';
+$route['admin/editInfo/(:any)'] = 'admin';
+$route['admin/approveRecord/(:num)'] = 'admin/approveRecord/$1';
+$route['admin/editInfo/(:any)'] = 'admin';
+$route['admin/(:any)'] = 'admin';
+
+
+
+// $route['(:any)'] = 'home';
+$route['(.*)'] = 'home';
 
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = TRUE;

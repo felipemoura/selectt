@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
 
-<div class="container animated fadeInDown">
+<div class="container animated fadeIn">
   <h1>Insert Technique</h1>
   <h5>Please provide the information below.</h5>
   <br>
@@ -10,13 +10,13 @@
       <div class="alert alert-danger" role="alert" style="margin-top: 10px;"><?= $error; ?></div>
   <? endif; ?>
 
-  <?php echo form_open_multipart('Insert_test/insert_database');?>
+  <?php echo form_open_multipart('insert_test/insert_database');?>
 
   <!-- Technique name -->
   <div class="form-group">
     <label for="inputApproachTechniqueName">Technique name:</label>
     <input type="text" class="form-control" id="inputApproachTechniqueName" name="inputApproachTechniqueName" aria-describedby="titleHelp" placeholder="Enter Technique name" required focus>
-    <strong><small>Required</small></strong>
+    <small>* Required</small>
     <span class="text-danger"><?php echo form_error('inputApproachTechniqueName'); ?></span>
   </div>
 
@@ -24,7 +24,7 @@
   <div class="form-group">
     <label for="inputTitle">Title:</label>
     <input type="text" class="form-control" id="inputTitle" name="inputTitle" aria-describedby="titleHelp" placeholder="Enter project Title" required focus>
-    <strong><small>Required</small></strong>
+    <small>* Required</small>
     <span class="text-danger"><?php echo form_error('inputTitle'); ?></span>
   </div>
 

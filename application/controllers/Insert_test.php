@@ -56,7 +56,7 @@ class Insert_test extends MY_Controller {
 
         $this->insert_model->insertRecordTechnique($sql);
 
-        redirect('Insert_test');
+        redirect('insert_test');
     }
 
 }

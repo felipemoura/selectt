@@ -2,10 +2,10 @@
 
 <? if (isset($record)): ?>
 
-<div class="container animated fadeInDown">
+<div class="container animated fadeIn">
   <h1>Edit <?= $record['ApproachTechniqueName']; ?> Technique 
 	<div class="pull-right">
-	  <a href="javascript:history.go(-1)">
+	  <a href="<?= base_url('admin'); ?>">
 	  	<button style="width: 200px;" type="button" class="btn btn-danger">Return</button>
 	  </a> 	
 	</div>  
@@ -23,7 +23,7 @@
   <div class="form-group">
     <label for="inputApproachTechniqueName">Technique Name:</label>
     <input type="text" class="form-control" id="inputApproachTechniqueName" name="inputApproachTechniqueName" aria-describedby="titleHelp" placeholder="Enter Technique name" required focus>
-    <strong><small>Required</small></strong>
+    <small>* Required</small>
     <span class="text-danger"><?php echo form_error('inputApproachTechniqueName'); ?></span>
   </div>
 
@@ -31,7 +31,7 @@
   <div class="form-group">
     <label for="inputTitle">Title:</label>
     <input type="text" class="form-control" id="inputTitle" name="inputTitle" aria-describedby="titleHelp" placeholder="Enter project Title" required focus>
-    <strong><small>Required</small></strong>
+    <small>* Required</small>
     <span class="text-danger"><?php echo form_error('inputTitle'); ?></span>
   </div>
 
@@ -56,7 +56,7 @@
   </div>
   
   <?php foreach ($record as $key => $item): ?>
-	<? if (($key == "ID") || ($key == "Title") || ($key == "Year")) { continue; } ?>
+	<? if (($key == "ID") || ($key == "Title") || ($key == "Year") || ($key == "ApproachTechniqueName")) { continue; } ?>
 
     <div class="row">
       <div class="col-lg-9 col-md-8 cold-sm-12 cold-xs-12">
@@ -83,7 +83,7 @@
   <button type="submit" onclick="return confirm('Do you really want to update <?= $record['ApproachTechniqueName']; ?> Technique ?');" class="btn btn-block btn-success">Update <?= $record['ApproachTechniqueName']; ?> </button>
 
   <!-- Return -->
-  <a href="javascript:history.go(-1)">
+  <a href="<?= base_url('admin'); ?>">
 	  <button type="button" class="btn btn-block btn-danger">Return</button>
   </a> 
 </div>
