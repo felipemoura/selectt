@@ -9,14 +9,28 @@ CREATE TABLE `dbo`.`user` (
   `INSTITUTION` VARCHAR(255) NULL,
   `ISADMIN` BIT(1) NOT NULL DEFAULT 0,
   `STATUS` BIT(1) NOT NULL DEFAULT 0,
+  `CREATED` DATETIME NOT NULL DEFAULT NOW(),
+  `LASTLOGIN` DATETIME NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`ID`),
   UNIQUE INDEX `ID_UNIQUE` (`ID` ASC),
   UNIQUE INDEX `EMAIL_UNIQUE` (`EMAIL` ASC),
   UNIQUE INDEX `USERNAME_UNIQUE` (`USERNAME` ASC));
 
 INSERT INTO `dbo`.`user` (`ID`, `FULLNAME`, `EMAIL`, `PASSWORD`, `USERNAME`, `INSTITUTION`, `ISADMIN`, `STATUS`) 
-VALUES ('1', 'Felipe Moreira Moura', 'felpemoura@usp.br', '7e04da88cbb8cc933c7b89fbfe121cca', 'felipe', 'USP', '0', '0');
+VALUES ('1', 'Felipe Moreira Moura', 'felpemoura@usp.br', '7e04da88cbb8cc933c7b89fbfe121cca', 'felipe', 'USP', '1', '1');
 
+INSERT INTO `dbo`.`user` (`ID`, `FULLNAME`, `EMAIL`, `PASSWORD`, `USERNAME`, `INSTITUTION`, `STATUS`) 
+VALUES ('2', 'Teste Testinho', 'teste@usp.br', '698dc19d489c4e4db73e28a713eab07b', 'teste', 'USP', '1');
+
+DROP TABLE IF EXISTS `dbo`.`selectt_sessions` ; 
+
+CREATE TABLE `dbo`.`selectt_sessions` (
+        `id` varchar(128) NOT NULL,
+        `ip_address` varchar(45) NOT NULL,
+        `timestamp` int(10) unsigned DEFAULT 0 NOT NULL,
+        `data` blob NOT NULL,
+        KEY `selectt_sessions_timestamp` (`timestamp`)
+);
 
 DROP TABLE IF EXISTS `dbo`.`caracterization`; 
 

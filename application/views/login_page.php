@@ -13,6 +13,10 @@
 			<div class="alert alert-danger" role="alert" style="margin-top: 10px;"><?= $error; ?></div>
 		<? endif; ?>
 
+		<? if (isset($warning)): ?>
+			<div class="alert alert-warning" role="alert" style="margin-top: 10px;"><?= $warning; ?></div>
+		<? endif; ?>
+
 		<!-- Username -->
 	 	<label for="inputUsername" class="sr-only">Username</label>
 		<input type="text" id="inputUsername" name="inputUsername" class="form-control" placeholder="Username" required autofocus>

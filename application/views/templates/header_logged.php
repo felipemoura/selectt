@@ -16,7 +16,7 @@
 
   <?php if($this->uri->segment(1)=="admin"){
   echo '<link rel="stylesheet" type="text/css" href="' . base_url("assets/media/css/dataTables.bootstrap.min.css") . '">';
-  echo '<link rel="stylesheet" type="text/css" href="' . base_url("assets/css/available_technique.css") . '">';
+  echo '<link rel="stylesheet" type="text/css" href="' . base_url("assets/css/admin.css") . '">';
   }?>
 
   <link rel="manifest" href="<? echo base_url("assets/fav/manifest.json");?>">
@@ -68,12 +68,17 @@
             <a href="<?= base_url('results');?>">Results</a>
           </li>
 
+        <? if ($this->session->userdata('is_admin')) : ?>
+          <!-- Only if Admin page -->
           <li <?php if($this->uri->segment(1)=="admin") {  echo 'class="active"';   }?>>
             <a href="<?= base_url('admin');?>">Admin</a>
           </li>
+        <? endif; ?>
         </ul>
-      
+
+
         <button onclick="location.href='<?= base_url('login/logout');?>'" class="btn btn-danger pull-right" type="submit" id="btnLogout">Logout</button>
+        <div class="pull-right" style="margin: auto; padding-top: 13px; padding-right: 20px;">Welcome, <? echo $this->session->userdata('name'); ?></div> 
      
       </div>
 

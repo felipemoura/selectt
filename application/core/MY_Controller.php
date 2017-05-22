@@ -1,5 +1,4 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+<?php defined('BASEPATH') OR exit('No direct script access allowed');
 
 class MY_Controller extends CI_Controller {
  
@@ -7,10 +6,10 @@ class MY_Controller extends CI_Controller {
        {
             parent::__construct();
 			
-			$logado = $this->session->userdata("logged");
-			
-			if ($logado != 1) 
+			if ( ($this->session->userdata("logged_in") != 1) || ($this->session->userdata("is_verifyed") != 1) ) {
+
 				redirect(base_url('login'));				
+			}
        }
 }
 

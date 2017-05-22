@@ -5,7 +5,7 @@
 <div class="container animated fadeIn">
   <h1>Edit <?= $record['ApproachTechniqueName']; ?> Technique 
 	<div class="pull-right">
-	  <a href="<?= base_url('admin'); ?>">
+	  <a href="<?= base_url('admin/techniques'); ?>">
 	  	<button style="width: 200px;" type="button" class="btn btn-danger">Return</button>
 	  </a> 	
 	</div>  
@@ -83,7 +83,7 @@
   <button type="submit" onclick="return confirm('Do you really want to update <?= $record['ApproachTechniqueName']; ?> Technique ?');" class="btn btn-block btn-success">Update <?= $record['ApproachTechniqueName']; ?> </button>
 
   <!-- Return -->
-  <a href="<?= base_url('admin'); ?>">
+  <a href="<?= base_url('admin/techniques'); ?>">
 	  <button type="button" class="btn btn-block btn-danger">Return</button>
   </a> 
 </div>

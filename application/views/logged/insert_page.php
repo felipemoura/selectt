@@ -5,12 +5,20 @@
   <h5>Please provide the information below.</h5>
   <br>
   
+  <?php echo form_open_multipart('insert_test/insert_database');?>
 
   <? if (isset($error)): ?>
-      <div class="alert alert-danger" role="alert" style="margin-top: 10px;"><?= $error; ?></div>
+  <div class="alert alert-danger text-center" role="alert" style="margin-top: 10px;"><?= $error; ?></div>
   <? endif; ?>
 
-  <?php echo form_open_multipart('insert_test/insert_database');?>
+  <? if (isset($success)): ?>
+  <div class="alert alert-success text-center" role="alert" style="margin-top: 10px;"><?= $success; ?></div>
+  <? endif; ?>
+
+  <? if (isset($warning)): ?>
+    <div class="alert alert-warning text-center" role="alert" style="margin-top: 10px;"><?= $warning; ?></div>
+  <? endif; ?>
+
 
   <!-- Technique name -->
   <div class="form-group">

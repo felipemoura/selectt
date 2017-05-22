@@ -7,6 +7,7 @@ class Login_model extends CI_Model
     {
         // Call the Model constructor
         parent::__construct();
+        $this->load->helper('date');
     }
     
     //insert into user table
@@ -20,17 +21,19 @@ class Login_model extends CI_Model
 
       $query = $this->db->get();
 
-      if($query->num_rows() == 1)
-      {
-        $row = $query->row_array();
-        return $row;
-      }
-      else
-      {
+      if($query->num_rows() == 1) {
+        return $query->row_array();
+      } else {
        return false;
       }  
     }
 
+    function updateLastLogin($id)
+    {
+      $data = array( 'LASTLOGIN' => date('Y-m-d H:i:s',now()));
+      $this->db->where('ID', $id);
+      $this->db->update('user', $data); 
+    }
 
 }
 ?>

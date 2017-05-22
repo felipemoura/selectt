@@ -12,7 +12,20 @@ class Insert_model extends CI_Model
     //insert into user table
     function insertRecordTechnique($data)
     {
-        return $this->db->insert('caracterization', $data);
+        $this->db->insert('caracterization', $data);
+
+        if ($this->db->affected_rows() != 1) {
+            $error = $this->db->error();
+
+            if ($error['code'] == 1062) {
+                return "Sorry but this technique is already in database!";
+            } else {
+                return "Unknown error, please contact the administrator !";
+            }
+
+        } else {
+            return true;
+        }
     }
 
     function buildFields () {

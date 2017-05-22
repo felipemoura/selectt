@@ -23,12 +23,11 @@ class Available_techniques_model extends CI_Model
                                             'Reference'             => $row->Reference,
                                             'Technique'             => $row->Technique,
                                             'Approach'              => $row->Approach,
-                                            'Typeofanalysis'        => $row->Typeofanalysis,
+                                            'Type of Analysis'      => $row->Typeofanalysis,
                                             'Paradigm'              => $row->Paradigm,
                                             'Language'              => $row->Language,
-                                            'Language'              => $row->Language,
-                                            'ConcurrentBug'         => $row->ConcurrentBug,
-                                            'SupportingTool'        => $row->SupportingTool,
+                                            'Concurrent Bug'        => $row->ConcurrentBug,
+                                            'Supporting Tool'       => $row->SupportingTool,
                                             'Evidence'              => $row->Evidence     
                                          );
       }

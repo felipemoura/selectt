@@ -54,9 +54,35 @@ class Insert_test extends MY_Controller {
             $sql[$value] = ($this->input->post('checkinput'.$value) == 1) ? 'No information' : ''.$this->input->post('input'.$value);
         }
 
-        $this->insert_model->insertRecordTechnique($sql);
+        $str = $this->insert_model->insertRecordTechnique($sql);
+        if ($str == "true") {
+            $data['id']   = $this->insert_model->buildId();
+            $data['name'] = $this->insert_model->buildName();
+            $data['success'] = "You successfully added <strong>" . $sql['Approach'] . "</strong> technique to database, the administrator will answer it soon.";
 
-        redirect('insert_test');
+            $this->load->view('templates/header_logged');
+            $this->load->view('logged/insert_page', $data);
+            $this->load->view('templates/footer');
+
+
+        } else {
+            $data['id']   = $this->insert_model->buildId();
+            $data['name'] = $this->insert_model->buildName();
+            $data['error'] = "Something went wrong with the database, please try again later.<br><strong>".$str."</strong>";
+
+            $this->load->view('templates/header_logged');
+            $this->load->view('logged/insert_page', $data);
+            $this->load->view('templates/footer');
+
+        }
+
+         $data['warning'] = "Unknown behavior, contact the administrator !";
+
+        $this->load->view('templates/header_logged');
+        $this->load->view('logged/insert_page', $data);
+        $this->load->view('templates/footer');
+
+        
     }
 
 }

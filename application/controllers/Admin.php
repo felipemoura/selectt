@@ -12,33 +12,63 @@ class Admin extends MY_Controller {
  
 	public function index()
 	{
-        $data = $this->admin_model->loadRegisters();
+        if (!$this->session->userdata('is_admin')) {
+            redirect(base_url('logged'));
+        }
+
+        // $data = $this->admin_model->loadRegisters();
 
         $this->load->view('templates/header_logged');
-        $this->load->view('logged/admin_page', $data);
+        $this->load->view('logged/admin/admin_page_dash');//, $data);
         $this->load->view('templates/footer_admin_page');
 	}
 
+    public function techniques () {
+        if (!$this->session->userdata('is_admin')) {
+            redirect(base_url('logged'));
+        }
+
+        $data = $this->admin_model->loadTechniques();
+
+        $this->load->view('templates/header_logged');
+        $this->load->view('logged/admin/admin_page2', $data);
+        $this->load->view('templates/footer_admin_page');
+    }
+
+
+    public function users () {
+        if (!$this->session->userdata('is_admin')) {
+            redirect(base_url('logged'));
+        }
+
+        $data = $this->admin_model->loadUsers();
+
+        $this->load->view('templates/header_logged');
+        $this->load->view('logged/admin/admin_page_users', $data);
+        $this->load->view('templates/footer_admin_page');
+    }
+
+    // TECHNIQUES functions
 	public function deleteRecord ($id) {
 		$this->admin_model->deleteRegister($id);
-		redirect(base_url('admin'));
+		redirect(base_url('admin/techniques'));
 	}
 
 	public function approveRecord ($id) {
 		$this->admin_model->approveRegister($id);
-		redirect(base_url('admin'));
+		redirect(base_url('admin/techniques'));
 	}
 
     public function editInfo ($id) {
         $record = $this->admin_model->getAllFieldInfo($id);
 
         if (is_null($record)) {
-            redirect ('admin');
+            redirect ('admin/techniques');
         }
         $data['record'] = $record;
 
         $this->load->view('templates/header_logged');
-        $this->load->view('logged/edit_record_admin_page', $data);
+        $this->load->view('logged/admin/edit_record_admin_page', $data);
         $this->load->view('templates/footer_admin_page', $data);
     }
 
@@ -77,7 +107,38 @@ class Admin extends MY_Controller {
         }
 
         $this->admin_model->updateRegister($targetID, $sql);
-        redirect('admin');
+        redirect('admin/techniques');
 	}
+
+    // USERS functions
+    public function deleteUser ($id) {
+        $this->admin_model->deleteUserDatabase($id);
+        redirect(base_url('admin/users'));
+    }
+
+    public function approveUserAdmin ($id) {
+        $this->admin_model->setAdmin($id);
+        redirect(base_url('admin/users'));
+    }
+
+    public function disapproveUserAdmin ($id) {
+        $this->admin_model->unsetAdmin($id);
+        redirect(base_url('admin/users'));
+    }
+
+    // public function editInfo ($id) {
+    //     $record = $this->admin_model->getAllFieldInfo($id);
+
+    //     if (is_null($record)) {
+    //         redirect ('admin');
+    //     }
+    //     $data['record'] = $record;
+
+    //     $this->load->view('templates/header_logged');
+    //     $this->load->view('logged/admin/edit_record_admin_page', $data);
+    //     $this->load->view('templates/footer_admin_page', $data);
+    // }
+
+
 }
 ?>

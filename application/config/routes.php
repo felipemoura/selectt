@@ -68,6 +68,7 @@ $route['contact/(.*)'] = 'contact';
 
 // login
 $route['login'] = 'login';
+$route['login/logout'] = 'login/logout';
 $route['login/loginCheck'] = 'login/loginCheck';
 $route['login/(.*)'] = 'login';
 
@@ -75,8 +76,6 @@ $route['login/(.*)'] = 'login';
 $route['register'] = 'register';
 $route['register/registerCheck'] = 'register/registerCheck';
 $route['register/(.*)'] = 'register';
-
-
 
 // logged now
 $route['logged'] = 'logged';
@@ -96,19 +95,19 @@ $route['form'] = 'form';
 $route['form/(.*)'] = 'form';
 
 // admin now
-$route['admin'] = 'admin';
-$route['admin/editInfo/(:num)'] = 'admin/editInfo/$1';
-$route['admin/editInfo/(:any)'] = 'admin';
-$route['admin/deleteRecord/(:num)'] = 'admin/deleteRecord/$1';
-$route['admin/editInfo/(:any)'] = 'admin';
-$route['admin/approveRecord/(:num)'] = 'admin/approveRecord/$1';
-$route['admin/editInfo/(:any)'] = 'admin';
-$route['admin/(:any)'] = 'admin';
+// $route['admin'] = 'admin';
+// $route['admin/techniques'] = 'admin/techniques';
+// $route['admin/users'] = 'admin/users';
+// $route['admin/techniques/editInfo/(:num)'] = 'admin/techniques/editInfo/$1';
+// $route['admin/techniques/editInfo/(.*)'] = 'admin';
+// $route['admin/techniques/deleteRecord/(:num)'] = 'admin/techniques/deleteRecord/$1';
+// $route['admin/editInfo/(.*)'] = 'admin';
+// $route['admin/approveRecord/(:num)'] = 'admin/approveRecord/$1';
+// $route['admin/editInfo/(.*)'] = 'admin';
+// $route['admin/(.*)'] = 'admin';
 
 
-
-// $route['(:any)'] = 'home';
-$route['(.*)'] = 'home';
-
+// // invalid
+// $route['(.*)'] = 'home';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = TRUE;

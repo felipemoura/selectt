@@ -52,7 +52,7 @@ class Register extends CI_Controller {
                 if (TRUE)//$this->register_model->sendEmail($this->input->post('email')))
                 {
                     // successfully sent mail
-                    $this->session->set_flashdata('msg','<div class="alert alert-success text-center">You are Successfully Registered! Please confirm the mail sent to your Email-ID!!!</div>');
+                    $this->session->set_flashdata('msg','<div class="alert alert-success text-center">You are Successfully Registered! Please confirm the mail sent to your Email !</div>');
 
                     redirect(base_url('register'));
                 }
