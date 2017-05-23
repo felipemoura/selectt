@@ -7,20 +7,21 @@ CREATE TABLE `dbo`.`user` (
   `PASSWORD` VARCHAR(255) NOT NULL,
   `USERNAME` VARCHAR(45) NOT NULL,
   `INSTITUTION` VARCHAR(255) NULL,
-  `ISADMIN` BIT(1) NOT NULL DEFAULT 0,
-  `STATUS` BIT(1) NOT NULL DEFAULT 0,
+  `ISADMIN` INT NOT NULL DEFAULT 0,
+  `STATUS` INT NOT NULL DEFAULT 0,
   `CREATED` DATETIME NOT NULL DEFAULT NOW(),
   `LASTLOGIN` DATETIME NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `ACTIVATIONKEY` VARCHAR(255) NOT NULL,
   PRIMARY KEY (`ID`),
   UNIQUE INDEX `ID_UNIQUE` (`ID` ASC),
   UNIQUE INDEX `EMAIL_UNIQUE` (`EMAIL` ASC),
   UNIQUE INDEX `USERNAME_UNIQUE` (`USERNAME` ASC));
 
-INSERT INTO `dbo`.`user` (`ID`, `FULLNAME`, `EMAIL`, `PASSWORD`, `USERNAME`, `INSTITUTION`, `ISADMIN`, `STATUS`) 
-VALUES ('1', 'Felipe Moreira Moura', 'felpemoura@usp.br', '7e04da88cbb8cc933c7b89fbfe121cca', 'felipe', 'USP', '1', '1');
+INSERT INTO `dbo`.`user` (`ID`, `FULLNAME`, `EMAIL`, `PASSWORD`, `USERNAME`, `INSTITUTION`, `ISADMIN`, `STATUS`, `ACTIVATIONKEY`) 
+VALUES ('1', 'Felipe Moreira Moura', 'felpemoura@usp.br', '7e04da88cbb8cc933c7b89fbfe121cca', 'felipe', 'USP', '1', '1', '7e04da88cbb8cc933c7b89fbfe121cca');
 
-INSERT INTO `dbo`.`user` (`ID`, `FULLNAME`, `EMAIL`, `PASSWORD`, `USERNAME`, `INSTITUTION`, `STATUS`) 
-VALUES ('2', 'Teste Testinho', 'teste@usp.br', '698dc19d489c4e4db73e28a713eab07b', 'teste', 'USP', '1');
+-- INSERT INTO `dbo`.`user` (`ID`, `FULLNAME`, `EMAIL`, `PASSWORD`, `USERNAME`, `INSTITUTION`, `STATUS`) 
+-- VALUES ('2', 'Teste Testinho', 'teste@usp.br', '698dc19d489c4e4db73e28a713eab07b', 'teste', 'USP', '1');
 
 DROP TABLE IF EXISTS `dbo`.`selectt_sessions` ; 
 
@@ -63,7 +64,7 @@ CREATE TABLE `dbo`.`caracterization` (
   `AutomationLevel` VARCHAR(1024) NULL,
   `PlatformOperation` VARCHAR(1024) NULL,
   `ToolCost` VARCHAR(1024) NULL,
-  `NeedApproval` BIT(1) NOT NULL DEFAULT 1,
+  `NeedApproval` INT NOT NULL DEFAULT 1,
 
 
   PRIMARY KEY (`ID`),

@@ -55,34 +55,21 @@ class Insert_test extends MY_Controller {
         }
 
         $str = $this->insert_model->insertRecordTechnique($sql);
+
         if ($str == "true") {
-            $data['id']   = $this->insert_model->buildId();
-            $data['name'] = $this->insert_model->buildName();
-            $data['success'] = "You successfully added <strong>" . $sql['Approach'] . "</strong> technique to database, the administrator will answer it soon.";
+            $this->session->set_flashdata('msg','<div class="alert alert-success text-center">You successfully added <strong>' . $sql['Approach'] . '</strong> technique to database, the administrator will answer it soon.</div>');
 
-            $this->load->view('templates/header_logged');
-            $this->load->view('logged/insert_page', $data);
-            $this->load->view('templates/footer');
-
+            redirect(base_url('insert_test')); 
 
         } else {
-            $data['id']   = $this->insert_model->buildId();
-            $data['name'] = $this->insert_model->buildName();
-            $data['error'] = "Something went wrong with the database, please try again later.<br><strong>".$str."</strong>";
+            $this->session->set_flashdata('msg','<div class="alert alert-danger text-center">Something went wrong with the database, please try again later.<br><strong>' . $str . '</strong></div>');
 
-            $this->load->view('templates/header_logged');
-            $this->load->view('logged/insert_page', $data);
-            $this->load->view('templates/footer');
-
+            redirect(base_url('insert_test')); 
         }
 
-         $data['warning'] = "Unknown behavior, contact the administrator !";
+        $this->session->set_flashdata('msg','<div class="alert alert-warning text-center">Unknown behavior, contact the administrator !</div>');
 
-        $this->load->view('templates/header_logged');
-        $this->load->view('logged/insert_page', $data);
-        $this->load->view('templates/footer');
-
-        
+        redirect(base_url('insert_test'));
     }
 
 }

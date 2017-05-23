@@ -64,17 +64,20 @@ $route['available-techniques'] = 'available_techniques';
 $route['available-techniques/(.*)'] = 'available_techniques';
 // contact
 $route['contact'] = 'contact';
+$route['contact/sendContactMail'] = 'contact/sendContactMail';
 $route['contact/(.*)'] = 'contact';
 
 // login
 $route['login'] = 'login';
 $route['login/logout'] = 'login/logout';
 $route['login/loginCheck'] = 'login/loginCheck';
+$route['login/loginCheck/(.*)'] = 'login/loginCheck';
 $route['login/(.*)'] = 'login';
 
 // register
 $route['register'] = 'register';
 $route['register/registerCheck'] = 'register/registerCheck';
+$route['register/verify/(:any)'] = 'register/verify/$1';
 $route['register/(.*)'] = 'register';
 
 // logged now

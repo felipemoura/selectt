@@ -27,11 +27,9 @@ class Login extends CI_Controller {
 
 			// user is not verified yet
 			if ($answer['STATUS'] == 0) {
-				$data['warning'] = "Username not verified yet ! Please verify your Email !";
+				$this->session->set_flashdata('msg','<div class="alert alert-warning text-center">Username not verified yet ! Please verify your Email !</div>');
 
-				$this->load->view('templates/header');
-				$this->load->view('login_page', $data);
-				$this->load->view('templates/footer');
+				redirect(base_url('login'));
 
 			} else {
 				$cookie = array(
@@ -49,24 +47,19 @@ class Login extends CI_Controller {
 
 				// update last login
 				$this->login_model->updateLastLogin($answer['ID']);
-				redirect('logged');
+				redirect(base_url('logged'));
 			}
 
 		} else {
 			//caso a senha/usuário estejam incorretos, então mando o usuário novamente para a tela de login com uma mensagem de erro.
-			$data['error'] = "Username or Password incorrect !";
-
-
-			$this->load->view('templates/header');
-			$this->load->view('login_page', $data);
-			$this->load->view('templates/footer');
+			$this->session->set_flashdata('msg','<div class="alert alert-danger text-center">Username or Password incorrect !</div>');
+			redirect(base_url('login'));
 		}
 	}
 
-
 	public function logout(){
 		$this->session->unset_userdata('logged_in');
-		redirect('login');	
+		redirect(base_url('login'));	
 	}
 }
 ?>

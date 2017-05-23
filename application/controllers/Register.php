@@ -28,6 +28,8 @@ class Register extends CI_Controller {
 
         $this->form_validation->set_rules('inputInstitution', 'Institution', 'trim|alpha_numeric_spaces|max_length[255]');
         
+        $this->form_validation->set_rules('g-recaptcha-response','Captcha','callback_recaptcha');
+
         //validate form input
         if ($this->form_validation->run() == FALSE) {
             // fails
@@ -38,33 +40,30 @@ class Register extends CI_Controller {
         } else {
             // Prepare the query to insert database, based on post form
             $data = array(
-                'FULLNAME' => $this->input->post('inputName'),
-                'EMAIL' => $this->input->post('inputEmail'),
-                'PASSWORD' => md5($this->input->post('inputPassword')),
-                'USERNAME' => $this->input->post('inputUsername'),
-                'INSTITUTION' => $this->input->post('inputInstitution')
+                'FULLNAME'      => $this->input->post('inputName'),
+                'EMAIL'         => $this->input->post('inputEmail'),
+                'PASSWORD'      => md5($this->input->post('inputPassword')),
+                'USERNAME'      => $this->input->post('inputUsername'),
+                'INSTITUTION'   => $this->input->post('inputInstitution'),
+                'ACTIVATIONKEY' => md5($this->input->post('inputName').$this->input->post('inputEmail'))
             );
             
             // insert form data into database
-            if ($this->register_model->insertUser($data))
-            {
+            if ($this->register_model->insertUser($data)) {
                 // send email
-                if (TRUE)//$this->register_model->sendEmail($this->input->post('email')))
-                {
+                if ( $this->register_model->sendEmail($data['ACTIVATIONKEY'], $data['EMAIL']) ) {
                     // successfully sent mail
                     $this->session->set_flashdata('msg','<div class="alert alert-success text-center">You are Successfully Registered! Please confirm the mail sent to your Email !</div>');
 
                     redirect(base_url('register'));
-                }
-                else
-                {
+
+                } else {
                     // error
                     $this->session->set_flashdata('msg','<div class="alert alert-danger text-center">Oops! Error.  Please try again later!!!</div>');
                     redirect(base_url('register'));
                 }
-            }
-            else
-            {
+
+            } else {
                 // error
                 $this->session->set_flashdata('msg','<div class="alert alert-danger text-center">Oops! Error.  Please try again later!!!</div>');
                 redirect(base_url('register'));
@@ -72,17 +71,32 @@ class Register extends CI_Controller {
         }
     }
     
-    function verify($hash=NULL)
+    // CAPTCHA CALLBACK
+    public function recaptcha($str)
     {
-        if ($this->register_model->verifyEmailID($hash))
-        {
-            $this->session->set_flashdata('verify_msg','<div class="alert alert-success text-center">Your Email Address is successfully verified! Please login to access your account!</div>');
-            redirect('user/register');
+        $secret_key = '6Le0dyIUAAAAADEzjrNITm4n_FoxMMK0UaxR6Fro';
+        $url = 'https://www.google.com/recaptcha/api/siteverify?secret=' . $secret_key . '&response='.$_POST['g-recaptcha-response'];
+        $response = @file_get_contents($url);
+        $data = json_decode($response, true);
+        
+        if($data['success']) {
+            return true;
+        } else {
+            $this->form_validation->set_message('recaptcha', 'Please confirm you are human');
+            return false;
         }
-        else
-        {
+    }
+
+
+    public function verify($hash)
+    {
+        if ($this->register_model->verifyEmailID($hash)) {
+            $this->session->set_flashdata('verify_msg','<div class="alert alert-success text-center">Your Email Address is successfully verified! Please login to access your account!</div>');
+
+            redirect(base_url('register'));
+        } else {
             $this->session->set_flashdata('verify_msg','<div class="alert alert-danger text-center">Sorry! There is error verifying your Email Address!</div>');
-            redirect('user/register');
+            redirect(base_url('register'));
         }
     }
 

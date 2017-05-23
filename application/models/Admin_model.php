@@ -154,5 +154,12 @@ class Admin_model extends CI_Model
       $this->db->where('ID', $id);
       $this->db->update('user', $data); 
     }
+
+    function approveUserWithoutMailVerification($id)
+    {
+      $data = array( 'STATUS' => 1 );
+      $this->db->where('ID', $id);
+      $this->db->update('user', $data);
+    }
 }
 ?>

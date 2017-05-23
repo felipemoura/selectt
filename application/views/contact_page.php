@@ -6,38 +6,49 @@
 <h1>Contact</h1>
 
   <!-- Contact Form -->
-  <form role="form" method="post" action="contact/">
+  <form role="form" method="post" action="<?= base_url('contact/sendContactMail'); ?>">
+    
+  <?php echo $this->session->flashdata('msg'); ?>
+
     <div class="form-group">
-      <label for="InputName">Name</label>
-      <input type="name" class="form-control" id="InputName" aria-describedby="NameHelp" placeholder="Name" required focus>
+      <label for="inputName">Name</label>
+      <input type="name" class="form-control" name="inputName" id="inputName" aria-describedby="NameHelp" placeholder="Name" required focus>
       <small class="form-text text-muted" style="color:black">* Required</small>
+      <span class="text-danger"><?php echo form_error('inputName'); ?></span>
     </div>
 
     <div class="form-group">
-      <label for="InputEmail1">Email address</label>
-      <input type="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp" placeholder="Enter a valid email" required focus>
+      <label for="inputEmail">Email address</label>
+      <input type="email" class="form-control" id="inputEmail" name="inputEmail" aria-describedby="emailHelp" placeholder="Enter a valid email" required focus>
       <small id="emailHelp" class="form-text text-muted" style="color:black">* Required. We'll never share your email with anyone else. We promisse!</small>
-
+      <span class="text-danger"><?php echo form_error('inputEmail'); ?></span>
     </div>
 
     <div class="form-group">
-      <label for="phoneNumber">Phone Number</label>
-      <input class="form-control" id="phoneNumber" aria-describedby="numberHelp" placeholder="Phone Number">
+      <label for="inputPhoneNumber">Phone Number</label>
+      <input class="form-control" id="inputPhoneNumber" name="inputPhoneNumber" aria-describedby="numberHelp" placeholder="Phone Number">
+      <span class="text-danger"><?php echo form_error('inputPhoneNumber'); ?></span>
     </div>
 
     <div class="form-group">
-      <label for="phoneNumber">Company</label>
-      <input class="form-control" id="Company" aria-describedby="companyHelp" placeholder="Company">
+      <label for="inputInstitution">Institution</label>
+      <input class="form-control" id="inputInstitution" name="inputInstitution"  aria-describedby="InstitutionHelp" placeholder="Institution name">
+      <span class="text-danger"><?php echo form_error('inputInstitution'); ?></span>
     </div>
 
     <div class="form-group">
-      <label for="exampleTextarea">Text</label>
-      <textarea class="form-control" id="exampleTextarea" rows="4" placeholder="Enter Text" required focus></textarea>
+      <label for="inputMessage">Message</label>
+      <textarea class="form-control" id="inputMessage" name="inputMessage" rows="5" placeholder="Enter Message" required focus></textarea>
       <small class="form-text text-muted" style="color:black">* Required</small>
+      <span class="text-danger"><?php echo form_error('inputMessage'); ?></span>
     </div>
+
+    <!-- Recaptcha -->
+    <div class="g-recaptcha" data-sitekey="6Le0dyIUAAAAAEZXgofwNVy8ZPE_hic7wRaVy-YK"></div>
+    <span class="text-danger"><?php echo form_error('g-recaptcha-response'); ?></span>
 
     <button type="submit" class="btn btn-block btn-primary">Submit</button>
-
+    
   </form>
 </div>
 

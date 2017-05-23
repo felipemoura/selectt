@@ -59,6 +59,11 @@
                     <button type="button" class="btn btn-xs btn-warning">
                         <span class="glyphicon glyphicon-star-empty"></span> - Set Administrator as User
                     </button>
+
+                     <!-- Approve user -->
+                    <button type="button" class="btn btn-xs btn-success">
+                        <span class="glyphicon glyphicon-ok"></span> - Approve user without email verification
+                    </button>   
                 </div>
 
                 <div class="panel-body" style="padding:0px">
@@ -70,7 +75,7 @@
                             <th>Full Name</th>
                             <th>Registered on</th>
                             <th>Last Login</th>
-                            <th style="width: 120px;">Actions</th>
+                            <th style="width: 150px;">Actions</th>
                             </tr>
                         </thead>
 
@@ -107,19 +112,28 @@
 
                                         
                                         <?php if($temp['ISADMIN'] == 0) : ?>
-                                            <!-- Set Admin button -->
-                                            <a href="<?php echo base_url('admin/approveUserAdmin/'. $temp["ID"]); ?>">
-                                                <button onclick="return confirm('Are you sure you want to set this User as Administrator ?');" type="button" class="enabledisable-news btn btn-xs btn-info">
-                                                     <span class="glyphicon glyphicon-star"></span>
-                                                </button>
-                                            </a>
+                                        <!-- Set Admin button -->
+                                        <a href="<?php echo base_url('admin/approveUserAdmin/'. $temp["ID"]); ?>">
+                                            <button onclick="return confirm('Are you sure you want to set this User as Administrator ?');" type="button" class="enabledisable-news btn btn-xs btn-info">
+                                                 <span class="glyphicon glyphicon-star"></span>
+                                            </button>
+                                        </a>
                                         <? else: ?>
-                                            <!-- Remove Admin button -->
-                                            <a href="<?php echo base_url('admin/disapproveUserAdmin/'. $temp["ID"]); ?>">
-                                                <button onclick="return confirm('Are you sure you want to set this Administrator as User ?');"  type="button" class="enabledisable-news btn btn-xs btn-warning">
-                                                    <span class="glyphicon glyphicon-star-empty"></span>
-                                                </button>
-                                            </a>
+                                        <!-- Remove Admin button -->
+                                        <a href="<?php echo base_url('admin/disapproveUserAdmin/'. $temp["ID"]); ?>">
+                                            <button onclick="return confirm('Are you sure you want to set this Administrator as User ?');"  type="button" class="enabledisable-news btn btn-xs btn-warning">
+                                                <span class="glyphicon glyphicon-star-empty"></span>
+                                            </button>
+                                        </a>
+                                        <?php endif; ?>
+
+                                        <?php if($temp['STATUS'] == 0) : ?>
+                                        <!-- Remove Admin button -->
+                                        <a href="<?php echo base_url('admin/approveUser/'. $temp["ID"]); ?>">
+                                            <button onclick="return confirm('Are you sure you approve without mail verification ?');"  type="button" class="enabledisable-news btn btn-xs btn-success">
+                                                <span class="glyphicon glyphicon-ok"></span>
+                                            </button>
+                                        </a>
                                         <?php endif; ?>
                                     </td>   
                                 </tr>

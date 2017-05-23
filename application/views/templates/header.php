@@ -35,6 +35,11 @@
   <meta name="theme-color" content="#ffffff">
 
 	<title>Selectt</title>
+
+  <? if ( ( $this->uri->segment(1) == "contact" ) || ( $this->uri->segment(1) == "register") )  : ?>
+  <script src='https://www.google.com/recaptcha/api.js'></script>
+  <? endif; ?>
+
 </head>
 
 <body>

@@ -2,17 +2,11 @@
 
 <!-- Register Container -->
 <div class="container animated fadeIn" id="register">
-    <?php echo $this->session->flashdata('verify_msg'); ?>
 
-    <form class="form-signin" role="form" method="post" action="<?= base_url('register/registerCheck') ?>">
+    <form class="form-signin" role="form" method="post" action="<?= base_url('register/registerCheck'); ?>">
         <h2 class="form-signin-heading">Register Account</h2>
 
-        <!-- check -->
-        <? if (isset($error)): ?>
-            <div class="alert alert-danger" role="alert" style="margin-top: 10px;"><?= $error; ?></div>
-        <? endif; ?>
-
-
+        <?php echo $this->session->flashdata('verify_msg'); ?>
         <?php echo $this->session->flashdata('msg'); ?>
 
         <!-- Full Name -->
@@ -64,7 +58,12 @@
             <span class="text-danger"><?php echo form_error('inputInstitution'); ?></span>
         </div>
 
+        <!-- Recaptcha -->
+        <div class="g-recaptcha" data-sitekey="6Le0dyIUAAAAAEZXgofwNVy8ZPE_hic7wRaVy-YK"></div>
+        <span class="text-danger"><?php echo form_error('g-recaptcha-response'); ?></span>
+
+
         <button class="btn btn-danger btn-block" id="btnConfirm" type="submit">Confirm</button>
-  </form>
+    </form>
 </div>
 

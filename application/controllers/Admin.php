@@ -15,9 +15,7 @@ class Admin extends MY_Controller {
         if (!$this->session->userdata('is_admin')) {
             redirect(base_url('logged'));
         }
-
-        // $data = $this->admin_model->loadRegisters();
-
+        
         $this->load->view('templates/header_logged');
         $this->load->view('logged/admin/admin_page_dash');//, $data);
         $this->load->view('templates/footer_admin_page');
@@ -123,6 +121,11 @@ class Admin extends MY_Controller {
 
     public function disapproveUserAdmin ($id) {
         $this->admin_model->unsetAdmin($id);
+        redirect(base_url('admin/users'));
+    }
+
+    public function approveUser ($id) {
+        $this->admin_model->approveUserWithoutMailVerification($id);
         redirect(base_url('admin/users'));
     }
 

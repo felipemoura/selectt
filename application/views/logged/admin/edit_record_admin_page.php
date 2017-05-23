@@ -13,9 +13,7 @@
   <h5>Please provide the information below.</h5>
   <br>
 
-  <? if (isset($error)): ?>
-      <div class="alert alert-danger" role="alert" style="margin-top: 10px;"><?= $error; ?></div>
-  <? endif; ?>
+  <?php echo $this->session->flashdata('msg'); ?>
 
   <?php echo form_open_multipart('Admin/updateRecord'.$record['ID']);?>
 
