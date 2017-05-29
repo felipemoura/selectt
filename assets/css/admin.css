@@ -4,6 +4,11 @@ body {
   padding-top: : 70px;
 }
 
+.panel-body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
+}
+
 .page-content > .row {
   position: relative;
   margin: 0px;

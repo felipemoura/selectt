@@ -19,8 +19,9 @@ class Register_model extends CI_Model
     function sendEmail($key, $to_email)
     {
         $from_email = 'selectttools@gmail.com'; //change this to yours
-        $subject = 'Verify Your Email Address';
-        $message = 'Dear User,<br /><br />Please click on the below activation link to verify your email address.<br /><br /> http://localhost:8888/selectt/register/verify/' . $key . '<br /><br /><br />Thanks<br />Selectt';
+        $subject = 'Selectt Tool - Verify Your Email Address';
+        $img = '<img alt="Brand" src="http://localhost:8888/selectt/assets/photos/selectt.png" style="max-width:280px; margin-top: -7px;">';
+        $message =  $img . '<h1>Welcome to Selectt</h1><br><br>Dear User,<br><br>Please click on the below activation link to verify your email address.<br><br> http://localhost:8888/selectt/register/verify/' . $key . '<br><br><br>Thanks,<br>Selectt Team';
         
         //configure email settings
         $config['protocol'] = 'smtp';

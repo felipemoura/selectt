@@ -8,6 +8,11 @@ html, body {
 
 }
 
+.panel-body {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 12px;
+}
+
 body { padding-top: 70px; }
 
 .container {

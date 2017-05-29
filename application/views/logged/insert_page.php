@@ -5,7 +5,7 @@
   <h5>Please provide the information below.</h5>
   <br>
   
-  <?php echo form_open_multipart('insert_test/insert_database');?>
+  <?php echo form_open_multipart(base_url('insert_test/insert_database'));?>
 
   <?php echo $this->session->flashdata('msg'); ?> 
 
