@@ -8,6 +8,26 @@ class Admin_model extends CI_Model
         parent::__construct();
     }
 
+    function getAllUserInfo ($id) {
+        $this->db->select ('*');
+        $this->db->from('user');
+        $this->db->where('ID', $id);
+        $this->db->limit(1);
+        $query = $this->db->get();
+        $row = $query->row_array();
+
+         // prepare data
+        $buildField = array(
+                    'ID'            => $row['ID'] ,
+                    'FULLNAME'      => $row['FULLNAME'] ,
+                    'EMAIL'         => $row['EMAIL'] ,
+                    'USERNAME'      => $row['USERNAME'] ,
+                    'INSTITUTION'   => $row['INSTITUTION']
+                );
+
+        return $buildField;
+    }
+
     function getAllFieldInfo ($id) {
         $this->db->select ('*');
         $this->db->from('caracterization');
@@ -131,7 +151,7 @@ class Admin_model extends CI_Model
     function updateRegister ($id, $data) 
     {
       $this->db->where('ID', $id);
-      $this->db->update('caracterization', $data); 
+      return $this->db->update('caracterization', $data); 
     }
 
 
@@ -160,6 +180,12 @@ class Admin_model extends CI_Model
       $data = array( 'STATUS' => 1 );
       $this->db->where('ID', $id);
       $this->db->update('user', $data);
+    }
+
+    function updateUser ($id, $data)
+    {
+      $this->db->where('ID', $id);
+      return $this->db->update('user', $data); 
     }
 }
 ?>

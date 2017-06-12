@@ -10,19 +10,23 @@ class Insert_test extends MY_Controller {
 
 	public function index()
 	{
+        $this->loadView();
+	} 
+
+    public function loadView ()
+    {
         $data['id']   = $this->insert_model->buildId();
         $data['name'] = $this->insert_model->buildName();
 
         $this->load->view('templates/header_logged');
         $this->load->view('logged/insert_page', $data);
         $this->load->view('templates/footer');
-	} 
-
+    }
 
 	public function insert_database()
     {
         // fazer verificacao de sql na db, se foi e erros
-        //fazer a page customizavel, com n coluns diferentes
+        // fazer a page customizavel, com n coluns diferentes
 
         // useful variables
         $id     = $this->insert_model->buildId();
@@ -30,41 +34,61 @@ class Insert_test extends MY_Controller {
         $field  = $this->insert_model->buildFields();
 
         //set validation rules
-        $this->form_validation->set_rules('inputApproachTechniqueName','Technique Name','trim|required|alpha_dash|min_length[3]|max_length[700]');        
-        $this->form_validation->set_rules('inputTitle', 'Title', 'trim|required|alpha_dash|min_length[3]|max_length[1023]');
-        $this->form_validation->set_rules('inputYear', 'Year', 'trim|alpha_dash|max_length[4]');
+        $this->form_validation->set_rules('inputApproachTechniqueName','Technique Name','trim|required|min_length[3]|max_length[700]',
+            array (     'required'      => 'You must provide a %s.',
+                        'min_length'    => 'Your %s must have at least 3 characteres.',
+                        'max_length'    => 'Your %s can have up to 700 characteres.'
+                )
+        );
 
+        $this->form_validation->set_rules('inputTitle', 'Title', 'trim|required|min_length[3]|max_length[1023]',
+            array (     'required'      => 'You must provide a %s.',
+                        'min_length'    => 'Your %s must have at least 3 characteres.',
+                        'max_length'    => 'Your %s can have up to 1023 characteres.'
+                )
+        );
 
-        $this->form_validation->set_rules('inputTechniqueLink', 'Link', 'trim|valid_url|max_length[1023]');
+        $this->form_validation->set_rules('inputYear', 'Year', 'trim|max_length[4]',
+            array (     'max_length'    => 'Your %s can have up to 4 characteres.'
+                )
+        );
+
+        $this->form_validation->set_rules('inputTechniqueLink', 'Link', 'trim|valid_url|max_length[1023]',
+            array (     'valid_url'      => 'You must provide a valid %s.',
+                        'max_length'    => 'Your %s can have up to 1023 characteres.'
+                )
+        );
 
         // validate all other forms
         foreach ($id as $key => $value) {
-            if ($value == 'inputTechniqueLink') continue;
-            $this->form_validation->set_rules( $value, $name[$key], 'trim|alpha_dash|max_length[1023]');
+            if ($value == 'inputTechniqueLink') { continue; }
+
+            $this->form_validation->set_rules( $value, $name[$key], 'trim|max_length[1023]',
+                array (  'max_length'    => 'Your %s can have up to 1023 characteres.'
+                )
+            );
         }
 
          //validate form input
         if ($this->form_validation->run() == FALSE) {
-            $data['id']   = $this->insert_model->buildId();
-            $data['name'] = $this->insert_model->buildName();
+            $this->loadView();
 
-            $this->load->view('templates/header_logged');
-            $this->load->view('logged/insert_page', $data);
-            $this->load->view('templates/footer');
         } else {
              // prepare sql
             $sql = array(
-                        'Title'      => $this->input->post("inputTitle"),
-                        'Year'       => ($this->input->post('checkinputYear') == 1 ) ? '-1' : ''.$this->input->post("inputYear"),
-                        'Approach'   => $this->input->post("inputApproachTechniqueName"));
+                        'Title'      => $this->input->post("inputTitle", TRUE),
+                        'Year'       => ($this->input->post('checkinputYear', TRUE) == 1 || 
+                                         $this->input->post("inputYear", TRUE) == "") ? '-1' : ''.$this->input->post("inputYear", TRUE),
+                        'Approach'   => $this->input->post("inputApproachTechniqueName", TRUE),
+                        'InsertedOn' => date("Y-m-d H:i:s")
+                    );
 
             foreach ($field as $key => $value) {
-                $sql[$value] = ($this->input->post('checkinput'.$value) == 1) ? 'No information' : ''.$this->input->post('input'.$value);
+                $sql[$value] = ($this->input->post('checkinput'.$value, TRUE) == 1 ||
+                                $this->input->post('input'.$value, TRUE) == "") ? 'No information' : ''.$this->input->post('input'.$value, TRUE);
             }
 
-            $str = $this->insert_model->insertRecordTechnique($sql);
-
-            if ($str == "true") {
+            if ($this->insert_model->insertRecordTechnique($sql) == TRUE) {
                 $this->session->set_flashdata('msg','<div class="alert alert-success text-center">You successfully added <strong>' . $sql['Approach'] . '</strong> technique to database, the administrator will answer it soon.</div>');
 
                 redirect(base_url('insert_test')); 
@@ -82,4 +106,5 @@ class Insert_test extends MY_Controller {
     }
 
 }
+
 ?>

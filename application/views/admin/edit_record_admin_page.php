@@ -1,17 +1,26 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
 
+<? if (isset($record)): ?>
+
 <div class="container animated fadeIn">
-  <h1>Insert Technique</h1>
+  <h1>Edit <?= $record['ApproachTechniqueName']; ?> Technique 
+  <div class="pull-right">
+    <a href="<?= base_url('admin/techniques'); ?>">
+      <button style="width: 200px;" type="button" class="btn btn-danger">Return</button>
+    </a>  
+  </div>  
+  </h1>
   <h5>Please provide the information below.</h5>
   <br>
-  
-  <?php echo form_open_multipart(base_url('insert_test/insert_database'));?>
 
+  <?php echo form_open_multipart('admin/updateRecord/'.$record['ID']);?>
+
+  
   <?php echo $this->session->flashdata('msg'); ?> 
 
   <!-- Technique name -->
   <div class="form-group">
-    <label for="inputApproachTechniqueName">Technique name:</label>
+    <label for="inputApproachTechniqueName">Technique Name:</label>
     <input type="text" class="form-control" id="inputApproachTechniqueName" name="inputApproachTechniqueName" aria-describedby="titleHelp" placeholder="Enter Technique name" required focus>
     <small>* Required</small>
     <span class="text-danger"><?php echo form_error('inputApproachTechniqueName'); ?></span>
@@ -45,14 +54,16 @@
     </div>
   </div>
   
-  <?php foreach ($id as $key => $item): ?>
+  <?php foreach ($record as $key => $item): ?>
+  <? if (($key == "ID") || ($key == "Title") || ($key == "Year") || ($key == "ApproachTechniqueName")) { continue; } ?>
+
     <div class="row">
       <div class="col-lg-9 col-md-8 cold-sm-12 cold-xs-12">
         <!-- <?= $item; ?> -->
         <div class="form-group">
-          <label for="<?= $item; ?>"><?= $name[$key]; ?>:</label>
-          <textarea class="form-control" id="<?= $item; ?>" name="<?= $item; ?>" placeholder="Enter <?= $name[$key]; ?>" rows="<?= ($item === "inputTechniqueLink") ? 1 : 4; ?>"></textarea>
-          <span class="text-danger"><?php echo form_error($item); ?></span>
+          <label for="<?= 'input'. str_replace(' ', '', $key); ?>"><?= $key; ?>:</label>
+          <textarea class="form-control" id="<?= 'input'. str_replace(' ', '', $key); ?>" name="<?= 'input'. str_replace(' ', '', $key); ?>" rows="<?=  (('input'. str_replace(' ', '', $key)) === 'inputTechniqueLink') ? 1 : 4 ;?>"></textarea>
+          <span class="text-danger"><?php echo form_error('input'. str_replace(' ', '', $key)); ?></span>
         </div>
       </div>
 
@@ -60,7 +71,7 @@
       <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
           <div class="form-check pull-right" style="margin: auto;  padding: 30px 0; text-align: center;">
             <label class="form-check-label">
-              <input type="checkbox" name="check<?= $item; ?>" id="check<?= $item; ?>" class="form-check-input" onchange="toggleCheckbox(this)" value="1"> No information
+              <input type="checkbox" name="check<?= 'input'. str_replace(' ', '', $key); ?>" id="check<?= 'input'. str_replace(' ', '', $key); ?>" class="form-check-input" onchange="toggleCheckbox(this)" value="1"> No information
             </label>
           </div>
       </div>
@@ -68,17 +79,12 @@
   <?php endforeach; ?>
 
   <!-- Submit Form -->
-  <button type="submit" class="btn btn-block btn-success">Insert Technique into Database</button>
+  <button type="submit" onclick="return confirm('Do you really want to update <?= $record['ApproachTechniqueName']; ?> Technique ?');" class="btn btn-block btn-success">Update <?= $record['ApproachTechniqueName']; ?> </button>
+
+  <!-- Return -->
+  <a href="<?= base_url('admin/techniques'); ?>">
+    <button type="button" class="btn btn-block btn-danger">Return</button>
+  </a> 
 </div>
 
-<script type="text/javascript">
-    function toggleCheckbox(el) {
-      var theId = el.id.replace("check","");
-
-      if( el.checked ){
-         $("#" + theId).prop('disabled', true);
-      }else{
-         $("#" + theId).prop('disabled', false);
-      }
-    }
-</script>
+<? endif; ?>

@@ -1,5 +1,4 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+<?php defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Contact extends CI_Controller {
 
@@ -7,16 +6,14 @@ class Contact extends CI_Controller {
     {
         parent::__construct();
         $this->load->library('email');
-        // $this->load->model('captcha_model');
     }
 
 	public function index()
 	{		
 		$this->load->view('templates/header');
-		$this->load->view('contact_page');
+		$this->load->view('home/contact_page');
 		$this->load->view('templates/footer');
 	}
-
 
 	public function sendContactMail() 
 	{
@@ -90,4 +87,5 @@ class Contact extends CI_Controller {
         }
   	}
 }
+
 ?>

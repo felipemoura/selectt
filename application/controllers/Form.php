@@ -10,8 +10,28 @@ class Form extends MY_Controller {
 	public function index()
 	{
 		$this->load->view('templates/header_logged');
-		$this->load->view('logged/form_page');
+		$this->load->view('form/form_page');
 		$this->load->view('templates/footer');
+	}
+
+	public function getResults ()
+	{
+		$matrix;
+
+		for ($i=1; $i <= 15; $i++) { 
+			$matrix[$i-1] = $this->input->post('input_'.$i);
+		}
+		
+		// Teste code
+		$message = "";
+		foreach ($matrix as $key => $value) {
+			$message = $message.$value."\n";
+		}
+		$this->session->set_flashdata('msg','<div class="alert alert-success text-center">'.$message.'</div>');
+		
+		// do some logic
+
+		redirect('results');
 	}
 }
 

@@ -49,5 +49,17 @@ echo '<script src="' . base_url("assets/js/admin_records.js")  					. '" type="t
 </script>
 <? endif; ?>
 
+
+<? if (isset($user)): ?>
+<script type="text/javascript">
+    $(document).ready(function() {
+      $('#inputUsername').val('<?php echo $user['USERNAME']; ?>');
+      $('#inputEmail').val('<?php echo $user['EMAIL']; ?>');
+      $('#inputFullName').val('<?php echo $user['FULLNAME']; ?>');
+      $('#inputInstitution').val('<?php echo $user['INSTITUTION']; ?>');
+    });
+</script>
+<? endif; ?>
+
 </body>
 </html>

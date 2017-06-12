@@ -24,7 +24,7 @@ class Insert_model extends CI_Model
             }
 
         } else {
-            return "true";
+            return TRUE;
         }
     }
 

@@ -11,13 +11,13 @@ class Login extends CI_Controller {
 	public function index()
 	{
 		$this->load->view('templates/header');
-		$this->load->view('login_page');
+		$this->load->view('account/login_page');
 		$this->load->view('templates/footer');
 	}
 
 	public function loginCheck () {
-		$username = $this->input->post("inputUsername");
-		$password = $this->input->post("inputPassword");
+		$username = $this->input->post("inputUsername", TRUE);
+		$password = $this->input->post("inputPassword", TRUE);
 		
 		$answer = $this->login_model->findUser($username, $password);
 
@@ -47,6 +47,7 @@ class Login extends CI_Controller {
 
 				// update last login
 				$this->login_model->updateLastLogin($answer['ID']);
+				
 				redirect(base_url('logged'));
 			}
 

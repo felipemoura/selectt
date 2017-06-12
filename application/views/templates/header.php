@@ -62,7 +62,7 @@
 
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
-          <li <?php if($this->uri->segment(1)=="home"){echo 'class="active"';}?>>
+          <li <?php if($this->uri->segment(1)=="home" || $this->uri->segment(1)==""){echo 'class="active"';}?>>
             <a href="<?= base_url('home');?>">Home</a>
           </li>
 

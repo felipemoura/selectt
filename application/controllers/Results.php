@@ -5,7 +5,7 @@ class Results extends MY_Controller {
 	public function index()
 	{
 		$this->load->view('templates/header_logged');
-		$this->load->view('logged/results_page');
+		$this->load->view('form/results_page');
 		$this->load->view('templates/footer');
 	}
 }

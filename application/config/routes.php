@@ -70,6 +70,7 @@ $route['contact/(.*)'] = 'contact';
 // login
 $route['login'] = 'login';
 $route['login/logout'] = 'login/logout';
+$route['login/logout/(.*)'] = 'login/logout';
 $route['login/loginCheck'] = 'login/loginCheck';
 $route['login/loginCheck/(.*)'] = 'login/loginCheck';
 $route['login/(.*)'] = 'login';
@@ -80,37 +81,61 @@ $route['register/registerCheck'] = 'register/registerCheck';
 $route['register/verify/(:any)'] = 'register/verify/$1';
 $route['register/(.*)'] = 'register';
 
-// logged now
+// logged
 $route['logged'] = 'logged';
 $route['logged/(.*)'] = 'logged';
 
-// inserting now
+// inserting
 $route['insert_test'] = 'insert_test';
 $route['insert_test/insert_database'] = 'insert_test/insert_database';
 $route['insert_test/(.*)'] = 'insert_test';
 
-//  results now 
+//  results 
 $route['results'] = 'results';
 $route['results/(.*)'] = 'results';
 
-// form now
+// form
 $route['form'] = 'form';
+$route['form/getResults'] = 'form/getResults';
 $route['form/(.*)'] = 'form';
 
-// admin now
-// $route['admin'] = 'admin';
-// $route['admin/techniques'] = 'admin/techniques';
-// $route['admin/users'] = 'admin/users';
-// $route['admin/techniques/editInfo/(:num)'] = 'admin/techniques/editInfo/$1';
-// $route['admin/techniques/editInfo/(.*)'] = 'admin';
-// $route['admin/techniques/deleteRecord/(:num)'] = 'admin/techniques/deleteRecord/$1';
-// $route['admin/editInfo/(.*)'] = 'admin';
-// $route['admin/approveRecord/(:num)'] = 'admin/approveRecord/$1';
-// $route['admin/editInfo/(.*)'] = 'admin';
-// $route['admin/(.*)'] = 'admin';
+// admin
+$route['admin'] = 'admin';
 
 
-// // invalid
-// $route['(.*)'] = 'home';
+// admin techniques
+$route['admin/techniques'] = 'admin/techniques';
+$route['admin/deleteRecord/(:num)'] = 'admin/deleteRecord/$1';
+$route['admin/approveRecord/(:num)'] = 'admin/approveRecord/$1';
+$route['admin/editInfo/(:num)'] = 'admin/editInfo/$1';
+$route['admin/updateRecord/(:num)'] = 'admin/updateRecord/$1';
+// invalid admin techiniquesp ath
+$route['admin/techniques/(.*)'] = 'admin/techniques';
+$route['admin/deleteRecord/(.*)'] = 'admin/techniques';
+$route['admin/approveRecord/(.*)'] = 'admin/techniques';
+$route['admin/editInfo/(.*)'] = 'admin/techniques';
+$route['admin/updateRecord/(.*)'] = 'admin/techniques';
+
+
+// admin users
+$route['admin/users'] = 'admin/users';
+$route['admin/deleteUser/(:num)'] = 'admin/deleteUser/$1';
+$route['admin/approveUserAdmin/(:num)'] = 'admin/approveUserAdmin/$1';
+$route['admin/disapproveUserAdmin/(:num)'] = 'admin/disapproveUserAdmin/$1';
+$route['admin/approveUser/(:num)'] = 'admin/approveUser/$1';
+$route['admin/updateUser/(:num)'] = 'admin/updateUser/$1';
+$route['admin/editUser/(:num)'] = 'admin/editUser/$1';
+// invalid admin users path
+$route['admin/users/(.*)'] = 'admin/users';
+$route['admin/deleteUser/(.*)'] = 'admin/users';
+$route['admin/approveUserAdmin/(.*)'] = 'admin/users';
+$route['admin/disapproveUserAdmin/(.*)'] = 'admin/users';
+$route['admin/approveUser/(.*)'] = 'admin/users';
+$route['admin/updateUser/(.*)'] = 'admin/users';
+$route['admin/editUser/(.*)'] = 'admin/users';
+
+
+// invalid
+$route['(.*)'] = 'home';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = TRUE;
