@@ -18,7 +18,7 @@ class Admin extends MY_Controller {
 	public function index()
 	{
         $this->load->view('templates/header_logged');
-        $this->load->view('admin/admin_page_dash');//, $data);
+        $this->load->view('admin/admin_page_dash');
         $this->load->view('templates/footer_admin_page');
 	}
 
@@ -66,6 +66,7 @@ class Admin extends MY_Controller {
 	public function updateRecord ($targetID) {
 		// remove se escolher no info !!!
         // verificar form no redirect !!
+        // problem validating form, next release will fix
 
         // useful variables
         $id     = $this->insert_model->buildId();
@@ -107,12 +108,12 @@ class Admin extends MY_Controller {
             );
         }
 
+
         //validate form input
         if ($this->form_validation->run() == FALSE) {
             // fails
             $this->editInfo($targetID);
         
-        // nao ta entrando aqui nao sei pq
         } else {
             // Prepare the query to insert database, based on post form
             // prepare sql
