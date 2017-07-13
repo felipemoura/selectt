@@ -11,7 +11,9 @@
                 <ul class="nav">
                     <!-- Main menu -->
                     <li class="current">
-                    	<a href="<?= base_url('admin'); ?>"><i class="glyphicon glyphicon-home"></i>Dashboard</a>
+                    	<a href="<?= base_url('admin'); ?>">
+                            <i class="glyphicon glyphicon-home"></i>Dashboard
+                        </a>
                     </li>
 
                     <li>
@@ -21,10 +23,18 @@
                    	</li>
 
                     <li>
-                    	<a href="<?= base_url('admin/users'); ?>">
-                    		<i class="glyphicon glyphicon-user"></i>Users
-                    	</a>
+                        <a href="<?= base_url('admin/users'); ?>">
+                            <i class="glyphicon glyphicon-user"></i>Users
+                        </a>
                     </li>
+
+
+                    <li>
+                        <a href="<?= base_url('admin/content'); ?>">
+                            <i class="glyphicon glyphicon-edit"></i>Content
+                        </a>
+                    </li>
+
                 </ul>
              </div>
     	</div>

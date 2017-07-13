@@ -13,6 +13,7 @@ class Admin extends MY_Controller {
 
         $this->load->model('admin_model');
    		$this->load->model('insert_model');
+        $this->load->model('Utilidades_model', 'utility');
  	}
  
 	public function index()
@@ -37,6 +38,17 @@ class Admin extends MY_Controller {
         $this->load->view('admin/admin_page_users', $data);
         $this->load->view('templates/footer_admin_page');
     }
+
+    public function content () {
+        $data['home'] = $this->utility->getHomeText();
+        $data['people'] = $this->utility->getPeopleText();
+        $data['publication'] = $this->utility->getPublicationText();
+
+        $this->load->view('templates/header_logged');
+        $this->load->view('admin/admin_page_content', $data);
+        $this->load->view('templates/footer_admin_page');
+    }
+
 
     // TECHNIQUES functions
     //
@@ -241,6 +253,34 @@ class Admin extends MY_Controller {
                 redirect ('admin/users');
             }
         }
+    }
+
+
+    // CONTENT FUNCTIONS
+    //
+    //
+    public function updatePeople ()
+    {
+       $id = 1;
+       $text = $this->input->post('contentPeople');
+       $this->utility->updatePeopleText($text, $id);
+       redirect(base_url('admin/content'));
+    }
+
+    public function updateHome ()
+    {
+       $id = 1;
+       $text = $this->input->post('contentHome');
+       $this->utility->updateHomeText($text, $id);
+       redirect(base_url('admin/content'));
+    }
+
+    public function updatePublication ()
+    {
+       $id = 1;
+       $text = $this->input->post('contentPublication');
+       $this->utility->updatePublicationText($text, $id);
+       redirect(base_url('admin/content'));
     }
 
 }

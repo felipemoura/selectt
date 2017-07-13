@@ -1,3 +1,41 @@
+DROP TABLE IF EXISTS `selectt`.`home`; 
+
+CREATE TABLE `selectt`.`home` (
+  `ID` INT NOT NULL,
+  `TEXT` VARCHAR(65000) NULL,
+  PRIMARY KEY (`ID`),
+  UNIQUE INDEX `idhome_UNIQUE` (`ID` ASC));
+
+INSERT INTO `selectt`.`home`
+(`ID`, `TEXT`)
+VALUES (1, '<p style="text-align: justify;"><span style="background-color: #ffffff;">O projeto a ser desenvolvido tem como objetivo desenvolver uma infraestrutura computacional para automatizar o processo de sele&ccedil;&atilde;o de t&eacute;cnicas de teste de software concorrente. Baseadas em informa&ccedil;&otilde;es contidas em um reposit&oacute;rio com caracter&iacute;sticas das t&eacute;cnicas de teste que influenciam no processo de tomada de decis&atilde;o. O reposit&oacute;rio &eacute; desenvolvido no projeto de doutorado ao qual esse projeto est&aacute; vinculado. A estrutura computacional &eacute; definida como um sistema web que requer como entrada informa&ccedil;&otilde;es a respeito do projeto de software a ser desenvolvido (tipo de plataforma a ser utilizada, linguagem de programa&ccedil;&atilde;o do software, etc) fornecida pelo usu&aacute;rio (equipe de teste) e compara &agrave; informa&ccedil;&otilde;es extra&iacute;das do reposit&oacute;rio (caracter&iacute;sticas das t&eacute;cnicas de teste) a fim de comparar e estabelecer um ranking sobre quais as t&eacute;cnicas mais adequadas para o projeto em quest&atilde;o. Para o c&aacute;lculo da t&eacute;cnica adequada ao projeto devem ser estabelecidos pesos as caracter&iacute;sticas (crit&eacute;rios de adequa&ccedil;&atilde;o) e c&aacute;lculos matem&aacute;ticos a fim de obter uma lista das t&eacute;cnicas mais adequadas, facilitando a tomada de decis&atilde;o da equipe de teste. Em s&iacute;ntese, o prop&oacute;sito deste projeto &eacute; o desenvolvimento de um site web que recebe como entradas informa&ccedil;&otilde;es a respeito de um projeto de teste e busca em um banco de dados de t&eacute;cnicas de teste, qual t&eacute;cnica apresenta caracter&iacute;sticas mais adequadas a este projeto. A decis&atilde;o final sobre qual t&eacute;cnica de teste usar no projeto cabe ao projetista de teste, que usa como apoio o resultado obtido pelo site.</span></p>');
+
+DROP TABLE IF EXISTS `selectt`.`people`; 
+
+CREATE TABLE `selectt`.`people` (
+  `ID` INT NOT NULL,
+  `TEXT` VARCHAR(65000) NULL,
+  PRIMARY KEY (`ID`),
+  UNIQUE INDEX `idpeople_UNIQUE` (`ID` ASC));
+
+INSERT INTO `selectt`.`people`
+(`ID`, `TEXT`)
+VALUES (1,   'People active.\n<h4>Researchers</h4>\n<ul class="circle">\n  <li>Paulo Sérgio Lopes de Souza</a> (ICMC/USP)</li>\n  <li>Simone do Rocio Senger de Souza (ICMC/USP)</li>\n</ul>\n<h4>Doctoral Students</h4>\n  <ul class="circle">\n  <li>Silvana Morita Melo (In Progress)</li>\n</ul>\n<h4>Students</h4>\n  <ul class="circle">\n  <li>Felipe Moreira Moura (In Progress)</li>\n</ul>\n');
+
+
+DROP TABLE IF EXISTS `selectt`.`publication`; 
+
+CREATE TABLE `selectt`.`publication` (
+  `ID` INT NOT NULL,
+  `TEXT` VARCHAR(65000) NULL,
+  PRIMARY KEY (`ID`),
+  UNIQUE INDEX `idpublication_UNIQUE` (`ID` ASC));
+
+INSERT INTO `selectt`.`publication`
+(`ID`, `TEXT`)
+VALUES (1, '');
+
+
 DROP TABLE IF EXISTS `selectt`.`user`; 
 
 CREATE TABLE `selectt`.`user` (

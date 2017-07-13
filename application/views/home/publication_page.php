@@ -4,6 +4,9 @@
 
 <h1>Publications</h1>
 
+
+	<?= $publication['TEXT']; ?>
+
 </div>
 
 
