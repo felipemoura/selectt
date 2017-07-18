@@ -18,35 +18,31 @@ class Admin extends MY_Controller {
  
 	public function index()
 	{
-        $this->load->view('templates/header_logged');
-        $this->load->view('admin/admin_page_dash');
-        $this->load->view('templates/footer_admin_page');
-	}
+        redirect(base_url('admin/dash'));
+    }
 
+    public function dash () 
+    {
+        $this->load->view('admin/admin_page_dash');
+    }
+    
     public function techniques () {
         $data = $this->admin_model->loadTechniques();
-
-        $this->load->view('templates/header_logged');
         $this->load->view('admin/admin_page_techniques', $data);
-        $this->load->view('templates/footer_admin_page');
     }
 
     public function users () {
         $data = $this->admin_model->loadUsers();
-
-        $this->load->view('templates/header_logged');
         $this->load->view('admin/admin_page_users', $data);
-        $this->load->view('templates/footer_admin_page');
     }
 
     public function content () {
-        $data['home'] = $this->utility->getHomeText();
-        $data['people'] = $this->utility->getPeopleText();
+        $data['home']        = $this->utility->getHomeText();
+        $data['people']      = $this->utility->getPeopleText();
         $data['publication'] = $this->utility->getPublicationText();
-
-        $this->load->view('templates/header_logged');
+        $data['logado']      = $this->utility->getLogadoText();
+        
         $this->load->view('admin/admin_page_content', $data);
-        $this->load->view('templates/footer_admin_page');
     }
 
 
@@ -70,9 +66,7 @@ class Admin extends MY_Controller {
             redirect ('admin/techniques');
         }
 
-        $this->load->view('templates/header_logged');
         $this->load->view('admin/edit_record_admin_page', $data);
-        $this->load->view('templates/footer_admin_page', $data);
     }
 
 	public function updateRecord ($targetID) {
@@ -187,9 +181,7 @@ class Admin extends MY_Controller {
             redirect ('admin/users');
         }
 
-        $this->load->view('templates/header_logged');
         $this->load->view('admin/edit_user_admin_page', $data);
-        $this->load->view('templates/footer_admin_page', $data);
     }
 
     public function updateUser ($targetID)
@@ -280,6 +272,14 @@ class Admin extends MY_Controller {
        $id = 1;
        $text = $this->input->post('contentPublication');
        $this->utility->updatePublicationText($text, $id);
+       redirect(base_url('admin/content'));
+    }
+
+    public function updateLogado ()
+    {
+       $id = 1;
+       $text = $this->input->post('contentLogado');
+       $this->utility->updateLogadoText($text, $id);
        redirect(base_url('admin/content'));
     }
 

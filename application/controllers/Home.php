@@ -11,12 +11,8 @@ class Home extends CI_Controller {
 	public function index()
 	{
 		$data['home'] = $this->utility->getHomeText();
-
-		$this->load->view('templates/header');
 		$this->load->view('home/home_page', $data);
-		$this->load->view('templates/footer');
-	}
-	
+	}	
 }
 
 ?>

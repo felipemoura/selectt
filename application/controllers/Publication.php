@@ -11,10 +11,7 @@ class Publication extends CI_Controller {
 	public function index()
 	{
 		$data['publication'] = $this->utility->getPublicationText();
-
-		$this->load->view('templates/header');
 		$this->load->view('home/publication_page', $data);
-		$this->load->view('templates/footer');
 	}
 	
 }

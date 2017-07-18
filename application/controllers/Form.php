@@ -9,9 +9,7 @@ class Form extends MY_Controller {
 
 	public function index()
 	{
-		$this->load->view('templates/header_logged');
 		$this->load->view('form/form_page');
-		$this->load->view('templates/footer');
 	}
 
 	public function getResults ()

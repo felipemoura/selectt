@@ -1,5 +1,7 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
 
+<? $this->load->view('templates/header_logged'); ?>
+
 <div class="container animated fadeIn">
   <h1>Insert Technique</h1>
   <h5>Please provide the information below.</h5>
@@ -71,14 +73,12 @@
   <button type="submit" class="btn btn-block btn-success">Insert Technique into Database</button>
 </div>
 
-<script type="text/javascript">
-    function toggleCheckbox(el) {
-      var theId = el.id.replace("check","");
 
-      if( el.checked ){
-         $("#" + theId).prop('disabled', true);
-      }else{
-         $("#" + theId).prop('disabled', false);
-      }
-    }
-</script>
+<!-- START OF FOOTER -->
+<?  $this->load->view('templates/footer'); ?>
+
+<script src="<? base_url("assets/js/insert_custom.js"); ?>" type="text/javascript"></script>
+
+<!-- END OF IT  -->
+</body>
+</html>

@@ -1,5 +1,7 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
 
+<? $this->load->view('templates/header_logged'); ?>
+
 <style type="text/css">
 	.form-group {
 		margin-top: 4em;
@@ -543,3 +545,9 @@
 <!-- End container -->
 </div>
 
+<!-- START OF FOOTER -->
+<? $this->load->view('templates/footer'); ?>
+<!-- END OF IT  -->
+
+</body>
+</html>

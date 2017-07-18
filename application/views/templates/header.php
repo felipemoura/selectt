@@ -83,9 +83,9 @@
           </li>
         </ul>
         
-        <button onclick="location.href=' <?= base_url('register');?>'" class="btn btn-success pull-right" type="submit" id="btnLogin" style="margin-top: 0.5em; margin-left: 1px; border-style: ">Register</button>     
+        <button onclick="location.href='<?= base_url('register');?>'" class="btn btn-success pull-right" type="submit" id="btnLogin" style="margin-top: 0.5em; margin-left: 1px; border-style: ">Register</button>     
 
-        <button onclick="location.href=' <?= base_url('login')?>'" class="btn btn-primary pull-right" type="submit" id="btnLogin" style="margin-top: 0.5em;">Login</button>         
+        <button onclick="location.href='<?= base_url('login')?>'" class="btn btn-primary pull-right" type="submit" id="btnLogin" style="margin-top: 0.5em;">Login</button>         
       </div>
 
     </div>

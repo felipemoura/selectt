@@ -1,5 +1,8 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
 
+<? $this->load->view('templates/header'); ?>
+
+
 <div class="container animated fadeIn">
 
   <h1>Available Techniques</h1>
@@ -30,17 +33,7 @@
 			        <th>Actions</th>
 		        </tr>
 			</thead>
-		
-		  	<!-- <tfoot>
-	            <tr>
-	                <th>Technique name</th>
-			        <th>Title</th>
-			        <th>Technique</th>
-			        <th>Language</th>
-			        <th>Actions</th>
-	            </tr>
-	        </tfoot>
- 			-->
+	
 			<tbody>
 
 			<? if (isset($info)): ?>
@@ -60,6 +53,7 @@
 				<?php } ?>
 			<? endif; ?>
 			</tbody> 
+			
 	    </table>
 	  </div>  
 	</div>
@@ -112,3 +106,16 @@
     <!-- End modal -->
 </div>
 <?php } ?>
+
+<!-- START OF FOOTER -->
+<?	$this->load->view('templates/footer'); ?>
+
+
+<script src="<? base_url('assets/media/js/jquery.dataTables.min.js'); ?>" type="text/javascript"></script>
+<script src="<? base_url('assets/media/js/dataTables.bootstrap.min.js'); ?> " type="text/javascript"></script>
+<script src="<? base_url("assets/js/available_technique.js"); ?>" type="text/javascript"></script>
+
+
+<!-- END OF IT  -->
+</body>
+</html>

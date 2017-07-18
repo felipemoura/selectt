@@ -1,5 +1,7 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
 
+<? $this->load->view('templates/header_logged'); ?>
+
 <? if (isset($record)): ?>
 
 <div class="container animated fadeIn">
@@ -88,3 +90,42 @@
 </div>
 
 <? endif; ?>
+
+<!-- START OF FOOTER -->
+<? $this->load->view('templates/footer');?>
+
+
+<? if (isset($record)): ?>
+<script type="text/javascript">
+
+ var start = 1950;
+ var end = new Date().getFullYear();
+ var options = "<option> </option>";
+
+ for(var year = end ; year >= start; year--){
+  options += "<option>"+ year +"</option>";
+}
+document.getElementById("inputYear").innerHTML = options;
+
+<?php foreach ($record as $key => $item): ?>
+  <? if ($key == "ID") { continue; } ?>
+
+  $('#input<?php echo str_replace(' ', '', $key); ?>').val('<?php echo $item; ?>');
+
+<?php endforeach; ?>
+
+function toggleCheckbox(el) {
+  var theId = el.id.replace("check","");
+
+  if( el.checked ){
+   $("#" + theId).prop('disabled', true);
+ }else{
+   $("#" + theId).prop('disabled', false);
+ }
+}
+</script>
+<? endif; ?>
+
+<!-- END OF IT -->
+</body>
+</html>

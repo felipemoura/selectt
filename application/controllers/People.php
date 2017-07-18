@@ -12,10 +12,7 @@ class People extends CI_Controller {
 	public function index()
 	{
 		$data['people'] = $this->utility->getPeopleText();
-
-		$this->load->view('templates/header');
 		$this->load->view('home/people_page', $data);
-		$this->load->view('templates/footer');
 	}
 	
 }

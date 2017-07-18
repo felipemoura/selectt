@@ -1,6 +1,8 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
 
 
+<? $this->load->view('templates/header'); ?>
+
 <!-- Login container -->
 <!-- Login FORM -->
 <div class="container animated fadeIn">
@@ -24,3 +26,10 @@
 
 	</form>	
 </div>
+
+
+<?	$this->load->view('templates/footer'); ?>
+
+<!-- END OF IT  -->
+</body>
+</html>

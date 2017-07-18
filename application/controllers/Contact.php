@@ -10,9 +10,7 @@ class Contact extends CI_Controller {
 
 	public function index()
 	{		
-		$this->load->view('templates/header');
 		$this->load->view('home/contact_page');
-		$this->load->view('templates/footer');
 	}
 
 	public function sendContactMail() 
@@ -26,9 +24,7 @@ class Contact extends CI_Controller {
  
         //validate form input
         if ($this->form_validation->run() == FALSE) {
-            $this->load->view('templates/header');
 			$this->load->view('contact_page');
-			$this->load->view('templates/footer');
 
 		} else {
 			// prepare message

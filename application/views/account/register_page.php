@@ -1,5 +1,9 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
 
+
+<? $this->load->view('templates/header'); ?>
+
+
 <!-- Register Container -->
 <div class="container animated fadeIn" id="register">
 
@@ -67,3 +71,9 @@
     </form>
 </div>
 
+<!-- START FOOTER -->
+<?  $this->load->view('templates/footer'); ?>
+
+<!-- END OF IT  -->
+</body>
+</html>

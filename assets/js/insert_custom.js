@@ -9,4 +9,14 @@ $(document).ready(function(){
 	}
 	document.getElementById("inputYear").innerHTML = options;
 
+	function toggleCheckbox(el) {
+      var theId = el.id.replace("check","");
+
+      if( el.checked ){
+         $("#" + theId).prop('disabled', true);
+      }else{
+         $("#" + theId).prop('disabled', false);
+      }
+    }
+
 });

@@ -25,7 +25,7 @@ class Register extends CI_Controller {
 
         );
 
-        $this->form_validation->set_rules('inputUsername', 'Username', 'trim|required|alpha_numeric_spaces|is_unique[user.USERNAME|min_length[3]|max_length[45]',
+        $this->form_validation->set_rules('inputUsername', 'Username', 'trim|required|alpha_numeric_spaces|is_unique[user.USERNAME]|min_length[3]|max_length[45]',
             array (     'required'      => 'You must provide a %s.',
                         'alpha_numeric_spaces'    => 'You can only use letters and underscore on %s',
                         'min_length'    => 'Your %s must have at least 3 characteres.',
@@ -72,9 +72,7 @@ class Register extends CI_Controller {
         //validate form input
         if ($this->form_validation->run() == FALSE) {
             // fails
-            $this->load->view('templates/header');
             $this->load->view('account/register_page');
-            $this->load->view('templates/footer');
         
         } else {
             // Prepare the query to insert database, based on post form

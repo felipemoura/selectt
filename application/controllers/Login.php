@@ -6,16 +6,26 @@ class Login extends CI_Controller {
  	{
    		parent::__construct();
    		$this->load->model('login_model');
+
+   		if ($this->session->userdata('attempt') === NULL) {
+            $cookie = array( 'attempt'		=> 0 );
+            $this->session->set_userdata($cookie);
+        }
  	}
 
 	public function index()
 	{
-		$this->load->view('templates/header');
 		$this->load->view('account/login_page');
-		$this->load->view('templates/footer');
 	}
 
 	public function loginCheck () {
+		// check if failed 3 attempts
+		if ($this->session->userdata('attempt') >= 3) {
+            $this->session->set_flashdata('msg','<div class="alert alert-danger text-center">You had 3 wrong attempts, you are blocker for 10 minutes please try again later!</div>');
+            redirect(base_url('login'));
+        }
+
+
 		$username = $this->input->post("inputUsername", TRUE);
 		$password = $this->input->post("inputPassword", TRUE);
 		
@@ -39,7 +49,8 @@ class Login extends CI_Controller {
 				        'email'     	=> $answer['EMAIL'] ,
 				        'logged_in' 	=> TRUE,
 				        'is_admin'		=> $answer['ISADMIN'],
-				        'is_verifyed' 	=> $answer['STATUS']
+				        'is_verifyed' 	=> $answer['STATUS'],
+				        'attempt'		=> 0
 				);
 
 				// setting cookie, and if is admin or not
@@ -54,6 +65,10 @@ class Login extends CI_Controller {
 		} else {
 			//caso a senha/usuário estejam incorretos, então mando o usuário novamente para a tela de login com uma mensagem de erro.
 			$this->session->set_flashdata('msg','<div class="alert alert-danger text-center">Username or Password incorrect !</div>');
+			
+			$attempt = $this->session->userdata('attempt');
+			$this->session->set_userdata('attempt', ++$attempt);
+
 			redirect(base_url('login'));
 		}
 	}

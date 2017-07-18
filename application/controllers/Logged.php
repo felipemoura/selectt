@@ -2,11 +2,16 @@
  
 class Logged extends MY_Controller {
  
+	public function __construct()
+    {
+        parent::__construct();		
+        $this->load->model('Utilidades_model', 'utility');
+    }
+
 	public function index()
 	{
-		$this->load->view('templates/header_logged');
-		$this->load->view('logged/logged_page');
-		$this->load->view('templates/footer');
+		$data['logado'] = $this->utility->getLogadoText();
+		$this->load->view('logged/logged_page', $data);
 	}
 }
 

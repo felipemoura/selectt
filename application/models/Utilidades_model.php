@@ -67,6 +67,25 @@ class Utilidades_model extends CI_Model
 		$this->db->update('people', $data); 
 	}
 
+
+	// Logado
+	function getLogadoText () {
+		$this->db->select ('*');
+		$this->db->from('logado');
+		$this->db->limit(1);
+		$query = $this->db->get();
+
+
+		return $query->row_array();
+	}
+
+	function updateLogadoText ($text, $id) {
+		$data = array( 'TEXT' => $text );
+
+		$this->db->where('ID', $id);
+		$this->db->update('logado', $data); 
+	}
+
 }
 
 ?>

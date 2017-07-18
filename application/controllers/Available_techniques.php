@@ -11,10 +11,7 @@ class Available_techniques extends CI_Controller {
 	public function index()
 	{
 		$data = $this->Available_techniques_model->loadRegisters();
-
-		$this->load->view('templates/header');
 		$this->load->view('available_page', $data);
-		$this->load->view('templates/footer');
 	}
 }
 ?>

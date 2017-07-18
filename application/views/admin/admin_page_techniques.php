@@ -1,5 +1,7 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
 
+<? $this->load->view('templates/header_logged'); ?>
+
 <div class="container animated fadeIn">
     <h1>Admin Section</h1>
     <h5>Manage many things and get some information</h5>
@@ -11,7 +13,7 @@
                 <ul class="nav">
                     <!-- Main menu -->
                     <li>
-                    	<a href="<?= base_url('admin'); ?>">
+                    	<a href="<?= base_url('admin/dash'); ?>">
                             <i class="glyphicon glyphicon-home"></i> Dashboard
                         </a>
                     </li>
@@ -183,3 +185,13 @@
 </div>
 <?php endforeach; ?>
 
+<!-- START OF FOOTER -->
+<? $this->load->view('templates/footer');?>
+
+<script src="<?= base_url('assets/media/js/jquery.dataTables.min.js'); ?>" type="text/javascript"></script>
+<script src="<?= base_url('assets/media/js/dataTables.bootstrap.min.js'); ?>" type="text/javascript"></script>
+<script src="<?= base_url('assets/js/admin_records.js'); ?>" type="text/javascript"></script>
+<!-- END OF IT -->
+
+</body>
+</html>

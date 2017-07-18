@@ -1,5 +1,8 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
 
+
+<? $this->load->view('templates/header_logged'); ?>
+
 <div class="container animated fadeIn">
     <h1>Admin Section</h1>
     <h5>Manage many things and get some information</h5>
@@ -55,3 +58,10 @@
     <!-- End Page content -->
     </div>
 </div>
+
+<!-- START OF FOOTER -->
+<? $this->load->view('templates/footer');?>
+<!-- END OF IT -->
+
+</body>
+</html>

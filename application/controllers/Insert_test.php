@@ -18,9 +18,7 @@ class Insert_test extends MY_Controller {
         $data['id']   = $this->insert_model->buildId();
         $data['name'] = $this->insert_model->buildName();
 
-        $this->load->view('templates/header_logged');
         $this->load->view('logged/insert_page', $data);
-        $this->load->view('templates/footer');
     }
 
 	public function insert_database()

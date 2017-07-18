@@ -35,7 +35,17 @@ INSERT INTO `dbo`.`publication`
 (`ID`, `TEXT`)
 VALUES (1, '');
 
+DROP TABLE IF EXISTS `dbo`.`logado`; 
 
+CREATE TABLE `dbo`.`logado` (
+  `ID` INT NOT NULL,
+  `TEXT` VARCHAR(65000) NULL,
+  PRIMARY KEY (`ID`),
+  UNIQUE INDEX `idlogado_UNIQUE` (`ID` ASC));
+
+INSERT INTO `dbo`.`logado`
+(`ID`, `TEXT`)
+VALUES (1, 'Here you can insert test criteria or other things');
 
 DROP TABLE IF EXISTS `dbo`.`user`; 
 
