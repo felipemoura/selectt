@@ -8,6 +8,32 @@ class Utilidades_model extends CI_Model
 		parent::__construct();
 	}
 
+	// WEIGHTS function
+	function getFields () {
+		$study = 'Study Identification';
+		$query = $this->db->select ('*')->from('Field')->where('category !=  ', $study)->get();
+
+		$count = 0;
+		foreach ($query->result() as $row) {    
+			$data['fields'][$count++] = array ( 
+				'idField'       => $row->idField,
+				'atribute'      => $row->atribute,
+				'weight'      	=> $row->weight,
+				'html_ID'   	=> $row->html_ID,
+				'html_Name'   	=> $row->html_Name,
+				'html_label'    => $row->html_label
+				);
+		}
+
+      return $data;  
+	}
+
+	function updateField($key, $value)
+	{
+		$data = array ( 'weight' => $value );
+		$this->db->where('html_ID', $key);
+		$this->db->update('Field', $data);
+	}
 
 	// Home
 	function getHomeText () {
@@ -27,8 +53,6 @@ class Utilidades_model extends CI_Model
 		$this->db->update('home', $data); 
 	}
 
-
-
 	//  Publication
 	function getPublicationText () {
 		$this->db->select ('*');
@@ -46,8 +70,6 @@ class Utilidades_model extends CI_Model
 		$this->db->where('ID', $id);
 		$this->db->update('publication', $data); 
 	}
-
-
 
 	// People
 	function getPeopleText () {
@@ -85,7 +107,6 @@ class Utilidades_model extends CI_Model
 		$this->db->where('ID', $id);
 		$this->db->update('logado', $data); 
 	}
-
 }
 
 ?>

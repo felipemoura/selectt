@@ -110,10 +110,9 @@
 <!-- START OF FOOTER -->
 <?	$this->load->view('templates/footer'); ?>
 
-
-<script src="<? base_url('assets/media/js/jquery.dataTables.min.js'); ?>" type="text/javascript"></script>
-<script src="<? base_url('assets/media/js/dataTables.bootstrap.min.js'); ?> " type="text/javascript"></script>
-<script src="<? base_url("assets/js/available_technique.js"); ?>" type="text/javascript"></script>
+<script src="<?= base_url('assets/media/datatables/js/jquery.dataTables.min.js'); ?>" type="text/javascript"></script>
+<script src="<?= base_url('assets/media/datatables/js/dataTables.bootstrap.min.js'); ?>" type="text/javascript"></script>
+<script src="<?= base_url("assets/js/available_technique.js"); ?>" type="text/javascript"></script>
 
 
 <!-- END OF IT  -->

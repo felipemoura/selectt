@@ -9,14 +9,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="">
   <meta name="author" content="Felipe Moura">
-    
-	<link rel="stylesheet" type="text/css" href="<? echo base_url("assets/css/bootstrap.min.css");?>">
-	<link rel="stylesheet" type="text/css" href="<? echo base_url("assets/css/animate.css");?>">
-	<link rel="stylesheet" type="text/css" href="<? echo base_url("assets/css/custom.css");?>">
+
+  <link rel="stylesheet" type="text/css" href="<? echo base_url("assets/css/bootstrap.min.css");?>">
+  <link rel="stylesheet" type="text/css" href="<? echo base_url("assets/css/animate.css");?>">
+  <link rel="stylesheet" type="text/css" href="<? echo base_url("assets/css/custom.css");?>">
   
   <?php if($this->uri->segment(1)=="available-techniques"){
-  echo '<link rel="stylesheet" type="text/css" href="' . base_url("assets/media/css/dataTables.bootstrap.min.css") . '">';
-  echo '<link rel="stylesheet" type="text/css" href="' . base_url("assets/css/available_technique.css") . '">';
+    echo '<link rel="stylesheet" type="text/css" href="' . base_url("assets/media/datatables/css/dataTables.bootstrap.min.css") . '">';
+    echo '<link rel="stylesheet" type="text/css" href="' . base_url("assets/css/available_technique.css") . '">';
   }?>
 
   <link rel="manifest" href="<? echo base_url("assets/fav/manifest.json");?>">
@@ -34,11 +34,11 @@
   <meta name="msapplication-config" content="<? echo base_url('assets/fav/browserconfig.xml') ?>">
   <meta name="theme-color" content="#ffffff">
 
-	<title>Selectt</title>
+  <title>Selectt</title>
 
   <? if ( ( $this->uri->segment(1) == "contact" ) || ( $this->uri->segment(1) == "register") )  : ?>
   <script src='https://www.google.com/recaptcha/api.js'></script>
-  <? endif; ?>
+<? endif; ?>
 
 </head>
 
@@ -49,10 +49,10 @@
     <div class="container-fluid">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
         </button>
 
         <a class="navbar-brand" href="<?= base_url('home');?>">

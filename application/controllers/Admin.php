@@ -31,6 +31,11 @@ class Admin extends MY_Controller {
         $this->load->view('admin/admin_page_techniques', $data);
     }
 
+    public function weights () {
+        $data = $this->utility->getFields();
+        $this->load->view('admin/admin_page_weights', $data);
+    }
+
     public function users () {
         $data = $this->admin_model->loadUsers();
         $this->load->view('admin/admin_page_users', $data);
@@ -247,6 +252,27 @@ class Admin extends MY_Controller {
         }
     }
 
+
+    // WEIGHT FUNCTIONS
+    //
+    //
+    public function saveWeights ()
+    {
+        $weights = $this->input->post();
+        $data = $this->utility->getFields();
+
+        $count = 0;
+        foreach ($weights as $key => $value) {
+            if ($data['fields'][$count++]['weight'] != floatval($value) ) {
+                $this->utility->updateField($key, $value);
+            }
+        }
+
+        // successfully updated weights
+        $this->session->set_flashdata('msg','<div class="alert alert-success text-center">Weights Updated successfully !</div>');
+
+        redirect ('admin/weights');
+    }
 
     // CONTENT FUNCTIONS
     //

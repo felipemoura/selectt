@@ -1,10 +1,11 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
 
+<!-- FOOTER -->
 <footer class="footer">
-  <div class="container">
-   <hr>
-   <p>© Copyright 2017 Selectt Project</p>
- </div>
+	<div class="container">
+		<hr>
+		<p>© Copyright 2017 Selectt Project</p>
+	</div>
 </footer>
 
 <!-- Jave Script -->

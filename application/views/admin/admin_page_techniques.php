@@ -8,37 +8,8 @@
 
     <div class="page-content">
       <div class="row">
-    	  <div class="col-lg-2 col-md-2">
-    	  	<div class="sidebar content-box" style="display: block;">
-                <ul class="nav">
-                    <!-- Main menu -->
-                    <li>
-                    	<a href="<?= base_url('admin/dash'); ?>">
-                            <i class="glyphicon glyphicon-home"></i> Dashboard
-                        </a>
-                    </li>
-
-                    <li class="current">
-                    	<a href="<?= base_url('admin/techniques'); ?>">
-                    		<i class="glyphicon glyphicon-hdd"></i>Techniques
-                    	</a>
-                   	</li>
-
-                    <li>
-                    	<a href="<?= base_url('admin/users'); ?>">
-                    		<i class="glyphicon glyphicon-user"></i>Users
-                    	</a>
-                    </li>
-
-                    <li>
-                        <a href="<?= base_url('admin/content'); ?>">
-                            <i class="glyphicon glyphicon-edit"></i>Content
-                        </a>
-                    </li>
-               
-                </ul>
-             </div>
-    	</div>
+    	
+        <? $this->load->view('templates/admin_nav'); ?>
 
         <div class="col-lg-10 col-md-10">
           <?php echo $this->session->flashdata('msg'); ?>
@@ -188,8 +159,8 @@
 <!-- START OF FOOTER -->
 <? $this->load->view('templates/footer');?>
 
-<script src="<?= base_url('assets/media/js/jquery.dataTables.min.js'); ?>" type="text/javascript"></script>
-<script src="<?= base_url('assets/media/js/dataTables.bootstrap.min.js'); ?>" type="text/javascript"></script>
+<script src="<?= base_url('assets/media/datatables/js/jquery.dataTables.min.js'); ?>" type="text/javascript"></script>
+<script src="<?= base_url('assets/media/datatables/js/dataTables.bootstrap.min.js'); ?>" type="text/javascript"></script>
 <script src="<?= base_url('assets/js/admin_records.js'); ?>" type="text/javascript"></script>
 <!-- END OF IT -->
 
