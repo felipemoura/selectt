@@ -1,0 +1,35 @@
+-- Study identification
+ID
+Title
+Year
+Bibliografic reference (Bibtex)
+Link (URL)
+
+-- Programing model
+Execution platform => P = 0,70
+Context/Objective => P = 0,61
+Programming Language/Runtime libraries => P = 0,59
+
+-- General testing characteristics
+Testing technique => P = 0,76
+Test data generation
+Testing level => P = 0,69
+Synchronization interleaving mechanism
+Inputs required
+Output/Response variable
+Quality attributes => P = 0,37
+Type of study => P = 0,66
+
+-- Concurrent testing characteristics
+Testing analysis => P = 0,71
+Concurrent paradigm for process interaction => P = 0,62
+Replay mechanism => P = 0,54
+Program representation
+Instrumentation
+State space reduction
+Concurrent bugs => P = 0,80
+
+-- Testing tool support
+Tool name
+Cost => P = 0,69
+Platform that the tool operate

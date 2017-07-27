@@ -38,16 +38,17 @@
             <? echo form_open ('admin/saveWeights') ?>
             <?php foreach($fields as $field): ?>
 
+            <!-- <?= $field['atribute']; ?> -->
             <div class="form-group" style="margin-bottom: 25px;">
-              <label style="font-size: 12pt;" for="<?= $field['html_ID']; ?>"><?= $field['html_label']; ?></label>
+              <label style="font-size: 12pt;" for="<?= $field['html_id']; ?>"><?= $field['html_label']; ?></label>
               <br>
-              <input id="<?= $field['html_ID']; ?>" name="<?= $field['html_Name']; ?>" data-slider-id='<?= $field['html_ID'] . 'SliderVal'; ?>' type="number" data-slider-min="0" data-slider-max="1" data-slider-step="0.01" data-slider-value="<?= $field['weight']; ?>"/>
-              <span class="text-danger"><?php echo form_error($field['html_ID']); ?></span>
+              <input id="<?= $field['html_id']; ?>" name="<?= $field['html_name']; ?>" data-slider-id='<?= $field['html_id'] . 'SliderVal'; ?>' type="number" data-slider-value="<?= $field['weight']; ?>"/>
+              <span class="text-danger"><?php echo form_error($field['html_id']); ?></span>
             </div>
 
             <?php endforeach; ?>
               <!-- Submit Form -->
-              <button type="submit" style="margin-top: 20px; width: 700px;" class="btn btn-block btn-success">Save Weights</button>
+              <button type="submit" style="margin-top: 30px; width: 700px;" class="btn btn-block btn-success">Save Weights</button>
             </form>
 
            </div>            
@@ -70,10 +71,13 @@
 <script>
   $(document).ready( function () { 
     <?php foreach($fields as $field): ?>
-    $("<?= $field['html_ID'];?>").bootstrapSlider({
-      precision: 2,
-      ticks: [0.00, 0.25, 0.50, 0.75, 1.00],
-      ticks_labels: ['0.00', '0.25', '0.50', '0.75', '1.00'],
+    $("<?= $field['html_id'];?>").bootstrapSlider({
+      precision: 4,
+      step: 0.0001, 
+      min: 0.0000, 
+      max: 0.1000,
+      ticks: [0.0000, 0.0250, 0.0500, 0.0750, 0.1000],
+      ticks_labels: ['0.0000', '0.0250', '0.0500', '0.0750', '0.1000'],
     });
 
   <?php endforeach; ?>

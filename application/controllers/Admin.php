@@ -264,7 +264,7 @@ class Admin extends MY_Controller {
         $count = 0;
         foreach ($weights as $key => $value) {
             if ($data['fields'][$count++]['weight'] != floatval($value) ) {
-                $this->utility->updateField($key, $value);
+                $this->utility->updateFieldWeight($key, $value);
             }
         }
 

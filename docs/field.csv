@@ -1,0 +1,26 @@
+idField;category;atribute;weight;html_ID;html_Name;html_row_count;html_label;html_placeholder;html_info
+1;Study identification;Title;0.00;title;title;1;Title;Please enter with Title;
+2;Study identification;Year;0.00;year;year;;Year;;Year that the article was published
+3;Study identification;Bibliografic Reference (BibTex);0.00;bibtex;bibtex;3;Bibliografic reference (Bibtex);Please enter with Bibliografic reference (Bibtex);
+4;Study identification;Link (URL);0.00;link;link;1;Link (URL);Please enter with Link (URL);Link to the article
+5;Programming model;Execution platformm ;0.0680;executionPlatform;executionPlatform;1;Execution platform;Please enter with Execution platformm ;Execution platform that the software under test executes
+6;Programming model;Objective;0.00;objective;objective;1;Context/Objective;Please enter with Context/Objective;Context/objective of the concurrent software
+7;Programming model;Programming language ;0.0573;programmingLanguage;programmingLanguage;1;Programming Language/Runtime libraries;Please enter with Programming language ;Programming language and/or runtime libraries that the software under testing was developed
+8;General testing characteristics;Testing technique ;0.0738;testingTechnique;testingTechnique;1;Testing technique ;Please enter with Testing Technique;Type of testing technique proposed
+9;General testing characteristics;Test data generation;0.00;testDataGeneration;testDataGeneration;1;Test data generation;Please enter with Test data generation;Synchronization interleaving mechanism
+10;General testing characteristics;Testing level;0.0689;testingLevel;testingLevel;1;Testing level;Please enter with Testing level;Testing level that the technique was applied
+11;General testing characteristics;Synchronization mechanism;0.0689;synchronizationMechanism;synchronizationMechanism;1;Synchronization interleaving mechanism;Please enter with Synchronization interleaving mechanism;Development Context/Objective of the software under testing
+12;General testing characteristics;Input;0.0641;input;input;1;Inputs required;Please enter with Input;Expected input for a test case
+13;General testing characteristics;Output;0.0670;output;output;2;Output/Response variable;Please enter with Output/Response variable;Expected output for a test case
+14;General testing characteristics;Quality attribute;0.0777;qualityAttribute;qualityAttribute;1;Quality attributes;Please enter with Quality attribute;Software quality characteristic that the technique is able to evaluate
+15;General testing characteristics;Type of study;0.00;typeOfStudy;typeOfStudy;1;Type of study;Please enter with Type of study;Type of empirical study applied to validate teh testing technique
+16;Concurrent testing characteristics;Testing analysis;0.0641;testingAnalysis;testingAnalysis;1;Testing analysis;Please enter with Testing analysis;Type of analysis used by the technique 
+17;Concurrent testing characteristics;Concurrent paradigm;0.0592;concurrentParadigm;concurrentParadigm;1;Concurrent paradigm for process interaction;Please enter with Concurrent paradigm;Concurrent paradigm for process interaction
+18;Concurrent testing characteristics;Replay mechanism;0.0602;replayMechanism;replayMechanism;1;Replay mechanism;Please enter with Replay mechanism;Type of replay mechanism used to re-execute the program during the testing
+19;Concurrent testing characteristics;Program representation;0.00;programRepresentation;programRepresentation;1;Program representation;Please enter with Program representation;The program representation that captures the relevant information to the testing
+20;Concurrent testing characteristics;Instrumentation;0.00;instrumentation;instrumentation;1;Instrumentation;;
+21;Concurrent testing characteristics;State space reduction;0.0592;stateSpaceReduction;stateSpaceReduction;1;State space reduction;Please enter with State space reduction;The technique used to treat the state explosion problem
+22;Concurrent testing characteristics;Concurrent bugs;0.0777;concurrentBugs;concurrentBugs;1;Concurrent bugs;Please enter with Concurrent bugs;The type of concurrent bugs identified by the testing technique
+23;Testing tool support;Tool name;0.0670;toolName;toolName;1;Tool name;Please enter with Tool name;Name of the tool if the technique presents one
+24;Testing tool support;Cost;0.00;cost;cost;1;Cost;Please enter with Cost;The cost associated with the tool
+25;Testing tool support;Platform;0.00;platform;platform;1;Platform that the tool operate;Please enter with Platform;The execution platform that the tool operate

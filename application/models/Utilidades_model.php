@@ -16,22 +16,49 @@ class Utilidades_model extends CI_Model
 		$count = 0;
 		foreach ($query->result() as $row) {    
 			$data['fields'][$count++] = array ( 
-				'idField'       => $row->idField,
-				'atribute'      => $row->atribute,
-				'weight'      	=> $row->weight,
-				'html_ID'   	=> $row->html_ID,
-				'html_Name'   	=> $row->html_Name,
-				'html_label'    => $row->html_label
+				'idField'       	=> $row->idField,
+				'atribute'      	=> $row->atribute,
+				'category'      	=> $row->category,
+				'weight'      		=> $row->weight,
+				'html_id'   		=> $row->html_id,
+				'html_name'   		=> $row->html_name,
+				'html_row_count'   	=> $row->html_row_count,
+				'html_label'    	=> $row->html_label,
+				'html_placeholder'  => $row->html_placeholder,
+				'html_info'    		=> $row->html_info
 				);
 		}
 
       return $data;  
 	}
 
-	function updateField($key, $value)
+	function getFields () {
+		$study = 'Study Identification';
+		$query = $this->db->select ('*')->from('Field')->where('category !=  ', $study)->get();
+
+		$count = 0;
+		foreach ($query->result() as $row) {    
+			$data['fields'][$count++] = array ( 
+				'idField'       	=> $row->idField,
+				'atribute'      	=> $row->atribute,
+				'category'      	=> $row->category,
+				'weight'      		=> $row->weight,
+				'html_id'   		=> $row->html_id,
+				'html_name'   		=> $row->html_name,
+				'html_row_count'   	=> $row->html_row_count,
+				'html_label'    	=> $row->html_label,
+				'html_placeholder'  => $row->html_placeholder,
+				'html_info'    		=> $row->html_info
+				);
+		}
+
+		return $data;  
+	}
+
+	function updateFieldWeight($key, $value)
 	{
 		$data = array ( 'weight' => $value );
-		$this->db->where('html_ID', $key);
+		$this->db->where('html_id', $key);
 		$this->db->update('Field', $data);
 	}
 
