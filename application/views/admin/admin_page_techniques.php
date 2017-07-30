@@ -71,7 +71,7 @@
                                         <!-- </a> -->
 
                                         <!-- Edit button -->
-                                        <a href="<?php echo base_url('admin/editInfo/'. $temp['id']); ?>">
+                                        <a href="<?php echo base_url('admin/editTechnique/'. $temp['id']); ?>">
                                         <button type="button" class="btn btn-xs btn-default" id="<?php echo $temp['id']; ?>">
                                             <span class="glyphicon glyphicon-pencil"></span>
                                         </button>

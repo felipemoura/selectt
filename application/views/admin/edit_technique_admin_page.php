@@ -25,16 +25,26 @@
   }
 </style>
 
+<? if (isset($technique)): ?>
 <div class="container animated fadeIn">
-  <h1>Insert Technique</h1>
+  <h1>Edit <?= $technique['title']; ?> Technique 
+  <div class="pull-right">
+    <a href="<?= base_url('admin/techniques'); ?>">
+      <button style="width: 200px;" type="button" class="btn btn-danger">Return</button>
+    </a>  
+  </div>  
+  </h1>
   <h5>Please provide the information below.</h5>
   <br>
+
+  <?php echo form_open_multipart('admin/updateTechnique/'.$technique['id']);?>
+  <span id="error"></span>
   
-  <?php echo form_open(base_url('insert_test/insert_database'));?>
   <?php echo $this->session->flashdata('msg'); ?> 
 
-
   <?php $count = 0; ?>
+
+
   <h2 align="center" style="margin-top: 50px"><?= 'Part '. ($count+1) . ' - ' . $name[$count++]; ?></h2>
   <hr class="line">
 
@@ -177,8 +187,16 @@
   <?php endforeach; ?>
 
   <!-- Submit Form -->
-  <button style="margin-top: 50px; border: 1px solid #8c8b8b;" type="submit" class="btn btn-block btn-success">Insert Technique into Database</button>
+  <button type="submit" onclick="return confirm('Do you really want to update <?= $technique['title']; ?> Technique ?');" class="btn btn-block btn-success">Update <?= $technique['title']; ?> </button>
+
+  <!-- Return -->
+  <a href="<?= base_url('admin/techniques'); ?>">
+    <button type="button" class="btn btn-block btn-danger">Return</button>
+  </a> 
 </div>
+
+<? endif; ?>
+
 
 <!-- START OF FOOTER -->
 <?  $this->load->view('templates/footer'); ?>
@@ -187,7 +205,59 @@
 <script src="<?= base_url('assets/media/tagsinput/bootstrap-tagsinput.js'); ?>" type="text/javascript"></script>
 
 <script type="text/javascript">
+  $(document).ready(function() {
+    let httpRequest;
+    let id = <?= $technique['id'] ?>;
 
+    if (window.XMLHttpRequest) { // Mozilla, Safari, ...
+      httpRequest = new XMLHttpRequest();
+    } else if (window.ActiveXObject) { // IE 8 and older
+      httpRequest = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+
+    httpRequest.onreadystatechange = function(){
+      if (httpRequest.readyState === 4) {
+        if (httpRequest.status === 200) {
+          let data = JSON.parse(httpRequest.responseText);
+
+          $('#title').val(data.title);
+          $('#year').val(data.year);
+          $('#bibtex').val(data.bibTex);
+          $('#link').val(data.link);
+          $('#executionPlatform').tagsinput('add', data.ExecutionPlatform.toString() );
+          $('#objective').tagsinput('add', data.Objective.toString() );
+          $('#programmingLanguage').tagsinput('add', data.ProgrammingLanguage.toString() );
+          $('#testingTechnique').tagsinput('add', data.TestingTechnique.toString() );
+          $('#testDataGeneration').tagsinput('add', data.TestDataGeneration.toString() );
+          $('#testingLevel').tagsinput('add', data.TestingLevel.toString() );
+          $('#synchronizationMechanism').tagsinput('add', data.SynchronizationMechanism.toString() );
+          $('#input').tagsinput('add', data.Input.toString() );
+          $('#output').tagsinput('add', data.Output.toString() );
+          $('#qualityAttribute').tagsinput('add', data.QualityAttribute.toString() );
+          $('#typeOfStudy').tagsinput('add', data.TypeOfStudy.toString() );
+          $('#testingAnalysis').tagsinput('add', data.TestingAnalysis.toString() );
+          $('#concurrentParadigm').tagsinput('add', data.ConcurrentParadigm.toString() );
+          $('#replayMechanism').tagsinput('add', data.ReplayMechanism.toString() );
+          $('#programRepresentation').tagsinput('add', data.ProgramRepresentation.toString() );
+          $('#instrumentation').tagsinput('add', data.Instrumentation.toString() );
+          $('#stateSpaceReduction').tagsinput('add', data.StateSpaceReduction.toString() );
+          $('#concurrentBugs').tagsinput('add', data.ConcurrentBugs.toString() );
+          $('#toolName').tagsinput('add', data.ToolName.toString() );
+          $('#cost').tagsinput('add', data.Cost.toString() );
+          $('#platformTool').tagsinput('add', data.PlatformTool.toString() );
+
+        } else {
+          let errorHTML = '<div class="alert alert-danger" style="text-align: center;">' +  httpRequest.responseText +'</div>';
+          $('#error').empty().append(errorHTML);
+        }
+      }
+    };
+
+    httpRequest.open('GET', window.location.origin + '/selectt/api/technique/id/' + id, true);
+    httpRequest.send(null);
+
+  });
+  
   function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
@@ -200,7 +270,6 @@
       queryTokenizer: Bloodhound.tokenizers.whitespace,
       prefetch: window.location.origin + '/selectt/api/tableInfo/table/' + capitalizeFirstLetter('<?= $field['html_id']; ?>'),
       local: window.location.origin + '/selectt/api/tableInfo/table/' + capitalizeFirstLetter('<?= $field['html_id']; ?>'),
-      // prefetch: '../selectt/api/tableInfo/table/' + capitalizeFirstLetter('<?= $field['html_id']; ?>'),
       remote: {
         url: window.location.origin + '/selectt/api/tableInfo/table/' + capitalizeFirstLetter('<?= $field['html_id']; ?>')
         // url: '../selectt/api/tableInfo/table/%QUERY.json',
@@ -248,6 +317,6 @@
  
 </script>
 
-<!-- END OF IT  -->
+<!-- END OF IT -->
 </body>
 </html>

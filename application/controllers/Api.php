@@ -20,8 +20,8 @@ class Api extends REST_Controller{
             redirect(base_url('login'));                
         } 
 
-        $this->load->model('Technique', 'technique');
-        $this->load->model('User', 'user');
+        $this->load->model('Technique_model', 'technique');
+        $this->load->model('User_model', 'user');
     }
 
 

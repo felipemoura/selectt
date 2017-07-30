@@ -6,12 +6,12 @@ class Form extends MY_Controller {
     {
         parent::__construct();
         $this->load->model('Utilidades_model', 'utility');
-        $this->load->model('Technique', 'technique');
+        $this->load->model('Technique_model', 'technique');
     }
 
 	public function index()
 	{
-		// $data['category'][0] = $this->utility->getFieldsCategory('Programming model');
+		$data['category'][0] = $this->utility->getFieldsCategory('Programming model');
 		$data['category'][1] = $this->utility->getFieldsCategory('General testing characteristics');
 		$data['category'][2] = $this->utility->getFieldsCategory('Concurrent testing characteristics');
 		$data['category'][3] = $this->utility->getFieldsCategory('Testing tool support');

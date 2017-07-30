@@ -112,10 +112,14 @@
     var <?= $field['html_id']; ?> = new Bloodhound({
       datumTokenizer: Bloodhound.tokenizers.whitespace,
       queryTokenizer: Bloodhound.tokenizers.whitespace,
-      prefetch: '../selectt/api/tableInfo/table/' + capitalizeFirstLetter('<?= $field['html_id']; ?>'),
+
+      prefetch: window.location.origin + '/selectt/api/tableInfo/table/' + capitalizeFirstLetter('<?= $field['html_id']; ?>'),
+      local: window.location.origin + '/selectt/api/tableInfo/table/' + capitalizeFirstLetter('<?= $field['html_id']; ?>'),
+      // prefetch: '../selectt/api/tableInfo/table/' + capitalizeFirstLetter('<?= $field['html_id']; ?>'),
       remote: {
-        url: '../selectt/api/tableInfo/table/%QUERY.json',
-        wildcard: '%QUERY'
+        url: window.location.origin + '/selectt/api/tableInfo/table/' + capitalizeFirstLetter('<?= $field['html_id']; ?>')
+        // url: '../selectt/api/tableInfo/table/%QUERY.json',
+        // wildcard: '%QUERY'
       }
     });
 
@@ -123,9 +127,12 @@
 
     $("#<?= $field['html_id']; ?>").tagsinput({
       typeaheadjs: [{
-        hint: false,
+        hint: true,
         highlight: true,
-        minLength: 1
+        minLength: 1,        
+        ttl_ms: 1,
+        prefetch: window.location.origin + '/selectt/api/tableInfo/table/' + capitalizeFirstLetter('<?= $field['html_id']; ?>'),
+        remote: window.location.origin + '/selectt/api/tableInfo/table/' + capitalizeFirstLetter('<?= $field['html_id']; ?>')
       },{
         name: '<?= $field['html_id']; ?>',
         source: <?= $field['html_id']; ?>.ttAdapter()

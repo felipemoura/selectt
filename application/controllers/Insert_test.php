@@ -6,7 +6,7 @@ class Insert_test extends MY_Controller {
     {
         parent::__construct();
         $this->load->model('Utilidades_model', 'utility');
-        $this->load->model('Technique', 'technique');
+        $this->load->model('Technique_model', 'technique');
     }
 
 	public function index()

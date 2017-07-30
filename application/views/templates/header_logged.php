@@ -28,7 +28,7 @@
     echo '<link rel="stylesheet" type="text/css" href="' . base_url("assets/css/admin.css") . '">';
   }?>
 
-  <?php if ( ($this->uri->segment(1)=="insert_test") || ($this->uri->segment(1)=="form") ){
+  <?php if ( ($this->uri->segment(1)=="insert_test") || ($this->uri->segment(1)=="form") || ($this->uri->segment(2)=="editTechnique" ) ){
     
     echo '<link rel="stylesheet" type="text/css" href="' . base_url("assets/media/tagsinput/bootstrap-tagsinput-typeahead.css") . '">';
     echo '<link rel="stylesheet" type="text/css" href="' . base_url("assets/media/tagsinput/bootstrap-tagsinput.css") . '">';

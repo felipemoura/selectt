@@ -6,16 +6,15 @@ class Admin extends MY_Controller {
 	public function __construct()
  	{
    		parent::__construct();
-   		// control, only admins
+
+   		// control access, only admins
         if (!$this->session->userdata('is_admin')) {
             redirect(base_url('logged'));
         }
 
-        $this->load->model('admin_model');
-   		$this->load->model('insert_model');
         $this->load->model('Utilidades_model', 'utility');
-        $this->load->model('Technique', 'technique');
-        $this->load->model('User', 'user');
+        $this->load->model('Technique_model', 'technique');
+        $this->load->model('User_model', 'user');
  	}
  
 	public function index()
@@ -53,6 +52,9 @@ class Admin extends MY_Controller {
     }
 
 
+    // *********************************************************************************************************
+    // ******************************************       TECHNIQUE        ***************************************
+    // *********************************************************************************************************
     // TECHNIQUES admin functions
 	public function deleteTechnique ($id) {
 		$this->technique->deleteTechnique($id);
@@ -64,123 +66,161 @@ class Admin extends MY_Controller {
 		redirect(base_url('admin/techniques'));
 	}
 
-    public function editInfo ($id) {
-        $data['record'] = $this->admin_model->getAllFieldInfo($id);
+    public function editTechnique ($id) {
+        $data['technique'] = $this->technique->buildTechnique($id);
 
-        if (is_null($data['record'])) {
+        if (is_null($data['technique'])) {
             redirect ('admin/techniques');
         }
 
-        $this->load->view('admin/edit_record_admin_page', $data);
+        // $data['category'][0] = $this->utility->getFieldsCategory('Study identification');
+        $data['category'][0] = $this->utility->getFieldsCategory('Programming model');
+        $data['category'][1] = $this->utility->getFieldsCategory('General testing characteristics');
+        $data['category'][2] = $this->utility->getFieldsCategory('Concurrent testing characteristics');
+        $data['category'][3] = $this->utility->getFieldsCategory('Testing tool support');
+
+        $data['name'][0] = 'Study identification';
+        $data['name'][1] = 'Programming model';
+        $data['name'][2] = 'General testing characteristics';
+        $data['name'][3] = 'Concurrent testing characteristics';
+        $data['name'][4] = 'Testing tool support';
+
+
+        $this->load->view('admin/edit_technique_admin_page', $data);
     }
 
-	public function updateRecord ($targetID) {
+	public function updateTechnique ($targetID) {
 		// remove se escolher no info !!!
         // verificar form no redirect !!
         // problem validating form, next release will fix
 
-        // useful variables
-        $id     = $this->insert_model->buildId();
-        $name   = $this->insert_model->buildName();
-        $field  = $this->insert_model->buildFields();
-
-        //set validation rules
-        $this->form_validation->set_rules('inputApproachTechniqueName', 'Technique Name', 'trim|required|min_length[3]|max_length[700]',
+         //set validation rules
+        $this->form_validation->set_rules('title','Technique Title','trim|required|min_length[3]|max_length[255]',
             array (     'required'      => 'You must provide a %s.',
                         'min_length'    => 'Your %s must have at least 3 characteres.',
-                        'max_length'    => 'Your %s can have up to 700 characteres.'
+                        'max_length'    => 'Your %s can have up to 255 characteres.'
                 )
         );
 
-        $this->form_validation->set_rules('inputTitle', 'Title', 'trim|required|min_length[3]|max_length[1023]',
+        $this->form_validation->set_rules('year', 'Year', 'trim|max_length[4]',
+            array (     'max_length'    => 'Your %s can have up to 4 characteres.'
+                )
+        );
+
+        $this->form_validation->set_rules('bibitex', 'Bibliografic reference (Bibtex)', 'trim|max_length[10000]',
             array (     'required'      => 'You must provide a %s.',
-                        'min_length'    => 'Your %s must have at least 3 characteres.',
-                        'max_length'    => 'Your %s can have up to 1023 characteres.'
-                )
-        );
-        $this->form_validation->set_rules('inputYear', 'Year', 'trim|max_length[4]',
-            array (     'max_length'    => 'Your %s must have YYYY format.'
+                        'max_length'    => 'Your %s can have up to 10000 characteres.'
                 )
         );
 
-        $this->form_validation->set_rules('inputTechniqueLink', 'Link', 'trim|valid_url|max_length[1023]',
-            array (     'valid_url'     => 'You must provide a valid %s.',
-                        'max_length'    => 'Your %s can have up to 1023 characteres.'
+        $this->form_validation->set_rules('link', 'Link', 'trim|valid_url|max_length[2048]',
+            array (     'valid_url'      => 'You must provide a valid %s.',
+                        'max_length'    => 'Your %s can have up to 2048 characteres.'
                 )
         );
+
+        // Helper to get all table names
+        $fields = $this->utility->getFields();
 
         // validate all other forms
-        foreach ($id as $key => $value) {
-            if ($value == 'inputTechniqueLink') { continue; }
-
-            $this->form_validation->set_rules( $value, $name[$key], 'trim|max_length[1023]',
-                array (  'max_length'    => 'Your %s can have up to 1023 characteres.'
+        foreach ($fields['fields'] as $field) {
+            $this->form_validation->set_rules( $field['html_id'], $field['html_label'], 'trim|max_length[255]',
+                array (  'max_length'    => 'Your %s can have up to 255 characteres.'
                 )
             );
         }
-
 
         //validate form input
         if ($this->form_validation->run() == FALSE) {
             // fails
-            $this->editInfo($targetID);
-        
+            $this->editTechnique($targetID);
+
         } else {
-            // Prepare the query to insert database, based on post form
-            // prepare sql
             $sql = array(
-                    'Title'      =>  $this->input->post("inputTitle", TRUE),
-                    'Year'       => ($this->input->post('checkinputYear', TRUE) == 1 ) ? '-1' : ''.$this->input->post("inputYear", TRUE),
-                    'Approach'   =>  $this->input->post("inputApproachTechniqueName", TRUE)
-            );
+                        'title'         => $this->input->post("title", TRUE),
+                        'year'          => ($this->input->post("checkyear", TRUE) == 1 || $this->input->post("year", TRUE) == "") ? 'No Information' : '' . $this->input->post("year", TRUE),
+                        'bibTex'        => ($this->input->post("checkbibtex", TRUE) == 1 || $this->input->post("bibtex", TRUE) == "") ? 'No Information' : '' . $this->input->post("bibtex", TRUE),
+                        'link'          => ($this->input->post("checklink", TRUE) == 1 ||  $this->input->post("link", TRUE) == "") ? 'No Information' : '' . $this->input->post("link", TRUE),
+                        'needApproval'   => 1,
+                        'insertedBy'    => $this->session->userdata("username"),
+                        'insertedOn'    => date("Y-m-d H:i:s")
+                    );
 
-            foreach ($field as $key => $value) {
-                $sql[$value] = ($this->input->post('checkinput'.$value, TRUE) == 1) ? 'No information' : ''.$this->input->post('input'.$value, TRUE);
-            }
+            $answer = $this->technique->updateTechnique($sql, $targetID);
 
-            // insert form data into database
-            if ($this->admin_model->updateRegister($targetID, $sql)) {
-                $this->session->set_flashdata('msg','<div class="alert alert-success text-center">You successfully updated '.$sql['Title'].' !</div>');
-                redirect('admin/techniques');        
+            // inserted            
+            if ($answer === TRUE) {
+                $this->session->set_flashdata('msg','<div class="alert alert-success text-center">You successfully updated <strong>' . $sql['title'] . '</strong> technique.</div>');
+
+                foreach ($fields['fields'] as $field) {
+                    $this->technique->deleteAllTechniqueAtributes (ucfirst($field['html_id']), $targetID);
+
+                    if ($this->input->post("check" . $field['html_id'], TRUE) == 1 ||  $this->input->post($field['html_id'], TRUE) == "") {
+
+                        $sql = array( 'idTechnique' => $targetID, $field['html_id'] => 'No Information' );
+                        $this->technique->insertTechniqueAtributes (ucfirst($field['html_id']), $sql);
+                        // echo $this->db->last_query() . ";<br>";
+
+                    } else {
+                        $temp = explode(",", $this->input->post($field['html_id'], TRUE));
+
+                        foreach ($temp as $value) {
+                            $sql = array( 'idTechnique' => $targetID, $field['html_id'] => trim($value) );
+
+                            $this->technique->insertTechniqueAtributes (ucfirst($field['html_id']), $sql);
+                            // echo $this->db->last_query() . ";<br>";
+                        }    
+                    }
+                }
+
+                
+                redirect(base_url('insert_test')); 
+                
+                redirect(base_url('admin/techniques')); 
 
             } else {
-                // error
-                $this->session->set_flashdata('msg','<div class="alert alert-danger text-center">Oops! Error updating '.$sql['Title'].' . Please try again later!!!</div>');
-                redirect('admin/techniques');
+                $this->session->set_flashdata('msg','<div class="alert alert-danger text-center">Something went wrong with the database, please try again later.<br><strong>' . $answer . '</strong></div>');
+
+                redirect(base_url('admin/techniques')); 
             }
 
-            $this->session->set_flashdata('msg','<div class="alert alert-danger text-center">Unkown behavior</div>');
+            $this->session->set_flashdata('msg','<div class="alert alert-warning text-center">Unknown behavior, contact the administrator !</div>');
 
-            redirect('admin/techniques');
+            redirect(base_url('admin/techniques'));
         }
-	}
+
+    }
 
 
-    // USERS functions
-    //
-    //
+
+
+
+
+    // *********************************************************************************************************
+    // ******************************************       USER        ********************************************
+    // *********************************************************************************************************
     public function deleteUser ($id) {
-        $this->admin_model->deleteUserDatabase($id);
+        $this->user->deleteUserDatabase($id);
         redirect(base_url('admin/users'));
     }
 
     public function approveUserAdmin ($id) {
-        $this->admin_model->setAdmin($id);
+        $this->user->setAdmin($id);
         redirect(base_url('admin/users'));
     }
 
     public function disapproveUserAdmin ($id) {
-        $this->admin_model->unsetAdmin($id);
+        $this->user->unsetAdmin($id);
         redirect(base_url('admin/users'));
     }
 
     public function approveUser ($id) {
-        $this->admin_model->approveUserWithoutMailVerification($id);
+        $this->user->approveUserWithoutMailVerification($id);
         redirect(base_url('admin/users'));
     }
 
     public function editUser ($id) {
-        $data['user'] = $this->admin_model->getAllUserInfo($id);
+        $data['user'] = $this->user->buildUser($id);
 
         if (is_null($data['user'])) {
             redirect ('admin/users');
@@ -192,16 +232,16 @@ class Admin extends MY_Controller {
     public function updateUser ($targetID)
     {
         //set validation rules
-        $this->form_validation->set_rules('inputUsername', 'Username', 'trim|required|alpha_numeric_spaces|min_length[3]|max_length[45]',
-            array (    'required'      => 'You must provide a %s.',
-                        'alpha_numeric_spaces'    => 'You can only use letters and numbers on %s',
-                        'min_length'    => 'Your %s must have at least 3 characteres.',
-                        'max_length'    => 'Your %s can have up to 45 characteres.'
+        $this->form_validation->set_rules('username', 'Username', 'trim|required|alpha_numeric_spaces|min_length[3]|max_length[45]',
+            array (    'required'                   => 'You must provide a %s.',
+                        'alpha_numeric_spaces'      => 'You can only use letters and numbers on %s',
+                        'min_length'                => 'Your %s must have at least 3 characteres.',
+                        'max_length'                => 'Your %s can have up to 45 characteres.'
                 )
         );
 
         // solve unique problem here
-        $this->form_validation->set_rules('inputEmail', 'Email', 'trim|required|valid_email|min_length[4]|max_length[255]',
+        $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email|min_length[4]|max_length[255]',
             array ( 'required'      => 'You must provide a %s.',
                     'valid_email'   => 'You must provide a valid %s.',
                     'min_length'    => 'Your %s must have at least 4 characteres.',
@@ -209,15 +249,15 @@ class Admin extends MY_Controller {
             )
         );
 
-        $this->form_validation->set_rules('inputFullName', 'Full Name', 'trim|required|alpha_numeric_spaces|min_length[4]|max_length[255]',
-             array (    'required'      => 'You must provide a %s.',
-                        'alpha_numeric_spaces'    => 'You can only use letters and numbers on %s',
-                        'min_length'    => 'Your %s must have at least 4 characteres.',
-                        'max_length'    => 'Your %s can have up to 255 characteres.'
+        $this->form_validation->set_rules('fullname', 'Full Name', 'trim|required|alpha_numeric_spaces|min_length[4]|max_length[255]',
+             array (    'required'                  => 'You must provide a %s.',
+                        'alpha_numeric_spaces'      => 'You can only use letters and numbers on %s',
+                        'min_length'                => 'Your %s must have at least 4 characteres.',
+                        'max_length'                => 'Your %s can have up to 255 characteres.'
                 )
         );
 
-        $this->form_validation->set_rules('inputInstitution', 'Institution', 'trim|max_length[1023]',
+        $this->form_validation->set_rules('institution', 'Institution', 'trim|max_length[1023]',
                  array ( 'max_length'    => 'Your %s can have up to 1023 characteres.'
                 )
 
@@ -231,14 +271,14 @@ class Admin extends MY_Controller {
         } else {
             // Prepare the query to insert database, based on post form
             $data = array(
-                'FULLNAME'      => $this->input->post('inputFullName',TRUE),
-                'EMAIL'         => $this->input->post('inputEmail',TRUE),
-                'USERNAME'      => $this->input->post('inputUsername',TRUE),
-                'INSTITUTION'   => (($this->input->post('inputInstitution',TRUE) == null) ? '' : $this->input->post('inputInstitution', TRUE))
+                'FULLNAME'      => $this->input->post('fullname',TRUE),
+                'EMAIL'         => $this->input->post('email',TRUE),
+                'USERNAME'      => $this->input->post('username',TRUE),
+                'INSTITUTION'   => (($this->input->post('institution',TRUE) == null) ? '' : $this->input->post('institution', TRUE))
             );
             
             // insert form data into database
-            if ($this->admin_model->updateUser($targetID, $data)) {
+            if ($this->user->updateUser($targetID, $data)) {
                 $this->session->set_flashdata('msg','<div class="alert alert-success text-center">You successfully updated '.$data['USERNAME'].' !</div>');
 
                 redirect ('admin/users');
@@ -253,9 +293,11 @@ class Admin extends MY_Controller {
     }
 
 
-    // WEIGHT FUNCTIONS
-    //
-    //
+
+
+    // *********************************************************************************************************
+    // ******************************************       WEIGHT        ******************************************
+    // *********************************************************************************************************
     public function saveWeights ()
     {
         $weights = $this->input->post();
@@ -274,9 +316,12 @@ class Admin extends MY_Controller {
         redirect ('admin/weights');
     }
 
-    // CONTENT FUNCTIONS
-    //
-    //
+    
+
+
+    // *********************************************************************************************************
+    // ******************************************       CONTENT        *****************************************
+    // *********************************************************************************************************
     public function updatePeople ()
     {
        $id = 1;
@@ -308,6 +353,5 @@ class Admin extends MY_Controller {
        $this->utility->updateLogadoText($text, $id);
        redirect(base_url('admin/content'));
     }
-
 }
 ?>

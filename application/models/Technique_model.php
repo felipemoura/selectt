@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Technique extends CI_Model
+class Technique_model extends CI_Model
 {
     function __construct()
     {
@@ -32,19 +32,36 @@ class Technique extends CI_Model
     // delete technique, only on admin page
     function deleteTechnique ($id) 
     {
-      $this->db->delete ('Technique', array('id' =>  $id));
+      $this->db->delete('Technique', array('id' =>  $id));
     }
 
     // aprove inserted technique, only on admin page
     function approveTechnique ($id) 
     {
       $data = array( 'needApproval' => 0 );
-      $this->db->where('id', $id);
-      $this->db->update('Technique', $data); 
+      $this->db->where('id', $id)->update('Technique', $data); 
     }
 
+    // UPDATE all info into technique table
+    function updateTechnique($data, $id)
+    {
+      $this->db->where('id', $id)->update('Technique', $data);
+
+      if ($this->db->affected_rows() != 1) {
+        $error = $this->db->error();
+
+        if ($error['code'] == 1062) {
+          return "Sorry but this technique is already in database!";
+        } else {
+          return "Unknown error, please contact the administrator !";
+        }
+
+      } else {
+        return TRUE;
+      }
+    }
   
-    // Inserte all info into technique table
+    // INSERT all info into technique table
     function insertTechnique ($data) 
     {
       $this->db->insert('Technique', $data);
@@ -63,7 +80,12 @@ class Technique extends CI_Model
         }
     }
 
-    // Insert all info (atributes) of a technique into atributes tables
+    function deleteAllTechniqueAtributes ($tableName, $id)
+    {
+      $this->db->delete($tableName, array('idTechnique' =>  $id));
+    }
+
+    // INSERT all info (atributes) of a technique into atributes tables
     function insertTechniqueAtributes ($tableName, $data)
     {
       $this->db->insert($tableName, $data);
@@ -198,7 +220,7 @@ class Technique extends CI_Model
         foreach ($query->result() as $row) {
           $tableInfo[$count++] = $row->$fieldName;
         }
-        $tableInfo[$count] = 'No Information';
+        // $tableInfo[$count] = 'No Information';
 
         return $tableInfo;
       } 
@@ -227,7 +249,7 @@ class Technique extends CI_Model
             $tableInfo[$value][$count++] = $row->$value;
           }
 
-          $tableInfo[$value][$count] = 'No Information';
+          // $tableInfo[$value][$count] = 'No Information';
 
         }
 

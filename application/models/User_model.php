@@ -1,6 +1,6 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
-class User extends CI_Model
+class User_model extends CI_Model
 {
     function __construct()
     {
@@ -8,6 +8,51 @@ class User extends CI_Model
         parent::__construct();
     }
     
+    // USERS functions
+    function deleteUserDatabase ($id) 
+    {
+      $this->db->delete ('user', array('ID' =>  $id));
+    }
+
+    function setAdmin ($id)
+    {
+      $data = array( 'ISADMIN' => 1 );
+      $this->db->where('ID', $id);
+      $this->db->update('user', $data);
+    }
+
+    function unsetAdmin ($id)
+    {
+      $data = array( 'ISADMIN' => 0 );
+      $this->db->where('ID', $id);
+      $this->db->update('user', $data); 
+    }
+
+    function approveUserWithoutMailVerification($id)
+    {
+      $data = array( 'STATUS' => 1 );
+      $this->db->where('ID', $id);
+      $this->db->update('user', $data);
+    }
+
+    function updateUser ($id, $data)
+    {
+      $this->db->where('ID', $id)->update('user', $data); 
+
+      if ($this->db->affected_rows() != 1) {
+        $error = $this->db->error();
+
+        if ($error['code'] == 1062) {
+          return "Sorry but this user is already in database!";
+        } else {
+          return "Unknown error, please contact the administrator !";
+        }
+
+      } else {
+        return TRUE;
+      }
+    }
+
     // Get all techniques for admin page
     function getAllUsers ()
     {

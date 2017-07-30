@@ -16,30 +16,31 @@
   <?php echo $this->session->flashdata('msg'); ?>
 
   <?php echo form_open_multipart('admin/updateUser/'.$user['ID']);?>
+  <span id="error"></span>
 
   <!-- Technique name -->
   <div class="form-group">
-    <label for="inputUsername">Username:</label>
-    <input type="text" class="form-control" id="inputUsername" name="inputUsername" aria-describedby="titleHelp" placeholder="Enter username" required focus>
-    <span class="text-danger"><?php echo form_error('inputUsername'); ?></span>
+    <label for="username">Username</label>
+    <input type="text" class="form-control" id="username" name="username" aria-describedby="titleHelp" placeholder="Enter username" required focus>
+    <span class="text-danger"><?php echo form_error('username'); ?></span>
   </div>
 
   <div class="form-group">
-    <label for="inputEmail">Email:</label>
-    <input type="text" class="form-control" id="inputEmail" name="inputEmail" aria-describedby="titleHelp" placeholder="Enter Email" required focus>
-    <span class="text-danger"><?php echo form_error('inputEmail'); ?></span>
+    <label for="email">Email</label>
+    <input type="text" class="form-control" id="email" name="email" aria-describedby="titleHelp" placeholder="Enter Email" required focus>
+    <span class="text-danger"><?php echo form_error('email'); ?></span>
   </div>
 
   <div class="form-group">
-    <label for="inputFullName">Full Name:</label>
-    <input type="text" class="form-control" id="inputFullName" name="inputFullName" aria-describedby="titleHelp" placeholder="Enter Full Name" required focus>
-    <span class="text-danger"><?php echo form_error('inputFullName'); ?></span>
+    <label for="fullname">Full Name</label>
+    <input type="text" class="form-control" id="fullname" name="fullname" aria-describedby="titleHelp" placeholder="Enter Full Name" required focus>
+    <span class="text-danger"><?php echo form_error('fullname'); ?></span>
   </div>
 
   <div class="form-group">
-    <label for="inputInstitution">Institution:</label>
-    <input type="text" class="form-control" id="inputInstitution" name="inputInstitution" aria-describedby="titleHelp" placeholder="Enter Institution">
-    <span class="text-danger"><?php echo form_error('inputInstitution'); ?></span>
+    <label for="institution">Institution</label>
+    <input type="text" class="form-control" id="institution" name="institution" aria-describedby="titleHelp" placeholder="Enter Institution">
+    <span class="text-danger"><?php echo form_error('institution'); ?></span>
   </div>
 
   <!-- Submit Form -->
@@ -54,7 +55,41 @@
 
 <!-- START OF FOOTER -->
 <? $this->load->view('templates/footer'); ?>
-<!-- END OF IT -->
 
+<script type="text/javascript">
+    $(document).ready(function() {
+        let httpRequest;
+        let id = <?= $user['ID'] ?>;
+
+        if (window.XMLHttpRequest) { // Mozilla, Safari, ...
+          httpRequest = new XMLHttpRequest();
+        } else if (window.ActiveXObject) { // IE 8 and older
+          httpRequest = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+
+        httpRequest.onreadystatechange = function(){
+          if (httpRequest.readyState === 4) {
+            if (httpRequest.status === 200) {
+              let data = JSON.parse(httpRequest.responseText);
+
+              $('#username').val(data.USERNAME);
+              $('#email').val(data.EMAIL);
+              $('#fullname').val(data.FULLNAME);
+              $('#institution').val(data.INSTITUTION);
+
+            } else {
+              let errorHTML = '<div class="alert alert-danger" style="text-align: center;">' +  httpRequest.responseText +'</div>';
+              $('#error').empty().append(errorHTML);
+            }
+          }
+        };
+
+        httpRequest.open('GET', window.location.origin + '/selectt/api/user/id/' + id, true);
+        httpRequest.send(null);
+
+      });
+</script>
+
+<!-- END OF IT -->
 </body>
 </html>
