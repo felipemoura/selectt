@@ -14,20 +14,25 @@
   <link rel="stylesheet" type="text/css" href="<? echo base_url("assets/css/animate.css");?>">
   <link rel="stylesheet" type="text/css" href="<? echo base_url("assets/css/custom.css");?>">
 
-<?php if ($this->uri->segment(2)=="weights"){
-  echo '<link rel="stylesheet" type="text/css" href="' . base_url("assets/media/jqueryui/jquery-ui.theme.css") . '">';
-  echo '<link rel="stylesheet" type="text/css" href="' . base_url("assets/media/jqueryui/jquery-ui.min.css") . '">';
-  echo '<link rel="stylesheet" type="text/css" href="' . base_url("assets/css/bootstrap-slider.min.css") . '">';
-}?>
+  <?php if ($this->uri->segment(2)=="weights"){
+    echo '<link rel="stylesheet" type="text/css" href="' . base_url("assets/media/jqueryui/jquery-ui.theme.css") . '">';
+    echo '<link rel="stylesheet" type="text/css" href="' . base_url("assets/media/jqueryui/jquery-ui.min.css") . '">';
+    echo '<link rel="stylesheet" type="text/css" href="' . base_url("assets/css/bootstrap-slider.min.css") . '">';
+  }?>
 
+  <?php if( ($this->uri->segment(2)=="users") || ($this->uri->segment(2)=="techniques") ){
+    echo '<link rel="stylesheet" type="text/css" href="' . base_url("assets/media/datatables/css/dataTables.bootstrap.min.css") . '">';
+  }?>
 
-<?php if( ($this->uri->segment(2)=="users") || ($this->uri->segment(2)=="techniques") ){
-  echo '<link rel="stylesheet" type="text/css" href="' . base_url("assets/media/datatables/css/dataTables.bootstrap.min.css") . '">';
-}?>
+  <?php if($this->uri->segment(1)=="admin"){
+    echo '<link rel="stylesheet" type="text/css" href="' . base_url("assets/css/admin.css") . '">';
+  }?>
 
-<?php if($this->uri->segment(1)=="admin"){
-  echo '<link rel="stylesheet" type="text/css" href="' . base_url("assets/css/admin.css") . '">';
-}?>
+  <?php if ( ($this->uri->segment(1)=="insert_test") || ($this->uri->segment(1)=="form") ){
+    
+    echo '<link rel="stylesheet" type="text/css" href="' . base_url("assets/media/tagsinput/bootstrap-tagsinput-typeahead.css") . '">';
+    echo '<link rel="stylesheet" type="text/css" href="' . base_url("assets/media/tagsinput/bootstrap-tagsinput.css") . '">';
+  }?>
 
   <link rel="manifest" href="<? echo base_url("assets/fav/manifest.json");?>">
   <meta name="msapplication-TileColor" content="#ffffff">

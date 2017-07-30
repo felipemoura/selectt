@@ -32,13 +32,11 @@ class Utilidades_model extends CI_Model
       return $data;  
 	}
 
-	function getFields () {
-		$study = 'Study Identification';
-		$query = $this->db->select ('*')->from('Field')->where('category !=  ', $study)->get();
-
+	function getFieldsCategory ($category) {
+		$query = $this->db->select ('*')->from('Field')->where('category =  ', $category)->get();
 		$count = 0;
 		foreach ($query->result() as $row) {    
-			$data['fields'][$count++] = array ( 
+			$data[$count++] = array ( 
 				'idField'       	=> $row->idField,
 				'atribute'      	=> $row->atribute,
 				'category'      	=> $row->category,
@@ -48,10 +46,10 @@ class Utilidades_model extends CI_Model
 				'html_row_count'   	=> $row->html_row_count,
 				'html_label'    	=> $row->html_label,
 				'html_placeholder'  => $row->html_placeholder,
-				'html_info'    		=> $row->html_info
+				'html_info'    		=> $row->html_info,
+				'html_code'    		=> $row->html_code
 				);
 		}
-
 		return $data;  
 	}
 

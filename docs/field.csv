@@ -3,7 +3,7 @@ idField;category;atribute;weight;html_ID;html_Name;html_row_count;html_label;htm
 2;Study identification;Year;0.00;year;year;;Year;;Year that the article was published
 3;Study identification;Bibliografic Reference (BibTex);0.00;bibtex;bibtex;3;Bibliografic reference (Bibtex);Please enter with Bibliografic reference (Bibtex);
 4;Study identification;Link (URL);0.00;link;link;1;Link (URL);Please enter with Link (URL);Link to the article
-5;Programming model;Execution platformm ;0.0680;executionPlatform;executionPlatform;1;Execution platform;Please enter with Execution platformm ;Execution platform that the software under test executes
+5;Programming model;Execution platform;0.0680;executionPlatform;executionPlatform;1;Execution platform;Please enter with Execution platformm ;Execution platform that the software under test executes
 6;Programming model;Objective;0.00;objective;objective;1;Context/Objective;Please enter with Context/Objective;Context/objective of the concurrent software
 7;Programming model;Programming language ;0.0573;programmingLanguage;programmingLanguage;1;Programming Language/Runtime libraries;Please enter with Programming language ;Programming language and/or runtime libraries that the software under testing was developed
 8;General testing characteristics;Testing technique ;0.0738;testingTechnique;testingTechnique;1;Testing technique ;Please enter with Testing Technique;Type of testing technique proposed
@@ -23,4 +23,4 @@ idField;category;atribute;weight;html_ID;html_Name;html_row_count;html_label;htm
 22;Concurrent testing characteristics;Concurrent bugs;0.0777;concurrentBugs;concurrentBugs;1;Concurrent bugs;Please enter with Concurrent bugs;The type of concurrent bugs identified by the testing technique
 23;Testing tool support;Tool name;0.0670;toolName;toolName;1;Tool name;Please enter with Tool name;Name of the tool if the technique presents one
 24;Testing tool support;Cost;0.00;cost;cost;1;Cost;Please enter with Cost;The cost associated with the tool
-25;Testing tool support;Platform;0.00;platform;platform;1;Platform that the tool operate;Please enter with Platform;The execution platform that the tool operate
+25;Testing tool support;PlatformTool;0.00;platformTool;platformTool;1;Platform that the tool operates;Please enter with Platform Tool;The execution platform that the tool operates

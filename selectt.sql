@@ -22,7 +22,7 @@ DROP TABLE IF EXISTS `dbo`.`Field`;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `dbo`.`Field` (
   `idField` INT NOT NULL AUTO_INCREMENT,
-  `category` VARCHAR(32) NOT NULL,
+  `category` VARCHAR(64) NOT NULL,
   `atribute` VARCHAR(64) NOT NULL,
   `weight` DECIMAL(10,4) NOT NULL DEFAULT 0.0000,
   `html_id` VARCHAR(64) NULL,
@@ -31,6 +31,7 @@ CREATE TABLE IF NOT EXISTS `dbo`.`Field` (
   `html_label` VARCHAR(64) NULL,
   `html_placeholder` VARCHAR(64) NULL,
   `html_info` VARCHAR(128) NULL,
+  `html_code` VARCHAR(2048) NULL,
   PRIMARY KEY (`idField`),
   UNIQUE INDEX `idField_UNIQUE` (`idField` ASC)
   )
@@ -56,7 +57,7 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
 
 -- Field
-INSERT INTO `dbo`.`Field` (`idField`, `category`, `atribute`, `weight`, `html_id`, `html_name`, `html_row_count`, `html_label`, `html_placeholder`, `html_info`) VALUES ('1', 'Study identification', 'Title', '0.00', 'title', 'title', '1', 'Title', 'Please enter with Title', '');
+INSERT INTO `dbo`.`Field` (`idField`, `category`, `atribute`, `weight`, `html_id`, `html_name`, `html_row_count`, `html_label`, `html_placeholder`, `html_info`) VALUES ('1', 'Study identification', 'Title', '0.00', 'title', 'title', '1', 'Title', 'Please enter with Title', 'The Title of the project published');
 INSERT INTO `dbo`.`Field` (`idField`, `category`, `atribute`, `weight`, `html_id`, `html_name`, `html_row_count`, `html_label`, `html_placeholder`, `html_info`) VALUES ('2', 'Study identification', 'Year', '0.00', 'year', 'year', '', 'Year', '', 'Year that the article was published');
 INSERT INTO `dbo`.`Field` (`idField`, `category`, `atribute`, `weight`, `html_id`, `html_name`, `html_row_count`, `html_label`, `html_placeholder`, `html_info`) VALUES ('3', 'Study identification', 'Bibliografic Reference (BibTex)', '0.00', 'bibtex', 'bibtex', '3', 'Bibliografic reference (Bibtex)', 'Please enter with Bibliografic reference (Bibtex)', '');
 INSERT INTO `dbo`.`Field` (`idField`, `category`, `atribute`, `weight`, `html_id`, `html_name`, `html_row_count`, `html_label`, `html_placeholder`, `html_info`) VALUES ('4', 'Study identification', 'Link (URL)', '0.00', 'link', 'link', '1', 'Link (URL)', 'Please enter with Link (URL)', 'Link to the article');

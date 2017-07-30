@@ -69,17 +69,17 @@ CREATE TABLE `dbo`.`user` (
 INSERT INTO `dbo`.`user` (`ID`, `FULLNAME`, `EMAIL`, `PASSWORD`, `USERNAME`, `INSTITUTION`, `ISADMIN`, `STATUS`, `ACTIVATIONKEY`, `CREATED`) 
 VALUES ('1', 'Felipe Moreira Moura', 'felpemoura@usp.br', '7e04da88cbb8cc933c7b89fbfe121cca', 'felipe', 'USP', '1', '1', '7e04da88cbb8cc933c7b89fbfe121cca', NOW());
 
--- INSERT INTO `dbo`.`user` (`ID`, `FULLNAME`, `EMAIL`, `PASSWORD`, `USERNAME`, `INSTITUTION`, `STATUS`) 
--- VALUES ('2', 'Teste Testinho', 'teste@usp.br', '698dc19d489c4e4db73e28a713eab07b', 'teste', 'USP', '1');
+INSERT INTO `dbo`.`user` (`ID`, `FULLNAME`, `EMAIL`, `PASSWORD`, `USERNAME`, `INSTITUTION`, `STATUS`) 
+VALUES ('2', 'Teste Testinho', 'teste@usp.br', '698dc19d489c4e4db73e28a713eab07b', 'teste', 'USP', '1');
 
-DROP TABLE IF EXISTS `dbo`.`dbo_sessions` ; 
+DROP TABLE IF EXISTS `dbo`.`selectt_sessions` ; 
 
-CREATE TABLE `dbo`.`dbo_sessions` (
+CREATE TABLE `dbo`.`selectt_sessions` (
         `id` varchar(128) NOT NULL,
         `ip_address` varchar(45) NOT NULL,
         `timestamp` int(10) unsigned DEFAULT 0 NOT NULL,
         `data` blob NOT NULL,
-        KEY `dbo_sessions_timestamp` (`timestamp`)
+        KEY `selectt_sessions_timestamp` (`timestamp`)
 );
 
 DROP TABLE IF EXISTS `dbo`.`caracterization`; 

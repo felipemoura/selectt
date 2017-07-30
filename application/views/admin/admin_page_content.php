@@ -126,7 +126,25 @@
 <!-- START OF FOOTER -->
 <? $this->load->view('templates/footer');?>
 <script src="<?= base_url('assets/js/tinymce/tinymce.min.js'); ?>" type="text/javascript"></script>
-<script src="<?= base_url('assets/js/admin_content.js'); ?>" type="text/javascript"></script>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    tinymce.init({ 
+      selector:"textarea" ,
+      height: 300 ,
+      theme: 'modern',
+      plugins: [
+      'advlist autolink lists link image charmap print preview hr anchor pagebreak',
+      'searchreplace wordcount visualblocks visualchars code fullscreen',
+      'insertdatetime media nonbreaking save table contextmenu directionality',
+      'emoticons template paste textcolor colorpicker textpattern imagetools codesample toc help'
+      ],
+      toolbar1: 'undo redo | insert | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
+      toolbar2: 'print preview media | forecolor backcolor emoticons | codesample help',
+      image_advtab: true
+    });
+  });
+</script>
 
 
 <!-- END OF IT -->

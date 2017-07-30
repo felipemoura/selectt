@@ -92,63 +92,8 @@ class Admin_model extends CI_Model
       return $data;  
     }
 
-    //insert into user table
-    function loadTechniques ()
-    {
-      $this->db->select ('*');
-      $this->db->from('caracterization');
-      $query = $this->db->get();
-      $count = 0;
-
-      foreach ($query->result() as $row) {    
-        $data['info'][$count++] = array ( 'ID'                              => $row->ID,
-                                          'Title'                           => $row->Title,
-                                          'Year'                            => $row->Year,
-                                          'Approach'                        => $row->Approach,
-                                          'Bibliografic Reference'          => $row->BibliograficReference,
-                                          'Technique Link'                  => $row->TechniqueLink,
-                                          'Development Paradigm'            => $row->DevelopmentParadigm,
-                                          'Software Execution Platform'     => $row->SoftwareExecutionPlatform,
-                                          'Software Language'               => $row->SoftwareLanguage,
-                                          'Typeof Testing Technique'        => $row->TypeofTestingTechnique,
-                                          'Testing Level'                   => $row->TestingLevel,
-                                          'Test Case Generation Criteria'   => $row->TestCaseGenerationCriteria,
-                                          'Inputs Required'                 => $row->InputsRequired,
-                                          'Results Generated'               => $row->ResultsGenerated,
-                                          'Failures Revealed'               => $row->FailuresRevealed,
-                                          'Quality Attributes'              => $row->QualityAttributes,
-                                          'Concurrent BugPattern'           => $row->ConcurrentBugPattern,
-                                          'Graphica lRepresentation'        => $row->GraphicalRepresentation,
-                                          'Type of Analysis'                => $row->Typeofanalysis,
-                                          'Paradigm'                        => $row->Paradigm,
-                                          'Mechanism Of Replay'             => $row->MechanismOfReplay,
-                                          'Instrumentation'                 => $row->Instrumentation,
-                                          'State Space'                     => $row->StateSpace,
-                                          'Tool'                            => $row->Tool,
-                                          'Tool Ref Catalog'                => $row->ToolRefCatalog,
-                                          'Automation Level'                => $row->AutomationLevel,
-                                          'Platform Operation'              => $row->PlatformOperation,
-                                          'ToolCost'                        => $row->ToolCost,
-                                          'Approval'                        => $row->NeedApproval
-                                        );
-      }
-    
-      return $data;  
-    }
-
-    function deleteRegister ($id) 
-    {
-      $this->db->delete ('caracterization', array('ID' =>  $id));
-    }
-
-    function approveRegister ($id) 
-    {
-      $data = array( 'NeedApproval' => 0 );
-      $this->db->where('ID', $id);
-      $this->db->update('caracterization', $data); 
-    }
-
-    function updateRegister ($id, $data) 
+    // update technique
+      function updateRegister ($id, $data) 
     {
       $this->db->where('ID', $id);
       return $this->db->update('caracterization', $data); 

@@ -14,6 +14,8 @@ class Admin extends MY_Controller {
         $this->load->model('admin_model');
    		$this->load->model('insert_model');
         $this->load->model('Utilidades_model', 'utility');
+        $this->load->model('Technique', 'technique');
+        $this->load->model('User', 'user');
  	}
  
 	public function index()
@@ -27,7 +29,7 @@ class Admin extends MY_Controller {
     }
     
     public function techniques () {
-        $data = $this->admin_model->loadTechniques();
+        $data = $this->technique->getAllTechniques();
         $this->load->view('admin/admin_page_techniques', $data);
     }
 
@@ -37,7 +39,7 @@ class Admin extends MY_Controller {
     }
 
     public function users () {
-        $data = $this->admin_model->loadUsers();
+        $data = $this->user->getAllUsers();
         $this->load->view('admin/admin_page_users', $data);
     }
 
@@ -51,16 +53,14 @@ class Admin extends MY_Controller {
     }
 
 
-    // TECHNIQUES functions
-    //
-    //
-	public function deleteRecord ($id) {
-		$this->admin_model->deleteRegister($id);
+    // TECHNIQUES admin functions
+	public function deleteTechnique ($id) {
+		$this->technique->deleteTechnique($id);
 		redirect(base_url('admin/techniques'));
 	}
 
-	public function approveRecord ($id) {
-		$this->admin_model->approveRegister($id);
+	public function approveTechnique ($id) {
+		$this->technique->approveTechnique($id);
 		redirect(base_url('admin/techniques'));
 	}
 

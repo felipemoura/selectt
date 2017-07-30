@@ -105,17 +105,16 @@ $route['admin'] = 'admin';
 
 // admin techniques
 $route['admin/techniques'] = 'admin/techniques';
-$route['admin/deleteRecord/(:num)'] = 'admin/deleteRecord/$1';
-$route['admin/approveRecord/(:num)'] = 'admin/approveRecord/$1';
+$route['admin/deleteTechnique/(:num)'] = 'admin/deleteTechnique/$1';
+$route['admin/approveTechnique/(:num)'] = 'admin/approveTechnique/$1';
 $route['admin/editInfo/(:num)'] = 'admin/editInfo/$1';
 $route['admin/updateRecord/(:num)'] = 'admin/updateRecord/$1';
 // invalid admin techiniquesp ath
 $route['admin/techniques/(.*)'] = 'admin/techniques';
-$route['admin/deleteRecord/(.*)'] = 'admin/techniques';
-$route['admin/approveRecord/(.*)'] = 'admin/techniques';
+$route['admin/deleteTechnique/(.*)'] = 'admin/techniques';
+$route['admin/approveTechnique/(.*)'] = 'admin/techniques';
 $route['admin/editInfo/(.*)'] = 'admin/techniques';
 $route['admin/updateRecord/(.*)'] = 'admin/techniques';
-
 
 // admin users
 $route['admin/users'] = 'admin/users';
