@@ -887,10 +887,426 @@
     INSERT INTO `Cost` (`idTechnique`, `cost`) VALUES (7, 'No Information');
     INSERT INTO `PlatformTool` (`idTechnique`, `platformTool`) VALUES (7, 'Linux');
 
+
+    -- -----------------------------------------------------
+    -- Table `dbo`.`ResultTechnique`
+    -- -----------------------------------------------------
+    DROP TABLE IF EXISTS `dbo`.`ResultTechnique`; 
+
+    CREATE TABLE IF NOT EXISTS `dbo`.`ResultTechnique` (
+      `id` INT NOT NULL AUTO_INCREMENT,
+      `title` VARCHAR(255) NOT NULL,
+      `insertedBy` VARCHAR(128) NOT NULL DEFAULT 'admin',
+      `insertedOn` DATETIME NOT NULL,
+      PRIMARY KEY (`id`),
+      UNIQUE INDEX `id_UNIQUE` (`id` ASC))
+    ENGINE = InnoDB;
+
+
+    -- -----------------------------------------------------
+    -- Table `dbo`.`ResultExecutionPlatform`
+    -- -----------------------------------------------------
+    DROP TABLE IF EXISTS `dbo`.`ResultExecutionPlatform`; 
+
+    CREATE TABLE IF NOT EXISTS `dbo`.`ResultExecutionPlatform` (
+      `id` INT NOT NULL AUTO_INCREMENT,
+      `idTechniqueResult` INT NOT NULL,
+      `executionPlatform` VARCHAR(255) NOT NULL,
+      PRIMARY KEY (`id`),
+      UNIQUE INDEX `id_UNIQUE` (`id` ASC),
+      INDEX `idTechniqueResult_idx` (`idTechniqueResult` ASC),
+      CONSTRAINT `idTechniqueResult_1`
+        FOREIGN KEY (`idTechniqueResult`)
+        REFERENCES `dbo`.`ResultTechnique` (`id`)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE)
+    ENGINE = InnoDB;
+
+    -- -----------------------------------------------------
+    -- Table `dbo`.`ResultObjective`
+    -- -----------------------------------------------------
+    DROP TABLE IF EXISTS `dbo`.`ResultObjective`; 
+
+    CREATE TABLE IF NOT EXISTS `dbo`.`ResultObjective` (
+      `id` INT NOT NULL AUTO_INCREMENT,
+      `idTechniqueResult` INT NOT NULL,
+      `objective` VARCHAR(255) NOT NULL,
+      PRIMARY KEY (`id`),
+      UNIQUE INDEX `id_UNIQUE` (`id` ASC),
+      INDEX `idTechniqueResult_idx` (`idTechniqueResult` ASC),
+      CONSTRAINT `idTechniqueResult_2`
+        FOREIGN KEY (`idTechniqueResult`)
+        REFERENCES `dbo`.`ResultTechnique` (`id`)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE)
+    ENGINE = InnoDB;
+
+    -- -----------------------------------------------------
+    -- Table `dbo`.`ResultProgrammingLanguage`
+    -- -----------------------------------------------------
+    DROP TABLE IF EXISTS `dbo`.`ResultProgrammingLanguage`; 
+
+    CREATE TABLE IF NOT EXISTS `dbo`.`ResultProgrammingLanguage` (
+      `id` INT NOT NULL AUTO_INCREMENT,
+      `idTechniqueResult` INT NOT NULL,
+      `programmingLanguage` VARCHAR(255) NOT NULL,
+      PRIMARY KEY (`id`),
+      UNIQUE INDEX `id_UNIQUE` (`id` ASC),
+      INDEX `idTechniqueResult_idx` (`idTechniqueResult` ASC),
+      CONSTRAINT `idTechniqueResult_3`
+        FOREIGN KEY (`idTechniqueResult`)
+        REFERENCES `dbo`.`ResultTechnique` (`id`)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE)
+    ENGINE = InnoDB;
+
+    -- -----------------------------------------------------
+    -- Table `dbo`.`ResultTestingTechnique`
+    -- -----------------------------------------------------
+    DROP TABLE IF EXISTS `dbo`.`ResultTestingTechnique`; 
+
+    CREATE TABLE IF NOT EXISTS `dbo`.`ResultTestingTechnique` (
+      `id` INT NOT NULL AUTO_INCREMENT,
+      `idTechniqueResult` INT NOT NULL,
+      `testingTechnique` VARCHAR(255) NOT NULL,
+      PRIMARY KEY (`id`),
+      UNIQUE INDEX `id_UNIQUE` (`id` ASC),
+      INDEX `idTechniqueResult_idx` (`idTechniqueResult` ASC),
+      CONSTRAINT `idTechniqueResult_4`
+        FOREIGN KEY (`idTechniqueResult`)
+        REFERENCES `dbo`.`ResultTechnique` (`id`)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE)
+    ENGINE = InnoDB;
+
+
+    -- -----------------------------------------------------
+    -- Table `dbo`.`ResultTestDataGeneration`
+    -- -----------------------------------------------------
+    DROP TABLE IF EXISTS `dbo`.`ResultTestDataGeneration`; 
+
+    CREATE TABLE IF NOT EXISTS `dbo`.`ResultTestDataGeneration` (
+      `id` INT NOT NULL AUTO_INCREMENT,
+      `idTechniqueResult` INT NOT NULL,
+      `testDataGeneration` VARCHAR(255) NOT NULL,
+      PRIMARY KEY (`id`),
+      UNIQUE INDEX `id_UNIQUE` (`id` ASC),
+      INDEX `idTechniqueResult_idx` (`idTechniqueResult` ASC),
+      CONSTRAINT `idTechniqueResult_5`
+        FOREIGN KEY (`idTechniqueResult`)
+        REFERENCES `dbo`.`ResultTechnique` (`id`)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE)
+    ENGINE = InnoDB;
+
+    -- -----------------------------------------------------
+    -- Table `dbo`.`ResultTestingLevel`
+    -- -----------------------------------------------------
+    DROP TABLE IF EXISTS `dbo`.`ResultTestingLevel`; 
+
+    CREATE TABLE IF NOT EXISTS `dbo`.`ResultTestingLevel` (
+      `id` INT NOT NULL AUTO_INCREMENT,
+      `idTechniqueResult` INT NOT NULL,
+      `testingLevel` VARCHAR(255) NOT NULL,
+      PRIMARY KEY (`id`),
+      UNIQUE INDEX `id_UNIQUE` (`id` ASC),
+      INDEX `idTechniqueResult_idx` (`idTechniqueResult` ASC),
+      CONSTRAINT `idTechniqueResult_6`
+        FOREIGN KEY (`idTechniqueResult`)
+        REFERENCES `dbo`.`ResultTechnique` (`id`)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE)
+    ENGINE = InnoDB;
+
+    -- -----------------------------------------------------
+    -- Table `dbo`.`ResultSynchronizationMechanism`
+    -- -----------------------------------------------------
+    DROP TABLE IF EXISTS `dbo`.`ResultSynchronizationMechanism`; 
+
+    CREATE TABLE IF NOT EXISTS `dbo`.`ResultSynchronizationMechanism` (
+      `id` INT NOT NULL AUTO_INCREMENT,
+      `idTechniqueResult` INT NOT NULL,
+      `synchronizationMechanism` VARCHAR(255) NOT NULL,
+      PRIMARY KEY (`id`),
+      UNIQUE INDEX `id_UNIQUE` (`id` ASC),
+      INDEX `idTechniqueResult_idx` (`idTechniqueResult` ASC),
+      CONSTRAINT `idTechniqueResult_7`
+        FOREIGN KEY (`idTechniqueResult`)
+        REFERENCES `dbo`.`ResultTechnique` (`id`)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE)
+    ENGINE = InnoDB;
+
+    -- -----------------------------------------------------
+    -- Table `dbo`.`ResultInput`
+    -- -----------------------------------------------------
+    DROP TABLE IF EXISTS `dbo`.`ResultInput`; 
+
+    CREATE TABLE IF NOT EXISTS `dbo`.`ResultInput` (
+      `id` INT NOT NULL AUTO_INCREMENT,
+      `idTechniqueResult` INT NOT NULL,
+      `input` VARCHAR(255) NOT NULL,
+      PRIMARY KEY (`id`),
+      UNIQUE INDEX `id_UNIQUE` (`id` ASC),
+      INDEX `idTechniqueResult_idx` (`idTechniqueResult` ASC),
+      CONSTRAINT `idTechniqueResult_8`
+        FOREIGN KEY (`idTechniqueResult`)
+        REFERENCES `dbo`.`ResultTechnique` (`id`)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE)
+    ENGINE = InnoDB;
+
+    -- -----------------------------------------------------
+    -- Table `dbo`.`ResultOutput`
+    -- -----------------------------------------------------
+    DROP TABLE IF EXISTS `dbo`.`ResultOutput`; 
+
+    CREATE TABLE IF NOT EXISTS `dbo`.`ResultOutput` (
+      `id` INT NOT NULL AUTO_INCREMENT,
+      `idTechniqueResult` INT NOT NULL,
+      `output` VARCHAR(255) NOT NULL,
+      PRIMARY KEY (`id`),
+      UNIQUE INDEX `id_UNIQUE` (`id` ASC),
+      INDEX `idTechniqueResult_idx` (`idTechniqueResult` ASC),
+      CONSTRAINT `idTechniqueResult_9`
+        FOREIGN KEY (`idTechniqueResult`)
+        REFERENCES `dbo`.`ResultTechnique` (`id`)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE)
+    ENGINE = InnoDB;
+
+    -- -----------------------------------------------------
+    -- Table `dbo`.`ResultQualityAttribute`
+    -- -----------------------------------------------------
+    DROP TABLE IF EXISTS `dbo`.`ResultQualityAttribute`; 
+
+    CREATE TABLE IF NOT EXISTS `dbo`.`ResultQualityAttribute` (
+      `id` INT NOT NULL AUTO_INCREMENT,
+      `idTechniqueResult` INT NOT NULL,
+      `qualityAttribute` VARCHAR(255) NOT NULL,
+      PRIMARY KEY (`id`),
+      UNIQUE INDEX `id_UNIQUE` (`id` ASC),
+      INDEX `idTechniqueResult_idx` (`idTechniqueResult` ASC),
+      CONSTRAINT `idTechniqueResult_10`
+        FOREIGN KEY (`idTechniqueResult`)
+        REFERENCES `dbo`.`ResultTechnique` (`id`)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE)
+    ENGINE = InnoDB;
+
+
+    -- -----------------------------------------------------
+    -- Table `dbo`.`ResultTypeOfStudy`
+    -- -----------------------------------------------------
+    DROP TABLE IF EXISTS `dbo`.`ResultTypeOfStudy`; 
+
+    CREATE TABLE IF NOT EXISTS `dbo`.`ResultTypeOfStudy` (
+      `id` INT NOT NULL AUTO_INCREMENT,
+      `idTechniqueResult` INT NOT NULL,
+      `typeOfStudy` VARCHAR(255) NOT NULL,
+      PRIMARY KEY (`id`),
+      UNIQUE INDEX `id_UNIQUE` (`id` ASC),
+      INDEX `idTechniqueResult_idx` (`idTechniqueResult` ASC),
+      CONSTRAINT `idTechniqueResult_11`
+        FOREIGN KEY (`idTechniqueResult`)
+        REFERENCES `dbo`.`ResultTechnique` (`id`)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE)
+    ENGINE = InnoDB;
+
+    -- -----------------------------------------------------
+    -- Table `dbo`.`ResultTestingAnalysis`
+    -- -----------------------------------------------------
+    DROP TABLE IF EXISTS `dbo`.`ResultTestingAnalysis`; 
+
+    CREATE TABLE IF NOT EXISTS `dbo`.`ResultTestingAnalysis` (
+      `id` INT NOT NULL AUTO_INCREMENT,
+      `idTechniqueResult` INT NOT NULL,
+      `testingAnalysis` VARCHAR(255) NOT NULL,
+      PRIMARY KEY (`id`),
+      UNIQUE INDEX `id_UNIQUE` (`id` ASC),
+      INDEX `idTechniqueResult_idx` (`idTechniqueResult` ASC),
+      CONSTRAINT `idTechniqueResult_12`
+        FOREIGN KEY (`idTechniqueResult`)
+        REFERENCES `dbo`.`ResultTechnique` (`id`)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE)
+    ENGINE = InnoDB;
+
+    -- -----------------------------------------------------
+    -- Table `dbo`.`ResultConcurrentParadigm`
+    -- -----------------------------------------------------
+    DROP TABLE IF EXISTS `dbo`.`ResultConcurrentParadigm`; 
+
+    CREATE TABLE IF NOT EXISTS `dbo`.`ResultConcurrentParadigm` (
+      `id` INT NOT NULL AUTO_INCREMENT,
+      `idTechniqueResult` INT NOT NULL,
+      `concurrentParadigm` VARCHAR(255) NOT NULL,
+      PRIMARY KEY (`id`),
+      UNIQUE INDEX `id_UNIQUE` (`id` ASC),
+      INDEX `idTechniqueResult_idx` (`idTechniqueResult` ASC),
+      CONSTRAINT `idTechniqueResult_13`
+        FOREIGN KEY (`idTechniqueResult`)
+        REFERENCES `dbo`.`ResultTechnique` (`id`)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE)
+    ENGINE = InnoDB;
+
+    -- -----------------------------------------------------
+    -- Table `dbo`.`ResultReplayMechanism`
+    -- -----------------------------------------------------
+    DROP TABLE IF EXISTS `dbo`.`ResultReplayMechanism`; 
+
+    CREATE TABLE IF NOT EXISTS `dbo`.`ResultReplayMechanism` (
+      `id` INT NOT NULL AUTO_INCREMENT,
+      `idTechniqueResult` INT NOT NULL,
+      `replayMechanism` VARCHAR(255) NOT NULL,
+      PRIMARY KEY (`id`),
+      UNIQUE INDEX `id_UNIQUE` (`id` ASC),
+      INDEX `idTechniqueResult_idx` (`idTechniqueResult` ASC),
+      CONSTRAINT `idTechniqueResult_14`
+        FOREIGN KEY (`idTechniqueResult`)
+        REFERENCES `dbo`.`ResultTechnique` (`id`)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE)
+    ENGINE = InnoDB;
+
+    -- -----------------------------------------------------
+    -- Table `dbo`.`ResultProgramRepresentation`
+    -- -----------------------------------------------------
+    DROP TABLE IF EXISTS `dbo`.`ResultProgramRepresentation`; 
+
+    CREATE TABLE IF NOT EXISTS `dbo`.`ResultProgramRepresentation` (
+      `id` INT NOT NULL AUTO_INCREMENT,
+      `idTechniqueResult` INT NOT NULL,
+      `programRepresentation` VARCHAR(255) NOT NULL,
+      PRIMARY KEY (`id`),
+      UNIQUE INDEX `id_UNIQUE` (`id` ASC),
+      INDEX `idTechniqueResult_idx` (`idTechniqueResult` ASC),
+      CONSTRAINT `idTechniqueResult_15`
+        FOREIGN KEY (`idTechniqueResult`)
+        REFERENCES `dbo`.`ResultTechnique` (`id`)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE)
+    ENGINE = InnoDB;
+
+
+    -- -----------------------------------------------------
+    -- Table `dbo`.`ResultInstrumentation`
+    -- -----------------------------------------------------
+    DROP TABLE IF EXISTS `dbo`.`ResultInstrumentation`; 
+
+    CREATE TABLE IF NOT EXISTS `dbo`.`ResultInstrumentation` (
+      `id` INT NOT NULL AUTO_INCREMENT,
+      `idTechniqueResult` INT NOT NULL,
+      `instrumentation` VARCHAR(255) NOT NULL,
+      PRIMARY KEY (`id`),
+      UNIQUE INDEX `id_UNIQUE` (`id` ASC),
+      INDEX `idTechniqueResult_idx` (`idTechniqueResult` ASC),
+      CONSTRAINT `idTechniqueResult_16`
+        FOREIGN KEY (`idTechniqueResult`)
+        REFERENCES `dbo`.`ResultTechnique` (`id`)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE)
+    ENGINE = InnoDB;
+
+    -- -----------------------------------------------------
+    -- Table `dbo`.`ResultStateSpaceReduction`
+    -- -----------------------------------------------------
+    DROP TABLE IF EXISTS `dbo`.`ResultStateSpaceReduction`; 
+
+    CREATE TABLE IF NOT EXISTS `dbo`.`ResultStateSpaceReduction` (
+      `id` INT NOT NULL AUTO_INCREMENT,
+      `idTechniqueResult` INT NOT NULL,
+      `stateSpaceReduction` VARCHAR(255) NOT NULL,
+      PRIMARY KEY (`id`),
+      UNIQUE INDEX `id_UNIQUE` (`id` ASC),
+      INDEX `idTechniqueResult_idx` (`idTechniqueResult` ASC),
+      CONSTRAINT `idTechniqueResult_17`
+        FOREIGN KEY (`idTechniqueResult`)
+        REFERENCES `dbo`.`ResultTechnique` (`id`)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE)
+    ENGINE = InnoDB;
+
+    -- -----------------------------------------------------
+    -- Table `dbo`.`ResultConcurrentBugs`
+    -- -----------------------------------------------------
+    DROP TABLE IF EXISTS `dbo`.`ResultConcurrentBugs`; 
+
+    CREATE TABLE IF NOT EXISTS `dbo`.`ResultConcurrentBugs` (
+      `id` INT NOT NULL AUTO_INCREMENT,
+      `idTechniqueResult` INT NOT NULL,
+      `concurrentBugs` VARCHAR(255) NOT NULL,
+      PRIMARY KEY (`id`),
+      UNIQUE INDEX `id_UNIQUE` (`id` ASC),
+      INDEX `idTechniqueResult_idx` (`idTechniqueResult` ASC),
+      CONSTRAINT `idTechniqueResult_18`
+        FOREIGN KEY (`idTechniqueResult`)
+        REFERENCES `dbo`.`ResultTechnique` (`id`)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE)
+    ENGINE = InnoDB;
+
+    -- -----------------------------------------------------
+    -- Table `dbo`.`ResultToolName`
+    -- -----------------------------------------------------
+    DROP TABLE IF EXISTS `dbo`.`ResultToolName`; 
+
+    CREATE TABLE IF NOT EXISTS `dbo`.`ResultToolName` (
+      `id` INT NOT NULL AUTO_INCREMENT,
+      `idTechniqueResult` INT NOT NULL,
+      `toolName` VARCHAR(255) NOT NULL,
+      PRIMARY KEY (`id`),
+      UNIQUE INDEX `id_UNIQUE` (`id` ASC),
+      INDEX `idTechniqueResult_idx` (`idTechniqueResult` ASC),
+      CONSTRAINT `idTechniqueResult_19`
+        FOREIGN KEY (`idTechniqueResult`)
+        REFERENCES `dbo`.`ResultTechnique` (`id`)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE)
+    ENGINE = InnoDB;
+
+    -- -----------------------------------------------------
+    -- Table `dbo`.`ResultCost`
+    -- -----------------------------------------------------
+    DROP TABLE IF EXISTS `dbo`.`ResultCost`; 
+
+    CREATE TABLE IF NOT EXISTS `dbo`.`ResultCost` (
+      `id` INT NOT NULL AUTO_INCREMENT,
+      `idTechniqueResult` INT NOT NULL,
+      `cost` VARCHAR(255) NOT NULL,
+      PRIMARY KEY (`id`),
+      UNIQUE INDEX `id_UNIQUE` (`id` ASC),
+      INDEX `idTechniqueResult_idx` (`idTechniqueResult` ASC),
+      CONSTRAINT `idTechniqueResult_20`
+        FOREIGN KEY (`idTechniqueResult`)
+        REFERENCES `dbo`.`ResultTechnique` (`id`)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE)
+    ENGINE = InnoDB;
+
+    -- -----------------------------------------------------
+    -- Table `dbo`.`ResultPlatformTool`
+    -- -----------------------------------------------------
+    DROP TABLE IF EXISTS `dbo`.`ResultPlatformTool`; 
+
+    CREATE TABLE IF NOT EXISTS `dbo`.`ResultPlatformTool` (
+      `id` INT NOT NULL AUTO_INCREMENT,
+      `idTechniqueResult` INT NOT NULL,
+      `PlatformTool` VARCHAR(255) NOT NULL,
+      PRIMARY KEY (`id`),
+      UNIQUE INDEX `id_UNIQUE` (`id` ASC),
+      INDEX `idTechniqueResult_idx` (`idTechniqueResult` ASC),
+      CONSTRAINT `idTechniqueResult_21`
+        FOREIGN KEY (`idTechniqueResult`)
+        REFERENCES `dbo`.`ResultTechnique` (`id`)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE)
+    ENGINE = InnoDB;
+
+
     -- CHECKS
     SET SQL_MODE=@OLD_SQL_MODE;
     SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
     SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
-
-
-

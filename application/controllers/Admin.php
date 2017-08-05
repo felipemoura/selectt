@@ -140,10 +140,7 @@ class Admin extends MY_Controller {
                         'title'         => $this->input->post("title", TRUE),
                         'year'          => ($this->input->post("checkyear", TRUE) == 1 || $this->input->post("year", TRUE) == "") ? 'No Information' : '' . $this->input->post("year", TRUE),
                         'bibTex'        => ($this->input->post("checkbibtex", TRUE) == 1 || $this->input->post("bibtex", TRUE) == "") ? 'No Information' : '' . $this->input->post("bibtex", TRUE),
-                        'link'          => ($this->input->post("checklink", TRUE) == 1 ||  $this->input->post("link", TRUE) == "") ? 'No Information' : '' . $this->input->post("link", TRUE),
-                        'needApproval'   => 1,
-                        'insertedBy'    => $this->session->userdata("username"),
-                        'insertedOn'    => date("Y-m-d H:i:s")
+                        'link'          => ($this->input->post("checklink", TRUE) == 1 ||  $this->input->post("link", TRUE) == "") ? 'No Information' : '' . $this->input->post("link", TRUE)
                     );
 
             $answer = $this->technique->updateTechnique($sql, $targetID);

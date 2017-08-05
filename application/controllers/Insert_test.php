@@ -127,9 +127,7 @@ class Insert_test extends MY_Controller {
 
             redirect(base_url('insert_test'));
         }
-
     }
-
 
 }
 

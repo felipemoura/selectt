@@ -3,15 +3,13 @@
 <? $this->load->view('templates/header_logged'); ?>
 
 
-<? if (isset($info)) : ?>
 <div class="container animated fadeIn">
 
 	<h1>Form Page</h1>
 
-	<h5>Results from <?= $info['title']; ?></h5>
-
+  	<h5>No result, run a form to get results !</h5>
+  	
 </div>
-<? endif; ?>
 
 
 <!-- START OF FOOTER -->

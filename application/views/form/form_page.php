@@ -31,6 +31,7 @@
   <br>
   
   <?php echo form_open(base_url('form/getResults'));?>
+
   <?php echo $this->session->flashdata('msg'); ?> 
 
 
@@ -114,12 +115,8 @@
       queryTokenizer: Bloodhound.tokenizers.whitespace,
 
       prefetch: window.location.origin + '/selectt/api/tableInfo/table/' + capitalizeFirstLetter('<?= $field['html_id']; ?>'),
-      local: window.location.origin + '/selectt/api/tableInfo/table/' + capitalizeFirstLetter('<?= $field['html_id']; ?>'),
-      // prefetch: '../selectt/api/tableInfo/table/' + capitalizeFirstLetter('<?= $field['html_id']; ?>'),
       remote: {
         url: window.location.origin + '/selectt/api/tableInfo/table/' + capitalizeFirstLetter('<?= $field['html_id']; ?>')
-        // url: '../selectt/api/tableInfo/table/%QUERY.json',
-        // wildcard: '%QUERY'
       }
     });
 
@@ -148,19 +145,6 @@
 
     <?php endforeach; ?>
   <?php endforeach; ?>
-
-
-  $(document).ready(function(){
-    var start = 1950;
-    var end = new Date().getFullYear();
-    var options = "<option> </option>";
-
-    for(var year = end ; year >= start; year--){
-      options += "<option>"+ year +"</option>";
-    }
-    document.getElementById("year").innerHTML = options;
-  });
- 
 </script>
 
 <!-- END OF IT  -->

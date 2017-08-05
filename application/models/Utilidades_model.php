@@ -9,6 +9,46 @@ class Utilidades_model extends CI_Model
 	}
 
 	// WEIGHTS function
+	function compareFields($compare, $value, $weight )
+	{
+		if (strcasecmp($value, $compare) === 0) 
+		{
+			return $weight;
+		}
+
+		return 0;
+	}
+
+	function generateFieldsForCompare ($baseField, $compareField, $weightValue )
+	{
+		$data 				= array();
+		$max				= 0.000;
+
+		$count = 0;
+		foreach ($baseField as $valueBase) {
+		
+			foreach ($compareField as $valueCompare) {
+				$data[$count++] = array(
+								'baseValue' 		=> $valueBase, 
+								'compareValue' 		=> $valueCompare, 
+								'weight' 			=> $weightValue ,
+								'result'			=> $this->compareFields ($valueBase, $valueCompare, $weightValue)
+							);
+			}
+		}
+
+
+		foreach ($data as $value) {
+			if ($value['result'] > $max) {
+				$max = $value['result'];
+			}
+		}
+
+		$data['max_value'] = $max;
+		return $data;
+	}
+
+
 	function getFields () {
 		$study = 'Study Identification';
 		$query = $this->db->select ('*')->from('Field')->where('category !=  ', $study)->get();

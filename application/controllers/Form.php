@@ -7,9 +7,15 @@ class Form extends MY_Controller {
         parent::__construct();
         $this->load->model('Utilidades_model', 'utility');
         $this->load->model('Technique_model', 'technique');
+        $this->load->model('Result_model', 'result');
     }
 
-	public function index()
+    public function index ()
+    {
+    	$this->loadView();
+    }
+
+	public function loadView()
 	{
 		$data['category'][0] = $this->utility->getFieldsCategory('Programming model');
 		$data['category'][1] = $this->utility->getFieldsCategory('General testing characteristics');
@@ -27,24 +33,77 @@ class Form extends MY_Controller {
 
 	public function getResults ()
 	{
-		print_r($this->input->post());
-		// $matrix;
+		//set validation rules
+        $this->form_validation->set_rules('title','Technique Title','trim|required|min_length[3]|max_length[255]',
+            array (     'required'      => 'You must provide a %s.',
+                        'min_length'    => 'Your %s must have at least 3 characteres.',
+                        'max_length'    => 'Your %s can have up to 255 characteres.'
+                )
+        );
 
-		// for ($i=1; $i <= 15; $i++) { 
-		// 	$matrix[$i-1] = $this->input->post('input_'.$i);
-		// }
-		
-		// // Teste code
-		// $message = "";
-		// foreach ($matrix as $key => $value) {
-		// 	$message = $message.$value."\n";
-		// }
-		// $this->session->set_flashdata('msg','<div class="alert alert-success text-center">'.$message.'</div>');
-		
-		// // do some logic
+        $fields = $this->utility->getFields();
 
-		// redirect('results');
-	}
+        // validate all other forms
+        foreach ($fields['fields'] as $field) {
+            $this->form_validation->set_rules( $field['html_id'], $field['html_label'], 'trim|max_length[255]',
+                array (  'max_length'    => 'Your %s can have up to 255 characteres.'
+                )
+            );
+        }
+
+        //validate form input
+        if ($this->form_validation->run() == FALSE) {
+            $this->loadView();
+
+        } else {
+
+        	$sql = array( 	'title'         => $this->input->post("title", TRUE),
+	                        'insertedBy'    => $this->session->userdata("username"),
+	                        'insertedOn'    => date("Y-m-d H:i:s")
+                    );
+
+			$answer = $this->result->insertTechniqueResult($sql);
+
+			// inserted            
+			if ($answer === TRUE) {
+
+				$id = $this->db->insert_id();
+
+                foreach ($fields['fields'] as $field) {
+                	if ($this->input->post("check" . $field['html_id'], TRUE) == 1 ||  $this->input->post($field['html_id'], TRUE) == "") {
+                		$sql = array( 'idTechniqueResult' => $id, $field['html_id'] => 'No Information' );
+                		$this->result->insertTechniqueResultAtributes ('Result' . ucfirst($field['html_id']), $sql);
+
+                	} else {
+                		$temp = explode(",", $this->input->post($field['html_id'], TRUE));
+
+                		foreach ($temp as $value) {
+                			$sql = array( 'idTechniqueResult' => $id, $field['html_id'] => trim($value) );
+
+                			$this->result->insertTechniqueResultAtributes ('Result' . ucfirst($field['html_id']), $sql);
+                		}    
+                	}
+                }
+
+                // Last result on cookies
+                $this->session->set_userdata( 
+                		array('result_user' => $id)
+                	);
+
+                redirect(base_url('results')); 
+
+            } else {
+            	$this->session->set_flashdata('msg','<div class="alert alert-danger text-center">Something went wrong with the database, please try again later.<br></div>');
+
+            	redirect(base_url('form')); 
+            }
+
+            $this->session->set_flashdata('msg','<div class="alert alert-warning text-center">Unknown behavior, contact the administrator !</div>');
+
+            redirect(base_url('form'));
+        }
+    }
+
 }
 
 ?>

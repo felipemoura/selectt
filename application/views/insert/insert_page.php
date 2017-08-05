@@ -199,7 +199,7 @@
       datumTokenizer: Bloodhound.tokenizers.whitespace,
       queryTokenizer: Bloodhound.tokenizers.whitespace,
       prefetch: window.location.origin + '/selectt/api/tableInfo/table/' + capitalizeFirstLetter('<?= $field['html_id']; ?>'),
-      local: window.location.origin + '/selectt/api/tableInfo/table/' + capitalizeFirstLetter('<?= $field['html_id']; ?>'),
+      // local: window.location.origin + '/selectt/api/tableInfo/table/' + capitalizeFirstLetter('<?= $field['html_id']; ?>'),
       // prefetch: '../selectt/api/tableInfo/table/' + capitalizeFirstLetter('<?= $field['html_id']; ?>'),
       remote: {
         url: window.location.origin + '/selectt/api/tableInfo/table/' + capitalizeFirstLetter('<?= $field['html_id']; ?>')
