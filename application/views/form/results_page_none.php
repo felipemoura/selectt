@@ -5,7 +5,7 @@
 
 <div class="container animated fadeIn">
 
-	<h1>Form Page</h1>
+	<h1>Results Page</h1>
 
   	<h5>No result, run a form to get results !</h5>
   	
