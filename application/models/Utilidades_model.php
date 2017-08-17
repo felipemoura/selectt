@@ -11,36 +11,57 @@ class Utilidades_model extends CI_Model
 	// WEIGHTS function
 	function compareFields($compare, $value, $weight )
 	{
-		if (strcasecmp($value, $compare) === 0) 
-		{
-			return $weight;
+		$temp = array();
+		$encoding = mb_internal_encoding();
+
+		if (strcmp(mb_strtoupper($value, $encoding), mb_strtoupper("No Information", $encoding)) == 0 || 
+			strcmp(mb_strtoupper($compare, $encoding), mb_strtoupper("No Information", $encoding)) == 0 ){
+			$temp['result'] = floatval(0.000);
+			$temp['isMatch'] = false;
+			return $temp;
 		}
 
-		return 0;
+		if (strcmp(mb_strtoupper($compare, $encoding), mb_strtoupper($value, $encoding)) == 0 ){
+			$temp['result'] = floatval($weight);
+			$temp['isMatch'] = true;
+			return $temp;
+		}
+
+		$temp['result'] = floatval(0.000);
+		$temp['isMatch'] = false;
+		return $temp;
 	}
 
 	function generateFieldsForCompare ($baseField, $compareField, $weightValue )
 	{
 		$data 				= array();
-		$max				= 0.000;
+		$max				= floatval(0.000);
+		$data['isMatch'] 	= false;
 
 		$count = 0;
 		foreach ($baseField as $valueBase) {
 		
 			foreach ($compareField as $valueCompare) {
+				$tempResponse = $this->compareFields ($valueBase, $valueCompare, $weightValue);
+
 				$data[$count++] = array(
 								'baseValue' 		=> $valueBase, 
 								'compareValue' 		=> $valueCompare, 
 								'weight' 			=> $weightValue ,
-								'result'			=> $this->compareFields ($valueBase, $valueCompare, $weightValue)
+								'result'			=> $tempResponse['result'],
+								'isMatch'			=> $tempResponse['isMatch'],
 							);
 			}
 		}
 
 
 		foreach ($data as $value) {
-			if ($value['result'] > $max) {
-				$max = $value['result'];
+			if (floatval($value['result']) > $max) {
+				$max = floatval($value['result']);
+			}
+
+			if ($value['isMatch'] == true) {
+				$data['isMatch'] = true;
 			}
 		}
 

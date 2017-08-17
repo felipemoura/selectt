@@ -62,6 +62,8 @@ $route['publication/(.*)'] = 'publication';
 // available techniques
 $route['available-techniques'] = 'available_techniques';
 $route['available-techniques/(.*)'] = 'available_techniques';
+$route['intro'] = 'home/intro';
+$route['intro/(.*)'] = 'home/intro';
 // contact
 $route['contact'] = 'contact';
 $route['contact/sendContactMail'] = 'contact/sendContactMail';

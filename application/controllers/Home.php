@@ -12,7 +12,12 @@ class Home extends CI_Controller {
 	{
 		$data['home'] = $this->utility->getHomeText();
 		$this->load->view('home/home_page', $data);
-	}	
+	}
+
+	public function intro ()
+	{
+		$this->load->view('home/intro_page');	
+	}
 }
 
 ?>

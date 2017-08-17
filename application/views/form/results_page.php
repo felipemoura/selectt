@@ -27,6 +27,32 @@
 
 	a.clickable { color: inherit; }
 	a.clickable:hover { text-decoration:none; }
+
+	table {
+		align-content: center; 
+		align-self: center; 
+		font-size: 16pt;
+		margin: 1em;
+		width: 80%;
+	}
+
+	tr th {
+		background-color: #FAF9FF;
+		font-size: 24pt;
+		text-align: center;
+	}
+
+	tr td {
+		background-color: #BDCEFA;
+	}
+
+	.glyphicon-ok{
+		color: green;
+	}
+
+	.glyphicon-remove{
+		color: red;
+	}
 </style>
 
 
@@ -37,18 +63,20 @@
 
 	<h3 align="center">Results from <?= $info['title']; ?></h3>
 
+	<? $count = 0; ?>
 	<?php foreach ($result as $technique) : ?>
 		<? $resultWeight = $technique['result_weight'] * 100; ?>
 
 		<? if ($resultWeight > 75.00) : ?>
-			<div class="panel panel-success">
+			<div class="panel panel-success" <?= ($count >= 5) ? "hidden" : "" ?>>
 		<? elseif ($resultWeight > 50.00) : ?>
-			<div class="panel panel-info">
+			<div class="panel panel-info" <?= ($count >= 5) ? "hidden" : "" ?>>
 		<? elseif ($resultWeight > 25.00) : ?>
-			<div class="panel panel-warning">
+			<div class="panel panel-warning" <?= ($count >= 5) ? "hidden" : "" ?>>
 		<? else : ?>
-			<div class="panel panel-danger">
+			<div class="panel panel-danger" <?= ($count >= 5) ? "hidden" : "" ?>>
 		<? endif; ?>
+		<? $count++; ?> 
 				<div class="clickable panel-heading">
 					<h3 class="panel-title">
 						<?= $technique['title']; ?>
@@ -83,50 +111,51 @@
 					</div>
 				</div>
 
-				<div class="panel-body">
-					<?php foreach ($technique as $keyTechnique => $field) : ?>
-						<? if ( (strcmp ($keyTechnique, "id") == 0) || (strcmp ($keyTechnique, "result_weight") == 0) ) : ?>
-							<? continue; ?>
-						<? endif; ?>
+				<div class="panel-body" align="center">
+					<table border="1">
 
-
-						<div class="form-group">
-							<? if (strcmp($keyTechnique, "title") != 0): ?>
-							<label style="font-size: 10pt;"><?= $field['atribute']; ?> 
-								attribute
-							<? endif; ?>
-							</label>
-	
-							<? if (strcmp ($keyTechnique, "title") == 0) : ?>
-								<label>Technique Title for comparison</label>
-								<p class="form-control-static"><?= $field; ?></p></div>
+						<?php foreach ($technique as $keyTechnique => $field) : ?>
+							<? if ( (strcmp ($keyTechnique, "id") === 0) || (strcmp ($keyTechnique, "result_weight") === 0) ) : ?>
 								<? continue; ?>
 							<? endif; ?>
 
-							<table style="align-content: center; align-self: center; width:50%" border="1">
-								<tr>
-									<th style="width: 50%">Compare</th>
-									<th style="width: 50%">Input on form</th>
-								</tr>
-								
-								<?php foreach ($field as $key => $single) : ?>
-								
-									<? if ( (strcmp($key, "max_value") == 0) || (strcmp($key, "atribute") == 0)) continue; ?>
 
-									<tr <?= $single['weight'] === $single['result'] ? "style='background-color: 	#90ee90;'" : ""; ?>>
-											<td><?= $single['baseValue'];?></td>
-											<td><?= $single['compareValue'];?></td>
+							<? if (strcmp ($keyTechnique, "title") == 0) : ?>
+								<thead>
+									<tr>
+										<th colspan="2"><?= $field; ?></th>
 									</tr>
-								<? endforeach; ?>
-							</table>
+									<tr>
+										<th style="width: 50%">Atribute</th>
+										<th style="width: 50%">Match ( <i class="glyphicon glyphicon-ok"></i> or <i class="glyphicon glyphicon-remove"></i> )</th>
+									</tr>
+								</thead>
+								<? continue; ?>
+							<? else: ?>
+								<tbody>
+									<tr>
+										<td style="font-weight: 900"><?= $field['atribute']; ?></td>
+										<td style="text-align:center;">
+											<? if ($field['match'] === true) : ?>
+												<i class="glyphicon glyphicon-ok"></i>
+											<? else : ?>
+												<i class="glyphicon glyphicon-remove"></i>
+											<? endif; ?>
+										</td>
+									</tr>
+								</tbody>
+							<? endif; ?>
 
-						</div>
-					<? endforeach; ?>
+
+						<?php endforeach; ?>
+					
+					</table>
 				</div>
 			</div>
 	
 	<? endforeach; ?>
 
+	<button id="showAll" style="margin-top: 50px; border: 1px solid #8c8b8b;" class="btn btn-block btn-primary">View all Results</button>
 </div>
 <? endif; ?>
 
@@ -163,6 +192,11 @@
 	$(document).ready(function () {
 		$('.panel-heading span.clickable').click();
 		$('.panel div.clickable').click();
+	});
+
+	$("#showAll").click(function() {
+	  document.getElementById(this.id).style.visibility = "hidden";
+	  $('.panel').show().fadeIn('slow');
 	});
 
 </script>

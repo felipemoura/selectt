@@ -8,7 +8,10 @@ CREATE TABLE `selectt`.`home` (
 
 INSERT INTO `selectt`.`home`
 (`ID`, `TEXT`)
-VALUES (1, '<p style="text-align: justify;"><span style="background-color: #ffffff;">O projeto a ser desenvolvido tem como objetivo desenvolver uma infraestrutura computacional para automatizar o processo de sele&ccedil;&atilde;o de t&eacute;cnicas de teste de software concorrente. Baseadas em informa&ccedil;&otilde;es contidas em um reposit&oacute;rio com caracter&iacute;sticas das t&eacute;cnicas de teste que influenciam no processo de tomada de decis&atilde;o. O reposit&oacute;rio &eacute; desenvolvido no projeto de doutorado ao qual esse projeto est&aacute; vinculado. A estrutura computacional &eacute; definida como um sistema web que requer como entrada informa&ccedil;&otilde;es a respeito do projeto de software a ser desenvolvido (tipo de plataforma a ser utilizada, linguagem de programa&ccedil;&atilde;o do software, etc) fornecida pelo usu&aacute;rio (equipe de teste) e compara &agrave; informa&ccedil;&otilde;es extra&iacute;das do reposit&oacute;rio (caracter&iacute;sticas das t&eacute;cnicas de teste) a fim de comparar e estabelecer um ranking sobre quais as t&eacute;cnicas mais adequadas para o projeto em quest&atilde;o. Para o c&aacute;lculo da t&eacute;cnica adequada ao projeto devem ser estabelecidos pesos as caracter&iacute;sticas (crit&eacute;rios de adequa&ccedil;&atilde;o) e c&aacute;lculos matem&aacute;ticos a fim de obter uma lista das t&eacute;cnicas mais adequadas, facilitando a tomada de decis&atilde;o da equipe de teste. Em s&iacute;ntese, o prop&oacute;sito deste projeto &eacute; o desenvolvimento de um site web que recebe como entradas informa&ccedil;&otilde;es a respeito de um projeto de teste e busca em um banco de dados de t&eacute;cnicas de teste, qual t&eacute;cnica apresenta caracter&iacute;sticas mais adequadas a este projeto. A decis&atilde;o final sobre qual t&eacute;cnica de teste usar no projeto cabe ao projetista de teste, que usa como apoio o resultado obtido pelo site.</span></p>');
+VALUES (1, '<p style="text-align: justify;"><span style="background-color: #ffffff;">O projeto a ser desenvolvido tem como objetivo desenvolver uma infraestrutura computacional para automatizar o processo de sele&ccedil;&atilde;o de t&eacute;cnicas de teste de software concorrente. Baseadas em informa&ccedil;&otilde;es contidas em um reposit&oacute;rio com caracter&iacute;sticas das t&eacute;cnicas de teste que influenciam no processo de tomada de decis&atilde;o. O reposit&oacute;rio &eacute; desenvolvido no projeto de doutorado ao qual esse projeto est&aacute; vinculado. A estrutura computacional &eacute; definida como um sistema web que requer como entrada informa&ccedil;&otilde;es a respeito do projeto de software a ser desenvolvido (tipo de plataforma a ser utilizada, linguagem de programa&ccedil;&atilde;o do software, etc) fornecida pelo usu&aacute;rio (equipe de teste) e compara &agrave; informa&ccedil;&otilde;es extra&iacute;das do reposit&oacute;rio (caracter&iacute;sticas das t&eacute;cnicas de teste) a fim de comparar e estabelecer um ranking sobre quais as t&eacute;cnicas mais adequadas para o projeto em quest&atilde;o. Para o c&aacute;lculo da t&eacute;cnica adequada ao projeto devem ser estabelecidos pesos as caracter&iacute;sticas (crit&eacute;rios de adequa&ccedil;&atilde;o) e c&aacute;lculos matem&aacute;ticos a fim de obter uma lista das t&eacute;cnicas mais adequadas, facilitando a tomada de decis&atilde;o da equipe de teste. Em s&iacute;ntese, o prop&oacute;sito deste projeto &eacute; o desenvolvimento de um site web que recebe como entradas informa&ccedil;&otilde;es a respeito de um projeto de teste e busca em um banco de dados de t&eacute;cnicas de teste, qual t&eacute;cnica apresenta caracter&iacute;sticas mais adequadas a este projeto. A decis&atilde;o final sobre qual t&eacute;cnica de teste usar no projeto cabe ao projetista de teste, que usa como apoio o resultado obtido pelo site.</span></p>
+ <p style="text-align: justify;">&nbsp;</p>
+ <h1 style="text-align: justify;"><span style="background-color: #ffffff;">Para maiores informa&ccedil;&otilde;es</span></h1>
+ <p><span style="background-color: #ffffff;"><a href="../~selectt/intro">Maiores informa&ccedil;&otilde;es</a></span></p>');
 
 DROP TABLE IF EXISTS `selectt`.`people`; 
 
@@ -1700,7 +1703,7 @@ VALUES ('Preemption sealing for efficient concurrency testing','link.springer.co
     INSERT INTO `selectt`.`Field` (`idField`, `category`, `atribute`, `weight`, `html_id`, `html_name`, `html_row_count`, `html_label`, `html_placeholder`, `html_info`) VALUES ('22', 'Concurrent testing characteristics', 'Concurrent bugs', '0.0777', 'concurrentBugs', 'concurrentBugs', '1', 'Concurrent bugs', 'Please enter with Concurrent bugs', 'The type of concurrent bugs identified by the testing technique');
     INSERT INTO `selectt`.`Field` (`idField`, `category`, `atribute`, `weight`, `html_id`, `html_name`, `html_row_count`, `html_label`, `html_placeholder`, `html_info`) VALUES ('23', 'Testing tool support', 'Tool name', '0.0670', 'toolName', 'toolName', '1', 'Tool name', 'Please enter with Tool name', 'Name of the tool if the technique presents one');
     INSERT INTO `selectt`.`Field` (`idField`, `category`, `atribute`, `weight`, `html_id`, `html_name`, `html_row_count`, `html_label`, `html_placeholder`, `html_info`) VALUES ('24', 'Testing tool support', 'Cost', '0.00', 'cost', 'cost', '1', 'Cost', 'Please enter with Cost', 'The cost associated with the tool');
-    INSERT INTO `selectt`.`Field` (`idField`, `category`, `atribute`, `weight`, `html_id`, `html_name`, `html_row_count`, `html_label`, `html_placeholder`, `html_info`) VALUES ('25', 'Testing tool support', 'PlatformTool', '0.00', 'platformTool', 'platformTool', '1', 'Platform that the tool operates', 'Please enter with Platform Tool', 'The execution platform that the tool operates');
+    INSERT INTO `selectt`.`Field` (`idField`, `category`, `atribute`, `weight`, `html_id`, `html_name`, `html_row_count`, `html_label`, `html_placeholder`, `html_info`) VALUES ('25', 'Testing tool support', 'Platform Tool', '0.00', 'platformTool', 'platformTool', '1', 'Platform that the tool operates', 'Please enter with Platform Tool', 'The execution platform that the tool operates');
 
 
 
@@ -2504,6 +2507,424 @@ VALUES ('Preemption sealing for efficient concurrency testing','link.springer.co
     INSERT INTO `ToolName` (`idTechnique`, `toolName`) VALUES (7, 'No Information');
     INSERT INTO `Cost` (`idTechnique`, `cost`) VALUES (7, 'No Information');
     INSERT INTO `PlatformTool` (`idTechnique`, `platformTool`) VALUES (7, 'Linux');
+
+ -- -----------------------------------------------------
+    -- Table `selectt`.`ResultTechnique`
+    -- -----------------------------------------------------
+    DROP TABLE IF EXISTS `selectt`.`ResultTechnique`; 
+
+    CREATE TABLE IF NOT EXISTS `selectt`.`ResultTechnique` (
+      `id` INT NOT NULL AUTO_INCREMENT,
+      `title` VARCHAR(255) NOT NULL,
+      `insertedBy` VARCHAR(128) NOT NULL DEFAULT 'admin',
+      `insertedOn` DATETIME NOT NULL,
+      PRIMARY KEY (`id`),
+      UNIQUE INDEX `id_UNIQUE` (`id` ASC))
+    ENGINE = InnoDB;
+
+
+    -- -----------------------------------------------------
+    -- Table `selectt`.`ResultExecutionPlatform`
+    -- -----------------------------------------------------
+    DROP TABLE IF EXISTS `selectt`.`ResultExecutionPlatform`; 
+
+    CREATE TABLE IF NOT EXISTS `selectt`.`ResultExecutionPlatform` (
+      `id` INT NOT NULL AUTO_INCREMENT,
+      `idTechniqueResult` INT NOT NULL,
+      `executionPlatform` VARCHAR(255) NOT NULL,
+      PRIMARY KEY (`id`),
+      UNIQUE INDEX `id_UNIQUE` (`id` ASC),
+      INDEX `idTechniqueResult_idx` (`idTechniqueResult` ASC),
+      CONSTRAINT `idTechniqueResult_1`
+        FOREIGN KEY (`idTechniqueResult`)
+        REFERENCES `selectt`.`ResultTechnique` (`id`)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE)
+    ENGINE = InnoDB;
+
+    -- -----------------------------------------------------
+    -- Table `selectt`.`ResultObjective`
+    -- -----------------------------------------------------
+    DROP TABLE IF EXISTS `selectt`.`ResultObjective`; 
+
+    CREATE TABLE IF NOT EXISTS `selectt`.`ResultObjective` (
+      `id` INT NOT NULL AUTO_INCREMENT,
+      `idTechniqueResult` INT NOT NULL,
+      `objective` VARCHAR(255) NOT NULL,
+      PRIMARY KEY (`id`),
+      UNIQUE INDEX `id_UNIQUE` (`id` ASC),
+      INDEX `idTechniqueResult_idx` (`idTechniqueResult` ASC),
+      CONSTRAINT `idTechniqueResult_2`
+        FOREIGN KEY (`idTechniqueResult`)
+        REFERENCES `selectt`.`ResultTechnique` (`id`)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE)
+    ENGINE = InnoDB;
+
+    -- -----------------------------------------------------
+    -- Table `selectt`.`ResultProgrammingLanguage`
+    -- -----------------------------------------------------
+    DROP TABLE IF EXISTS `selectt`.`ResultProgrammingLanguage`; 
+
+    CREATE TABLE IF NOT EXISTS `selectt`.`ResultProgrammingLanguage` (
+      `id` INT NOT NULL AUTO_INCREMENT,
+      `idTechniqueResult` INT NOT NULL,
+      `programmingLanguage` VARCHAR(255) NOT NULL,
+      PRIMARY KEY (`id`),
+      UNIQUE INDEX `id_UNIQUE` (`id` ASC),
+      INDEX `idTechniqueResult_idx` (`idTechniqueResult` ASC),
+      CONSTRAINT `idTechniqueResult_3`
+        FOREIGN KEY (`idTechniqueResult`)
+        REFERENCES `selectt`.`ResultTechnique` (`id`)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE)
+    ENGINE = InnoDB;
+
+    -- -----------------------------------------------------
+    -- Table `selectt`.`ResultTestingTechnique`
+    -- -----------------------------------------------------
+    DROP TABLE IF EXISTS `selectt`.`ResultTestingTechnique`; 
+
+    CREATE TABLE IF NOT EXISTS `selectt`.`ResultTestingTechnique` (
+      `id` INT NOT NULL AUTO_INCREMENT,
+      `idTechniqueResult` INT NOT NULL,
+      `testingTechnique` VARCHAR(255) NOT NULL,
+      PRIMARY KEY (`id`),
+      UNIQUE INDEX `id_UNIQUE` (`id` ASC),
+      INDEX `idTechniqueResult_idx` (`idTechniqueResult` ASC),
+      CONSTRAINT `idTechniqueResult_4`
+        FOREIGN KEY (`idTechniqueResult`)
+        REFERENCES `selectt`.`ResultTechnique` (`id`)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE)
+    ENGINE = InnoDB;
+
+
+    -- -----------------------------------------------------
+    -- Table `selectt`.`ResultTestDataGeneration`
+    -- -----------------------------------------------------
+    DROP TABLE IF EXISTS `selectt`.`ResultTestDataGeneration`; 
+
+    CREATE TABLE IF NOT EXISTS `selectt`.`ResultTestDataGeneration` (
+      `id` INT NOT NULL AUTO_INCREMENT,
+      `idTechniqueResult` INT NOT NULL,
+      `testDataGeneration` VARCHAR(255) NOT NULL,
+      PRIMARY KEY (`id`),
+      UNIQUE INDEX `id_UNIQUE` (`id` ASC),
+      INDEX `idTechniqueResult_idx` (`idTechniqueResult` ASC),
+      CONSTRAINT `idTechniqueResult_5`
+        FOREIGN KEY (`idTechniqueResult`)
+        REFERENCES `selectt`.`ResultTechnique` (`id`)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE)
+    ENGINE = InnoDB;
+
+    -- -----------------------------------------------------
+    -- Table `selectt`.`ResultTestingLevel`
+    -- -----------------------------------------------------
+    DROP TABLE IF EXISTS `selectt`.`ResultTestingLevel`; 
+
+    CREATE TABLE IF NOT EXISTS `selectt`.`ResultTestingLevel` (
+      `id` INT NOT NULL AUTO_INCREMENT,
+      `idTechniqueResult` INT NOT NULL,
+      `testingLevel` VARCHAR(255) NOT NULL,
+      PRIMARY KEY (`id`),
+      UNIQUE INDEX `id_UNIQUE` (`id` ASC),
+      INDEX `idTechniqueResult_idx` (`idTechniqueResult` ASC),
+      CONSTRAINT `idTechniqueResult_6`
+        FOREIGN KEY (`idTechniqueResult`)
+        REFERENCES `selectt`.`ResultTechnique` (`id`)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE)
+    ENGINE = InnoDB;
+
+    -- -----------------------------------------------------
+    -- Table `selectt`.`ResultSynchronizationMechanism`
+    -- -----------------------------------------------------
+    DROP TABLE IF EXISTS `selectt`.`ResultSynchronizationMechanism`; 
+
+    CREATE TABLE IF NOT EXISTS `selectt`.`ResultSynchronizationMechanism` (
+      `id` INT NOT NULL AUTO_INCREMENT,
+      `idTechniqueResult` INT NOT NULL,
+      `synchronizationMechanism` VARCHAR(255) NOT NULL,
+      PRIMARY KEY (`id`),
+      UNIQUE INDEX `id_UNIQUE` (`id` ASC),
+      INDEX `idTechniqueResult_idx` (`idTechniqueResult` ASC),
+      CONSTRAINT `idTechniqueResult_7`
+        FOREIGN KEY (`idTechniqueResult`)
+        REFERENCES `selectt`.`ResultTechnique` (`id`)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE)
+    ENGINE = InnoDB;
+
+    -- -----------------------------------------------------
+    -- Table `selectt`.`ResultInput`
+    -- -----------------------------------------------------
+    DROP TABLE IF EXISTS `selectt`.`ResultInput`; 
+
+    CREATE TABLE IF NOT EXISTS `selectt`.`ResultInput` (
+      `id` INT NOT NULL AUTO_INCREMENT,
+      `idTechniqueResult` INT NOT NULL,
+      `input` VARCHAR(255) NOT NULL,
+      PRIMARY KEY (`id`),
+      UNIQUE INDEX `id_UNIQUE` (`id` ASC),
+      INDEX `idTechniqueResult_idx` (`idTechniqueResult` ASC),
+      CONSTRAINT `idTechniqueResult_8`
+        FOREIGN KEY (`idTechniqueResult`)
+        REFERENCES `selectt`.`ResultTechnique` (`id`)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE)
+    ENGINE = InnoDB;
+
+    -- -----------------------------------------------------
+    -- Table `selectt`.`ResultOutput`
+    -- -----------------------------------------------------
+    DROP TABLE IF EXISTS `selectt`.`ResultOutput`; 
+
+    CREATE TABLE IF NOT EXISTS `selectt`.`ResultOutput` (
+      `id` INT NOT NULL AUTO_INCREMENT,
+      `idTechniqueResult` INT NOT NULL,
+      `output` VARCHAR(255) NOT NULL,
+      PRIMARY KEY (`id`),
+      UNIQUE INDEX `id_UNIQUE` (`id` ASC),
+      INDEX `idTechniqueResult_idx` (`idTechniqueResult` ASC),
+      CONSTRAINT `idTechniqueResult_9`
+        FOREIGN KEY (`idTechniqueResult`)
+        REFERENCES `selectt`.`ResultTechnique` (`id`)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE)
+    ENGINE = InnoDB;
+
+    -- -----------------------------------------------------
+    -- Table `selectt`.`ResultQualityAttribute`
+    -- -----------------------------------------------------
+    DROP TABLE IF EXISTS `selectt`.`ResultQualityAttribute`; 
+
+    CREATE TABLE IF NOT EXISTS `selectt`.`ResultQualityAttribute` (
+      `id` INT NOT NULL AUTO_INCREMENT,
+      `idTechniqueResult` INT NOT NULL,
+      `qualityAttribute` VARCHAR(255) NOT NULL,
+      PRIMARY KEY (`id`),
+      UNIQUE INDEX `id_UNIQUE` (`id` ASC),
+      INDEX `idTechniqueResult_idx` (`idTechniqueResult` ASC),
+      CONSTRAINT `idTechniqueResult_10`
+        FOREIGN KEY (`idTechniqueResult`)
+        REFERENCES `selectt`.`ResultTechnique` (`id`)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE)
+    ENGINE = InnoDB;
+
+
+    -- -----------------------------------------------------
+    -- Table `selectt`.`ResultTypeOfStudy`
+    -- -----------------------------------------------------
+    DROP TABLE IF EXISTS `selectt`.`ResultTypeOfStudy`; 
+
+    CREATE TABLE IF NOT EXISTS `selectt`.`ResultTypeOfStudy` (
+      `id` INT NOT NULL AUTO_INCREMENT,
+      `idTechniqueResult` INT NOT NULL,
+      `typeOfStudy` VARCHAR(255) NOT NULL,
+      PRIMARY KEY (`id`),
+      UNIQUE INDEX `id_UNIQUE` (`id` ASC),
+      INDEX `idTechniqueResult_idx` (`idTechniqueResult` ASC),
+      CONSTRAINT `idTechniqueResult_11`
+        FOREIGN KEY (`idTechniqueResult`)
+        REFERENCES `selectt`.`ResultTechnique` (`id`)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE)
+    ENGINE = InnoDB;
+
+    -- -----------------------------------------------------
+    -- Table `selectt`.`ResultTestingAnalysis`
+    -- -----------------------------------------------------
+    DROP TABLE IF EXISTS `selectt`.`ResultTestingAnalysis`; 
+
+    CREATE TABLE IF NOT EXISTS `selectt`.`ResultTestingAnalysis` (
+      `id` INT NOT NULL AUTO_INCREMENT,
+      `idTechniqueResult` INT NOT NULL,
+      `testingAnalysis` VARCHAR(255) NOT NULL,
+      PRIMARY KEY (`id`),
+      UNIQUE INDEX `id_UNIQUE` (`id` ASC),
+      INDEX `idTechniqueResult_idx` (`idTechniqueResult` ASC),
+      CONSTRAINT `idTechniqueResult_12`
+        FOREIGN KEY (`idTechniqueResult`)
+        REFERENCES `selectt`.`ResultTechnique` (`id`)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE)
+    ENGINE = InnoDB;
+
+    -- -----------------------------------------------------
+    -- Table `selectt`.`ResultConcurrentParadigm`
+    -- -----------------------------------------------------
+    DROP TABLE IF EXISTS `selectt`.`ResultConcurrentParadigm`; 
+
+    CREATE TABLE IF NOT EXISTS `selectt`.`ResultConcurrentParadigm` (
+      `id` INT NOT NULL AUTO_INCREMENT,
+      `idTechniqueResult` INT NOT NULL,
+      `concurrentParadigm` VARCHAR(255) NOT NULL,
+      PRIMARY KEY (`id`),
+      UNIQUE INDEX `id_UNIQUE` (`id` ASC),
+      INDEX `idTechniqueResult_idx` (`idTechniqueResult` ASC),
+      CONSTRAINT `idTechniqueResult_13`
+        FOREIGN KEY (`idTechniqueResult`)
+        REFERENCES `selectt`.`ResultTechnique` (`id`)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE)
+    ENGINE = InnoDB;
+
+    -- -----------------------------------------------------
+    -- Table `selectt`.`ResultReplayMechanism`
+    -- -----------------------------------------------------
+    DROP TABLE IF EXISTS `selectt`.`ResultReplayMechanism`; 
+
+    CREATE TABLE IF NOT EXISTS `selectt`.`ResultReplayMechanism` (
+      `id` INT NOT NULL AUTO_INCREMENT,
+      `idTechniqueResult` INT NOT NULL,
+      `replayMechanism` VARCHAR(255) NOT NULL,
+      PRIMARY KEY (`id`),
+      UNIQUE INDEX `id_UNIQUE` (`id` ASC),
+      INDEX `idTechniqueResult_idx` (`idTechniqueResult` ASC),
+      CONSTRAINT `idTechniqueResult_14`
+        FOREIGN KEY (`idTechniqueResult`)
+        REFERENCES `selectt`.`ResultTechnique` (`id`)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE)
+    ENGINE = InnoDB;
+
+    -- -----------------------------------------------------
+    -- Table `selectt`.`ResultProgramRepresentation`
+    -- -----------------------------------------------------
+    DROP TABLE IF EXISTS `selectt`.`ResultProgramRepresentation`; 
+
+    CREATE TABLE IF NOT EXISTS `selectt`.`ResultProgramRepresentation` (
+      `id` INT NOT NULL AUTO_INCREMENT,
+      `idTechniqueResult` INT NOT NULL,
+      `programRepresentation` VARCHAR(255) NOT NULL,
+      PRIMARY KEY (`id`),
+      UNIQUE INDEX `id_UNIQUE` (`id` ASC),
+      INDEX `idTechniqueResult_idx` (`idTechniqueResult` ASC),
+      CONSTRAINT `idTechniqueResult_15`
+        FOREIGN KEY (`idTechniqueResult`)
+        REFERENCES `selectt`.`ResultTechnique` (`id`)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE)
+    ENGINE = InnoDB;
+
+
+    -- -----------------------------------------------------
+    -- Table `selectt`.`ResultInstrumentation`
+    -- -----------------------------------------------------
+    DROP TABLE IF EXISTS `selectt`.`ResultInstrumentation`; 
+
+    CREATE TABLE IF NOT EXISTS `selectt`.`ResultInstrumentation` (
+      `id` INT NOT NULL AUTO_INCREMENT,
+      `idTechniqueResult` INT NOT NULL,
+      `instrumentation` VARCHAR(255) NOT NULL,
+      PRIMARY KEY (`id`),
+      UNIQUE INDEX `id_UNIQUE` (`id` ASC),
+      INDEX `idTechniqueResult_idx` (`idTechniqueResult` ASC),
+      CONSTRAINT `idTechniqueResult_16`
+        FOREIGN KEY (`idTechniqueResult`)
+        REFERENCES `selectt`.`ResultTechnique` (`id`)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE)
+    ENGINE = InnoDB;
+
+    -- -----------------------------------------------------
+    -- Table `selectt`.`ResultStateSpaceReduction`
+    -- -----------------------------------------------------
+    DROP TABLE IF EXISTS `selectt`.`ResultStateSpaceReduction`; 
+
+    CREATE TABLE IF NOT EXISTS `selectt`.`ResultStateSpaceReduction` (
+      `id` INT NOT NULL AUTO_INCREMENT,
+      `idTechniqueResult` INT NOT NULL,
+      `stateSpaceReduction` VARCHAR(255) NOT NULL,
+      PRIMARY KEY (`id`),
+      UNIQUE INDEX `id_UNIQUE` (`id` ASC),
+      INDEX `idTechniqueResult_idx` (`idTechniqueResult` ASC),
+      CONSTRAINT `idTechniqueResult_17`
+        FOREIGN KEY (`idTechniqueResult`)
+        REFERENCES `selectt`.`ResultTechnique` (`id`)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE)
+    ENGINE = InnoDB;
+
+    -- -----------------------------------------------------
+    -- Table `selectt`.`ResultConcurrentBugs`
+    -- -----------------------------------------------------
+    DROP TABLE IF EXISTS `selectt`.`ResultConcurrentBugs`; 
+
+    CREATE TABLE IF NOT EXISTS `selectt`.`ResultConcurrentBugs` (
+      `id` INT NOT NULL AUTO_INCREMENT,
+      `idTechniqueResult` INT NOT NULL,
+      `concurrentBugs` VARCHAR(255) NOT NULL,
+      PRIMARY KEY (`id`),
+      UNIQUE INDEX `id_UNIQUE` (`id` ASC),
+      INDEX `idTechniqueResult_idx` (`idTechniqueResult` ASC),
+      CONSTRAINT `idTechniqueResult_18`
+        FOREIGN KEY (`idTechniqueResult`)
+        REFERENCES `selectt`.`ResultTechnique` (`id`)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE)
+    ENGINE = InnoDB;
+
+    -- -----------------------------------------------------
+    -- Table `selectt`.`ResultToolName`
+    -- -----------------------------------------------------
+    DROP TABLE IF EXISTS `selectt`.`ResultToolName`; 
+
+    CREATE TABLE IF NOT EXISTS `selectt`.`ResultToolName` (
+      `id` INT NOT NULL AUTO_INCREMENT,
+      `idTechniqueResult` INT NOT NULL,
+      `toolName` VARCHAR(255) NOT NULL,
+      PRIMARY KEY (`id`),
+      UNIQUE INDEX `id_UNIQUE` (`id` ASC),
+      INDEX `idTechniqueResult_idx` (`idTechniqueResult` ASC),
+      CONSTRAINT `idTechniqueResult_19`
+        FOREIGN KEY (`idTechniqueResult`)
+        REFERENCES `selectt`.`ResultTechnique` (`id`)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE)
+    ENGINE = InnoDB;
+
+    -- -----------------------------------------------------
+    -- Table `selectt`.`ResultCost`
+    -- -----------------------------------------------------
+    DROP TABLE IF EXISTS `selectt`.`ResultCost`; 
+
+    CREATE TABLE IF NOT EXISTS `selectt`.`ResultCost` (
+      `id` INT NOT NULL AUTO_INCREMENT,
+      `idTechniqueResult` INT NOT NULL,
+      `cost` VARCHAR(255) NOT NULL,
+      PRIMARY KEY (`id`),
+      UNIQUE INDEX `id_UNIQUE` (`id` ASC),
+      INDEX `idTechniqueResult_idx` (`idTechniqueResult` ASC),
+      CONSTRAINT `idTechniqueResult_20`
+        FOREIGN KEY (`idTechniqueResult`)
+        REFERENCES `selectt`.`ResultTechnique` (`id`)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE)
+    ENGINE = InnoDB;
+
+    -- -----------------------------------------------------
+    -- Table `selectt`.`ResultPlatformTool`
+    -- -----------------------------------------------------
+    DROP TABLE IF EXISTS `selectt`.`ResultPlatformTool`; 
+
+    CREATE TABLE IF NOT EXISTS `selectt`.`ResultPlatformTool` (
+      `id` INT NOT NULL AUTO_INCREMENT,
+      `idTechniqueResult` INT NOT NULL,
+      `PlatformTool` VARCHAR(255) NOT NULL,
+      PRIMARY KEY (`id`),
+      UNIQUE INDEX `id_UNIQUE` (`id` ASC),
+      INDEX `idTechniqueResult_idx` (`idTechniqueResult` ASC),
+      CONSTRAINT `idTechniqueResult_21`
+        FOREIGN KEY (`idTechniqueResult`)
+        REFERENCES `selectt`.`ResultTechnique` (`id`)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE)
+    ENGINE = InnoDB;
+
 
     -- CHECKS
     SET SQL_MODE=@OLD_SQL_MODE;

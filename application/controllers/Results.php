@@ -34,7 +34,7 @@ class Results extends MY_Controller {
 		foreach ($allTechniques as $technique) {
 			$result[$count]['id']	 = $technique['id']; 
 			$result[$count]['title'] = $technique['title'];
-			$resultWeight = 0.000;
+			$resultWeight = floatval(0.000);
 
 			foreach ($allWeights['fields'] as $weight) {
 				// just to help reading the code ...
@@ -44,9 +44,9 @@ class Results extends MY_Controller {
 				$weightValue 	= $weight['weight'];
 
 				$result[$count][$idTemp] = $this->utility->generateFieldsForCompare ($originalField, $compareField, $weightValue );
-				$resultWeight += $result[$count][$idTemp]['max_value'];
-				
+				$resultWeight += floatval($result[$count][$idTemp]['max_value']);
 				$result[$count][$idTemp]['atribute'] = $weight['atribute'];
+				$result[$count][$idTemp]['match'] = $result[$count][$idTemp]['isMatch'];
 			}
 			$result[$count]['result_weight'] = $resultWeight;
 
@@ -55,21 +55,18 @@ class Results extends MY_Controller {
 
 		// order by weight
 		for ($i = 0; $i < count($result) - 1; $i++) { 
-			for ($j = 0; $j < count($result) - 1; $j++) { 
+			for ($j = 0; $j < count($result) - $i - 1; $j++) { 
 				if ($result[$j+1]['result_weight'] > $result[$j]['result_weight']) {
-					$temp = $result[$j]['result_weight'];
-					$result[$j]['result_weight'] =  $result[$j+1]['result_weight'];
-					$result[$j+1]['result_weight'] = $temp;
+					$temp = $result[$j];
+					$result[$j] =  $result[$j+1];
+					$result[$j+1] = $temp;
 				}
 			}
 		}
 
 		$data['info'] 	= $resultTechnique;
 		$data['result'] = $result;
-
-		// echo "<pre>";
-		// print_r($result);
-		// echo "</pre>";
+		
 		$this->load->view('form/results_page', $data);
 	}
 }
