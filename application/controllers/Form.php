@@ -32,7 +32,7 @@ class Form extends MY_Controller {
         foreach($data['category'] as $fields) {
             $count2 = 0;
             foreach($fields as $field) {
-                $data['category'][$count][$count2++]['typeheadJS'] = $this->technique->singleTableInfo ($field['html_id']);
+                $data['category'][$count][$count2++]['typeheadJS'] = $this->technique->singleTableInfo (ucfirst($field['html_id']));
                 // echo "<pre>";
                 // print_r($field['typeheadJS']);
                 // echo "</pre>";
