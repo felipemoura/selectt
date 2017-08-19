@@ -53,6 +53,14 @@
 	.glyphicon-remove{
 		color: red;
 	}
+
+	.box {
+		margin: auto;
+		height: 20px;
+		display: inline-block;
+		padding-top: 10px;
+		width: 20px;
+	}
 </style>
 
 
@@ -62,6 +70,21 @@
 	<h1>Results Page</h1>
 
 	<h3 align="center">Results from <?= $info['title']; ?></h3>
+
+	<h3>Legend</h3>
+
+	<!-- View button -->
+	<div style="font-size: 14pt;line-height: 24px;border-style: solid; font-weight: normal;background-color: white;padding: 0;margin: 0; width: 30%">
+
+		<p><span class="box" style="background-color: #5cb85c"></span> - Programming model</p>
+		<p><span class="box" style="background-color: #5bc0de"></span> - General testing characteristics</p>
+		<p><span class="box" style="background-color: #f0ad4e"></span> - Concurrent testing characteristics</p>
+		<p><span class="box" style="background-color: #d9534f"></span> - Testing tool support</p>
+	</div>
+
+	<br>
+	<br>
+	<br>
 
 	<? $count = 0; ?>
 	<?php foreach ($result as $technique) : ?>
@@ -86,30 +109,35 @@
 						</span>
 					</h3>
 					<br>
+
+
 					<div class="progress">
-						<? if ($resultWeight > 75.00) : ?>
-							<div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="<?= $resultWeight; ?>"
-								aria-valuemin="0" aria-valuemax="100" style="width: <?= $resultWeight; ?>%;">
-								<?= $resultWeight; ?> %
-							</div>
-						<? elseif ($resultWeight > 50.00) : ?>
-							<div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="<?= $resultWeight; ?>"
-								aria-valuemin="0" aria-valuemax="100" style="width: <?= $resultWeight; ?>%;">
-								<?= $resultWeight; ?> %
-							</div>
-						<? elseif ($resultWeight > 25.00) : ?>
-							<div class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar" aria-valuenow="<?= $resultWeight; ?>"
-								aria-valuemin="0" aria-valuemax="100" style="width: <?= $resultWeight; ?>%;">
-								<?= $resultWeight; ?> %
-							</div>
-						<? else : ?>
-							<div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" aria-valuenow="<?= $resultWeight; ?>"
-								aria-valuemin="0" aria-valuemax="100" style="width: <?= $resultWeight; ?>%;">
-								<?= $resultWeight; ?> %
-							</div>
-						<? endif; ?>
+						<!-- Programming model influence -->
+						<div class="bar bar-success progress-bar progress-bar-success" role="progressbar" style="width: <?= $technique['Programming model']*100; ?>%" aria-valuemax="12.53">
+							<?= $technique['Programming model']*100; ?>%
+						</div>
+
+						<!-- General testing characteristics influence -->
+						<div class="bar bar-info progress-bar progress-bar-info" role="progressbar" style="width: <?= $technique['General testing characteristics']*100; ?>%" aria-valuemax="48.72">
+							<?= $technique['General testing characteristics']*100; ?>%
+						</div>
+
+						<div class="bar bar-warning progress-bar progress-bar-warning" role="progressbar" style="width: <?= $technique['Concurrent testing characteristics']*100; ?>%" aria-valuemax="32.04">
+							<?= $technique['Concurrent testing characteristics']*100; ?>%
+						</div>
+						<div class="bar bar-danger progress-bar progress-bar-danger" role="progressbar" style="width: <?= $technique['Testing tool support']*100; ?>%" aria-valuemax="6.7">
+							<?= $technique['Testing tool support']*100; ?>%
+						</div>
 					</div>
+
 				</div>
+
+				<? 
+					unset($technique['Programming model']);
+					unset($technique['General testing characteristics']);
+					unset($technique['Concurrent testing characteristics']);
+					unset($technique['Testing tool support']);
+				?>
 
 				<div class="panel-body" align="center">
 					<table border="1">

@@ -28,6 +28,20 @@ class Form extends MY_Controller {
 		$data['name'][3] = 'Concurrent testing characteristics';
 		$data['name'][4] = 'Testing tool support';
 
+        $count = 0;
+        foreach($data['category'] as $fields) {
+            $count2 = 0;
+            foreach($fields as $field) {
+                $data['category'][$count][$count2++]['typeheadJS'] = $this->technique->singleTableInfo ($field['html_id']);
+                // echo "<pre>";
+                // print_r($field['typeheadJS']);
+                // echo "</pre>";
+            }
+            $count++;
+        }
+        // echo "<pre>";
+        // print_r($data);
+        // echo "</pre>";
 		$this->load->view('form/form_page', $data);
 	}
 

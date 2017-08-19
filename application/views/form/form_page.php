@@ -113,11 +113,7 @@
     var <?= $field['html_id']; ?> = new Bloodhound({
       datumTokenizer: Bloodhound.tokenizers.whitespace,
       queryTokenizer: Bloodhound.tokenizers.whitespace,
-
-      prefetch: window.location.origin + '/selectt/api/tableInfo/table/' + capitalizeFirstLetter('<?= $field['html_id']; ?>'),
-      remote: {
-        url: window.location.origin + '/selectt/api/tableInfo/table/' + capitalizeFirstLetter('<?= $field['html_id']; ?>')
-      }
+      local: <?= json_encode($field['typeheadJS']); ?> 
     });
 
     <?= $field['html_id']; ?>.initialize();
@@ -127,9 +123,7 @@
         hint: true,
         highlight: true,
         minLength: 1,        
-        ttl_ms: 1,
-        prefetch: window.location.origin + '/selectt/api/tableInfo/table/' + capitalizeFirstLetter('<?= $field['html_id']; ?>'),
-        remote: window.location.origin + '/selectt/api/tableInfo/table/' + capitalizeFirstLetter('<?= $field['html_id']; ?>')
+        ttl_ms: 1
       },{
         name: '<?= $field['html_id']; ?>',
         source: <?= $field['html_id']; ?>.ttAdapter()

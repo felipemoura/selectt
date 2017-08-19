@@ -8,23 +8,23 @@
     SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 
     -- -----------------------------------------------------
-    -- Schema dbo
+    -- Schema selectt
     -- -----------------------------------------------------
 
     -- -----------------------------------------------------
-    -- Schema dbo
+    -- Schema selectt
     -- -----------------------------------------------------
-    CREATE SCHEMA IF NOT EXISTS `dbo` DEFAULT CHARACTER SET utf8 ;
-    USE `dbo` ;
+    CREATE SCHEMA IF NOT EXISTS `selectt` DEFAULT CHARACTER SET utf8 ;
+    USE `selectt` ;
 
 
     -- -----------------------------------------------------
-    -- Table `dbo`.`Field`
+    -- Table `selectt`.`Field`
     -- -----------------------------------------------------
-    DROP TABLE IF EXISTS `dbo`.`Field`;
+    DROP TABLE IF EXISTS `selectt`.`Field`;
 
 
-    CREATE TABLE IF NOT EXISTS `dbo`.`Field` (
+    CREATE TABLE IF NOT EXISTS `selectt`.`Field` (
       `idField` INT NOT NULL AUTO_INCREMENT,
       `category` VARCHAR(64) NOT NULL,
       `atribute` VARCHAR(64) NOT NULL,
@@ -41,59 +41,59 @@
       )
     ENGINE = InnoDB;
 
-    USE `dbo` ;
+    USE `selectt` ;
 
     -- -----------------------------------------------------
-    -- Placeholder table for view `dbo`.`view1`
+    -- Placeholder table for view `selectt`.`view1`
     -- -----------------------------------------------------
-    CREATE TABLE IF NOT EXISTS `dbo`.`view1` (`id` INT);
+    CREATE TABLE IF NOT EXISTS `selectt`.`view1` (`id` INT);
 
     -- -----------------------------------------------------
-    -- View `dbo`.`view1`
+    -- View `selectt`.`view1`
     -- -----------------------------------------------------
-    DROP TABLE IF EXISTS `dbo`.`view1`;
-    USE `dbo`;
+    DROP TABLE IF EXISTS `selectt`.`view1`;
+    USE `selectt`;
 
 
 
 
     -- Field
-    INSERT INTO `dbo`.`Field` (`idField`, `category`, `atribute`, `weight`, `html_id`, `html_name`, `html_row_count`, `html_label`, `html_placeholder`, `html_info`) VALUES ('1', 'Study identification', 'Title', '0.00', 'title', 'title', '1', 'Title', 'Please enter with Title', 'The Title of the project published');
-    INSERT INTO `dbo`.`Field` (`idField`, `category`, `atribute`, `weight`, `html_id`, `html_name`, `html_row_count`, `html_label`, `html_placeholder`, `html_info`) VALUES ('2', 'Study identification', 'Year', '0.00', 'year', 'year', '1', 'Year', '', 'Year that the article was published');
-    INSERT INTO `dbo`.`Field` (`idField`, `category`, `atribute`, `weight`, `html_id`, `html_name`, `html_row_count`, `html_label`, `html_placeholder`, `html_info`) VALUES ('3', 'Study identification', 'Bibliografic Reference (BibTex)', '0.00', 'bibtex', 'bibtex', '3', 'Bibliografic reference (Bibtex)', 'Please enter with Bibliografic reference (Bibtex)', '');
-    INSERT INTO `dbo`.`Field` (`idField`, `category`, `atribute`, `weight`, `html_id`, `html_name`, `html_row_count`, `html_label`, `html_placeholder`, `html_info`) VALUES ('4', 'Study identification', 'Link (URL)', '0.00', 'link', 'link', '1', 'Link (URL)', 'Please enter with Link (URL)', 'Link to the article');
-    INSERT INTO `dbo`.`Field` (`idField`, `category`, `atribute`, `weight`, `html_id`, `html_name`, `html_row_count`, `html_label`, `html_placeholder`, `html_info`) VALUES ('5', 'Programming model', 'Execution platform', '0.0680', 'executionPlatform', 'executionPlatform', '1', 'Execution platform', 'Please enter with Execution platformm', 'Execution platform that the software under test executes');
-    INSERT INTO `dbo`.`Field` (`idField`, `category`, `atribute`, `weight`, `html_id`, `html_name`, `html_row_count`, `html_label`, `html_placeholder`, `html_info`) VALUES ('6', 'Programming model', 'Context/Objective', '0.00', 'objective', 'objective', '1', 'Context/Objective', 'Please enter with Context/Objective', 'Context/objective of the concurrent software');
-    INSERT INTO `dbo`.`Field` (`idField`, `category`, `atribute`, `weight`, `html_id`, `html_name`, `html_row_count`, `html_label`, `html_placeholder`, `html_info`) VALUES ('7', 'Programming model', 'Programming language/Runtime libraries', '0.0573', 'programmingLanguage', 'programmingLanguage', '1', 'Programming Language/Runtime libraries', 'Please enter with Programming language', 'Programming language and/or runtime libraries that the software under testing was developed');
-    INSERT INTO `dbo`.`Field` (`idField`, `category`, `atribute`, `weight`, `html_id`, `html_name`, `html_row_count`, `html_label`, `html_placeholder`, `html_info`) VALUES ('8', 'General testing characteristics', 'Testing technique', '0.0738', 'testingTechnique', 'testingTechnique', '1', 'Testing technique', 'Please enter with Testing Technique', 'Type of testing technique proposed');
-    INSERT INTO `dbo`.`Field` (`idField`, `category`, `atribute`, `weight`, `html_id`, `html_name`, `html_row_count`, `html_label`, `html_placeholder`, `html_info`) VALUES ('9', 'General testing characteristics', 'Test data generation', '0.00', 'testDataGeneration', 'testDataGeneration', '1', 'Test data generation', 'Please enter with Test data generation', 'Synchronization interleaving mechanism');
-    INSERT INTO `dbo`.`Field` (`idField`, `category`, `atribute`, `weight`, `html_id`, `html_name`, `html_row_count`, `html_label`, `html_placeholder`, `html_info`) VALUES ('10', 'General testing characteristics', 'Testing level', '0.0689', 'testingLevel', 'testingLevel', '1', 'Testing level', 'Please enter with Testing level', 'Testing level that the technique was applied');
-    INSERT INTO `dbo`.`Field` (`idField`, `category`, `atribute`, `weight`, `html_id`, `html_name`, `html_row_count`, `html_label`, `html_placeholder`, `html_info`) VALUES ('11', 'General testing characteristics', 'Synchronization interleaving mechanism', '0.0689', 'synchronizationMechanism', 'synchronizationMechanism', '1', 'Synchronization interleaving mechanism', 'Please enter with Synchronization interleaving mechanism', 'Development Context/Objective of the software under testing');
-    INSERT INTO `dbo`.`Field` (`idField`, `category`, `atribute`, `weight`, `html_id`, `html_name`, `html_row_count`, `html_label`, `html_placeholder`, `html_info`) VALUES ('12', 'General testing characteristics', 'Inputs required', '0.0641', 'input', 'input', '1', 'Inputs required', 'Please enter with Input', 'Expected input for a test case');
-    INSERT INTO `dbo`.`Field` (`idField`, `category`, `atribute`, `weight`, `html_id`, `html_name`, `html_row_count`, `html_label`, `html_placeholder`, `html_info`) VALUES ('13', 'General testing characteristics', 'Output', '0.0670', 'output', 'output', '2', 'Output/Response variable', 'Please enter with Output/Response variable', 'Expected output for a test case');
-    INSERT INTO `dbo`.`Field` (`idField`, `category`, `atribute`, `weight`, `html_id`, `html_name`, `html_row_count`, `html_label`, `html_placeholder`, `html_info`) VALUES ('14', 'General testing characteristics', 'Quality attribute', '0.0777', 'qualityAttribute', 'qualityAttribute', '1', 'Quality attributes', 'Please enter with Quality attribute', 'Software quality characteristic that the technique is able to evaluate');
-    INSERT INTO `dbo`.`Field` (`idField`, `category`, `atribute`, `weight`, `html_id`, `html_name`, `html_row_count`, `html_label`, `html_placeholder`, `html_info`) VALUES ('15', 'General testing characteristics', 'Type of empirical study', '0.00', 'typeOfStudy', 'typeOfStudy', '1', 'Type of study', 'Please enter with Type of study', 'Type of empirical study applied to validate teh testing technique');
-    INSERT INTO `dbo`.`Field` (`idField`, `category`, `atribute`, `weight`, `html_id`, `html_name`, `html_row_count`, `html_label`, `html_placeholder`, `html_info`) VALUES ('16', 'Concurrent testing characteristics', 'Testing analysis', '0.0641', 'testingAnalysis', 'testingAnalysis', '1', 'Testing analysis', 'Please enter with Testing analysis', 'Type of analysis used by the technique ');
-    INSERT INTO `dbo`.`Field` (`idField`, `category`, `atribute`, `weight`, `html_id`, `html_name`, `html_row_count`, `html_label`, `html_placeholder`, `html_info`) VALUES ('17', 'Concurrent testing characteristics', 'Concurrent paradigm for process interaction', '0.0592', 'concurrentParadigm', 'concurrentParadigm', '1', 'Concurrent paradigm for process interaction', 'Please enter with Concurrent paradigm', 'Concurrent paradigm for process interaction');
-    INSERT INTO `dbo`.`Field` (`idField`, `category`, `atribute`, `weight`, `html_id`, `html_name`, `html_row_count`, `html_label`, `html_placeholder`, `html_info`) VALUES ('18', 'Concurrent testing characteristics', 'Replay mechanism', '0.0602', 'replayMechanism', 'replayMechanism', '1', 'Replay mechanism', 'Please enter with Replay mechanism', 'Type of replay mechanism used to re-execute the program during the testing');
-    INSERT INTO `dbo`.`Field` (`idField`, `category`, `atribute`, `weight`, `html_id`, `html_name`, `html_row_count`, `html_label`, `html_placeholder`, `html_info`) VALUES ('19', 'Concurrent testing characteristics', 'Program representation', '0.00', 'programRepresentation', 'programRepresentation', '1', 'Program representation', 'Please enter with Program representation', 'The program representation that captures the relevant information to the testing');
-    INSERT INTO `dbo`.`Field` (`idField`, `category`, `atribute`, `weight`, `html_id`, `html_name`, `html_row_count`, `html_label`, `html_placeholder`, `html_info`) VALUES ('20', 'Concurrent testing characteristics', 'Instrumentation', '0.00', 'instrumentation', 'instrumentation', '1', 'Instrumentation', '', '');
-    INSERT INTO `dbo`.`Field` (`idField`, `category`, `atribute`, `weight`, `html_id`, `html_name`, `html_row_count`, `html_label`, `html_placeholder`, `html_info`) VALUES ('21', 'Concurrent testing characteristics', 'State space reduction', '0.0592', 'stateSpaceReduction', 'stateSpaceReduction', '1', 'State space reduction', 'Please enter with State space reduction', 'The technique used to treat the state explosion problem');
-    INSERT INTO `dbo`.`Field` (`idField`, `category`, `atribute`, `weight`, `html_id`, `html_name`, `html_row_count`, `html_label`, `html_placeholder`, `html_info`) VALUES ('22', 'Concurrent testing characteristics', 'Concurrent bugs', '0.0777', 'concurrentBugs', 'concurrentBugs', '1', 'Concurrent bugs', 'Please enter with Concurrent bugs', 'The type of concurrent bugs identified by the testing technique');
-    INSERT INTO `dbo`.`Field` (`idField`, `category`, `atribute`, `weight`, `html_id`, `html_name`, `html_row_count`, `html_label`, `html_placeholder`, `html_info`) VALUES ('23', 'Testing tool support', 'Tool name', '0.0670', 'toolName', 'toolName', '1', 'Tool name', 'Please enter with Tool name', 'Name of the tool if the technique presents one');
-    INSERT INTO `dbo`.`Field` (`idField`, `category`, `atribute`, `weight`, `html_id`, `html_name`, `html_row_count`, `html_label`, `html_placeholder`, `html_info`) VALUES ('24', 'Testing tool support', 'Cost', '0.00', 'cost', 'cost', '1', 'Cost', 'Please enter with Cost', 'The cost associated with the tool');
-    INSERT INTO `dbo`.`Field` (`idField`, `category`, `atribute`, `weight`, `html_id`, `html_name`, `html_row_count`, `html_label`, `html_placeholder`, `html_info`) VALUES ('25', 'Testing tool support', 'Tool Platform', '0.00', 'platformTool', 'platformTool', '1', 'Platform that the tool operates', 'Please enter with Platform Tool', 'The execution platform that the tool operates');
+    INSERT INTO `selectt`.`Field` (`idField`, `category`, `atribute`, `weight`, `html_id`, `html_name`, `html_row_count`, `html_label`, `html_placeholder`, `html_info`) VALUES ('1', 'Study identification', 'Title', '0.00', 'title', 'title', '1', 'Title', 'Please enter with Title', 'The Title of the project published');
+    INSERT INTO `selectt`.`Field` (`idField`, `category`, `atribute`, `weight`, `html_id`, `html_name`, `html_row_count`, `html_label`, `html_placeholder`, `html_info`) VALUES ('2', 'Study identification', 'Year', '0.00', 'year', 'year', '1', 'Year', '', 'Year that the article was published');
+    INSERT INTO `selectt`.`Field` (`idField`, `category`, `atribute`, `weight`, `html_id`, `html_name`, `html_row_count`, `html_label`, `html_placeholder`, `html_info`) VALUES ('3', 'Study identification', 'Bibliografic Reference (BibTex)', '0.00', 'bibtex', 'bibtex', '3', 'Bibliografic reference (Bibtex)', 'Please enter with Bibliografic reference (Bibtex)', '');
+    INSERT INTO `selectt`.`Field` (`idField`, `category`, `atribute`, `weight`, `html_id`, `html_name`, `html_row_count`, `html_label`, `html_placeholder`, `html_info`) VALUES ('4', 'Study identification', 'Link (URL)', '0.00', 'link', 'link', '1', 'Link (URL)', 'Please enter with Link (URL)', 'Link to the article');
+    INSERT INTO `selectt`.`Field` (`idField`, `category`, `atribute`, `weight`, `html_id`, `html_name`, `html_row_count`, `html_label`, `html_placeholder`, `html_info`) VALUES ('5', 'Programming model', 'Execution platform', '0.0680', 'executionPlatform', 'executionPlatform', '1', 'Execution platform', 'Please enter with Execution platformm', 'Execution platform that the software under test executes');
+    INSERT INTO `selectt`.`Field` (`idField`, `category`, `atribute`, `weight`, `html_id`, `html_name`, `html_row_count`, `html_label`, `html_placeholder`, `html_info`) VALUES ('6', 'Programming model', 'Context/Objective', '0.00', 'objective', 'objective', '1', 'Context/Objective', 'Please enter with Context/Objective', 'Context/objective of the concurrent software');
+    INSERT INTO `selectt`.`Field` (`idField`, `category`, `atribute`, `weight`, `html_id`, `html_name`, `html_row_count`, `html_label`, `html_placeholder`, `html_info`) VALUES ('7', 'Programming model', 'Programming language/Runtime libraries', '0.0573', 'programmingLanguage', 'programmingLanguage', '1', 'Programming Language/Runtime libraries', 'Please enter with Programming language', 'Programming language and/or runtime libraries that the software under testing was developed');
+    INSERT INTO `selectt`.`Field` (`idField`, `category`, `atribute`, `weight`, `html_id`, `html_name`, `html_row_count`, `html_label`, `html_placeholder`, `html_info`) VALUES ('8', 'General testing characteristics', 'Testing technique', '0.0738', 'testingTechnique', 'testingTechnique', '1', 'Testing technique', 'Please enter with Testing Technique', 'Type of testing technique proposed');
+    INSERT INTO `selectt`.`Field` (`idField`, `category`, `atribute`, `weight`, `html_id`, `html_name`, `html_row_count`, `html_label`, `html_placeholder`, `html_info`) VALUES ('9', 'General testing characteristics', 'Test data generation', '0.0670', 'testDataGeneration', 'testDataGeneration', '1', 'Test data generation', 'Please enter with Test data generation', 'Synchronization interleaving mechanism');
+    INSERT INTO `selectt`.`Field` (`idField`, `category`, `atribute`, `weight`, `html_id`, `html_name`, `html_row_count`, `html_label`, `html_placeholder`, `html_info`) VALUES ('10', 'General testing characteristics', 'Testing level', '0.0689', 'testingLevel', 'testingLevel', '1', 'Testing level', 'Please enter with Testing level', 'Testing level that the technique was applied');
+    INSERT INTO `selectt`.`Field` (`idField`, `category`, `atribute`, `weight`, `html_id`, `html_name`, `html_row_count`, `html_label`, `html_placeholder`, `html_info`) VALUES ('11', 'General testing characteristics', 'Synchronization interleaving mechanism', '0.0689', 'synchronizationMechanism', 'synchronizationMechanism', '1', 'Synchronization interleaving mechanism', 'Please enter with Synchronization interleaving mechanism', 'Development Context/Objective of the software under testing');
+    INSERT INTO `selectt`.`Field` (`idField`, `category`, `atribute`, `weight`, `html_id`, `html_name`, `html_row_count`, `html_label`, `html_placeholder`, `html_info`) VALUES ('12', 'General testing characteristics', 'Inputs required', '0.0641', 'input', 'input', '1', 'Inputs required', 'Please enter with Input', 'Expected input for a test case');
+    INSERT INTO `selectt`.`Field` (`idField`, `category`, `atribute`, `weight`, `html_id`, `html_name`, `html_row_count`, `html_label`, `html_placeholder`, `html_info`) VALUES ('13', 'General testing characteristics', 'Output', '0.0670', 'output', 'output', '2', 'Output/Response variable', 'Please enter with Output/Response variable', 'Expected output for a test case');
+    INSERT INTO `selectt`.`Field` (`idField`, `category`, `atribute`, `weight`, `html_id`, `html_name`, `html_row_count`, `html_label`, `html_placeholder`, `html_info`) VALUES ('14', 'General testing characteristics', 'Quality attribute', '0.0777', 'qualityAttribute', 'qualityAttribute', '1', 'Quality attributes', 'Please enter with Quality attribute', 'Software quality characteristic that the technique is able to evaluate');
+    INSERT INTO `selectt`.`Field` (`idField`, `category`, `atribute`, `weight`, `html_id`, `html_name`, `html_row_count`, `html_label`, `html_placeholder`, `html_info`) VALUES ('15', 'General testing characteristics', 'Type of empirical study', '0.00', 'typeOfStudy', 'typeOfStudy', '1', 'Type of study', 'Please enter with Type of study', 'Type of empirical study applied to validate teh testing technique');
+    INSERT INTO `selectt`.`Field` (`idField`, `category`, `atribute`, `weight`, `html_id`, `html_name`, `html_row_count`, `html_label`, `html_placeholder`, `html_info`) VALUES ('16', 'Concurrent testing characteristics', 'Testing analysis', '0.0641', 'testingAnalysis', 'testingAnalysis', '1', 'Testing analysis', 'Please enter with Testing analysis', 'Type of analysis used by the technique');
+    INSERT INTO `selectt`.`Field` (`idField`, `category`, `atribute`, `weight`, `html_id`, `html_name`, `html_row_count`, `html_label`, `html_placeholder`, `html_info`) VALUES ('17', 'Concurrent testing characteristics', 'Concurrent paradigm for process interaction', '0.0592', 'concurrentParadigm', 'concurrentParadigm', '1', 'Concurrent paradigm for process interaction', 'Please enter with Concurrent paradigm', 'Concurrent paradigm for process interaction');
+    INSERT INTO `selectt`.`Field` (`idField`, `category`, `atribute`, `weight`, `html_id`, `html_name`, `html_row_count`, `html_label`, `html_placeholder`, `html_info`) VALUES ('18', 'Concurrent testing characteristics', 'Replay mechanism', '0.0602', 'replayMechanism', 'replayMechanism', '1', 'Replay mechanism', 'Please enter with Replay mechanism', 'Type of replay mechanism used to re-execute the program during the testing');
+    INSERT INTO `selectt`.`Field` (`idField`, `category`, `atribute`, `weight`, `html_id`, `html_name`, `html_row_count`, `html_label`, `html_placeholder`, `html_info`) VALUES ('19', 'Concurrent testing characteristics', 'Program representation', '0.00', 'programRepresentation', 'programRepresentation', '1', 'Program representation', 'Please enter with Program representation', 'The program representation that captures the relevant information to the testing');
+    INSERT INTO `selectt`.`Field` (`idField`, `category`, `atribute`, `weight`, `html_id`, `html_name`, `html_row_count`, `html_label`, `html_placeholder`, `html_info`) VALUES ('20', 'Concurrent testing characteristics', 'Instrumentation', '0.00', 'instrumentation', 'instrumentation', '1', 'Instrumentation', '', '');
+    INSERT INTO `selectt`.`Field` (`idField`, `category`, `atribute`, `weight`, `html_id`, `html_name`, `html_row_count`, `html_label`, `html_placeholder`, `html_info`) VALUES ('21', 'Concurrent testing characteristics', 'State space reduction', '0.0592', 'stateSpaceReduction', 'stateSpaceReduction', '1', 'State space reduction', 'Please enter with State space reduction', 'The technique used to treat the state explosion problem');
+    INSERT INTO `selectt`.`Field` (`idField`, `category`, `atribute`, `weight`, `html_id`, `html_name`, `html_row_count`, `html_label`, `html_placeholder`, `html_info`) VALUES ('22', 'Concurrent testing characteristics', 'Concurrent bugs', '0.0777', 'concurrentBugs', 'concurrentBugs', '1', 'Concurrent bugs', 'Please enter with Concurrent bugs', 'The type of concurrent bugs identified by the testing technique');
+    INSERT INTO `selectt`.`Field` (`idField`, `category`, `atribute`, `weight`, `html_id`, `html_name`, `html_row_count`, `html_label`, `html_placeholder`, `html_info`) VALUES ('23', 'Testing tool support', 'Tool name', '0.0670', 'toolName', 'toolName', '1', 'Tool name', 'Please enter with Tool name', 'Name of the tool if the technique presents one');
+    INSERT INTO `selectt`.`Field` (`idField`, `category`, `atribute`, `weight`, `html_id`, `html_name`, `html_row_count`, `html_label`, `html_placeholder`, `html_info`) VALUES ('24', 'Testing tool support', 'Cost', '0.00', 'cost', 'cost', '1', 'Cost', 'Please enter with Cost', 'The cost associated with the tool');
+    INSERT INTO `selectt`.`Field` (`idField`, `category`, `atribute`, `weight`, `html_id`, `html_name`, `html_row_count`, `html_label`, `html_placeholder`, `html_info`) VALUES ('25', 'Testing tool support', 'Tool Platform', '0.00', 'platformTool', 'platformTool', '1', 'Platform that the tool operates', 'Please enter with Platform Tool', 'The execution platform that the tool operates');
 
 
 
 
 
     -- -----------------------------------------------------
-    -- Table `dbo`.`Technique`
+    -- Table `selectt`.`Technique`
     -- -----------------------------------------------------
-    DROP TABLE IF EXISTS `dbo`.`Technique`; 
+    DROP TABLE IF EXISTS `selectt`.`Technique`; 
 
-    CREATE TABLE IF NOT EXISTS `dbo`.`Technique` (
+    CREATE TABLE IF NOT EXISTS `selectt`.`Technique` (
       `id` INT NOT NULL AUTO_INCREMENT,
       `title` VARCHAR(255) NOT NULL,
       `year` INT NOT NULL,
@@ -108,20 +108,23 @@
     ENGINE = InnoDB;
 
 
-    INSERT INTO `dbo`.`Technique`
-    (`id`,
-    `title`,
-    `year`,
-    `bibTex`,
-    `link`,
-    `needApproval`,
-    `insertedBy`,
-    `insertedOn`)
-    VALUES
-    (1,
-    'An Empirical Evaluation of the Cost and Effectiveness of Structural Testing Criteria for Concurrent Programs',
-    2013,
-    '"@inproceedings{2,
+INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  1 , 'A Modular Approach to Model-based Testing of Concurrent Programs', 2013  , '"@Inbook{1,
+    author=""Carver, Richard
+    and Lei, Yu"",
+    editor=""Louren{\c{c}}o, Jo{\~a}o M.
+    and Farchi, E7
+    chapter=""A Modular Approach to Model-Based Testing of Concurrent Programs"",
+    title=""Multicore Software Engineering, Performance, and Tools: International Conference, C11 2013, St. Petersburg, Russia, August 19-20, 2013. Proceedings"",
+    year=""2013"",
+    publisher=""Springer Berlin Heidelberg"",
+    address=""Berlin, Heidelberg"",
+    pages=""85--96"",
+    isbn=""978-3-642-39955-8"",
+    doi=""10.1007/978-3-642-39955-8_8"",
+    url=""http://dx.doi.org/10.1007/978-3-642-39955-8_8""
+    }"',  'dl.acm.org/citation.cfm?id=2951642', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  2 , 'An Empirical Evaluation of the Cost and Effectiveness of Structural Testing Criteria for Concurrent Programs', 2013  , '"@inproceedings{2,
       added-at = {2013-06-05T00:00:00.000+0200},
       author = {Brito, Maria A. S. and do Rocio Senger de Souza, Simone and de Souza, Paulo Sergio Lopes},
       biburl = {http://www.bibsonomy.org/bibtex/21935ffea5917ab7825789e25d985a931/dblp},
@@ -140,52 +143,1911 @@
       url = {http://dblp.uni-trier.de/db/conf/iccS/iccS2013.html#BritoSS13},
       volume = 18,
       year = 2013
-    }"',
-    'www.sciencedirect.com/science/article/pii/S1877050913003311',
-    0,
-    'admin',
-    NOW());
+    }"',  'www.sciencedirect.com/science/article/pii/S1877050913003311', 0, 'admin', NOW() );
 
-    INSERT INTO `dbo`.`Technique` 
-    (`id`, 
-    `title`, 
-    `year`, 
-    `bibTex`, 
-    `link`, 
-    `needApproval`, 
-    `insertedBy`, 
-    `insertedOn`) 
-    VALUES 
-    (2, 
-    'Empirical evaluation of a new composite approach to the coverage criteria and reachability testing of concurrent programs', 
-    '2014', 
-    '"@article {27,
-      author = {Souza, S. R. S. and Souza, P. S. L. and Brito, M. A. S. and Simao, A. S. and Zaluska, E. J.},
-      title = {Empirical evaluation of a new composite approach to the coverage criteria and reachability testing of concurrent programs},
-      journal = {Software Testing, Verification and Reliability},
-      volume = {25},
-      number = {3},
-      issn = {1099-1689},
-      url = {http://dx.doi.org/10.1002/stvr.1568},
-      doi = {10.1002/stvr.1568},
-      pages = {310--332},
-      keywords = {structural testing, reachability testing, concurrent programs, experimental study},
-      year = {2015},
-    }"',
-    'onlinelibrary.wiley.com/doi/10.1002/stvr.1568/abstract',
-    0,
-    'admin',
-    NOW());
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  3 , 'BALLERINA: automatic generation and clustering of efficient random unit tests for multithreaded code', 2012  , '"@inproceedings{3,
+     author = {Nistor, Adrian and Luo, Qingzhou and Pradel, Michael and Gross, Thomas R. and Marinov, Darko},
+     title = {BALLERINA: Automatic Generation and Clustering of Efficient Random Unit Tests for Multithreaded Code},
+     booktitle = {Proceedings of the 34th International Conference on Software Engineering},
+     series = {ICSE \'12},
+     year = {2012},
+     isbn = {978-1-4673-1067-3},
+     location = {Zurich, Switzerland},
+     pages = {727--737},
+     numpages = {11},
+     url = {http://dl.acm.org/citation.cfm?id=2337223.2337309},
+     acmid = {2337309},
+     publisher = {IEEE Press},
+     address = {Piscataway, NJ, USA},
+    }"',  'ieeexplore.ieee.org/document/6227145/', 0, 'admin', NOW() );
 
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  4 , 'CARISMA: a context-sensitive approach to race-condition sample-instance selection for multithreaded applications.',  2012  , '"@inproceedings{4,
+      added-at = {2012-09-09T00:00:00.000+0200},
+      author = {Zhai, Ke and Xu, Boni and Chan, W. K. and Tse, T. H.},
+      biburl = {http://www.bibsonomy.org/bibtex/22c93e52495d78b741fa87235fcbd71be/dblp},
+      booktitle = {ISSTA},
+      crossref = {conf/issta/2012},
+      editor = {Heimdahl, Mats Per Erik and Su, Zhendong},
+      ee = {http://doi.acm.org/10.1145/2338965.2336780},
+      interhash = {8a09602b81d4c6a2261b46d3244851ed},
+      intrahash = {2c93e52495d78b741fa87235fcbd71be},
+      isbn = {978-1-4503-1454-1},
+      keywords = {dblp},
+      pages = {221-231},
+      publisher = {ACM},
+      timestamp = {2012-09-11T11:35:14.000+0200},
+      title = {CARISMA: a context-sensitive approach to race-condition sample-instance selection for multithreaded applications.},
+      url = {http://dblp.uni-trier.de/db/conf/issta/issta2012.html#ZhaiXCT12},
+      year = 2012
+    }"',  'dl.acm.org/citation.cfm?id=2336780', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  5 , 'Comparative assessment of testing and model checking using program mutation. ',  2007  , '"@inproceedings{5,
+    Author = {Jeremy S. Bradbury AND James R. Cordy AND Juergen Dingel},
+    Booktitle = {Proc. of the 3rd Workshop on Mutation Analysis (Mutation 2007)},
+    Month = {Sept.},
+    Pages = {210-219},
+    Title = {Comparative Assessment of Testing and Model Checking Using Program Mutation},
+    Year = {2007}}"',   'ieeexplore.ieee.org/document/4344126/', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  6 , 'Efficient mutation testing of multithreaded code', 2013  , '"@article {6,
+    author = {Gligoric, Milos and Jagannath, Vilas and Luo, Qingzhou and Marinov, Darko},
+    title = {Efficient mutation testing of multithreaded code},
+    journal = {Software Testing, Verification and Reliability},
+    volume = {23},
+    number = {5},
+    issn = {1099-1689},
+    url = {http://dx.doi.org/10.1002/stvr.1469},
+    doi = {10.1002/stvr.1469},
+    pages = {375--403},
+    keywords = {mutation testing, multithreaded code},
+    year = {2013},
+    }
+    "',   'onlinelibrary.wiley.com/doi/10.1002/stvr.1469/pdf', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  7 , 'Generating effective tests for concurrent programs via AI automated planning techniques',  2013  , '"@Article{7,
+      author =       ""Niloofar Razavi and Azadeh Farzan and Sheila A.
+                     McIlraith"",
+      title =        ""Generating effective tests for concurrent programs via
+                     {AI} automated planning techniques"",
+      journal =      j-INT-J-SOFTW-TOOLS-TECHNOL-TRANSFER,
+      volume =       ""16"",
+      number =       ""1"",
+      pages =        ""49--65"",
+      month =        feb,
+      year =         ""2014"",
+      CODEN =        ""????"",
+      DOI =          ""http://dx.doi.org/10.1007/s10009-013-0277-y"",
+      ISSN =         ""1433-2779 (print), 1433-2787 (electronic)"",
+      ISSN-L =       ""1433-2779"",
+      bibdate =      ""Fri Mar 14 08:24:41 MDT 2014"",
+      bibsource =    ""http://springerlink.metapress.com/openurl.asp?genre=issue&issn=????&volume=16&issue=1;
+                     http://www.math.utah.edu/pub/tex/bib/sttt.bib"",
+      URL =          ""http://link.springer.com/article/10.1007/s10009-013-0277-y"",
+      acknowledgement = ack-nhfb,
+      fjournal =     ""International Journal on Software Tools for Technology
+                     Transfer: STTT"",
+      journal-URL =  ""http://link.springer.com/journal/10009"",
+    }"',  'link.springer.com/article/10.1007/s10009-013-0277-y', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  8 , 'Generating unit tests for concurrent classes', 2013  , '"@INPROCEEDINGS{8, 
+    author={S. Steenbuck and G. Fraser}, 
+    booktitle={2013 IEEE Sixth International Conference on Software Testing, Verification and Validation}, 
+    title={Generating Unit Tests for Concurrent Classes}, 
+    year={2013}, 
+    pages={144-153}, 
+    keywords={concurrency control;multi-threading;program testing;Consuite prototype;automated testing tools;concurrent classes;multicore CPU;multithreaded code;novel coverage criterion;shared memory access points;unit test generation;Computer bugs;Concurrent computing;Instruction sets;Java;Schedules;Synchronization;Testing;concurrency coverage;search based software engineering;unit testing}, 
+    doi={10.1109/ICST.2013.33}, 
+    ISSN={2159-4848}, 
+    month={March},}"',  'dl.acm.org/citation.cfm?id=2511595', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  9 , 'How Good is Static Analysis at Finding Concurrency Bugs?', 2010  , '"@inproceedings{9,
+      added-at = {2015-04-15T00:00:00.000+0200},
+      author = {Kester, Devin and Mwebesa, Martin and Bradbury, Jeremy S.},
+      biburl = {http://www.bibsonomy.org/bibtex/263cac93762fbb8a4198b5417dbd8ac85/dblp},
+      booktitle = {SCAM},
+      crossref = {conf/scam/2010},
+      ee = {http://doi.ieeecomputersociety.org/10.1109/SCAM.2010.26},
+      interhash = {c5fa98be864226935f59b3b18298d907},
+      intrahash = {63cac93762fbb8a4198b5417dbd8ac85},
+      isbn = {978-0-7695-4178-5},
+      keywords = {dblp},
+      pages = {115-124},
+      publisher = {IEEE Computer Society},
+      timestamp = {2015-06-19T20:41:25.000+0200},
+      title = {How Good is Static Analysis at Finding Concurrency Bugs?},
+      url = {http://dblp.uni-trier.de/db/conf/scam/scam2010.html#KesterMB10},
+      year = 2010
+    }"',  'ieeexplore.ieee.org/document/5601822/ ', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  10  , 'Location pairs: a test coverage metric for shared-memory concurrent programs', 2012  , '"@article{10,
+      author    = {Serdar Tasiran and
+                   M. Erkan Keremoglu and
+                   Kivan{\c{c}} Muslu},
+      title     = {Location pairs: a test coverage metric for shared-memory concurrent
+                   programs},
+      journal   = {Empirical Software Engineering},
+      volume    = {17},
+      number    = {3},
+      pages     = {129--165},
+      year      = {2012},
+      url       = {http://dx.doi.org/10.1007/s10664-011-9166-8},
+      doi       = {10.1007/s10664-011-9166-8},
+      timestamp = {Fri, 24 Feb 2012 00:00:00 +0100},
+      biburl    = {http://dblp.uni-trier.de/rec/bib/journals/ese/TasiranKM12},
+      bibsource = {dblp computer science bibliography, http://dblp.org}
+    }"',  'link.springer.com/article/10.1007/s10664-011-9166-8', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  11  , 'The Impact of Concurrent Coverage Metrics on Testing Effectiveness', 2013  , '"@INPROCEEDINGS{11, 
+    author={S. Hong and M. Staats and J. Ahn and M. Kim and G. Rothermel}, 
+    booktitle={2013 IEEE Sixth International Conference on Software Testing, Verification and Validation}, 
+    title={The Impact of Concurrent Coverage Metrics on Testing Effectiveness}, 
+    year={2013}, 
+    pages={232-241}, 
+    keywords={multi-threading;program testing;software metrics;branch-and-statement coverage metrics;concurrent coverage metrics;concurrent program behavior;fault detection;multithreaded program testing;sequential program testing;Concurrent computing;Correlation;Delays;Fault detection;Synchronization;Testing;Software testing;concurrent program;coverage metric}, 
+    doi={10.1109/ICST.2013.32}, 
+    ISSN={2159-4848}, 
+    month={March},}"',  'dl.acm.org/citation.cfm?id=2511604&CFID=905291509', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  12  , 'A Lightweight and Portable Approach to Making Concurrent Failures Reproducible', 2010  , '"@inproceedings{12,
+     author = {Luo, Qingzhou and Zhang, Sai and Zhao, Jianjun and Hu, Min},
+     title = {A Lightweight and Portable Approach to Making Concurrent Failures Reproducible},
+     booktitle = {Proceedings of the 13th International Conference on Fundamental Approaches to Software Engineering},
+     series = {FASE\'10},
+     year = {2010},
+     isbn = {3-642-12028-8, 978-3-642-12028-2},
+     location = {Paphos, Cyprus},
+     pages = {323--337},
+     numpages = {15},
+     url = {http://dx.doi.org/10.1007/978-3-642-12029-9_23},
+     doi = {10.1007/978-3-642-12029-9_23},
+     acmid = {2128593},
+     publisher = {Springer-Verlag},
+     address = {Berlin, Heidelberg},
+    } "',   'dl.acm.org/citation.cfm?id=2128593', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  13  , 'An approach to testing commercial embedded systems', 2013  , '"@article{13,
+     author = {Yu, Tingting and Sung, Ahyoung and Srisa-An, Witawas and Rothermel, Gregg},
+     title = {An Approach to Testing Commercial Embedded Systems},
+     journal = {J. Syst. Softw.},
+     issue_date = {February, 2014},
+     volume = {88},
+     month = feb,
+     year = {2014},
+     issn = {0164-1212},
+     pages = {207--230},
+     numpages = {24},
+     url = {http://dx.doi.org/10.1016/j.jss.2013.10.041},
+     doi = {10.1016/j.jss.2013.10.041},
+     acmid = {2566087},
+     publisher = {Elsevier Science Inc.},
+     address = {New York, NY, USA},
+     keywords = {Embedded systems, Software test adequacy criteria, Test oracles},
+    } "',   'dl.acm.org/citation.cfm?id=2566087', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  14  , 'An Automation-Assisted Empirical Study on Lock Usage for Concurrent Programs', 2013  , '"@INPROCEEDINGS{14, 
+    author={R. Xin and Z. Qi and S. Huang and C. Xiang and Y. Zheng and Y. Wang and H. Guan}, 
+    booktitle={Software Maintenance (ICSM), 2013 29th IEEE International Conference on}, 
+    title={An Automation-Assisted Empirical Study on Lock Usage for Concurrent Programs}, 
+    year={2013}, 
+    pages={100-109}, 
+    keywords={multi-threading;program testing;program verification;security of data;shared memory systems;Aget;Apache httpd;LUPA;Mysql;Pbzip2;automatic lock analysis;automation-assisted empirical study;concurrent program verification;data race detection;lock usage;multithread testing tools;shared memory protection;thread-interleaving;Computer bugs;Concurrent computing;Educational institutions;Pattern recognition;Programming;Software;Testing;concurrent program;empirical study;lock usage}, 
+    doi={10.1109/ICSM.2013.21}, 
+    ISSN={1063-6773}, 
+    month={Sept},}"',   'ieeexplore.ieee.org/document/6676881/', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  15  , 'An empirical study of data race detector tools', 2013  , '"@INPROCEEDINGS{15, 
+    author={J. S. Alowibdi and L. Stenneth}, 
+    booktitle={2013 25th Chinese Control and Decision Conference (CCDC)}, 
+    title={An empirical study of data race detector tools}, 
+    year={2013}, 
+    pages={3951-3955}, 
+    keywords={concurrency control;hazards and race conditions;parallel programming;software metrics;complex software systems;concurrent software systems;data race condition;data race detector tools;large software systems;software applications;software system efficiency;tool correctness measurement;tool effectiveness measurement;tool performance measurement;Benchmark testing;Detectors;Heuristic algorithms;Java;Software systems;Synchronization;Concurrent program;Correctness;Data race;Performance}, 
+    doi={10.1109/CCDC.2013.6561640}, 
+    ISSN={1948-9439}, 
+    month={May},}"',  'ieeexplore.ieee.org/document/6561640/ ', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  17  , 'Are concurrency coverage metrics effective for testing: a comprehensive empirical investigation',  2015  , '"@article{17,
+      author    = {Shin Hong and
+                   Matt Staats and
+                   Jaemin Ahn and
+                   Moonzoo Kim and
+                   Gregg Rothermel},
+      title     = {Are concurrency coverage metrics effective for testing: a comprehensive
+                   empirical investigation},
+      journal   = {Softw. Test., Verif. Reliab.},
+      volume    = {25},
+      number    = {4},
+      pages     = {334--370},
+      year      = {2015},
+      url       = {http://dx.doi.org/10.1002/stvr.1539},
+      doi       = {10.1002/stvr.1539},
+      timestamp = {Fri, 15 May 2015 01:00:00 +0200},
+      biburl    = {http://dblp.uni-trier.de/rec/bib/journals/stvr/HongSAKR15},
+      bibsource = {dblp computer science bibliography, http://dblp.org}
+    }"',  'dl.acm.org/citation.cfm?id=2858634', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  18  , 'ASP: Abstraction Subspace Partitioning for Detection of Atomicity Violations with an Empirical Study', 2013  , '"@ARTICLE{18, 
+    author={S. Wu and C. Yang and C. Jia and W. K. Chan}, 
+    journal={IEEE Transactions on Parallel and Distributed Systems}, 
+    title={ASP: Abstraction Subspace Partitioning for Detection of Atomicity Violations with an Empirical Study}, 
+    year={2016}, 
+    volume={27}, 
+    number={3}, 
+    pages={724-734}, 
+    keywords={concurrency control;multi-threading;program debugging;ASP;abstraction level;abstraction subspace partitioning;atomicity violation detection;atomicity violations;coarse-grained techniques;design factors;dynamic concurrency bug detectors;fault detection rate;multithreaded program executions;one-dimensional subspaces;partition-based prioritization;resultant partition-based techniques;vulnerability-related bugs;Benchmark testing;Computer bugs;Concurrent computing;Context;Detectors;Instruction sets;Atomicity violations;abstraction;bug localization;concurrency;debugging;multithreaded programs;partitioning;testing;testing and debugging;vulnerability}, 
+    doi={10.1109/TPDS.2015.2412544}, 
+    ISSN={1045-9219}, 
+    month={March},}"',  'ieeexplore.ieee.org/document/7059243/', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  19  , 'Assertion Guided Symbolic Execution of Multithreaded Programs',  2015  , '"@inproceedings{19,
+     author = {Guo, Shengjian and Kusano, Markus and Wang, Chao and Yang, Zijiang and Gupta, Aarti},
+     title = {Assertion Guided Symbolic Execution of Multithreaded Programs},
+     booktitle = {Proceedings of the 2015 10th Joint Meeting on Foundations of Software Engineering},
+     series = {ESEC/FSE 2015},
+     year = {2015},
+     isbn = {978-1-4503-3675-8},
+     location = {Bergamo, Italy},
+     pages = {854--865},
+     numpages = {12},
+     url = {http://doi.acm.org/10.1145/2786805.2786841},
+     doi = {10.1145/2786805.2786841},
+     acmid = {2786841},
+     publisher = {ACM},
+     address = {New York, NY, USA},
+     keywords = {Symbolic execution, concurrency, partial order reduction, test generation, weakest precondition},
+    } "',   'dl.acm.org/authorize?N92766', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  20  , 'Automated Classification of Data Races Under Both Strong and Weak Memory Models',  2013  , '"@article{20,
+     author = {Kasikci, Baris and Zamfir, Cristian and Candea, George},
+     title = {Automated Classification of Data Races Under Both Strong and Weak Memory Models},
+     journal = {ACM Trans. Program. Lang. Syst.},
+     issue_date = {June 2015},
+     volume = {37},
+     number = {3},
+     month = may,
+     year = {2015},
+     issn = {0164-0925},
+     pages = {8:1--8:44},
+     articleno = {8},
+     numpages = {44},
+     url = {http://doi.acm.org/10.1145/2734118},
+     doi = {10.1145/2734118},
+     acmid = {2734118},
+     publisher = {ACM},
+     address = {New York, NY, USA},
+     keywords = {Data races, concurrency, symbolic execution, triage},
+    } "',   'dl.acm.org/citation.cfm?id=2734118', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  21  , 'Clash of the Titans: Tools and techniques for hunting bugs in concurrent programs ', 2009  , '"@inproceedings{21,
+      added-at = {2010-01-19T00:00:00.000+0100},
+      author = {Rungta, Neha and Mercer, Eric G.},
+      biburl = {http://www.bibsonomy.org/bibtex/2a4f26f963c02ccc41679c4b03bbcf008/dblp},
+      booktitle = {PADTAD},
+      crossref = {conf/issta/2009p},
+      date = {2010-01-19},
+      description = {dblp},
+      editor = {Gopalakrishnan, Ganesh and Farchi, Eitan and Mercer, Eric},
+      ee = {http://doi.acm.org/10.1145/1639622.1639631},
+      interhash = {da07374b8ea22b8098bba849bb374c7e},
+      intrahash = {a4f26f963c02ccc41679c4b03bbcf008},
+      isbn = {978-1-60558-655-7},
+      keywords = {dblp},
+      publisher = {ACM},
+      timestamp = {2010-01-20T11:36:10.000+0100},
+      title = {Clash of the Titans: tools and techniques for hunting bugs in concurrent programs.},
+      url = {http://dblp.uni-trier.de/db/conf/issta/padtad2009.html#RungtaM09},
+      year = 2009
+    }"',  'dl.acm.org/citation.cfm?id=1639631', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  22  , 'Concurrency Testing Using Schedule Bounding: an Empirical Study',  2015  , '"@inproceedings{22,
+     author = {Thomson, Paul and Donaldson, Alastair F. and Betts, Adam},
+     title = {Concurrency Testing Using Schedule Bounding: An Empirical Study},
+     booktitle = {Proceedings of the 19th ACM SIGPLAN Symposium on Principles and Practice of Parallel Programming},
+     series = {PPoPP \'14},
+     year = {2014},
+     isbn = {978-1-4503-2656-8},
+     location = {Orlando, Florida, USA},
+     pages = {15--28},
+     numpages = {14},
+     url = {http://doi.acm.org/10.1145/2555243.2555260},
+     doi = {10.1145/2555243.2555260},
+     acmid = {2555260},
+     publisher = {ACM},
+     address = {New York, NY, USA},
+     keywords = {concurrency, context bounding, stateless model checking, systematic concurrency testing},
+    } "',   'dl.acm.org/citation.cfm?id=2555260', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  23  , 'ConLock: A Constraint-based Approach to Dynamic Checking on Deadlocks in Multithreaded Programs',  2014  , '"@inproceedings{23,
+     author = {Cai, Yan and Wu, Shangru and Chan, W. K.},
+     title = {ConLock: A Constraint-based Approach to Dynamic Checking on Deadlocks in Multithreaded Programs},
+     booktitle = {Proceedings of the 36th International Conference on Software Engineering},
+     series = {ICSE 2014},
+     year = {2014},
+     isbn = {978-1-4503-2756-5},
+     location = {Hyderabad, India},
+     pages = {491--502},
+     numpages = {12},
+     url = {http://doi.acm.org/10.1145/2568225.2568312},
+     doi = {10.1145/2568225.2568312},
+     acmid = {2568312},
+     publisher = {ACM},
+     address = {New York, NY, USA},
+     keywords = {Deadlock, confirmation, should-happen-before relation},
+    }"',  'dl.acm.org/citation.cfm?id=2568312', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  24  , 'Detecting Event Anomalies in Event-based Systems', 2015  , '"@inproceedings{24,
+     author = {Safi, Gholamreza and Shahbazian, Arman and Halfond, William G. J. and Medvidovic, Nenad},
+     title = {Detecting Event Anomalies in Event-based Systems},
+     booktitle = {Proceedings of the 2015 10th Joint Meeting on Foundations of Software Engineering},
+     series = {ESEC/FSE 2015},
+     year = {2015},
+     isbn = {978-1-4503-3675-8},
+     location = {Bergamo, Italy},
+     pages = {25--37},
+     numpages = {13},
+     url = {http://doi.acm.org/10.1145/2786805.2786836},
+     doi = {10.1145/2786805.2786836},
+     acmid = {2786836},
+     publisher = {ACM},
+     address = {New York, NY, USA},
+     keywords = {Android application, Event anomaly, Event-based system, Race detection},
+    } "',   'dl.acm.org/citation.cfm?id=2786836', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  25  , 'Effective random testing of concurrent programs',  2007  , '"@inproceedings{25,
+     author = {Sen, Koushik},
+     title = {Effective Random Testing of Concurrent Programs},
+     booktitle = {Proceedings of the Twenty-second IEEE/ACM International Conference on Automated Software Engineering},
+     series = {ASE \'07},
+     year = {2007},
+     isbn = {978-1-59593-882-4},
+     location = {Atlanta, Georgia, USA},
+     pages = {323--332},
+     numpages = {10},
+     url = {http://doi.acm.org/10.1145/1321631.1321679},
+     doi = {10.1145/1321631.1321679},
+     acmid = {1321679},
+     publisher = {ACM},
+     address = {New York, NY, USA},
+     keywords = {concurrent programs, random testing},
+    }"',  'dl.acm.org/citation.cfm?id=1321679', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  27  , 'Empirical evaluation of a new composite approach to the coverage criteria and reachability testing of concurrent programs',  2014  , '"@article {27,
+    author = {Souza, S. R. S. and Souza, P. S. L. and Brito, M. A. S. and Simao, A. S. and Zaluska, E. J.},
+    title = {Empirical evaluation of a new composite approach to the coverage criteria and reachability testing of concurrent programs},
+    journal = {Software Testing, Verification and Reliability},
+    volume = {25},
+    number = {3},
+    issn = {1099-1689},
+    url = {http://dx.doi.org/10.1002/stvr.1568},
+    doi = {10.1002/stvr.1568},
+    pages = {310--332},
+    keywords = {structural testing, reachability testing, concurrent programs, experimental study},
+    year = {2015},
+    }"',  'onlinelibrary.wiley.com/doi/10.1002/stvr.1568/abstract', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  29  , 'Incremental integration testing of concurrent programs', 2002  , '"@article{29, 
+    author = {Pramod V. Koppol and Richard H. Carver and Kuo-Chung Tai},
+    title = {Incremental Integration Testing of Concurrent Programs},
+    journal ={IEEE Transactions on Software Engineering},
+    volume = {28},
+    number = {6},
+    issn = {0098-5589},
+    year = {2002},
+    pages = {607-623},
+    doi = {http://doi.ieeecomputersociety.org/10.1109/TSE.2002.1010062},
+    publisher = {IEEE Computer Society},
+    address = {Los Alamitos, CA, USA},
+    }"',  'ieeexplore.ieee.org/iel5/32/21774/01010062.pdf', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  30  , 'Learning from mistakes: a comprehensive study on real world concurrency bug characteristics.', 2008  , '"@inproceedings{30,
+     author = {Lu, Shan and Park, Soyeon and Seo, Eunsoo and Zhou, Yuanyuan},
+     title = {Learning from Mistakes: A Comprehensive Study on Real World Concurrency Bug Characteristics},
+     booktitle = {Proceedings of the 13th International Conference on Architectural Support for Programming Languages and Operating Systems},
+     series = {ASPLOS XIII},
+     year = {2008},
+     isbn = {978-1-59593-958-6},
+     location = {Seattle, WA, USA},
+     pages = {329--339},
+     numpages = {11},
+     url = {http://doi.acm.org/10.1145/1346281.1346323},
+     doi = {10.1145/1346281.1346323},
+     acmid = {1346323},
+     publisher = {ACM},
+     address = {New York, NY, USA},
+     keywords = {bug characteristics, concurrency bug, concurrent program},
+    } "',   'dl.acm.org/citation.cfm?id=1346323', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  31  , 'RACEZ : A Lightweight and Non-Invasive Race Detection Tool for Production Applications', 2011  , '"@inproceedings{31, 
+    title = {RACEZ: A Lightweight and Non-Invasive Race Detection Tool for Production Applications},
+    author  = {Tianwei Sheng and Neil Vachharajani and Stephane Eranian and Robert Hundt},
+    year  = 2011,
+    URL = {http://portal.acm.org/citation.cfm?doid=1985793.1985848},
+    booktitle = {ICSE},
+    pages = {401-410}
+    }"',  'ieeexplore.ieee.org/document/6032479/ ', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  32  , 'RECONTEST: Effective Regression Testing of Concurrent Programs', 2014  , '"@inproceedings{32,
+     author = {Terragni, Valerio and Cheung, Shing-Chi and Zhang, Charles},
+     title = {RECONTEST: Effective Regression Testing of Concurrent Programs},
+     booktitle = {Proceedings of the 37th International Conference on Software Engineering - Volume 1},
+     series = {ICSE \'15},
+     year = {2015},
+     isbn = {978-1-4799-1934-5},
+     location = {Florence, Italy},
+     pages = {246--256},
+     numpages = {11},
+     url = {http://dl.acm.org/citation.cfm?id=2818754.2818787},
+     acmid = {2818787},
+     publisher = {IEEE Press},
+     address = {Piscataway, NJ, USA},
+    } 
+    "',   'dl.acm.org/citation.cfm?id=2818787', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  33  , 'Runtime Prevention of Concurrency Related Type-state Violations in Multithreaded Applications',  2013  , '"@inproceedings{33,
+     author = {Zhang, Lu and Wang, Chao},
+     title = {Runtime Prevention of Concurrency Related Type-state Violations in Multithreaded Applications},
+     booktitle = {Proceedings of the 2014 International Symposium on Software Testing and Analysis},
+     series = {ISSTA 2014},
+     year = {2014},
+     isbn = {978-1-4503-2645-2},
+     location = {San Jose, CA, USA},
+     pages = {1--12},
+     numpages = {12},
+     url = {http://doi.acm.org/10.1145/2610384.2610405},
+     doi = {10.1145/2610384.2610405},
+     acmid = {2610405},
+     publisher = {ACM},
+     address = {New York, NY, USA},
+     keywords = {Type state automaton, failure mitigation, model checking, partial order reduction, program repair, race condition},
+    }"',  'dl.acm.org/citation.cfm?id=2610405', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  34  , 'Saturation-based testing of concurrent programs',  2009  , '"@inproceedings{34,
+      added-at = {2009-08-31T00:00:00.000+0200},
+      author = {Sherman, Elena and Dwyer, Matthew B. and Elbaum, Sebastian G.},
+      biburl = {http://www.bibsonomy.org/bibtex/23fc8bd27c327af907a885722e35c043a/dblp},
+      booktitle = {ESEC/SIGSOFT FSE},
+      crossref = {conf/sigsoft/2009},
+      date = {2009-08-31},
+      description = {dblp},
+      editor = {van Vliet, Hans and Issarny, Valérie},
+      ee = {http://doi.acm.org/10.1145/1595696.1595706},
+      interhash = {6d05fc9a6f39d5795c367daf4fd169fd},
+      intrahash = {3fc8bd27c327af907a885722e35c043a},
+      isbn = {978-1-60558-001-2},
+      keywords = {dblp},
+      pages = {53-62},
+      publisher = {ACM},
+      timestamp = {2009-09-01T11:35:04.000+0200},
+      title = {Saturation-based testing of concurrent programs.},
+      url = {http://dblp.uni-trier.de/db/conf/sigsoft/fse2009.html#ShermanDE09},
+      year = 2009
+    }"',  'dl.acm.org/citation.cfm?id=1595706', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  35  , 'Selective mutation testing for concurrent code', 2013  , '"@inproceedings{35,
+      added-at = {2013-07-15T00:00:00.000+0200},
+      author = {Gligoric, Milos and Zhang, Lingming and Pereira, Cristiano and Pokam, Gilles},
+      biburl = {http://www.bibsonomy.org/bibtex/23fb441bf822eb5042481af166e7985be/dblp},
+      booktitle = {ISSTA},
+      crossref = {conf/issta/2013},
+      editor = {Pezzè, Mauro and Harman, Mark},
+      ee = {http://doi.acm.org/10.1145/2483760.2483773},
+      interhash = {9d94036a6817e31c5cb6925aa275e406},
+      intrahash = {3fb441bf822eb5042481af166e7985be},
+      isbn = {978-1-4503-2159-4},
+      keywords = {dblp},
+      pages = {224-234},
+      publisher = {ACM},
+      timestamp = {2013-08-13T15:03:11.000+0200},
+      title = {Selective mutation testing for concurrent code.},
+      url = {http://dblp.uni-trier.de/db/conf/issta/issta2013.html#GligoricZPP13},
+      year = 2013
+    }"',  'dl.acm.org/citation.cfm?id=2483773', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  36  , 'Testing Concurrent Programs on Relaxed Memory Models', 2011  , '"@inproceedings{36,
+     author = {Burnim, Jacob and Sen, Koushik and Stergiou, Christos},
+     title = {Testing Concurrent Programs on Relaxed Memory Models},
+     booktitle = {Proceedings of the 2011 International Symposium on Software Testing and Analysis},
+     series = {ISSTA \'11},
+     year = {2011},
+     isbn = {978-1-4503-0562-4},
+     location = {Toronto, Ontario, Canada},
+     pages = {122--132},
+     numpages = {11},
+     url = {http://doi.acm.org/10.1145/2001420.2001436},
+     doi = {10.1145/2001420.2001436},
+     acmid = {2001436},
+     publisher = {ACM},
+     address = {New York, NY, USA},
+     keywords = {active testing, concurrency, relaxed memory models},
+    }"',  'dl.acm.org/citation.cfm?id=2001436', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  37  , 'Toward a Methodology to Expose Partially Fixed Concurrency Bugs in Modified Multithreaded Programs', 2014  , '"@inproceedings{37,
+     author = {Tsui, To and Wu, Shangru and Chan, W. K.},
+     title = {Toward a Methodology to Expose Partially Fixed Concurrency Bugs in Modified Multithreaded Programs},
+     booktitle = {Proceedings of the International Workshop on Innovative Software Development Methodologies and Practices},
+     series = {InnoSWDev 2014},
+     year = {2014},
+     isbn = {978-1-4503-3226-2},
+     location = {Hong Kong, China},
+     pages = {49--56},
+     numpages = {8},
+     url = {http://doi.acm.org/10.1145/2666581.2666592},
+     doi = {10.1145/2666581.2666592},
+     acmid = {2666592},
+     publisher = {ACM},
+     address = {New York, NY, USA},
+     keywords = {Regression testing, active testing, concurrency bugs, debugging, execution contexts, modified versions, similarity measure},
+    } 
+    "',   'dl.acm.org/citation.cfm?id=2666592', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  38  , 'Incremental testing of concurrent programs using value schedules', 2008  , '"@INPROCEEDINGS{38,
+        author = {Jun Chen and Steve Macdonald},
+        title = {Incremental testing of concurrent programs using value schedules},
+        booktitle = {IEEE/ACM International Conference on Automated Software Engineering},
+        year = {2008}
+    }"',  'citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.150.1895', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  39  , 'Efficient Deterministic Multithreading Without Global Barriers', 2014  , '"@inproceedings{39,
+     author = {Lu, Kai and Zhou, Xu and Bergan, Tom and Wang, Xiaoping},
+     title = {Efficient Deterministic Multithreading Without Global Barriers},
+     booktitle = {Proceedings of the 19th ACM SIGPLAN Symposium on Principles and Practice of Parallel Programming},
+     series = {PPoPP \'14},
+     year = {2014},
+     isbn = {978-1-4503-2656-8},
+     location = {Orlando, Florida, USA},
+     pages = {287--300},
+     numpages = {14},
+     url = {http://doi.acm.org/10.1145/2555243.2555252},
+     doi = {10.1145/2555243.2555252},
+     acmid = {2555252},
+     publisher = {ACM},
+     address = {New York, NY, USA},
+     keywords = {deterministic execution, lazy release consistency, multithreading},
+    } 
+    "',   'dl.acm.org/citation.cfm?id=2555252', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  40  , 'Efficient Execution Path Exploration for Detecting Races in Concurrent Programs',  2014  , '"@article{40, 
+    Abstract = {Concurrent programs are more difficult to test or debug than sequential programs because their non-deterministic behaviors can produce errors that depend on timing and interleaving of threads. A different interleaving might affect branch outcomes that can lead the execution path into one different from that in which the error was detected. In order to detect concurrent errors, a programmer needs to re-execute the concurrent program many times by changing the interleaving, but it is not always feasible to conduct all the tests due to a large number of possible different interleavings. This paper proposes an efficient method to minimize the number of test cases for detecting errors in a concurrent program. This method generates test cases with different interleavings based on the execution trace. The method reduces redundant test cases without sacrificing the precision of error detection. The method is novel because it exploits the branch structure and utilizes data flows from trace inf},
+    Author = {Setiadi, Theodorus E. and Ohsuga, Akihiko and Maekawa, Mamoru},
+    ISSN = {1819656X},
+    Journal = {IAENG International Journal of Computer Science},
+    Keywords = {COMPUTERS -- Testing, COMPUTER programming, DEBUGGING in computer science, COMPUTER programmers, PRECISION (Information retrieval), INFORMATION storage & retrieval systems, concurrent program, race detection, testing},
+    Number = {3},
+    Pages = {15 - 34},
+    Title = {Efficient Execution Path Exploration for Detecting Races in Concurrent Programs.},
+    Volume = {40},
+    URL = {http://search.ebscohost.com/login.aspx?direct=true&db=iih&AN=90109752&lang=pt-br&site=eds-live},
+    Year = {2013},
+    }"',  'www.iaeng.org/IJCS/issues_v40/issue_3/IJCS_40_3_02.pdf', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  43  , 'Pegasus: Automatic Barrier Inference for Stable Multithreaded Systems',  2014  , '"@inproceedings{43,
+     author = {Dhok, Monika and Mudduluru, Rashmi and Ramanathan, Murali Krishna},
+     title = {Pegasus: Automatic Barrier Inference for Stable Multithreaded Systems},
+     booktitle = {Proceedings of the 2015 International Symposium on Software Testing and Analysis},
+     series = {ISSTA 2015},
+     year = {2015},
+     isbn = {978-1-4503-3620-8},
+     location = {Baltimore, MD, USA},
+     pages = {153--164},
+     numpages = {12},
+     url = {http://doi.acm.org/10.1145/2771783.2771813},
+     doi = {10.1145/2771783.2771813},
+     acmid = {2771813},
+     publisher = {ACM},
+     address = {New York, NY, USA},
+     keywords = {Concurrency, Dynamic analysis, Performance},
+    } 
+    "',   'dl.acm.org/citation.cfm?id=2771813', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  44  , 'Race directed random testing of concurrent programs',  2008  , '"@inproceedings{44,
+     author = {Sen, Koushik},
+     title = {Race Directed Random Testing of Concurrent Programs},
+     booktitle = {Proceedings of the 29th ACM SIGPLAN Conference on Programming Language Design and Implementation},
+     series = {PLDI \'08},
+     year = {2008},
+     isbn = {978-1-59593-860-2},
+     location = {Tucson, AZ, USA},
+     pages = {11--21},
+     numpages = {11},
+     url = {http://doi.acm.org/10.1145/1375581.1375584},
+     doi = {10.1145/1375581.1375584},
+     acmid = {1375584},
+     publisher = {ACM},
+     address = {New York, NY, USA},
+     keywords = {concurrency, dynamic analysis, race detection, random testing},
+    } "',   'dl.acm.org/citation.cfm?id=1375584', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  45  , 'SATCheck: SAT-Directed Stateless Model Checking for SC and TSO', 2015  , '"@article{45,
+     author = {Demsky, Brian and Lam, Patrick},
+     title = {SATCheck: SAT-directed Stateless Model Checking for SC and TSO},
+     journal = {SIGPLAN Not.},
+     issue_date = {October 2015},
+     volume = {50},
+     number = {10},
+     month = oct,
+     year = {2015},
+     issn = {0362-1340},
+     pages = {20--36},
+     numpages = {17},
+     url = {http://doi.acm.org/10.1145/2858965.2814297},
+     doi = {10.1145/2858965.2814297},
+     acmid = {2814297},
+     publisher = {ACM},
+     address = {New York, NY, USA},
+     keywords = {Relaxed memory model, model checking},
+    } "',   'dl.acm.org/citation.cfm?id=2814297', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  46  , 'TRADE: Precise Dynamic Race Detection for Scalable Transactional Memory Systems',  2013  , '"@article{46,
+     author = {Kestor, Gokcen and Unsal, Osman S. and Cristal, Adrian and Tasiran, Serdar},
+     title = {TRADE: Precise Dynamic Race Detection for Scalable Transactional Memory Systems},
+     journal = {ACM Trans. Parallel Comput.},
+     issue_date = {July 2015},
+     volume = {2},
+     number = {2},
+     month = jul,
+     year = {2015},
+     issn = {2329-4949},
+     pages = {11:1--11:23},
+     articleno = {11},
+     numpages = {23},
+     url = {http://doi.acm.org/10.1145/2786021},
+     doi = {10.1145/2786021},
+     acmid = {2786021},
+     publisher = {ACM},
+     address = {New York, NY, USA},
+     keywords = {Transactional memory, correctness, debugging, race detection},
+    }"',  'dl.acm.org/ft_gateway.cfm?ftid=1603544&id=2786021', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  47  , 'A combinatorial testing strategy for concurrent programs', 2007  , '"@article{47,
+     author = {Lei, Yu and Carver, Richard H. and Kacker, Raghu and Kung, David},
+     title = {A Combinatorial Testing Strategy for Concurrent Programs},
+     journal = {Softw. Test. Verif. Reliab.},
+     issue_date = {December 2007},
+     volume = {17},
+     number = {4},
+     month = dec,
+     year = {2007},
+     issn = {0960-0833},
+     pages = {207--225},
+     numpages = {19},
+     url = {http://dx.doi.org/10.1002/stvr.v17:4},
+     doi = {10.1002/stvr.v17:4},
+     acmid = {1324164},
+     publisher = {John Wiley and Sons Ltd.},
+     address = {Chichester, UK},
+     keywords = {combinatorial testing, concurrency testing, software testing, t-way testing},
+    } "',   'dl.acm.org/citation.cfm?id=1324164', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  48  , 'A meta heuristic for effectively detecting concurrency errors',  2009  , '"@Inbook{48, 
+    author=""Rungta, Neha
+    and Mercer, Eric G."",
+    editor=""Chockler, Hana
+    and Hu, Alan J."",
+    chapter=""A Meta Heuristic for Effectively Detecting Concurrency Errors"",
+    title=""Hardware and Software: Verification and Testing: 4th International Haifa Verification Conference, HVC 2008, Haifa, Israel, October 27-30, 2008. Proceedings"",
+    year=""2009"",
+    publisher=""Springer Berlin Heidelberg"",
+    address=""Berlin, Heidelberg"",
+    pages=""23--37"",
+    isbn=""978-3-642-01702-5"",
+    doi=""10.1007/978-3-642-01702-5_8"",
+    url=""http://dx.doi.org/10.1007/978-3-642-01702-5_8""
+    }"',  'link.springer.com/chapter/10.1007/978-3-642-01702-5_8', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  49  , 'A model-free and state-cover testing scheme for semaphore-based and shared-memory concurrent programs',  2014  , '"@article {49, 
+    author = {Hwang, Gwan-Hwan and Lin, Che-Sheng and Lee, Teng-Shuo and Wu-Lee, Chi},
+    title = {A model-free and state-cover testing scheme for semaphore-based and shared-memory concurrent programs},
+    journal = {Software Testing, Verification and Reliability},
+    volume = {24},
+    number = {8},
+    issn = {1099-1689},
+    url = {http://dx.doi.org/10.1002/stvr.1520},
+    doi = {10.1002/stvr.1520},
+    pages = {706--737},
+    keywords = {concurrent program semaphore, shared memory, nondeterministic behaviour, concurrent testing, SYN-sequence, reachability testing, dynamic effective testing},
+    year = {2014},
+    }"',  'onlinelibrary.wiley.com/doi/10.1002/stvr.1520/abstract', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  50  , 'A platform for search-based testing of concurrent software', 2010  , '"@inproceedings{50,
+     author = {K\v{r}ena, Bohuslav and Letko, Zden\v{e}k and Vojnar, Tom\'a}\v{s} and Ur, Shmuel},
+     title = {A Platform for Search-based Testing of Concurrent Software},
+     booktitle = {Proceedings of the 8th Workshop on Parallel and Distributed Systems: Testing, Analysis, and Debugging},
+     series = {PADTAD \'10},
+     year = {2010},
+     isbn = {978-1-4503-0136-7},
+     location = {Trento, Italy},
+     pages = {48--58},
+     numpages = {11},
+     url = {http://doi.acm.org/10.1145/1866210.1866215},
+     doi = {10.1145/1866210.1866215},
+     acmid = {1866215},
+     publisher = {ACM},
+     address = {New York, NY, USA},
+     keywords = {searching, testing},
+    }"',  'dl.acm.org/citation.cfm?id=1866215', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  51  , 'A race-detection and flipping algorithm for automated testing of multi-threaded programs', 2007  , '"@inproceedings{51,
+     author = {Sen, Koushik and Agha, Gul},
+     title = {A Race-detection and Flipping Algorithm for Automated Testing of Multi-threaded Programs},
+     booktitle = {Proceedings of the 2Nd International Haifa Verification Conference on Hardware and Software, Verification and Testing},
+     series = {HVC\'06},
+     year = {2007},
+     isbn = {978-3-540-70888-9},
+     location = {Haifa, Israel},
+     pages = {166--182},
+     numpages = {17},
+     url = {http://dl.acm.org/citation.cfm?id=1763218.1763234},
+     acmid = {1763234},
+     publisher = {Springer-Verlag},
+     address = {Berlin, Heidelberg},
+    } "',   'dl.acm.org/citation.cfm?id=1763234', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  52  , 'A randomized scheduler with probabilistic guarantees of finding bugs ',  2010  , '"@article{52,
+     author = {Burckhardt, Sebastian and Kothari, Pravesh and Musuvathi, Madanlal and Nagarakatte, Santosh},
+     title = {A Randomized Scheduler with Probabilistic Guarantees of Finding Bugs},
+     journal = {SIGPLAN Not.},
+     issue_date = {March 2010},
+     volume = {45},
+     number = {3},
+     month = mar,
+     year = {2010},
+     issn = {0362-1340},
+     pages = {167--178},
+     numpages = {12},
+     url = {http://doi.acm.org/10.1145/1735971.1736040},
+     doi = {10.1145/1735971.1736040},
+     acmid = {1736040},
+     publisher = {ACM},
+     address = {New York, NY, USA},
+     keywords = {concurrency, race conditions, randomized algorithms, testing},
+    } 
+    "',   'dl.acm.org/citation.cfm?id=1736040', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  53  , 'Accurate and Efficient Runtime Detection of Atomicity Errors in Concurrent Programs',  2006  , '"@inproceedings{53,
+     author = {Wang, Liqiang and Stoller, Scott D.},
+     title = {Accurate and Efficient Runtime Detection of Atomicity Errors in Concurrent Programs},
+     booktitle = {Proceedings of the Eleventh ACM SIGPLAN Symposium on Principles and Practice of Parallel Programming},
+     series = {PPoPP \'06},
+     year = {2006},
+     isbn = {1-59593-189-9},
+     location = {New York, New York, USA},
+     pages = {137--146},
+     numpages = {10},
+     url = {http://doi.acm.org/10.1145/1122971.1122993},
+     doi = {10.1145/1122971.1122993},
+     acmid = {1122993},
+     publisher = {ACM},
+     address = {New York, NY, USA},
+     keywords = {Java, atomicity, concurrent programming, data race, serializability},
+    }"',  'dl.acm.org/citation.cfm?id=1122993', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  54  , 'Advances in noise-based testing of concurrent software', 2015  , '"@article{54,
+      added-at = {2015-04-25T00:00:00.000+0200},
+      author = {Fiedor, Jan and Hrubá, Vendula and Krena, Bohuslav and Letko, Zdenek and Ur, S. and Vojnar, Tomás}, journal = {Softw. Test., Verif. Reliab.},
+      keywords = {dblp},
+      number = 3,
+      pages = {272-309},
+      timestamp = {2015-06-18T03:01:31.000+0200},
+      title = {Advances in noise-based testing of concurrent software.},
+      url = {http://dblp.uni-trier.de/db/journals/stvr/stvr25.html#FiedorHKLUV15},
+      volume = 25,
+      year = 2015
+    }"',  'dl.acm.org/citation.cfm?id=2858629', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  55  , 'An Efficient and Flexible Deterministic Framework for Multithreaded Programs', 2014  , '"@article{55,
+      author    = {Kai Lu and
+                   Xu Zhou and
+                   Xiaoping Wang and
+                   Tom Bergan and
+                   Chen Chen},
+      title     = {An Efficient and Flexible Deterministic Framework for Multithreaded
+                   Programs},
+      journal   = {J. Comput. Sci. Technol.},
+      volume    = {30},
+      number    = {1},
+      pages     = {42--56},
+      year      = {2015},
+      url       = {http://dx.doi.org/10.1007/s11390-015-1503-8},
+      doi       = {10.1007/s11390-015-1503-8},
+      timestamp = {Thu, 22 Jan 2015 08:42:35 +0100},
+      biburl    = {http://dblp2.uni-trier.de/rec/bib/journals/jcst/LuZWBC15},
+      bibsource = {dblp computer science bibliography, http://dblp.org}
+    }"',  'ink.springer.com/article/10.1007/s11390-015-1503-8', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  56  , 'An Evaluation of Data Race Detectors Using Bug Repositories',  2016  , '"@inproceedings{56,
+      added-at = {2015-11-17T00:00:00.000+0100},
+      author = {Schimmel, Jochen and Molitorisz, Korbinian and Tichy, Walter F.},
+      biburl = {http://www.bibsonomy.org/bibtex/2da5281686a508659de2a1162738eda64/dblp},
+      booktitle = {FedCSIS},
+      crossref = {conf/fedcsis/2013},
+      editor = {Ganzha, Maria and Maciaszek, Leszek A. and Paprzycki, Marcin},
+      ee = {http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=6644193},
+      interhash = {86ecbac7a78c27e25cf8a61a3e325463},
+      intrahash = {da5281686a508659de2a1162738eda64},
+      keywords = {dblp},
+      pages = {1349-1352},
+      timestamp = {2015-11-18T11:54:38.000+0100},
+      title = {An Evaluation of Data Race Detectors Using Bug Repositories.},
+      url = {http://dblp.uni-trier.de/db/conf/fedcsis/fedcsis2013.html#SchimmelMT13},
+      year = 2013
+    }
+    "',   'ieeexplore.ieee.org/document/6644193/', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  57  , 'ASN: A Dynamic Barrier-Based Approach to Confirmation of Deadlocks from Warnings for Large-Scale Multithreaded Programs',  2015  , '"@article{57, 
+    author = {Ke Zhai and Yan Cai and Shangru Wu and Changjiang Jia and W.K. Chan},
+    title = {ASN: A Dynamic Barrier-based Approach to Confirmation of Deadlocks from Warnings for Large-Scale Multithreaded Programs},
+    journal ={IEEE Transactions on Parallel and Distributed Systems},
+    volume = {99},
+    number = {PrePrints},
+    issn = {1045-9219},
+    year = {2014},
+    pages = {1},
+    doi = {http://doi.ieeecomputersociety.org/10.1109/TPDS.2014.2307864},
+    publisher = {IEEE Computer Society},
+    address = {Los Alamitos, CA, USA},
+    }"',  'ieeexplore.ieee.org/iel7/71/6980150/06747310.pdf', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  59  , 'Automatic testing environment for multi-core embedded software - ATEMES',  2012  , '"@article{59,
+     author = {Koong, Chorng-Shiuh and Shih, Chihhsiong and Hsiung, Pao-Ann and Lai, Hung-Jui and Chang, Chih-Hung and Chu, William C. and Hsueh, Nien-Lin and Yang, Chao-Tung},
+     title = {Automatic Testing Environment for Multi-core Embedded software-ATEMES},
+     journal = {J. Syst. Softw.},
+     issue_date = {January, 2012},
+     volume = {85},
+     number = {1},
+     month = jan,
+     year = {2012},
+     issn = {0164-1212},
+     pages = {43--60},
+     numpages = {18},
+     url = {http://dx.doi.org/10.1016/j.jss.2011.08.030},
+     doi = {10.1016/j.jss.2011.08.030},
+     acmid = {2064371},
+     publisher = {Elsevier Science Inc.},
+     address = {New York, NY, USA},
+     keywords = {Automatic testing, Coverage testing, Cross-testing, Embedded software testing, Multi-core embedded software testing, Object testing, Parallelism degree testing, TBB testing, Test case generation, Testing tool, Unit testing},
+    }"',  'dl.acm.org/citation.cfm?id=2064371', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  60  , 'Bita: Coverage-guided, automatic testing of actor programs', 2014  , '"@inproceedings{60,
+      author    = {Samira Tasharofi and
+                   Michael Pradel and
+                   Yu Lin and
+                   Ralph E. Johnson},
+      title     = {Bita: Coverage-guided, automatic testing of actor programs},
+      booktitle = {2013 28th {IEEE/ACM} International Conference on Automated Software
+                   Engineering, {ASE} 2013, Silicon Valley, CA, USA, November 11-15,
+                   2013},
+      pages     = {114--124},
+      year      = {2013},
+      crossref  = {DBLP:conf/kbse/2013},
+      url       = {http://dx.doi.org/10.1109/ASE.2013.6693072},
+      doi       = {10.1109/ASE.2013.6693072},
+      timestamp = {Mon, 21 Jul 2014 07:41:41 +0200},
+      biburl    = {http://dblp.uni-trier.de/rec/bib/conf/kbse/TasharofiPLJ13},
+      bibsource = {dblp computer science bibliography, http://dblp.org}
+    }"',  'ieeexplore.ieee.org/document/6693072/', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  61  , 'CLAP: Recording Local Executions to Reproduce Concurrency Failures', 2014  , '"@article{61,
+     author = {Huang, Jeff and Zhang, Charles and Dolby, Julian},
+     title = {CLAP: Recording Local Executions to Reproduce Concurrency Failures},
+     journal = {SIGPLAN Not.},
+     issue_date = {June 2013},
+     volume = {48},
+     number = {6},
+     month = jun,
+     year = {2013},
+     issn = {0362-1340},
+     pages = {141--152},
+     numpages = {12},
+     url = {http://doi.acm.org/10.1145/2499370.2462167},
+     doi = {10.1145/2499370.2462167},
+     acmid = {2462167},
+     publisher = {ACM},
+     address = {New York, NY, USA},
+     keywords = {bug reproduction, concurrency, constraint solving, local execution},
+    }"',  'dl.acm.org/citation.cfm?id=2462167', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  62  , 'Composable Specifications for Structured Shared-Memory Communication', 2010  , '"@inproceedings{62,
+     author = {Wood, Benjamin P. and Sampson, Adrian and Ceze, Luis and Grossman, Dan},
+     title = {Composable Specifications for Structured Shared-memory Communication},
+     booktitle = {Proceedings of the ACM International Conference on Object Oriented Programming Systems Languages and Applications},
+     series = {OOPSLA \'10},
+     year = {2010},
+     isbn = {978-1-4503-0203-6},
+     location = {Reno/Tahoe, Nevada, USA},
+     pages = {140--159},
+     numpages = {20},
+     url = {http://doi.acm.org/10.1145/1869459.1869473},
+     doi = {10.1145/1869459.1869473},
+     acmid = {1869473},
+     publisher = {ACM},
+     address = {New York, NY, USA},
+     keywords = {annotation, bug detection, concurrency, shared memory, software reliability, specification},
+    } "',   'dl.acm.org/citation.cfm?id=1869473', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  63  , 'Con2Colic Testing',  2013  , '"@inproceedings{63,
+     author = {Farzan, Azadeh and Holzer, Andreas and Razavi, Niloofar and Veith, Helmut},
+     title = {Con2Colic Testing},
+     booktitle = {Proceedings of the 2013 9th Joint Meeting on Foundations of Software Engineering},
+     series = {ESEC/FSE 2013},
+     year = {2013},
+     isbn = {978-1-4503-2237-9},
+     location = {Saint Petersburg, Russia},
+     pages = {37--47},
+     numpages = {11},
+     url = {http://doi.acm.org/10.1145/2491411.2491453},
+     doi = {10.1145/2491411.2491453},
+     acmid = {2491453},
+     publisher = {ACM},
+     address = {New York, NY, USA},
+     keywords = {Concolic, Concurrency, Interference, Testing},
+    } "',   'dl.acm.org/citation.cfm?id=2491453', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  64  , 'ConcBugAssist: Constraint Solving for Diagnosis and Repair of Concurrency Bugs', 2014  , '"@inproceedings{64,
+     author = {Khoshnood, Sepideh and Kusano, Markus and Wang, Chao},
+     title = {ConcBugAssist: Constraint Solving for Diagnosis and Repair of Concurrency Bugs},
+     booktitle = {Proceedings of the 2015 International Symposium on Software Testing and Analysis},
+     series = {ISSTA 2015},
+     year = {2015},
+     isbn = {978-1-4503-3620-8},
+     location = {Baltimore, MD, USA},
+     pages = {165--176},
+     numpages = {12},
+     url = {http://doi.acm.org/10.1145/2771783.2771798},
+     doi = {10.1145/2771783.2771798},
+     acmid = {2771798},
+     publisher = {ACM},
+     address = {New York, NY, USA},
+     keywords = {Concurrency, binate covering, bounded model checking, error diagnosis, partial MAX-SAT, program repair, unsatisfiability core},
+    } "',   'dl.acm.org/citation.cfm?id=2771798', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  65  , 'Concurrency Debugging with Differential Schedule Projections', 2015  , '"@article{65,
+     author = {Machado, Nuno and Lucia, Brandon and Rodrigues, Lu\'\i}s},
+     title = {Concurrency Debugging with Differential Schedule Projections},
+     journal = {SIGPLAN Not.},
+     issue_date = {June 2015},
+     volume = {50},
+     number = {6},
+     month = jun,
+     year = {2015},
+     issn = {0362-1340},
+     pages = {586--595},
+     numpages = {10},
+     url = {http://doi.acm.org/10.1145/2813885.2737973},
+     doi = {10.1145/2813885.2737973},
+     acmid = {2737973},
+     publisher = {ACM},
+     address = {New York, NY, USA},
+     keywords = {Concurrency, Constraint Solving, Debugging, Differential Schedule Projection, Symbolic Execution},
+    } "',   'dl.acm.org/citation.cfm?id=2737973', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  66  , 'Concurrent software verification with states, events, and deadlocks',  2005  , '"@article{66,
+      added-at = {2009-02-11T21:01:06.000+0100},
+      author = {Chaki, Sagar and Clarke, Edmund and Ouaknine, Jo""{e}l and Sharygina, Natasha and Sinha, Nishant},
+      biburl = {http://www.bibsonomy.org/bibtex/20f68f612829b997450c914d855f31ba2/leonardo},
+      citeulike-article-id = {888063},
+      doi = {10.1007/s00165-005-0071-z},
+      interhash = {2f521a78dcb61aa96032bf0f7758bddf},
+      intrahash = {0f68f612829b997450c914d855f31ba2},
+      journal = {Formal Aspects of Computing},
+      keywords = {2005 verification model_checking concurrent_systems},
+      month = {December},
+      number = 4,
+      pages = {461--483},
+      posted-at = {2006-10-07 02:46:42},
+      priority = {4},
+      timestamp = {2009-02-11T21:01:06.000+0100},
+      title = {Concurrent software verification with states, events, and deadlocks},
+      url = {http://dx.doi.org/10.1007/s00165-005-0071-z},
+      volume = {V17},
+      year = 2005
+    }"',  'link.springer.com/article/10.1007/s00165-005-0071-z', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  67  , 'ConMem: Detecting severe concurrency bugs through an effect-oriented approach',  2010  , '"@article{67,
+     author = {Zhang, Wei and Sun, Chong and Lu, Shan},
+     title = {ConMem: Detecting Severe Concurrency Bugs Through an Effect-oriented Approach},
+     journal = {SIGPLAN Not.},
+     issue_date = {March 2010},
+     volume = {45},
+     number = {3},
+     month = mar,
+     year = {2010},
+     issn = {0362-1340},
+     pages = {179--192},
+     numpages = {14},
+     url = {http://doi.acm.org/10.1145/1735971.1736041},
+     doi = {10.1145/1735971.1736041},
+     acmid = {1736041},
+     publisher = {ACM},
+     address = {New York, NY, USA},
+     keywords = {concurrency bugs, software testing},
+    } 
+    "',   'doi.org/10.1145/1736020.1736041', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  68  , 'ConSeq: Detecting Concurrency Bugs through Sequential Errors', 2011  , '"@article{68,
+     author = {Zhang, Wei and Sun, Chong and Lu, Shan},
+     title = {ConMem: Detecting Severe Concurrency Bugs Through an Effect-oriented Approach},
+     journal = {SIGPLAN Not.},
+     issue_date = {March 2010},
+     volume = {45},
+     number = {3},
+     month = mar,
+     year = {2010},
+     issn = {0362-1340},
+     pages = {179--192},
+     numpages = {14},
+     url = {http://doi.acm.org/10.1145/1735971.1736041},
+     doi = {10.1145/1735971.1736041},
+     acmid = {1736041},
+     publisher = {ACM},
+     address = {New York, NY, USA},
+     keywords = {concurrency bugs, software testing},
+    } 
+    "',   'dl.acm.org/authorize?N91344 ', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  69  , 'Coverage guided systematic concurrency testing', 2011  , '"@inproceedings{69,
+     author = {Wang, Chao and Said, Mahmoud and Gupta, Aarti},
+     title = {Coverage Guided Systematic Concurrency Testing},
+     booktitle = {Proceedings of the 33rd International Conference on Software Engineering},
+     series = {ICSE \'11},
+     year = {2011},
+     isbn = {978-1-4503-0445-0},
+     location = {Waikiki, Honolulu, HI, USA},
+     pages = {221--230},
+     numpages = {10},
+     url = {http://doi.acm.org/10.1145/1985793.1985824},
+     doi = {10.1145/1985793.1985824},
+     acmid = {1985824},
+     publisher = {ACM},
+     address = {New York, NY, USA},
+     keywords = {concurrency, coverage, partial order reduction},
+    } "',   'dl.acm.org/citation.cfm?id=1985824', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  70  , 'Coverage metrics for saturation-based and search-based testing of concurrent software',  2012  , '"@inproceedings{70,
+     author = {K\v{r}ena, Bohuslav and Letko, Zden\v{e}k and Vojnar, Tom\'a}\v{s}},
+     title = {Coverage Metrics for Saturation-based and Search-based Testing of Concurrent Software},
+     booktitle = {Proceedings of the Second International Conference on Runtime Verification},
+     series = {RV\'11},
+     year = {2012},
+     isbn = {978-3-642-29859-2},
+     location = {San Francisco, CA},
+     pages = {177--192},
+     numpages = {16},
+     url = {http://dx.doi.org/10.1007/978-3-642-29860-8_14},
+     doi = {10.1007/978-3-642-29860-8_14},
+     acmid = {2341635},
+     publisher = {Springer-Verlag},
+     address = {Berlin, Heidelberg},
+    } "',   'dl.acm.org/citation.cfm?id=2341635', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  71  , 'CTrigger: Exposing atomicity violation bugs from their hiding places', 2008  , '"@inproceedings{71,
+     author = {Park, Soyeon and Lu, Shan and Zhou, Yuanyuan},
+     title = {CTrigger: Exposing Atomicity Violation Bugs from Their Hiding Places},
+     booktitle = {Proceedings of the 14th International Conference on Architectural Support for Programming Languages and Operating Systems},
+     series = {ASPLOS XIV},
+     year = {2009},
+     isbn = {978-1-60558-406-5},
+     location = {Washington, DC, USA},
+     pages = {25--36},
+     numpages = {12},
+     url = {http://doi.acm.org/10.1145/1508244.1508249},
+     doi = {10.1145/1508244.1508249},
+     acmid = {1508249},
+     publisher = {ACM},
+     address = {New York, NY, USA},
+     keywords = {concurrency bug, software testing},
+    } 
+    "',   'dl.acm.org/citation.cfm?id=1508249', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  72  , 'Distributed reachability testing of concurrent programs',  2010  , '"@article{72,
+      added-at = {2010-12-21T00:00:00.000+0100},
+      author = {Carver, Richard H. and Lei, Yu},
+      journal = {Concurrency and Computation: Practice and Experience},
+      keywords = {dblp},
+      number = 18,
+      pages = {2445-2466},
+      title = {Distributed reachability testing of concurrent programs.},
+      volume = 22,
+      year = 2010
+    }"',  'onlinelibrary.wiley.com/doi/10.1002/cpe.1573/abstract', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  74  , 'Effective and Precise Dynamic Detection of Hidden Races for Java Programs',  2015  , '"@inproceedings{74,
+     author = {Cai, Yan and Cao, Lingwei},
+     title = {Effective and Precise Dynamic Detection of Hidden Races for Java Programs},
+     booktitle = {Proceedings of the 2015 10th Joint Meeting on Foundations of Software Engineering},
+     series = {ESEC/FSE 2015},
+     year = {2015},
+     isbn = {978-1-4503-3675-8},
+     location = {Bergamo, Italy},
+     pages = {450--461},
+     numpages = {12},
+     url = {http://doi.acm.org/10.1145/2786805.2786839},
+     doi = {10.1145/2786805.2786839},
+     acmid = {2786839},
+     publisher = {ACM},
+     address = {New York, NY, USA},
+     keywords = {Data race, hidden race, synchronization order, thread scheduling},
+    } 
+    "',   'dl.acm.org/citation.cfm?id=2786839 ', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  75  , 'Embedding Semantics of the Single-Producer/Single-Consumer Lock-Free Queue into a Race Detection Tool',  2014  , '"@inproceedings{75,
+     author = {Dolz, Manuel F. and del Rio Astorga, David and Fern\'a}ndez, Javier and Garc\'\i}a, J. Daniel and Garc\'\i}a-Carballeira, F{\'}lix and Danelutto, Marco and Torquati, Massimo},
+     title = {Embedding Semantics of the Single-Producer/Single-Consumer Lock-Free Queue into a Race Detection Tool},
+     booktitle = {Proceedings of the 7th International Workshop on Programming Models and Applications for Multicores and Manycores},
+     series = {PMAM\'16},
+     year = {2016},
+     isbn = {978-1-4503-4196-7},
+     location = {Barcelona, Spain},
+     pages = {20--29},
+     numpages = {10},
+     url = {http://doi.acm.org/10.1145/2883404.2883406},
+     doi = {10.1145/2883404.2883406},
+     acmid = {2883406},
+     publisher = {ACM},
+     address = {New York, NY, USA},
+     keywords = {Data race detectors, Parallel programming, Semantics, Wait-/lock-free parallel structures},
+    } "',   'dl.acm.org/citation.cfm?id=2883406', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  76  , 'Enforcer - Efficient failure injection.',  2006  , '"@inproceedings{76,
+      author    = {Cyrille Artho and
+                   Armin Biere and
+                   Shinichi Honiden},
+      title     = {Enforcer - Efficient Failure Injection},
+      booktitle = {{FM} 2006: Formal Methods, 14th International Symposium on Formal
+                   Methods, Hamilton, Canada, August 21-27, 2006, Proceedings},
+      pages     = {412--427},
+      year      = {2006},
+      crossref  = {DBLP:conf/fm/2006},
+      url       = {http://dx.doi.org/10.1007/11813040_28},
+      doi       = {10.1007/11813040_28},
+      timestamp = {Tue, 22 Aug 2006 14:47:47 +0200},
+      biburl    = {http://dblp2.uni-trier.de/rec/bib/conf/fm/ArthoBH06},
+      bibsource = {dblp computer science bibliography, http://dblp.org}
+    }"',  'link.springer.com/10.1007%2F11813040_28?from=SL', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  77  , 'Exploiting parallelism in deterministic shared memory multiprocessing',  2012  , '"@article{77,
+      author = {Zhou, Xu and Lu, Kai and Wang, Xiaoping and Li, Xu},
+      journal = {J. Parallel Distrib. Comput.},
+      keywords = {dblp},
+      number = 5,
+      pages = {716-727},
+      title = {Exploiting parallelism in deterministic shared memory multiprocessing.},
+      url = {http://dblp.uni-trier.de/db/journals/jpdc/jpdc72.html#ZhouLWL12},
+      volume = 72,
+      year = 2012
+    }
+    "',   'www.sciencedirect.com/science/article/pii/S0743731512000421', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  78  , 'Finding Atomicity-Violation Bugs through Unserializable Interleaving Testing', 2012  , '"@article{78,
+      author = {Lu, Shan and Park, Soyeon and Zhou, Yuanyuan},
+      biburl = {http://www.bibsonomy.org/bibtex/2c956047f2ef81b0600ac4f305011a357/dblp},
+      journal = {IEEE Trans. Software Eng.},
+      keywords = {dblp},
+      number = 4,
+      pages = {844-860},
+      timestamp = {2015-12-12T11:55:52.000+0100},
+      title = {Finding Atomicity-Violation Bugs through Unserializable Interleaving Testing.},
+      url = {http://dblp.uni-trier.de/db/journals/tse/tse38.html#LuPZ12},
+      volume = 38,
+      year = 2012
+    }
+    "',   'http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=5740930', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  80  , 'Iterative context bounding for systematic testing of multithreaded programs',  2007  , '"@article{80,
+     author = {Musuvathi, Madanlal and Qadeer, Shaz},
+     title = {Iterative Context Bounding for Systematic Testing of Multithreaded Programs},
+     journal = {SIGPLAN Not.},
+     issue_date = {June 2007},
+     volume = {42},
+     number = {6},
+     month = jun,
+     year = {2007},
+     issn = {0362-1340},
+     pages = {446--455},
+     numpages = {10},
+     url = {http://doi.acm.org/10.1145/1273442.1250785},
+     doi = {10.1145/1273442.1250785},
+     acmid = {1250785},
+     publisher = {ACM},
+     address = {New York, NY, USA},
+     keywords = {concurrency, context-bounding, model checking, multithreading, partial-order reduction, shared-memory programs, software testing},
+    } 
+    "',   'dl.acm.org/citation.cfm?id=1250785', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  81  , 'Kendo: efficient deterministic multithreading in software',  2009  , '"@article{81,
+     author = {Olszewski, Marek and Ansel, Jason and Amarasinghe, Saman},
+     title = {Kendo: Efficient Deterministic Multithreading in Software},
+     journal = {SIGPLAN Not.},
+     issue_date = {March 2009},
+     volume = {44},
+     number = {3},
+     month = mar,
+     year = {2009},
+     issn = {0362-1340},
+     pages = {97--108},
+     numpages = {12},
+     url = {http://doi.acm.org/10.1145/1508284.1508256},
+     doi = {10.1145/1508284.1508256},
+     acmid = {1508256},
+     publisher = {ACM},
+     address = {New York, NY, USA},
+     keywords = {debugging, determinism, deterministic multithreading, multicore, parallel programming},
+    }"',  'dl.acm.org/citation.cfm?id=1508256', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  82  , 'Kivati: Fast detection and prevention of atomicity violations',  2010  , '"@inproceedings{82,
+     author = {Chew, Lee and Lie, David},
+     title = {Kivati: Fast Detection and Prevention of Atomicity Violations},
+     booktitle = {Proceedings of the 5th European Conference on Computer Systems},
+     series = {EuroSys \'10},
+     year = {2010},
+     isbn = {978-1-60558-577-2},
+     location = {Paris, France},
+     pages = {307--320},
+     numpages = {14},
+     url = {http://doi.acm.org/10.1145/1755913.1755945},
+     doi = {10.1145/1755913.1755945},
+     acmid = {1755945},
+     publisher = {ACM},
+     address = {New York, NY, USA},
+     keywords = {atomicity violation, kivati, watchpoint},
+    } 
+    "',   'dl.acm.org/citation.cfm?id=1755945', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  84  , 'Maple: a coverage-driven testing tool for multithreaded programs', 2012  , '"@article{84,
+     author = {Yu, Jie and Narayanasamy, Satish and Pereira, Cristiano and Pokam, Gilles},
+     title = {Maple: A Coverage-driven Testing Tool for Multithreaded Programs},
+     journal = {SIGPLAN Not.},
+     issue_date = {October 2012},
+     volume = {47},
+     number = {10},
+     month = oct,
+     year = {2012},
+     issn = {0362-1340},
+     pages = {485--502},
+     numpages = {18},
+     url = {http://doi.acm.org/10.1145/2398857.2384651},
+     doi = {10.1145/2398857.2384651},
+     acmid = {2384651},
+     publisher = {ACM},
+     address = {New York, NY, USA},
+     keywords = {concurrency, coverage, debugging, idioms, testing},
+    } "',   'dl.acm.org/citation.cfm?id=2384651', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  85  , 'Maximizing synchronization coverage via controlling thread schedule',  2011  , '"@INPROCEEDINGS{85, 
+    author={H. Kim and D. Cho and S. Moon}, 
+    booktitle={2011 IEEE Consumer Communications and Networking Conference (CCNC)}, 
+    title={Maximizing synchronization coverage via controlling thread schedule}, 
+    year={2011}, 
+    pages={1186-1191}, 
+    keywords={multi-threading;multiprocessing systems;processor scheduling;program testing;synchronisation;application executions;controlling thread schedule;coverage analysis;coverage testing tool;multicore hardware;multithreaded applications;multithreaded environment;nondeterministic behavior;random method;simultaneously running threads;source code;synchronization coverage rates;synchronization primitives;tool instruments special code;traditional code coverage models;traditional single threaded applications;unit test code;Benchmark testing;Context;Instruction sets;Instruments;Sleep;Synchronization;code coverage;multi-threading;synchronization coverage;testing}, 
+    doi={10.1109/CCNC.2011.5766365}, 
+    ISSN={2331-9852}, 
+    month={Jan},}"',  'ieeexplore.ieee.org/document/5766365/', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  87  , 'Multicore Acceleration of Priority-Based Schedulers for Concurrency Bug Detection',  2012  , '"@inproceedings{87,
+     author = {Nagarakatte, Santosh and Burckhardt, Sebastian and Martin, Milo M.K. and Musuvathi, Madanlal},
+     title = {Multicore Acceleration of Priority-based Schedulers for Concurrency Bug Detection},
+     booktitle = {Proceedings of the 33rd ACM SIGPLAN Conference on Programming Language Design and Implementation},
+     series = {PLDI \'12},
+     year = {2012},
+     isbn = {978-1-4503-1205-9},
+     location = {Beijing, China},
+     pages = {543--554},
+     numpages = {12},
+     url = {http://doi.acm.org/10.1145/2254064.2254128},
+     doi = {10.1145/2254064.2254128},
+     acmid = {2254128},
+     publisher = {ACM},
+     address = {New York, NY, USA},
+     keywords = {concurrency, multithreading, parallel testing, priority-based scheduling, probabilistic concurrency testing},
+    } 
+    "',   'dl.acm.org/citation.cfm?id=2254128', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  88  , 'MultiOtter : Multiprocess Symbolic Execution', 2011  , '"@TECHREPORT{88,
+      AUTHOR =        {Jonathan Turpie, Elnatan Reisner, Jeffrey S. Foster and Michael Hicks},
+      TITLE =         {MultiOtter: Multiprocess Symbolic Execution},
+      NUMBER =        {CS-TR-4982},
+      INSTITUTION =   {Department of Computer Science, University of Maryland},
+      ADDRESS =       {College Park, MD},
+      KEYWORDS =      {},
+      NOTE =          {},
+      MONTH =         {},
+      YEAR  =         {2011},
+      AUTHOR1_URL =   {},
+      AUTHOR1_EMAIL = {yudi@cs.umd.edu},
+      AUTHOR2_URL =   {},
+      AUTHOR2_EMAIL = {jfoster@cs.umd.edu},
+      PAGES =         {},
+      FILE  =         {},
+      URL   =         {},
+      CONTACT =       {mwh@cs.umd.edu}
+    }"',  'https://www.cs.umd.edu/~mwh/papers/multiotter.pdf', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  89  , 'Multithreaded Test Synthesis for Deadlock Detection',  2015  , '"@inproceedings{89,
+     author = {Samak, Malavika and Ramanathan, Murali Krishna},
+     title = {Multithreaded Test Synthesis for Deadlock Detection},
+     booktitle = {Proceedings of the 2014 ACM International Conference on Object Oriented Programming Systems Languages \& Applications},
+     series = {OOPSLA \'14},
+     year = {2014},
+     isbn = {978-1-4503-2585-1},
+     location = {Portland, Oregon, USA},
+     pages = {473--489},
+     numpages = {17},
+     url = {http://doi.acm.org/10.1145/2660193.2660238},
+     doi = {10.1145/2660193.2660238},
+     acmid = {2660238},
+     publisher = {ACM},
+     address = {New York, NY, USA},
+     keywords = {concurrency, deadlock detection, dynamic analysis},
+    } 
+    "',   'dl.acm.org/citation.cfm?id=2660238', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  90  , 'On a Technique for Transparently Empowering Classical Compiler Optimizations on Multithreaded Code', 2012  , '"@article{90,
+     author = {Joisha, Pramod G. and Schreiber, Robert S. and Banerjee, Prithviraj and Boehm, Hans-J. and Chakrabarti, Dhruva R.},
+     title = {On a Technique for Transparently Empowering Classical Compiler Optimizations on Multithreaded Code},
+     journal = {ACM Trans. Program. Lang. Syst.},
+     issue_date = {June 2012},
+     volume = {34},
+     number = {2},
+     month = jun,
+     year = {2012},
+     issn = {0164-0925},
+     pages = {9:1--9:42},
+     articleno = {9},
+     numpages = {42},
+     url = {http://doi.acm.org/10.1145/2220365.2220368},
+     doi = {10.1145/2220365.2220368},
+     acmid = {2220368},
+     publisher = {ACM},
+     address = {New York, NY, USA},
+     keywords = {Data-flow analysis, parallel-program optimization},
+    } 
+    "',   'dl.acm.org/citation.cfm?id=2220368', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  91  , 'Race Detection for Android Applications',  2015  , '"@article{91,
+     author = {Maiya, Pallavi and Kanade, Aditya and Majumdar, Rupak},
+     title = {Race Detection for Android Applications},
+     journal = {SIGPLAN Not.},
+     issue_date = {June 2014},
+     volume = {49},
+     number = {6},
+     month = jun,
+     year = {2014},
+     issn = {0362-1340},
+     pages = {316--325},
+     numpages = {10},
+     url = {http://doi.acm.org/10.1145/2666356.2594311},
+     doi = {10.1145/2666356.2594311},
+     acmid = {2594311},
+     publisher = {ACM},
+     address = {New York, NY, USA},
+     keywords = {Android concurrency semantics, data races, happens-before reasoning},
+    } "',   'dl.acm.org/citation.cfm?id=2594311', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  92  , 'Reachability testing of concurrent programs. ',  2006  , '"@article{92, 
+     author = {Lei, Yu and Carver, Richard H.},
+     title = {Reachability Testing of Concurrent Programs},
+     journal = {IEEE Trans. Softw. Eng.},
+     issue_date = {June 2006},
+     volume = {32},
+     number = {6},
+     month = jun,
+     year = {2006},
+     issn = {0098-5589},
+     pages = {382--403},
+     numpages = {22},
+     url = {http://dx.doi.org/10.1109/TSE.2006.56},
+     doi = {10.1109/TSE.2006.56},
+     acmid = {1248743},
+     publisher = {IEEE Press},
+     address = {Piscataway, NJ, USA},
+     keywords = {Software testing, Software testing, reachability testing, concurrent programming., concurrent programming., reachability testing},
+    } 
+    "',   'ieeexplore.ieee.org/document/1650214/', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  93  , 'Runtime analysis of atomicity for multithreaded programs.',  2006  , '"@ARTICLE{93,   
+    author={L. Wang and S. D. Stoller}, 
+    journal={IEEE Transactions on Software Engineering}, 
+    title={Runtime analysis of atomicity for multithreaded programs}, 
+    year={2006}, 
+    volume={32}, 
+    number={2}, 
+    pages={93-110}, 
+    keywords={multi-threading;multiprocessing systems;program diagnostics;program testing;atomicity violations;block-based algorithm;concurrent systems;data race checking;dynamic escape analysis;happen-before analysis;multilockset algorithm;multithreaded programs;reduction-based algorithm;runtime analysis;Algorithm design and analysis;Automatic testing;Concurrent computing;Costs;Debugging;Java;Operating systems;Runtime;System recovery;Yarn;Concurrent programming;Java;atomicity.;data race;testing and debugging}, 
+    doi={10.1109/TSE.2006.1599419}, 
+    ISSN={0098-5589}, 
+    month={Feb},}"',  'ieeexplore.ieee.org/document/1599419/', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  94  , 'SOS: Saving Time in Dynamic Race Detection with Stationary Analysis',  2011  , '"@inproceedings{94, 
+     author = {Li, Du and Srisa-an, Witawas and Dwyer, Matthew B.},
+     title = {SOS: Saving Time in Dynamic Race Detection with Stationary Analysis},
+     booktitle = {Proceedings of the 2011 ACM International Conference on Object Oriented Programming Systems Languages and Applications},
+     series = {OOPSLA \'11},
+     year = {2011},
+     isbn = {978-1-4503-0940-0},
+     location = {Portland, Oregon, USA},
+     pages = {35--50},
+     numpages = {16},
+     url = {http://doi.acm.org/10.1145/2048066.2048072},
+     doi = {10.1145/2048066.2048072},
+     acmid = {2048072},
+     publisher = {ACM},
+     address = {New York, NY, USA},
+     keywords = {concurrency, monitoring, race, threading},
+    } 
+    "',   'dl.acm.org/citation.cfm?id=2048072', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  95  , 'Test-Data Generation for Testing Parallel Real-Time Systems',  2013  , '"@inproceedings{95,
+      author    = {Muhammad Waqar Aziz and
+                   Syed Abdul Baqi Shah},
+      title     = {Test-Data Generation for Testing Parallel Real-Time Systems},
+      booktitle = {Testing Software and Systems - 27th {IFIP} {WG} 6.1 International
+                   Conference, {ICTSS} 2015, Sharjah and Dubai, United Arab Emirates,
+                   November 23-25, 2015, Proceedings},
+      pages     = {211--223},
+      year      = {2015},
+      crossref  = {DBLP:conf/pts/2015},
+      url       = {http://dx.doi.org/10.1007/978-3-319-25945-1_13},
+      doi       = {10.1007/978-3-319-25945-1_13},
+      timestamp = {Mon, 09 Nov 2015 13:21:44 +0100},
+      biburl    = {http://dblp2.uni-trier.de/rec/bib/conf/pts/AzizS15},
+      bibsource = {dblp computer science bibliography, http://dblp.org}
+    }"',  'link.springer.com/chapter/10.1007/978-3-319-25945-1_13', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  96  , 'TM UNIT : A Transactional Memory Unit Testing and Workload Generation Tool', 2008  , '"@TECHREPORT{96, 
+      AUTHOR =        {Derin Harmanci, Pascal Felber, Vincent Gramoli, Martin SuBkraut and Christof Fetzer},
+      TITLE =         {TMUNIT: A Transactional Memory Unit Testing and Workload Generation Tool},
+      NUMBER =        {RR-I-08-08.1},
+      INSTITUTION =   {Informatics Institute, University of de Neuch\^{a}tel},
+      ADDRESS =       {Switzerland},
+      KEYWORDS =      {},
+      NOTE =          {},
+      MONTH =         {August},
+      YEAR  =         {2008},
+      AUTHOR1_URL =   {},
+      AUTHOR1_EMAIL = {derin.harmanci@unine.ch},
+      AUTHOR2_URL =   {},
+      AUTHOR2_EMAIL = {pascal.felber@unine.ch},
+      AUTHOR3_URL =   {},
+      AUTHOR3_EMAIL = {vincent.gramoli@ep .ch},
+      AUTHOR4_URL =   {},
+      AUTHOR4_EMAIL = {martin.suesskraut@tu-dresden.de},
+      AUTHOR5_URL =   {},
+      AUTHOR5_EMAIL = {christof.fetzer@tu-dresden.de},
+      PAGES =         {},
+      FILE  =         {},
+      URL   =         {},
+      CONTACT =       {}
+    }"',  'citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.165.6028', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  97  , 'Variable and thread bounding for systematic testing of multithreaded programs ', 2013  , '"@inproceedings{97, 
+      added-at = {2013-07-15T00:00:00.000+0200},
+      author = {Bindal, Sandeep and Bansal, Sorav and Lal, Akash},
+      biburl = {http://www.bibsonomy.org/bibtex/269a2a360f933cb59a9574c76f0df2db1/dblp},
+      booktitle = {ISSTA},
+      crossref = {conf/issta/2013},
+      editor = {Pezzè, Mauro and Harman, Mark},
+      ee = {http://doi.acm.org/10.1145/2483760.2483764},
+      interhash = {135f7c99148944f19b6395f28ff06c8c},
+      intrahash = {69a2a360f933cb59a9574c76f0df2db1},
+      isbn = {978-1-4503-2159-4},
+      keywords = {dblp},
+      pages = {145-155},
+      publisher = {ACM},
+      timestamp = {2013-08-13T15:03:10.000+0200},
+      title = {Variable and thread bounding for systematic testing of multithreaded programs.},
+      url = {http://dblp.uni-trier.de/db/conf/issta/issta2013.html#BindalBL13},
+      year = 2013
+    }"',  'dl.acm.org/citation.cfm?id=2483764', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  99  , 'Applications of Model Reuse When Using Estimation of Distribution Algorithms to Test Concurrent Software ',  2011  , '"@inproceedings{99, 
+     author = {Staunton, Jan and Clark, John A.},
+     title = {Applications of Model Reuse when Using Estimation of Distribution Algorithms to Test Concurrent Software},
+     booktitle = {Proceedings of the Third International Conference on Search Based Software Engineering},
+     series = {SSBSE\'11},
+     year = {2011},
+     isbn = {978-3-642-23715-7},
+     location = {Szeged, Hungary},
+     pages = {97--111},
+     numpages = {15},
+     url = {http://dl.acm.org/citation.cfm?id=2042243.2042260},
+     acmid = {2042260},
+     publisher = {Springer-Verlag},
+     address = {Berlin, Heidelberg},
+    } 
+    "',   'www.ssbse.org/2011/presentations/.../Staunton_EDA.pdf', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  101 , 'Value-deterministic Search-based Replay for Android Multithreaded Applications', 2015  , '"@inproceedings{101, 
+     author = {Jha, Ajay Kumar and Jeong, Sooyong and Lee, Woo Jin},
+     title = {Value-deterministic Search-based Replay for Android Multithreaded Applications},
+     booktitle = {Proceedings of the 2013 Research in Adaptive and Convergent Systems},
+     series = {RACS \'13},
+     year = {2013},
+     isbn = {978-1-4503-2348-2},
+     location = {Montreal, Quebec, Canada},
+     pages = {381--386},
+     numpages = {6},
+     url = {http://doi.acm.org/10.1145/2513228.2513279},
+     doi = {10.1145/2513228.2513279},
+     acmid = {2513279},
+     publisher = {ACM},
+     address = {New York, NY, USA},
+     keywords = {Android, field failure, multithreaded programming, reproducing crash, shared memory},
+    } 
+    "',   'dl.acm.org/citation.cfm?id=2513279', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  102 , 'On the Effectiveness of Contracts as Test Oracles in the Detection and Diagnosis of Functional Faults in Concurrent Object-Oriented Software', 2013  , '"@ARTICLE{102,  
+    author={W. Araujo and L. C. Briand and Y. Labiche}, 
+    journal={IEEE Transactions on Software Engineering}, 
+    title={On the Effectiveness of Contracts as Test Oracles in the Detection and Diagnosis of Functional Faults in Concurrent Object-Oriented Software}, 
+    year={2014}, 
+    volume={40}, 
+    number={10}, 
+    pages={971-992}, 
+    keywords={Java;concurrency control;contracts;fault diagnosis;object-oriented methods;parallel programming;program compilers;program testing;software quality;software reliability;CCM;DbC;JML compiler;JMLC;Java modelling language;concurrent industrial software system;concurrent programs;concurrent software;contract complexity measure;design by contract;functional fault detection;functional fault diagnosing;object-oriented software quality;runtime assertion checking code;sequential programs;software development methodology;software engineering;target programming language;telecommunication domain;test oracles;Concurrent computing;Contracts;Interference;Java;Message systems;Programming;Software;Concurrent programming;Software Quality/SQA??Measurement applied to SQA and V&V;Software/Program Verification??Programming by contract;object-oriented programming}, 
+    doi={10.1109/TSE.2014.2339829}, 
+    ISSN={0098-5589}, 
+    month={Oct},"',   'ieeexplore.ieee.org/document/6857355/', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  106 , 'Types for safe locking: Static race detection for Java', 1997  , '"@article{106, 
+     author = {Abadi, Martin and Flanagan, Cormac and Freund, Stephen N.},
+     title = {Types for Safe Locking: Static Race Detection for Java},
+     journal = {ACM Trans. Program. Lang. Syst.},
+     issue_date = {March 2006},
+     volume = {28},
+     number = {2},
+     month = mar,
+     year = {2006},
+     issn = {0164-0925},
+     pages = {207--255},
+     numpages = {49},
+     url = {http://doi.acm.org/10.1145/1119479.1119480},
+     doi = {10.1145/1119479.1119480},
+     acmid = {1119480},
+     publisher = {ACM},
+     address = {New York, NY, USA},
+     keywords = {Concurrent programs, race conditions, type inference, type system},
+    } 
+    "',   'dl.acm.org/citation.cfm?id=1119480', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  107 , 'AVIO: Detecting atomicity violations via access interleaving invariants',  2006  , '"@article{107, 
+     author = {Lu, Shan and Tucek, Joseph and Qin, Feng and Zhou, Yuanyuan},
+     title = {AVIO: Detecting Atomicity Violations via Access Interleaving Invariants},
+     journal = {SIGOPS Oper. Syst. Rev.},
+     issue_date = {December 2006},
+     volume = {40},
+     number = {5},
+     month = oct,
+     year = {2006},
+     issn = {0163-5980},
+     pages = {37--48},
+     numpages = {12},
+     url = {http://doi.acm.org/10.1145/1168917.1168864},
+     doi = {10.1145/1168917.1168864},
+     acmid = {1168864},
+     publisher = {ACM},
+     address = {New York, NY, USA},
+     keywords = {atomicity violation, bug detection, concurrency bug, concurrent program, hardware support, program invariant},
+    } "',   'ieeexplore.ieee.org/document/4205121/', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  109 , 'Detection of asynchronous message passing errors using static analysis', 2011  , '"@inproceedings{109,
+     author = {Christakis, Maria and Sagonas, Konstantinos},
+     title = {Detection of Asynchronous Message Passing Errors Using Static Analysis},
+     booktitle = {Proceedings of the 13th International Conference on Practical Aspects of Declarative Languages},
+     series = {PADL\'11},
+     year = {2011},
+     isbn = {978-3-642-18377-5},
+     location = {Austin, TX, USA},
+     pages = {5--18},
+     numpages = {14},
+     url = {http://dl.acm.org/citation.cfm?id=1946313.1946318},
+     acmid = {1946318},
+     publisher = {Springer-Verlag},
+     address = {Berlin, Heidelberg},
+    } "',   'link.springer.com/chapter/10.1007/978-3-642-18378-2_3', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  110 , 'DTAM: Dynamic Taint Analysis of Multi-threaded Programs for Relevancy Malay Ganai. ',  2012  , '"@inproceedings{110, 
+     author = {Ganai, Malay and Lee, Dongyoon and Gupta, Aarti},
+     title = {DTAM: Dynamic Taint Analysis of Multi-threaded Programs for Relevancy},
+     booktitle = {Proceedings of the ACM SIGSOFT 20th International Symposium on the Foundations of Software Engineering},
+     series = {FSE \'12},
+     year = {2012},
+     isbn = {978-1-4503-1614-9},
+     location = {Cary, North Carolina},
+     pages = {46:1--46:11},
+     articleno = {46},
+     numpages = {11},
+     url = {http://doi.acm.org/10.1145/2393596.2393650},
+     doi = {10.1145/2393596.2393650},
+     acmid = {2393650},
+     publisher = {ACM},
+     address = {New York, NY, USA},
+     keywords = {generalization, relevancy, taint analysis},
+    } 
+    "',   'dl.acm.org/citation.cfm?id=2393650', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  111 , 'Efficient concurrency-bug detection across inputs',  2013  , '"@article{111,
+     author = {Deng, Dongdong and Zhang, Wei and Lu, Shan},
+     title = {Efficient Concurrency-bug Detection Across Inputs},
+     journal = {SIGPLAN Not.},
+     issue_date = {October 2013},
+     volume = {48},
+     number = {10},
+     month = oct,
+     year = {2013},
+     issn = {0362-1340},
+     pages = {785--802},
+     numpages = {18},
+     url = {http://doi.acm.org/10.1145/2544173.2509539},
+     doi = {10.1145/2544173.2509539},
+     acmid = {2509539},
+     publisher = {ACM},
+     address = {New York, NY, USA},
+     keywords = {bug detection, concurrency bugs, multi-threaded software, software testing},
+    }"',  'https://www.bibsonomy.org/bibtex/247d84bd5395323414b1f9df9de44b358/gron', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  113 , 'Efficient data race detection for distributed memory parallel programs', 2011  , '"@inproceedings{113, 
+     author = {Park, Chang-Seo and Sen, Koushik and Hargrove, Paul and Iancu, Costin},
+     title = {Efficient Data Race Detection for Distributed Memory Parallel Programs},
+     booktitle = {Proceedings of 2011 International Conference for High Performance Computing, Networking, Storage and Analysis},
+     series = {SC \'11},
+     year = {2011},
+     isbn = {978-1-4503-0771-0},
+     location = {Seattle, Washington},
+     pages = {51:1--51:12},
+     articleno = {51},
+     numpages = {12},
+     url = {http://doi.acm.org/10.1145/2063384.2063452},
+     doi = {10.1145/2063384.2063452},
+     acmid = {2063452},
+     publisher = {ACM},
+     address = {New York, NY, USA},
+    } 
+    "',   'dl.acm.org/citation.cfm?id=2063452', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  114 , 'InstantCheck: Checking the determinism of parallel programs using on-the-fly incremental hashing', 2010  , '"@INPROCEEDINGS{114,  
+    author={A. Nistor and D. Marinov and J. Torrellas}, 
+    booktitle={2010 43rd Annual IEEE/ACM International Symposium on Microarchitecture}, 
+    title={InstantCheck: Checking the Determinism of Parallel Programs Using On-the-Fly Incremental Hashing}, 
+    year={2010}, 
+    pages={251-262}, 
+    keywords={cryptography;file organisation;multi-threading;shared memory systems;64-bit register;InstantCheck programmer;PARSEC;PBZip2;SPLASH-2;Sphinx3;code testing;hardware extension;memory state;multithreaded program;on-the-fly incremental hashing;parallel program;shared memory system;Determinism;Incremental Hashing;Memory State Hash}, 
+    doi={10.1109/MICRO.2010.55}, 
+    ISSN={1072-4451}, 
+    month={Dec},}"',  'ieeexplore.ieee.org/abstract/document/5695541/', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  115 , 'MuTMuT: Efficient Exploration for Mutation Testing of Multithreaded Code.',  2010  , '"@INPROCEEDINGS{115,  
+    author={M. Gligoric and V. Jagannath and D. Marinov}, 
+    booktitle={2010 Third International Conference on Software Testing, Verification and Validation}, 
+    title={MuTMuT: Efficient Exploration for Mutation Testing of Multithreaded Code}, 
+    year={2010}, 
+    pages={55-64}, 
+    keywords={multi-threading;program testing;MuTMuT;efficient exploration;multithreaded code;multithreaded programs;mutation testing;efficient exploration;multithreaded code;mutant execution;mutation testing}, 
+    doi={10.1109/ICST.2010.33}, 
+    ISSN={2159-4848}, 
+    month={April},}"',  'dl.acm.org/citation.cfm?id=1828444', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  116 , 'SAM: Self-adaptive dynamic analysis for multithreaded programs', 2012  , '"@inproceedings{116, 
+     author = {Chen, Qichang and Wang, Liqiang and Yang, Zijiang},
+     title = {SAM: Self-adaptive Dynamic Analysis for Multithreaded Programs},
+     booktitle = {Proceedings of the 7th International Haifa Verification Conference on Hardware and Software: Verification and Testing},
+     series = {HVC\'11},
+     year = {2012},
+     isbn = {978-3-642-34187-8},
+     location = {Haifa, Israel},
+     pages = {115--129},
+     numpages = {15},
+     url = {http://dx.doi.org/10.1007/978-3-642-34188-5_12},
+     doi = {10.1007/978-3-642-34188-5_12},
+     acmid = {2426002},
+     publisher = {Springer-Verlag},
+     address = {Berlin, Heidelberg},
+    } 
+    "',   'link.springer.com/chapter/10.1007/978-3-642-34188-5_12 ', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  117 , 'Sound Predictive Race Detection in Polynomial Time', 2012  , '"@article{117,
+     author = {Smaragdakis, Yannis and Evans, Jacob and Sadowski, Caitlin and Yi, Jaeheon and Flanagan, Cormac},
+     title = {Sound Predictive Race Detection in Polynomial Time},
+     journal = {SIGPLAN Not.},
+     issue_date = {January 2012},
+     volume = {47},
+     number = {1},
+     month = jan,
+     year = {2012},
+     issn = {0362-1340},
+     pages = {387--400},
+     numpages = {14},
+     url = {http://doi.acm.org/10.1145/2103621.2103702},
+     doi = {10.1145/2103621.2103702},
+     acmid = {2103702},
+     publisher = {ACM},
+     address = {New York, NY, USA},
+     keywords = {dynamic analysis, happens-before, race detection},
+    } 
+    "',   'dl.acm.org/citation.cfm?id=2103702', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  118 , 'Synchronization identification through on-the-fly test', 2013  , '"@inproceedings{118, 
+     author = {Yuan, Xiang and Wang, Zhenjiang and Wu, Chenggang and Yew, Pen-Chung and Wang, Wenwen and Li, Jianjun and Xu, Di},
+     title = {Synchronization Identification Through On-the-fly Test},
+     booktitle = {Proceedings of the 19th International Conference on Parallel Processing},
+     series = {Euro-Par\'13},
+     year = {2013},
+     isbn = {978-3-642-40046-9},
+     location = {Aachen, Germany},
+     pages = {4--15},
+     numpages = {12},
+     url = {http://dx.doi.org/10.1007/978-3-642-40047-6_3},
+     doi = {10.1007/978-3-642-40047-6_3},
+     acmid = {2529823},
+     publisher = {Springer-Verlag},
+     address = {Berlin, Heidelberg},
+     keywords = {concurrency testing, multithreading, synchronization identification},
+    } "',   'dl.acm.org/citation.cfm?id=2529823', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  119 , 'Synthesizing Racy Tests',  2015  , '"@article{119, 
+     author = {Samak, Malavika and Ramanathan, Murali Krishna and Jagannathan, Suresh},
+     title = {Synthesizing Racy Tests},
+     journal = {SIGPLAN Not.},
+     issue_date = {June 2015},
+     volume = {50},
+     number = {6},
+     month = jun,
+     year = {2015},
+     issn = {0362-1340},
+     pages = {175--185},
+     numpages = {11},
+     url = {http://doi.acm.org/10.1145/2813885.2737998},
+     doi = {10.1145/2813885.2737998},
+     acmid = {2737998},
+     publisher = {ACM},
+     address = {New York, NY, USA},
+     keywords = {concurrency, dynamic analysis, race detection},
+    } 
+    "',   'dl.acm.org/citation.cfm?id=2737998', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  120 , 'Synthesizing Tests for Detecting Atomicity Violations',  2015  , '"@inproceedings{120, 
+     author = {Samak, Malavika and Ramanathan, Murali Krishna},
+     title = {Synthesizing Tests for Detecting Atomicity Violations},
+     booktitle = {Proceedings of the 2015 10th Joint Meeting on Foundations of Software Engineering},
+     series = {ESEC/FSE 2015},
+     year = {2015},
+     isbn = {978-1-4503-3675-8},
+     location = {Bergamo, Italy},
+     pages = {131--142},
+     numpages = {12},
+     url = {http://doi.acm.org/10.1145/2786805.2786874},
+     doi = {10.1145/2786805.2786874},
+     acmid = {2786874},
+     publisher = {ACM},
+     address = {New York, NY, USA},
+     keywords = {atomicity violation, concurrency, dynamic analysis},
+    } 
+    "',   'dl.acm.org/authorize?N92605', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  122 , 'TransDPOR: A novel dynamic partial-order reduction technique for testing actor programs',  2012  , '"@inproceedings{122, 
+     author = {Tasharofi, Samira and Karmani, Rajesh K. and Lauterburg, Steven and Legay, Axel and Marinov, Darko and Agha, Gul},
+     title = {TransDPOR: A Novel Dynamic Partial-order Reduction Technique for Testing Actor Programs},
+     booktitle = {Proceedings of the 14th Joint IFIP WG 6.1 International Conference and Proceedings of the 32Nd IFIP WG 6.1 International Conference on Formal Techniques for Distributed Systems},
+     series = {FMOODS\'12/FORTE\'12},
+     year = {2012},
+     isbn = {978-3-642-30792-8},
+     location = {Stockholm, Sweden},
+     pages = {219--234},
+     numpages = {16},
+     url = {http://dx.doi.org/10.1007/978-3-642-30793-5_14},
+     doi = {10.1007/978-3-642-30793-5_14},
+     acmid = {2366663},
+     publisher = {Springer-Verlag},
+     address = {Berlin, Heidelberg},
+    } 
+    "',   'dl.acm.org/citation.cfm?id=2366663', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  124 , 'Unfolding based automated testing of multithreaded programs',  2015  , '"@article{124, 
+     author = {K\""{a}hk\""{o}nen, Kari and Saarikivi, Olli and Heljanko, Keijo},
+     title = {Unfolding Based Automated Testing of Multithreaded Programs},
+     journal = {Automated Software Engg.},
+     issue_date = {December  2015},
+     volume = {22},
+     number = {4},
+     month = dec,
+     year = {2015},
+     issn = {0928-8910},
+     pages = {475--515},
+     numpages = {41},
+     url = {http://dx.doi.org/10.1007/s10515-014-0150-6},
+     doi = {10.1007/s10515-014-0150-6},
+     acmid = {2830233},
+     publisher = {Kluwer Academic Publishers},
+     address = {Hingham, MA, USA},
+     keywords = {Automated testing, Dynamic symbolic execution, Partial order reduction, Unfoldings},
+    } 
+    "',   'link.springer.com/article/10.1007/s10515-014-0150-6', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  125 , 'Using SPIN for automated debugging of infinite executions of Java programs', 2014  , '"@article{125, 
+     author = {Adalid, Dami\'a}n and Salmer\'o}n, Alberto and Gallardo, Mar\'\i}a Del Mar and Merino, Pedro},
+     title = {Using SPIN for Automated Debugging of Infinite Executions of Java Programs},
+     journal = {J. Syst. Softw.},
+     issue_date = {April, 2014},
+     volume = {90},
+     month = apr,
+     year = {2014},
+     issn = {0164-1212},
+     pages = {61--75},
+     numpages = {15},
+     url = {http://dx.doi.org/10.1016/j.jss.2013.10.056},
+     doi = {10.1016/j.jss.2013.10.056},
+     acmid = {2589291},
+     publisher = {Elsevier Science Inc.},
+     address = {New York, NY, USA},
+    } 
+    "',   'www.sciencedirect.com/science/article/pii/S0164121213002641', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  126 , 'Fair stateless model checking',  2008  , '"@article{126, 
+     author = {Musuvathi, Madanlal and Qadeer, Shaz},
+     title = {Fair Stateless Model Checking},
+     journal = {SIGPLAN Not.},
+     issue_date = {June 2008},
+     volume = {43},
+     number = {6},
+     month = jun,
+     year = {2008},
+     issn = {0362-1340},
+     pages = {362--371},
+     numpages = {10},
+     url = {http://doi.acm.org/10.1145/1379022.1375625},
+     doi = {10.1145/1379022.1375625},
+     acmid = {1375625},
+     publisher = {ACM},
+     address = {New York, NY, USA},
+     keywords = {concurrency, fairness, liveness, model checking, multi-threading, shared-memory programs, software testing},
+    } 
+    "',   'dl.acm.org/citation.cfm?id=1375625', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  127 , 'Verification and Coverage of Message Passing Multicore Applications',  2012  , '"@article{127, 
+     author = {Deniz, Etem and Sen, Alper and Holt, Jim},
+     title = {Verification and Coverage of Message Passing Multicore Applications},
+     journal = {ACM Trans. Des. Autom. Electron. Syst.},
+     issue_date = {June 2012},
+     volume = {17},
+     number = {3},
+     month = jul,
+     year = {2012},
+     issn = {1084-4309},
+     pages = {23:1--23:31},
+     articleno = {23},
+     numpages = {31},
+     url = {http://doi.acm.org/10.1145/2209291.2209296},
+     doi = {10.1145/2209291.2209296},
+     acmid = {2209296},
+     publisher = {ACM},
+     address = {New York, NY, USA},
+     keywords = {Multicore software, coverage, message passing communication, mutation testing, predictive verification},
+    } "',   'dl.acm.org/citation.cfm?id=2209296', 0, 'admin', NOW() );
+
+    INSERT INTO `selectt`.`Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (  128 , 'Preemption sealing for efficient concurrency testing', 2010  , '"@inproceedings{128, 
+     author = {Ball, Thomas and Burckhardt, Sebastian and Coons, Katherine E. and Musuvathi, Madanlal and Qadeer, Shaz},
+     title = {Preemption Sealing for Efficient Concurrency Testing},
+     booktitle = {Proceedings of the 16th International Conference on Tools and Algorithms for the Construction and Analysis of Systems},
+     series = {TACAS\'10},
+     year = {2010},
+     isbn = {3-642-12001-6, 978-3-642-12001-5},
+     location = {Paphos, Cyprus},
+     pages = {420--434},
+     numpages = {15},
+     url = {http://dx.doi.org/10.1007/978-3-642-12002-2_35},
+     doi = {10.1007/978-3-642-12002-2_35},
+     acmid = {2175600},
+     publisher = {Springer-Verlag},
+     address = {Berlin, Heidelberg},
+    } "',   'link.springer.com/chapter/10.1007/978-3-642-12002-2_35', 0, 'admin', NOW() );
 
 
 
     -- -----------------------------------------------------
-    -- Table `dbo`.`ExecutionPlatform`
+    -- Table `selectt`.`ExecutionPlatform`
     -- -----------------------------------------------------
-    DROP TABLE IF EXISTS `dbo`.`ExecutionPlatform`; 
+    DROP TABLE IF EXISTS `selectt`.`ExecutionPlatform`; 
 
-    CREATE TABLE IF NOT EXISTS `dbo`.`ExecutionPlatform` (
+    CREATE TABLE IF NOT EXISTS `selectt`.`ExecutionPlatform` (
       `id` INT NOT NULL AUTO_INCREMENT,
       `idTechnique` INT NOT NULL,
       `executionPlatform` VARCHAR(255) NOT NULL,
@@ -194,25 +2056,136 @@
       INDEX `idTechnique_idx` (`idTechnique` ASC),
       CONSTRAINT `idTechnique_1`
         FOREIGN KEY (`idTechnique`)
-        REFERENCES `dbo`.`Technique` (`id`)
+        REFERENCES `selectt`.`Technique` (`id`)
         ON DELETE CASCADE
         ON UPDATE CASCADE)
     ENGINE = InnoDB;
 
-
-
-    INSERT INTO `dbo`.`ExecutionPlatform`  (`id`,  `idTechnique`,  `executionPlatform`)  VALUES  (1,  1,  'Linux');
-    INSERT INTO `dbo`.`ExecutionPlatform`  (`id`,  `idTechnique`,  `executionPlatform`)  VALUES  (2,  2,  'Linux');
-
+    -- Execution Platform
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 1 ,'No Information');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 2 ,'Linux');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 3 ,'No Information');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 4 ,'Unix');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 5 ,'Linux');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 6 ,'Linux');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 7 ,'No Information');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 8 ,'No Information');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 9 ,'No Information');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 10  ,'No Information');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 11  ,'No Information');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 12  ,'Windows');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 13  ,'No Information');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 14  ,'Unix');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 15  ,'No Information');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 17  ,'No Information');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 18  ,'Linux');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 19  ,'No Information');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 20  ,'Linux');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 21  ,'No Information');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 22  ,'No Information');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 23  ,'Linux');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 24  ,'Android');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 25  ,'No Information');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 27  ,'Linux');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 29  ,'No Information');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 30  ,'No Information');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 31  ,'Linux');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 32  ,'No Information');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 33  ,'Linux');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 34  ,'No Information');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 35  ,'Linux');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 36  ,'No Information');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 37  ,'No Information');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 38  ,'Windows');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 39  ,'Linux');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 40  ,'No Information');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 43  ,'Linux');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 44  ,'Sun');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 45  ,'Linux');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 46  ,'No Information');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 47  ,'No Information');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 48  ,'No Information');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 49  ,'Windows');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 50  ,'No Information');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 51  ,'Windows');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 52  ,'Windows');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 53  ,'Unix');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 54  ,'Linux');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 55  ,'Linux');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 56  ,'Windows');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 56  ,'Unix');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 57  ,'Linux');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 59  ,'Linux');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 60  ,'No Information');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 61  ,'Linux');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 62  ,'Linux');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 63  ,'Linux');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 64  ,'Linux');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 65  ,'Linux');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 65  ,'Unix');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 66  ,'Linux');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 67  ,'Linux');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 68  ,'Linux');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 69  ,'Linux');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 70  ,'Linux');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 71  ,'No Information');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 72  ,'Linux');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 74  ,'Unix');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 75  ,'Linux');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 76  ,'Unix');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 77  ,'Linux');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 78  ,'No Information');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 80  ,'Windows');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 81  ,'Linux');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 82  ,'Linux');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 84  ,'Linux');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 85  ,'No Information');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 87  ,'Linux');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 88  ,'Unix');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 89  ,'Linux');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 90  ,'Linux');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 91  ,'Android');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 92  ,'Windows');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 92  ,'Solaris');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 92  ,'Unix');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 93  ,'Solaris');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 94  ,'No Information');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 95  ,'Unix');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 95  ,'Linux');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 96  ,'Linux');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 97  ,'No Information');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 99  ,'No Information');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 101 ,'Linux');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 102 ,'No Information');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 106 ,'Unix');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 107 ,'No Information');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 109 ,'LInux');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 110 ,'Linux');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 111 ,'Linux');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 113 ,'Cray XT4 system');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 114 ,'No Information');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 115 ,'Linux');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 115 ,'Sun');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 116 ,'Windows');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 117 ,'Windows');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 118 ,'No Information');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 119 ,'Linux');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 120 ,'Linux');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 122 ,'Unix');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 124 ,'No Information');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 125 ,'No Information');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 126 ,'Windows');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 127 ,'Linux');
+    INSERT INTO `selectt`.`executionPlatform` (`idTechnique`, `executionPlatform`) VALUES ( 128 ,'Windows');
 
 
 
     -- -----------------------------------------------------
-    -- Table `dbo`.`Objective`
+    -- Table `selectt`.`Objective`
     -- -----------------------------------------------------
-    DROP TABLE IF EXISTS `dbo`.`Objective`; 
+    DROP TABLE IF EXISTS `selectt`.`Objective`; 
 
-    CREATE TABLE IF NOT EXISTS `dbo`.`Objective` (
+    CREATE TABLE IF NOT EXISTS `selectt`.`Objective` (
       `id` INT NOT NULL AUTO_INCREMENT,
       `idTechnique` INT NOT NULL,
       `objective` VARCHAR(255) NOT NULL,
@@ -221,23 +2194,129 @@
       INDEX `idTechnique_idx` (`idTechnique` ASC),
       CONSTRAINT `idTechnique_2`
         FOREIGN KEY (`idTechnique`)
-        REFERENCES `dbo`.`Technique` (`id`)
+        REFERENCES `selectt`.`Technique` (`id`)
         ON DELETE CASCADE
         ON UPDATE CASCADE)
     ENGINE = InnoDB;
 
-    INSERT INTO `dbo`.`Objective` (`id`,  `idTechnique`,  `objective`)  VALUES  (1,  1,  'Process');
-    INSERT INTO `dbo`.`Objective` (`id`,  `idTechnique`,  `objective`)  VALUES  (2,  1,  'HPC');
-    INSERT INTO `dbo`.`Objective` (`id`,  `idTechnique`,  `objective`)  VALUES  (3,  2,  'Process');
-    INSERT INTO `dbo`.`Objective` (`id`,  `idTechnique`,  `objective`)  VALUES  (4,  2,  'HPC');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  1 ,'Distributed systems');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  2 ,'HPC');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  3 ,'HPC');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  4 ,'HPC');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  5 ,'HPC');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  6 ,'HPC');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  7 ,'HPC');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  8 ,'HPC');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  9 ,'HPC');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  10  ,'HPC');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  11  ,'HPC');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  12  ,'Distributed systems');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  13  ,'Embedded systems');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  14  ,'Distributed systems');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  15  ,'HPC');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  17  ,'HPC');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  18  ,'Distributed systems');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  19  ,'HPC');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  20  ,'HPC');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  21  ,'HPC');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  22  ,'HPC');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  23  ,'HPC');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  24  ,'Mobile');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  25  ,'HPC');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  27  ,'HPC');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  29  ,'Labeled transitions systems');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  30  ,'Distributed systems');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  31  ,'Distributed systems');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  32  ,'HPC');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  33  ,'HPC');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  34  ,'HPC');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  35  ,'HPC');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  36  ,'HPC');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  37  ,'HPC');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  38  ,'HPC');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  39  ,'HPC');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  40  ,'Distributed systems');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  43  ,'HPC');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  44  ,'HPC');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  45  ,'HPC');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  46  ,'Transactional memory');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  47  ,'HPC');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  48  ,'HPC');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  49  ,'HPC');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  50  ,'HPC');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  51  ,'HPC');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  52  ,'Distributed systems');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  53  ,'HPC');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  54  ,'HPC');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  55  ,'HPC');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  56  ,'Distributed systems');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  57  ,'Distributed systems');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  59  ,'Embedded systems');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  60  ,'actor programs');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  61  ,'Distributed systems');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  62  ,'HPC');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  63  ,'HPC');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  64  ,'Distributed systems');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  65  ,'HPC');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  66  ,'Distributed systems');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  67  ,'Distributed systems');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  68  ,'HPC');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  69  ,'HPC');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  70  ,'Distributed systems');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  71  ,'Distributed systems');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  72  ,'Distributed systems');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  74  ,'HPC');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  75  ,'Embedded systems');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  76  ,'HPC');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  77  ,'HPC');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  78  ,'Distributed systems');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  80  ,'HPC');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  81  ,'HPC');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  82  ,'Distributed systems');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  84  ,'HPC');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  85  ,'HPC');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  87  ,'HPC');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  88  ,'Distributed systems');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  89  ,'HPC');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  90  ,'HPC');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  91  ,'Mobile');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  92  ,'Distributed systems');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  93  ,'HPC');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  94  ,'HPC');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  95  ,'HPC');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  96  ,'Transactional memory');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  97  ,'HPC');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  99  ,'Distributed systems');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  101 ,'Mobile');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  102 ,'Distributed systems');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  106 ,'Distributed systems');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  107 ,'Distributed systems');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  109 ,'Distributed systems');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  110 ,'HPC');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  111 ,'HPC');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  113 ,'Distributed systems');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  114 ,'HPC');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  115 ,'HPC');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  116 ,'HPC');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  117 ,'Distributed systems');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  118 ,'HPC');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  119 ,'HPC');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  120 ,'HPC');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  122 ,'Distributed systems');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  124 ,'HPC');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  125 ,'Distributed systems');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  126 ,'HPC');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  127 ,'Distributed system');
+    INSERT INTO `selectt`.  `Objective` (`idTechnique`,   `objective` ) VALUES (  128 ,'HPC');
+    
 
 
     -- -----------------------------------------------------
-    -- Table `dbo`.`ProgrammingLanguage`
+    -- Table `selectt`.`ProgrammingLanguage`
     -- -----------------------------------------------------
-    DROP TABLE IF EXISTS `dbo`.`ProgrammingLanguage`; 
+    DROP TABLE IF EXISTS `selectt`.`ProgrammingLanguage`; 
 
-    CREATE TABLE IF NOT EXISTS `dbo`.`ProgrammingLanguage` (
+    CREATE TABLE IF NOT EXISTS `selectt`.`ProgrammingLanguage` (
       `id` INT NOT NULL AUTO_INCREMENT,
       `idTechnique` INT NOT NULL,
       `programmingLanguage` VARCHAR(255) NOT NULL,
@@ -246,26 +2325,179 @@
       INDEX `idTechnique_idx` (`idTechnique` ASC),
       CONSTRAINT `idTechnique_3`
         FOREIGN KEY (`idTechnique`)
-        REFERENCES `dbo`.`Technique` (`id`)
+        REFERENCES `selectt`.`Technique` (`id`)
         ON DELETE CASCADE
         ON UPDATE CASCADE)
     ENGINE = InnoDB;
 
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  1 ,'Java');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  2 ,'C');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  2 ,'MPI');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  3 ,'Java');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  4 ,'Java');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  5 ,'Java');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  6 ,'Java');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  7 ,'Java');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  8 ,'Java');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  9 ,'Java');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  10  ,'Java');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  11  ,'Java');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  12  ,'Java');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  13  ,'C');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  14  ,'Java');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  15  ,'Java');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  17  ,'Java');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  18  ,'Java');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  19  ,'C');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  19  ,'C++');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  20  ,'C');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  20  ,'C++');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  21  ,'java');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  21  ,'C#');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  22  ,'C');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  22  ,'C++');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  22  ,'Java');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  23  ,'C');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  23  ,'C++');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  23  ,'Java');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  24  ,'Java');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  25  ,'Java');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  27  ,'C');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  27  ,'MPI');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  29  ,'CCS');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  29  ,'CSP');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  29  ,'Ada');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  30  ,'C');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  30  ,'C++');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  31  ,'C');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  31  ,'C++');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  32  ,'Java');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  33  ,'C');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  33  ,'C++');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  33  ,'Pthreads');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  34  ,'Java');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  35  ,'Java');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  36  ,'C');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  37  ,'Pthread');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  38  ,'Java');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  39  ,'C');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  39  ,'C++');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  39  ,'Pthreads');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  40  ,'Java');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  43  ,'C');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  43  ,'C++');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  44  ,'Java');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  45  ,'C');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  46  ,'C');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  46  ,'C++');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  47  ,'Java');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  48  ,'Java');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  49  ,'Java');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  50  ,'Java');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  51  ,'Java');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  52  ,'C');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  52  ,'C++');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  53  ,'Java');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  54  ,'C');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  54  ,'Java');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  55  ,'Pthread');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  56  ,'Java');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  57  ,'C');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  57  ,'C++');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  57  ,'Java');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  59  ,'C');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  59  ,'C++');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  60  ,'Scala');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  61  ,'C');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  61  ,'C++');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  62  ,'Java');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  63  ,'Java');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  64  ,'C');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  65  ,'C');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  65  ,'C++');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  65  ,'Java');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  66  ,'C');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  67  ,'C');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  67  ,'C++');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  68  ,'C');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  68  ,'C++');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  69  ,'C');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  69  ,'C++');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  69  ,'Pthreads');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  70  ,'Java');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  71  ,'C');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  71  ,'C++');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  72  ,'Java');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  74  ,'Lotus');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  74  ,'Java');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  75  ,'C');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  75  ,'C++');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  75  ,'Pthreads');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  76  ,'Java');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  77  ,'Java');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  78  ,'C');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  78  ,'C++');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  80  ,'C');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  80  ,'C++');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  80  ,'C#');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  81  ,'C');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  81  ,'C++');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  82  ,'Pthread');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  82  ,'C');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  84  ,'C');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  84  ,'C++');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  85  ,'Pthread');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  87  ,'C++');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  88  ,'C');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  89  ,'Java');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  90  ,'C');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  90  ,'C++');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  91  ,'Java');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  92  ,'C++');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  93  ,'Java');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  94  ,'Java');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  95  ,'C');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  96  ,'Pthread');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  96  ,'C');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  97  ,'Java');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  97  ,'C#');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  99  ,'Java');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  101 ,'Java');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  102 ,'Java');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  106 ,'Java');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  107 ,'C');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  107 ,'C++');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  109 ,'Erlang');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  110 ,'C');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  110 ,'C++');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  111 ,'C');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  111 ,'C++');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  113 ,'C');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  113 ,'UPC');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  114 ,'C++');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  115 ,'Java');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  116 ,'Java');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  117 ,'Java');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  118 ,'Pthread');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  119 ,'Java');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  120 ,'Java');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  122 ,'ActorFoundry');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  124 ,'Java');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  125 ,'Java');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  126 ,'C++');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  127 ,'MCAPI');
+    INSERT INTO `selectt`.  `ProgrammingLanguage` (`idTechnique`,   `programmingLanguage` ) VALUES (  128 ,'.Net');
 
-    INSERT INTO `dbo`.`ProgrammingLanguage` (`id`,  `idTechnique`,  `programmingLanguage`)  VALUES  (1,  1,  'C');
-    INSERT INTO `dbo`.`ProgrammingLanguage` (`id`,  `idTechnique`,  `programmingLanguage`)  VALUES  (2,  1,  'MPI');
-    INSERT INTO `dbo`.`ProgrammingLanguage` (`id`,  `idTechnique`,  `programmingLanguage`)  VALUES  (3,  2,  'C');
-    INSERT INTO `dbo`.`ProgrammingLanguage` (`id`,  `idTechnique`,  `programmingLanguage`)  VALUES  (4,  2,  'MPI');
 
 
 
 
     -- -----------------------------------------------------
-    -- Table `dbo`.`TestingTechnique`
+    -- Table `selectt`.`TestingTechnique`
     -- -----------------------------------------------------
-    DROP TABLE IF EXISTS `dbo`.`TestingTechnique`; 
+    DROP TABLE IF EXISTS `selectt`.`TestingTechnique`; 
 
-    CREATE TABLE IF NOT EXISTS `dbo`.`TestingTechnique` (
+    CREATE TABLE IF NOT EXISTS `selectt`.`TestingTechnique` (
       `id` INT NOT NULL AUTO_INCREMENT,
       `idTechnique` INT NOT NULL,
       `testingTechnique` VARCHAR(255) NOT NULL,
@@ -274,24 +2506,131 @@
       INDEX `idTechnique_idx` (`idTechnique` ASC),
       CONSTRAINT `idTechnique_4`
         FOREIGN KEY (`idTechnique`)
-        REFERENCES `dbo`.`Technique` (`id`)
+        REFERENCES `selectt`.`Technique` (`id`)
         ON DELETE CASCADE
         ON UPDATE CASCADE)
     ENGINE = InnoDB;
 
-    INSERT INTO `dbo`.`TestingTechnique` (`id`,  `idTechnique`,  `testingTechnique`)  VALUES  (1,  1,  'Structural testing');
-    INSERT INTO `dbo`.`TestingTechnique` (`id`,  `idTechnique`,  `testingTechnique`)  VALUES  (2,  2,  'Structural testing');
 
-
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  1 ,'Model based testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  2 ,'Structural testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  3 ,'Model based testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  4 ,'Structural testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  5 ,'Fault-based testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  6 ,'Fault-based testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  7 ,'Formal method-based testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  8 ,'Structural testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  9 ,'Fault-based testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  10  ,'Structural testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  11  ,'Structural testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  12  ,'Structural testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  13  ,'structural testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  14  ,'No Information');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  15  ,'Fault-based testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  17  ,'Structural testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  18  ,'Fault-based testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  19  ,'Structural testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  20  ,'Fault-based testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  21  ,'No Information');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  22  ,'Formal method-based testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  23  ,'Model based testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  24  ,'Fault-based testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  25  ,'Model based testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  27  ,'Structural testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  29  ,'Structural testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  30  ,'Fault-based testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  31  ,'Fault-based testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  32  ,'Structural testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  33  ,'Fault-based testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  34  ,'Structural testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  35  ,'Fault-based testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  36  ,'Structural testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  37  ,'Structural testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  38  ,'Model based testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  39  ,'Model based testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  40  ,'Structural testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  43  ,'Structural testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  44  ,'Fault-based testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  45  ,'Formal method-based testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  46  ,'Fault-based testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  47  ,'Structural testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  48  ,'Structural testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  49  ,'Structural testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  50  ,'Structural testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  51  ,'Structural testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  52  ,'Structural testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  53  ,'Fault-based testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  54  ,'Structural testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  55  ,'Structural testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  56  ,'Fault-based testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  57  ,'Fault-based testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  59  ,'Structural testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  60  ,'Structural testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  61  ,'Fault-based testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  62  ,'Formal method-based testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  63  ,'No Information');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  64  ,'Formal method-based testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  65  ,'Model based testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  66  ,'Formal method-based testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  67  ,'Fault-based testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  68  ,'Fault-based testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  69  ,'No Information');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  70  ,'Structural testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  71  ,'Fault-based testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  72  ,'Model based testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  74  ,'Fault-based testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  75  ,'Formal method-based testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  76  ,'Structural testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  77  ,'Model based testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  78  ,'Fault-based testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  80  ,'Formal method-based testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  81  ,'Structural testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  82  ,'Fault-based testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  84  ,'Structural testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  85  ,'Structural testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  87  ,'Structural testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  88  ,'Model based testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  89  ,'Fault-based testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  90  ,'Structural testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  91  ,'Fault-based testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  92  ,'No Information');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  93  ,'Fault-based testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  94  ,'Fault-based testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  95  ,'Functional testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  96  ,'Formal method-based testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  97  ,'Formal method-based testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  99  ,'Model based testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  101 ,'Structural testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  102 ,'Functional testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  102 ,'Formal method-based testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  106 ,'Formal method-based testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  107 ,'Fault-based testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  109 ,'Structural testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  110 ,'Structural testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  111 ,'Structural testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  113 ,'Fault-based testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  114 ,'Structural testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  115 ,'Fault-based testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  116 ,'Structural testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  117 ,'Fault-based testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  118 ,'Structural testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  119 ,'Fault-based testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  120 ,'Fault-based testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  122 ,'Formal method-based testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  124 ,'Model based testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  125 ,'Formal method-based testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  126 ,'Formal method-based testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  127 ,'Structural testing');
+    INSERT INTO `selectt`.  `TestingTechnique`  (`idTechnique`,   `testingTechnique`  ) VALUES (  128 ,'Formal method-based testing');
 
 
 
     -- -----------------------------------------------------
-    -- Table `dbo`.`TestDataGeneration`
+    -- Table `selectt`.`TestDataGeneration`
     -- -----------------------------------------------------
-    DROP TABLE IF EXISTS `dbo`.`TestDataGeneration`; 
+    DROP TABLE IF EXISTS `selectt`.`TestDataGeneration`; 
 
-    CREATE TABLE IF NOT EXISTS `dbo`.`TestDataGeneration` (
+    CREATE TABLE IF NOT EXISTS `selectt`.`TestDataGeneration` (
       `id` INT NOT NULL AUTO_INCREMENT,
       `idTechnique` INT NOT NULL,
       `testDataGeneration` VARCHAR(255) NOT NULL,
@@ -300,26 +2639,136 @@
       INDEX `idTechnique_idx` (`idTechnique` ASC),
       CONSTRAINT `idTechnique_5`
         FOREIGN KEY (`idTechnique`)
-        REFERENCES `dbo`.`Technique` (`id`)
+        REFERENCES `selectt`.`Technique` (`id`)
         ON DELETE CASCADE
         ON UPDATE CASCADE)
     ENGINE = InnoDB;
 
 
-    INSERT INTO `dbo`.`TestDataGeneration` (`id`,  `idTechnique`,  `testDataGeneration`)  VALUES  (1,  1,  'Guided for testing criteria');
-    INSERT INTO `dbo`.`TestDataGeneration` (`id`,  `idTechnique`,  `testDataGeneration`)  VALUES  (2,  2,  'Guided for testing criteria');
 
-
-
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  1 ,'Thread interaction models');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  2 ,'coverage criteria');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  3 ,'Random generation');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  4 ,'context-sensitive sampling');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  5 ,'Mutation operators');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  6 ,'efficient exploration');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  7 ,'Search based testing');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  8 ,'Search based testing');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  9 ,'static analysis');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  10  ,'Coverage metric');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  10  ,'Location Pair (LP)');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  11  ,'guided for testing criteria');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  12  ,'replay-based');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  13  ,'coverage criteria');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  13  ,'test oracle');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  14  ,'lock pattern');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  15  ,'data race detection');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  17  ,'coverage criteria');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  18  ,'partition-based');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  19  ,'slicing testing');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  20  ,'data race detection');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  21  ,'stateless random walk');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  21  ,'randomized depth-first search');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  21  ,'guided search using abstraction refinement');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  22  ,'context bounding');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  23  ,'constraint based');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  24  ,'data flow analysis');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  25  ,'random partial order sampling');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  27  ,'Guided for testing criteria');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  29  ,'coverage criteria');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  30  ,'bug-triggering');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  31  ,'dynamic data race detection');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  32  ,'new interleaving selection');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  33  ,'data flow analysis');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  34  ,'coverage metrics, saturation-based criteria');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  35  ,'selective mutation');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  36  ,'random scheduler');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  37  ,'similarity-based active testing strategy');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  38  ,'read-write assignment sequences');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  39  ,'deterministic lazy release consistency (DLRC)');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  40  ,'read-write sequences');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  43  ,'Automatic Barrier Inference');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  44  ,'randomized dynamic analysis');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  45  ,'model checking');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  46  ,'read-write sequences');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  47  ,'Guided for testing criteria');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  48  ,'Search based testing');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  49  ,'state-cover testing');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  50  ,'Search based testing');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  51  ,'symbolic execution');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  52  ,'randomized scheduler');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  53  ,'detect atomicity violation');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  54  ,'search based testing');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  55  ,'Slicing based testing');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  56  ,'data race detection');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  57  ,'dynamic barrier-based approach');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  59  ,'automatic test data generation');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  60  ,'Guided for testing criteria');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  61  ,'constraint based');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  62  ,'composable specifications');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  63  ,'concolic testing');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  64  ,'bounded model checking');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  65  ,'concolic testing');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  66  ,'model checking');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  67  ,'effect-oriented approach');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  68  ,'state-space search');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  69  ,'coverage criteria');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  70  ,'Search based testing');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  71  ,'detect atomicity violation');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  72  ,'SYN-sequences');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  74  ,'delay scheduler');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  75  ,'embedding semantics');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  76  ,'guided for testing criteria');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  77  ,'working set memory');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  78  ,'Guided for testing criteria');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  80  ,'model checking');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  81  ,'deterministic logical time');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  82  ,'guided for testing criteria');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  84  ,'coverage-driven approach');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  85  ,'code coverage analysis');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  87  ,'priority-based probabilistic concurrency testing');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  88  ,'symbolic execution');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  89  ,'randomized test case generation');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  90  ,'Guided for testing criteria');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  91  ,'Event driven programming model');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  92  ,'No Information');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  93  ,'block-based');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  93  ,'reduction-based algorithm');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  94  ,'data race detection');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  95  ,'Search based testing');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  96  ,'model checking');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  97  ,'model checking');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  99  ,'Search based testing');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  101 ,'Search based testing');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  102 ,'designing contracts');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  106 ,'annotation inference');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  107 ,'concurrent-program invariant');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  109 ,'interprocess communication topology');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  110 ,'DTAM: Dynamic Taint Analysis');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  111 ,'Concurrent Function Pairs (CFP)');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  113 ,'active testing');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  114 ,'incremental rashing');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  115 ,'mutation operators');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  116 ,'intraprocedural analysis, symbolic context');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  117 ,'lock-set based approach');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  118 ,'synchronization pair');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  119 ,'synthesizing multithreaded tests');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  120 ,'synthesizing multithreaded tests');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  122 ,'stateless DPOR');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  124 ,'No Information');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  125 ,'model checking');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  126 ,'Fair Stateless Model Checking');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  127 ,'dynamic predictive verification');
+    INSERT INTO `selectt`.  `TestDataGeneration`  (`idTechnique`,   `testDataGeneration`  ) VALUES (  128 ,'preemption-bounded approach');
 
 
 
     -- -----------------------------------------------------
-    -- Table `dbo`.`TestingLevel`
+    -- Table `selectt`.`TestingLevel`
     -- -----------------------------------------------------
-    DROP TABLE IF EXISTS `dbo`.`TestingLevel`; 
+    DROP TABLE IF EXISTS `selectt`.`TestingLevel`; 
 
-    CREATE TABLE IF NOT EXISTS `dbo`.`TestingLevel` (
+    CREATE TABLE IF NOT EXISTS `selectt`.`TestingLevel` (
       `id` INT NOT NULL AUTO_INCREMENT,
       `idTechnique` INT NOT NULL,
       `testingLevel` VARCHAR(255) NOT NULL,
@@ -328,22 +2777,128 @@
       INDEX `idTechnique_idx` (`idTechnique` ASC),
       CONSTRAINT `idTechnique_6`
         FOREIGN KEY (`idTechnique`)
-        REFERENCES `dbo`.`Technique` (`id`)
+        REFERENCES `selectt`.`Technique` (`id`)
         ON DELETE CASCADE
         ON UPDATE CASCADE)
     ENGINE = InnoDB;
 
-    INSERT INTO `dbo`.`TestingLevel` (`id`,  `idTechnique`,  `testingLevel`)  VALUES  (1,  1,  'Unit');
-    INSERT INTO `dbo`.`TestingLevel` (`id`,  `idTechnique`,  `testingLevel`)  VALUES  (2,  2,  'Unit');
 
-
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  1 ,'system');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  2 ,'unit');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  3 ,'unit');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  4 ,'unit');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  5 ,'unit');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  6 ,'unit');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  7 ,'unit');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  8 ,'unit');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  9 ,'unit');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  10  ,'unit');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  11  ,'unit');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  12  ,'unit');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  13  ,'unit');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  14  ,'unit');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  15  ,'system');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  17  ,'unit');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  18  ,'No Information');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  19  ,'No Information');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  20  ,'unit');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  21  ,'unit');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  22  ,'No Information');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  23  ,'unit');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  24  ,'integration');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  25  ,'unit');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  27  ,'unit');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  29  ,'integration');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  30  ,'system');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  31  ,'unit');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  32  ,'regression');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  33  ,'unit');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  34  ,'unit');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  35  ,'unit');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  36  ,'unit');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  37  ,'regression');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  38  ,'unit');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  39  ,'unit');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  40  ,'unit');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  43  ,'system');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  44  ,'system');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  45  ,'unit');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  46  ,'system');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  47  ,'unit');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  48  ,'unit');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  49  ,'unit');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  50  ,'unit');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  51  ,'unit');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  52  ,'system');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  53  ,'system');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  54  ,'unit');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  55  ,'system');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  56  ,'unit');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  57  ,'system');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  59  ,'unit');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  60  ,'system');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  61  ,'system');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  62  ,'unit');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  63  ,'unit');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  64  ,'system');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  65  ,'system');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  66  ,'system');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  67  ,'unit');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  68  ,'unit');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  69  ,'unit');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  70  ,'unit');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  71  ,'system');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  72  ,'system');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  74  ,'unit');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  75  ,'unit');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  76  ,'unit');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  77  ,'system');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  78  ,'system');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  80  ,'system');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  81  ,'system');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  82  ,'system');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  84  ,'unit');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  85  ,'unit');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  87  ,'unit');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  88  ,'system');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  89  ,'unit');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  90  ,'unit');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  91  ,'system');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  92  ,'system');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  93  ,'unit');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  94  ,'system');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  95  ,'system');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  96  ,'unit');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  97  ,'unit');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  99  ,'system');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  101 ,'system');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  102 ,'system');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  106 ,'system');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  107 ,'system');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  109 ,'unit');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  110 ,'system');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  111 ,'system');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  113 ,'unit');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  114 ,'system');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  115 ,'unit');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  116 ,'Integration');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  117 ,'system');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  118 ,'system');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  119 ,'unit');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  120 ,'unit');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  122 ,'system');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  124 ,'unit');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  125 ,'unit');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  126 ,'unit');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  127 ,'unit');
+    INSERT INTO `selectt`.  `TestingLevel`  (`idTechnique`,   `testingLevel`  ) VALUES (  128 ,'unit');
 
     -- -----------------------------------------------------
-    -- Table `dbo`.`SynchronizationMechanism`
+    -- Table `selectt`.`SynchronizationMechanism`
     -- -----------------------------------------------------
-    DROP TABLE IF EXISTS `dbo`.`SynchronizationMechanism`; 
+    DROP TABLE IF EXISTS `selectt`.`SynchronizationMechanism`; 
 
-    CREATE TABLE IF NOT EXISTS `dbo`.`SynchronizationMechanism` (
+    CREATE TABLE IF NOT EXISTS `selectt`.`SynchronizationMechanism` (
       `id` INT NOT NULL AUTO_INCREMENT,
       `idTechnique` INT NOT NULL,
       `synchronizationMechanism` VARCHAR(255) NOT NULL,
@@ -352,23 +2907,148 @@
       INDEX `idTechnique_idx` (`idTechnique` ASC),
       CONSTRAINT `idTechnique_7`
         FOREIGN KEY (`idTechnique`)
-        REFERENCES `dbo`.`Technique` (`id`)
+        REFERENCES `selectt`.`Technique` (`id`)
         ON DELETE CASCADE
         ON UPDATE CASCADE)
     ENGINE = InnoDB;
 
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  1 ,'reachability testing');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  2 ,'Execution trace');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  3 ,'Linearizability');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  4 ,'happens-before relation');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  4 ,'locksets');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  5 ,'synchronization events');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  5 ,'thread schedules');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  6 ,'mutation operators');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  7 ,'predict interleavings');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  8 ,'concurrency coverage');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  9 ,'data flow analisis');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  9 ,'lock dependency');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  9 ,'call-graph analysis');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  9 ,'alias analysis');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  9 ,'thread-scape analysis');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  9 ,'lock analysis');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  10  ,'location pairs');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  11  ,'coverage metrics (singular, pairwise)');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  12  ,'logical thread schedule');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  13  ,'definition-use pairs');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  14  ,'symbolic exectuion');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  15  ,'No Information');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  17  ,'concurrency coverage metrics');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  18  ,'patterns of non-serializable interleaving');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  19  ,'symbolic exectuion');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  20  ,'symbolic exectuion');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  21  ,'context-bound');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  22  ,'iterative preemption bounding (IPB)');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  22  ,'iterative delay');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  23  ,'bounding (IDB) and unbounded depth-first search (DFS)');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  23  ,'non-systematic testing with a naive random scheduler (Rand)');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  24  ,'event-based interaction');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  25  ,'happens-before relation');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  27  ,'Reachability testing');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  29  ,'all-paths');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  29  ,'all-proper-paths');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  29  ,'all-transitions');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  29  ,'all-states');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  29  ,'all-int-T-synchronizations');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  29  ,'all-int-L-synchronizations');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  30  ,'partial order');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  31  ,'data flow analysis');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  32  ,'predictive trace analysis');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  33  ,'delay method');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  34  ,'randomized scheduler');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  35  ,'selective mutation');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  36  ,'noise making');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  37  ,'similar interleaving');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  38  ,'value-schedule-based technique');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  39  ,'deterministic lazy release consistency memory model');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  40  ,'Reachability testing');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  43  ,'soft barriers');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  44  ,'randomized thread scheduler');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  45  ,'SAT-based approach');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  46  ,'relaxed happens-before relation');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  47  ,'Reachability testing');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  48  ,'meta heuristic');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  49  ,'Reachability testing');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  50  ,'heuristical noise injection');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  51  ,'Reachability testing');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  52  ,'randomized scheduler');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  53  ,'serializability');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  54  ,'noise injection');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  55  ,'deterministic multithreading');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  56  ,'No Information');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  57  ,'randomized scheduler');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  59  ,'CppUnit-base test case');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  60  ,'schedule coverage criteria');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  61  ,'preemption-bounded schedule generation');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  62  ,'communication inlining');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  63  ,'context-bound');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  64  ,'logical constraint based symbolic analysis');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  65  ,'symbolic constraint solver');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  66  ,'state/event verification');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  67  ,'controlled interleaving perturbation');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  68  ,'consequence oriented approach');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  69  ,'coverage guided selective search');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  70  ,'synchronization coverage');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  71  ,'bug-triggering interleaving');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  72  ,'reachability testing');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  74  ,'may-trigger relation');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  75  ,'SPSC bounded lock-free queue');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  76  ,'all-e-deacts criterion');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  77  ,'Semantics-aware determinism');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  78  ,'data flow criteria');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  80  ,'context bounding');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  81  ,'deterministic multithreading');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  82  ,'data flow criteria');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  82  ,'local memory access pairs');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  84  ,'active scheduling');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  85  ,'active scheduling');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  87  ,'PPCT randomized scheduler');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  88  ,'syn-sequences coverage');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  89  ,'synthesized tests');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  90  ,'data flow analysis');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  91  ,'control flow');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  92  ,'Reachability testing');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  93  ,'synchronization events');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  94  ,'stationary objects');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  95  ,'worst case execution time');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  96  ,'variable and thread-bounding');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  97  ,'variable and thread-bounding');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  99  ,'model reuse');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  99  ,'estimation distributed algorithm EDA');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  101 ,'order-based technique');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  102 ,'runtime assertion checking');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  106 ,'candidates annotations');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  107 ,'access interleaving invariants');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  109 ,'control flow analysis');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  110 ,'alternate thread interleaving');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  111 ,'concurrent function pairs');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  113 ,'predictive analysis');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  114 ,'on-the-fly incremental hashing');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  115 ,'systematic exploration of possible schedules');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  116 ,'data flow ananalysis');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  116 ,'thread-based escape analysis');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  117 ,'causally-predeces relation');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  118 ,'modularized and ad-hoc synchronization');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  119 ,'racing schedules');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  120 ,'racing schedules');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  122 ,'dependency relation');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  124 ,'dynamic symbolic execution');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  124 ,'partial order reductions');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  125 ,'abstraction approaches');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  126 ,'fair scheduling');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  127 ,'mutation operators');
+    INSERT INTO `selectt`.  `SynchronizationMechanism`  (`idTechnique`,   `synchronizationMechanism`  ) VALUES (  128 ,'preempition sealing scheduler');
 
-    INSERT INTO `dbo`.`SynchronizationMechanism` (`id`,  `idTechnique`,  `synchronizationMechanism`)  VALUES  (1,  1,  'Execution trace');
-    INSERT INTO `dbo`.`SynchronizationMechanism` (`id`,  `idTechnique`,  `synchronizationMechanism`)  VALUES  (2,  2,  'Reachability testing');
 
 
 
     -- -----------------------------------------------------
-    -- Table `dbo`.`Input`
+    -- Table `selectt`.`Input`
     -- -----------------------------------------------------
-    DROP TABLE IF EXISTS `dbo`.`Input`; 
+    DROP TABLE IF EXISTS `selectt`.`Input`; 
 
-    CREATE TABLE IF NOT EXISTS `dbo`.`Input` (
+    CREATE TABLE IF NOT EXISTS `selectt`.`Input` (
       `id` INT NOT NULL AUTO_INCREMENT,
       `idTechnique` INT NOT NULL,
       `input` VARCHAR(255) NOT NULL,
@@ -377,23 +3057,137 @@
       INDEX `idTechnique_idx` (`idTechnique` ASC),
       CONSTRAINT `idTechnique_8`
         FOREIGN KEY (`idTechnique`)
-        REFERENCES `dbo`.`Technique` (`id`)
+        REFERENCES `selectt`.`Technique` (`id`)
         ON DELETE CASCADE
         ON UPDATE CASCADE)
     ENGINE = InnoDB;
 
-    INSERT INTO `dbo`.`Input` (`id`,  `idTechnique`,  `input`)  VALUES  (1,  1,  'Concurrent code in MPI');
-    INSERT INTO `dbo`.`Input` (`id`,  `idTechnique`,  `input`)  VALUES  (2,  2,  'Concurrent code in MPI');
 
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  1 ,'LTS model');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  2 ,'concurrent code in MPI');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  3 ,'multithread code class');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  3 ,'specification of the class');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  4 ,'multithreaded program');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  5 ,'source code in Java');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  6 ,'multithread code');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  7 ,'concurrent program');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  8 ,'bytecode of a class');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  9 ,'java bytecode');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  10  ,'java bytecode');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  11  ,'java code');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  12  ,'java code');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  13  ,'embedded system code');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  14  ,'concurrent program');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  15  ,'java source code');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  15  ,'java bytecode');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  17  ,'java code');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  18  ,'multithreaded program');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  19  ,'multithreaded program');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  20  ,'multithreaded program');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  21  ,'C#');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  21  ,'C');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  21  ,'Java code');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  22  ,'multithread algoriths');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  23  ,'Java');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  23  ,'C');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  23  ,'C++ binary program');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  24  ,'android applications');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  25  ,'multithread Java programs (data structures, high-performance computing, examples of synchronization mechanisms)');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  27  ,'concurrent code in MPI');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  29  ,'abstract and concrete concurrent programs');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  30  ,'open source program');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  31  ,'multithread program');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  32  ,'concurrent program');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  33  ,'concurrent program');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  34  ,'concurrent program');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  35  ,'java code');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  36  ,'C program');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  37  ,'multithreaded program');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  38  ,'java programs');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  39  ,'parallel applications');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  40  ,'concurrent programs');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  43  ,'cuncurrent program source code');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  44  ,'the initial state and a set of two racing statements');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  45  ,'C code');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  46  ,'SMT program');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  47  ,'concurrent program');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  48  ,'java code');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  49  ,'java bytecode');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  50  ,'concurrent program');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  51  ,'multi-thread program');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  52  ,'C/C++ executable compiled programs');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  53  ,'concurrent program');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  54  ,'Java bytecode and C/C++ binaries');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  55  ,'multithreaded programs');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  56  ,'multithreaded applications');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  57  ,'multithreaded program');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  59  ,'multithreaded program');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  60  ,'actor systems');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  61  ,'concurrent applications');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  62  ,'java applications');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  63  ,'concurrent code');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  64  ,'multithreaded program');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  65  ,'multithreaded program');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  66  ,'C program');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  67  ,'concorrent program with bugs');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  68  ,'concurrent applications');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  69  ,'real-world concurrent program');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  70  ,'multi-threaded java programs');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  71  ,'server/desktop application');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  71  ,'concurrent applications');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  72  ,'java programs');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  74  ,'real world java multithreaded program');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  75  ,'parallel applications');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  76  ,'java programs');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  77  ,'multi-threaded java programs');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  78  ,'C/C++ multithreaded applications');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  80  ,'multithread code');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  81  ,'parallel applications');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  82  ,'C program');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  84  ,'multithreaded program');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  85  ,'multi-threaded applications');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  87  ,'C++ code');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  88  ,'server programs');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  89  ,'java bytecode');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  90  ,'multithreaded program');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  91  ,'android applications');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  92  ,'multithreaded program');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  93  ,'multithreaded programs');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  94  ,'multithreaded applications');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  95  ,'real-time systems');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  96  ,'lock-based applications');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  97  ,'Java and C# programs');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  99  ,'system specification in LTL');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  101 ,'android applications');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  102 ,'concurrent object-oriented software');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  106 ,'unannotated program');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  107 ,'server applications');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  109 ,'Erlang programs');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  110 ,'multi-threaded applications');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  111 ,'multi-threaded software');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  113 ,'distributed memory programs');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  114 ,'parallel applications');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  115 ,'multithreaded program');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  116 ,'multithreaded java programs');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  117 ,'server level applications');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  118 ,'multi-threaded programs');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  119 ,'open-source Java libraries');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  120 ,'open-source Java libraries');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  122 ,'actor program');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  124 ,'multithreaded programs');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  125 ,'java programs');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  126 ,'shared-memory multithreaded programs');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  127 ,'message passing programs');
+    INSERT INTO `selectt`.  `Input` (`idTechnique`,   `input` ) VALUES (  128 ,'industrial-scale concurrent programs');
 
 
 
     -- -----------------------------------------------------
-    -- Table `dbo`.`Output`
+    -- Table `selectt`.`Output`
     -- -----------------------------------------------------
-    DROP TABLE IF EXISTS `dbo`.`Output`; 
+    DROP TABLE IF EXISTS `selectt`.`Output`; 
 
-    CREATE TABLE IF NOT EXISTS `dbo`.`Output` (
+    CREATE TABLE IF NOT EXISTS `selectt`.`Output` (
       `id` INT NOT NULL AUTO_INCREMENT,
       `idTechnique` INT NOT NULL,
       `output` VARCHAR(255) NOT NULL,
@@ -402,28 +3196,294 @@
       INDEX `idTechnique_idx` (`idTechnique` ASC),
       CONSTRAINT `idTechnique_9`
         FOREIGN KEY (`idTechnique`)
-        REFERENCES `dbo`.`Technique` (`id`)
+        REFERENCES `selectt`.`Technique` (`id`)
         ON DELETE CASCADE
         ON UPDATE CASCADE)
     ENGINE = InnoDB;
 
-
-
-    INSERT INTO `dbo`.`Output` (`id`,  `idTechnique`,  `output`)  VALUES  (1,  1, 'Number of test cases to cover a criterion');
-    INSERT INTO `dbo`.`Output` (`id`,  `idTechnique`,  `output`)  VALUES  (2,  1, 'Probability to satisfy a testing criterion using a test set adequate to another testing criterion' );
-    INSERT INTO `dbo`.`Output` (`id`,  `idTechnique`,  `output`)  VALUES  (3,  1, 'Percentage of defects detected');
-    INSERT INTO `dbo`.`Output` (`id`,  `idTechnique`,  `output`)  VALUES  (4,  2, 'Number of faults found');
-    INSERT INTO `dbo`.`Output` (`id`,  `idTechnique`,  `output`)  VALUES  (5,  2, 'Number of faults injected' );
-    INSERT INTO `dbo`.`Output` (`id`,  `idTechnique`,  `output`)  VALUES  (6,  2, 'Number of SYN-sequences (or paths) executed for each approach.');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  1 ,'partially-ordered sequences');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  1 ,'totally-ordered sequences');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  1 ,'modular sequences');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  2 ,'number of test cases to cover a criterion');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  2 ,'probability to satisfy a testing criterion using a test set adequate to another testing criterion');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  2 ,'percentage of defects detected');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  3 ,'number of transitions');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  4 ,'performance: detection rate');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  4 ,'effectiveness: detection rate');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  4 ,'time overhead: slowdown of the strategy and space ');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  4 ,'overhead: memory consumption');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  5 ,'number of faults detected');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  6 ,'execution time');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  7 ,'number of predicted runs');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  7 ,'the time required for each prediction');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  7 ,'number of bugs found during the tests for each violation type');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  8 ,'number of data races found');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  9 ,'number of bugs detected and percentage of spurious results produced by the tool');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  10  ,'test adequacy: percentage of iterations for which a metric was successful');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  10  ,'"% of passes that cover a new MP/DU/LP that also detect the bug” presents experimental results intended to show the correlation between the MP, DU and LP metrics and the atomicity violations in the buggy programs studied ');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  10  ,'"% of passes that detect the bug that also cover a new MP/DU/LP” is intended to provide another measure of correlation between coverage metrics and concurrency errors');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  11  ,'coverage achieved');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  11  ,'test suite size');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  11  ,'fault detection effectiveness');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  12  ,'effectiveness: number of generated test cases  and reproducible test cases');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  12  ,'overhead: execution time. failure reproducible');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  13  ,'the numbers of faults in our object programs detected by the different test suites');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  14  ,'lock manifestation');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  14  ,'lock pattern and lock usage evolution');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  15  ,'Compilation Time (CT) in second');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  15  ,'Number of Line of Code (LOC)');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  15  ,'Number of Classes (NOC)');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  15  ,'Number of Reported Data Race (RDR)');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  15  ,'Number of Actual Data Race (ADR)');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  15  ,'Type of Data Race (TDR)');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  15  ,'Output Result (OR)');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  15  ,'Tool Usage (TU)');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  17  ,'Achieved concurrency coverage of test suites');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  17  ,'Test suite size');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  17  ,'Fault detection effectiveness of generated test suites');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  17  ,'Difficulty of satisfying test requirements');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  17  ,'Fault detection effectiveness of test requirements');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  18  ,'percentage of bugs detected versus the percentage of suspicious instances confirmed');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  19  ,'number of explored executions');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  19  ,'run time');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  20  ,'effectiveness: Number of Bugs finding and states coverage');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  20  ,'accuracy: classification accuracy');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  20  ,'Scalability: number of executions per time');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  20  ,'efficiently: runing time memory');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  20  ,'overhead:peak memory consumption');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  20  ,'performance: time to classify ');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  21  ,'Hardness: ratio of the total number of trials executed over he total number of error discovering trials');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  21  ,'Time Bound: time bound at one hour');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  21  ,'Number of Trials: number trials executed');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  22  ,'schedules');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  22  ,'time');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  22  ,'bug found');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  23  ,'performance: time');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  23  ,'Effectiveness on Real Deadlocks: number of real deadlock confirmed');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  23  ,'Effectiveness on False Positives: number of false positive reported');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  24  ,'execution time');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  24  ,'number of false positives');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  24  ,'number of false negatives');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  25  ,'number of executions required to find a defect');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  25  ,'number of partial orders sampled');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  27  ,'number of faults found');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  27  ,'number of faults injected');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  27  ,'number of SYN-sequences (or paths) executed for each approach');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  29  ,'the number of transitions and states of a particular reduced ALTS');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  29  ,'the number of states in the reduced ALTS as a percentage of the number of states in the unreduced ALTS');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  29  ,'average sizes of the program slices produced using algorithm');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  29  ,'the number of  int-T-synchronizations');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  29  ,'int-L-synchronizations in the reduced models compared the level of effort required to satisfy the all-T-synchronization');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  29  ,'all-Lsynchronization coverage criteria');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  29  ,'number of test paths');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  30  ,'number of bugs detected');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  31  ,'overhead and false positives');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  32  ,'number of potential violations detected by the number or violations predicted');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  32  ,'computation time');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  32  ,'number of violations reported by RECONTEST');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  33  ,'effectiveness: supression of type-state violations');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  33  ,'performance: overhead of runtime failure mitigation');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  33  ,'scalability: increasing the number threads and runtime overhead');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  34  ,'coverage values');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  35  ,'time to execute schedules');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  35  ,'number of generated mutants');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  35  ,'number of killed mutants');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  35  ,'number of hit mutants');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  35  ,'mutation scores');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  36  ,'Average Runtime (seconds)');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  36  ,'cycles predicted');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  36  ,'cycles confirmed');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  36  ,'number of bugs identified');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  36  ,'probability of confirming a cycle');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  37  ,'Performance Maple: the time needed in both the profiling and testing iterations needed to trigger the same bug in each modified version');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  37  ,'Performance RegressionMaple: time needed for the testing iterations needed to trigger the bug');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  38  ,'number of transitions and intermediate states required to cover all relevant behaviors of the program or discover a bug');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  39  ,'number of synchronization operations');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  39  ,'number of memory operations');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  39  ,'the memory footprint');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  40  ,'number of test cases');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  40  ,'number of interleavings');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  43  ,'execution time');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  44  ,'average runtime');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  44  ,'number of potential races detected');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  44  ,'number of real races reported');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  44  ,'number of exceptions');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  45  ,'execution time');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  46  ,'number of existing and injected data races detected by tools');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  46  ,'ratio of the execution time');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  46  ,'runtime overhead');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  47  ,'number of mutants alive');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  48  ,'density of error discovery');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  49  ,'deadlocks detected');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  49  ,'time');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  49  ,'max memory usage');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  49  ,'number of states');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  49  ,'number of threads used');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  50  ,'code coverage');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  51  ,'Run time in seconds');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  51  ,'number of Paths');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  51  ,'number of races/deadlocks/infinite loops/exceptions');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  51  ,'numer of threads');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  51  ,'number of functions tested');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  52  ,'percentage of bugs detected');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  53  ,'running time');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  54  ,'time, number of test cases');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  55  ,'execution time');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  55  ,'memory overhead');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  55  ,'disk space overhead');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  56  ,'bugs detected');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  57  ,'deadlocks detected');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  59  ,'line coverage');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  59  ,'response time');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  59  ,'branch coverage');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  59  ,'executing time');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  59  ,'failed test case data');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  60  ,'number of bugs detected, number of schedules generated, number of executions until detect the bug, average time to find a bug.');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  61  ,'Runtime and space overhead, number of schecules, number of bugs rerproduced');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  62  ,'size of anotation, number of specified or exercised communication, runtime overhead (time and space), number or anotatition.');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  63  ,'diagnosis time, number of iterations required to complete the diagnosis, average size of the root cause returned by our method,');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  64  ,'reduction ratio, i.e., the number of constraints in the root cause divided by the average number of constraints in a bad schedule');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  65  ,'efficiency: time and storage overhead of path profiling relative to native execution and the time cost of symbolic trace collection');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  65  ,'efficacy: the number of program events and data-flow edges in the full, failing execution that Symbiosis computes compared to the number of events and data-flow edges in the differential schedule projection');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  66  ,'deadlock: maximum number of states');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  66  ,'number of reachable states');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  66  ,'number of iterations');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  66  ,'time in seconds');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  66  ,'memory usage in MB');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  66  ,'effectiveness: number of states and transitions in the the model');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  66  ,'model construction time');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  66  ,'model checking time');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  66  ,'total verification time');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  67  ,'effectiveness: number of bugs detected');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  67  ,'performance: average time across multiple runs');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  67  ,'accuracy:numbers of false positives (vs. true bugs)');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  68  ,'number of bugs detected');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  68  ,'number of false positives');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  68  ,'runtime overhead');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  69  ,'performance: number of interleavings tested and the run time in seconds');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  69  ,'effectiveness: if a bug is found');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  70  ,'percentage of code coverage');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  71  ,'effectiveness: whether the bugs can be exposed');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  71  ,'efficiency: how quickly the bugs can be exposed');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  71  ,'reproducibility: how reliably the bugs can be reproduced after their first manifestation');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  72  ,'speedup');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  74  ,'number of races detected');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  74  ,'overhead time');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  74  ,'Thrashing Rate');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  75  ,'number or data races detected');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  76  ,'exception coverage after Enforcer was used');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  77  ,'time, scalability');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  77  ,'redistribution granularity');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  77  ,'maximum execution budget');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  78  ,'Bug-Exposing Time');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  78  ,'CTrigger Bug-Exposing Time Breakdown');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  78  ,'Unserializable Interleaving Coverage');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  80  ,'number of preemptions');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  80  ,'number or executions');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  81  ,'percentage of nondeterministic (pthreads) execution time');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  82  ,'number of bugs detected');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  82  ,'number of false positives');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  82  ,'run-time overhead');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  84  ,'average performance overhead');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  84  ,'Number of successfully exposed iRoots/number  total predicted iRoots');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  85  ,'time to achieve full coverage');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  87  ,'Runs with the bug found');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  87  ,'execution time overhead');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  88  ,'line coverage');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  88  ,'number of paths explored');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  89  ,'number of deadlocks syntetized');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  89  ,'numbers corresponding to the synthesized multithreaded tests');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  89  ,'the deadlocks detected');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  90  ,'compilation time');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  91  ,'number of data races reported');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  91  ,'number of reports generated by DROIDRACER');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  91  ,'number of true and false positives');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  92  ,'number of sequences exercised during reachability testing');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  92  ,'number of times the programs are executed');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  92  ,'the number of transitions that are explored');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  92  ,'SYN-sequences explored');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  93  ,'atomicity violations reported');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  93  ,'the number of missed errors for the online reduction algorithm');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  93  ,'running times');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  94  ,'runtime');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  94  ,'race detected');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  94  ,'overhead');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  95  ,'end-to-end execution time');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  96  ,'overhead of the dynamic execution');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  97  ,'running time');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  97  ,'average number of executions');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  97  ,'time required to capture a bug');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  99  ,'time in finding a error');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  101 ,'execution time');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  102 ,'probability of oracles detecting faults');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  102 ,'average effort to diagnose faults normalized with the size of an execution thread');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  106 ,'number of annotations and time required to annotate each program');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  106 ,'the number of race conditions found in each program');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  106 ,'the time spent by the programmer inserting annotations');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  106 ,'the time to run the tool');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  107 ,'number of bugs detected');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  107 ,'number of false positives');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  109 ,'Number of message passing problems identified by the analysis');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  109 ,'elapsed wall clock time (in seconds)');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  109 ,'memory requirements (in MB)');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  110 ,'ratio of relevant inputs to the total number of inputs');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  111 ,'number of inputs that report each bug');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  111 ,'number of selected inputs and functions');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  111 ,'number of races');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  111 ,'single-variable atomicity violations overlap across inputs');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  111 ,'trace size');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  111 ,'trace-analysis time');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  113 ,'runtime');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  113 ,'overhead of the program with race prediction enabled and the average runtime');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  113 ,'overhead for program re-execution with race confirmation (phase II)');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  113 ,'The total number of potential races');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  113 ,'Speedup');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  114 ,'overhead, detected bug, number of determinism checks');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  115 ,'running time');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  116 ,'run time');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  116 ,'number of redundant contexts');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  116 ,'number of total context checks performed');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  116 ,'atomicity violation coverage');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  117 ,'number of races detected');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  117 ,'running time');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  118 ,'identified sync pairs');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  118 ,'number of false positives');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  118 ,'number of testing threads');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  118 ,'Testing Points');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  118 ,'running time of SyncTester');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  118 ,'throughput');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  119 ,'races detected');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  119 ,'synthesized test count');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  119 ,'synthesis time');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  120 ,'number of synthesized tests');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  120 ,'number of true atomicity violations');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  120 ,'time');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  122 ,'the number of paths executed in their entirety while exploring the specified subjects');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  122 ,'the total number of transitions executed (across all execution paths)');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  122 ,'the total exploration time in seconds');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  122 ,'memory usage (megabytes)');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  124 ,'number of tests needed to fully cover the benchmarks and execution time');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  125 ,'hash projection');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  125 ,'number or transitions');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  125 ,'time');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  125 ,'number of executions');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  125 ,'number of states');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  126 ,'Number of states visited for the context-bounded');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  126 ,'depth-first strategies both with and without fairness');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  127 ,'running time (seconds)');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  127 ,'memory usage (megabytes)');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  128 ,'number of executions explored during testing');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  128 ,'time');
+    INSERT INTO `selectt`.  `Output`  (`idTechnique`,   `output`  ) VALUES (  128 ,'Speedup');
 
 
 
     -- -----------------------------------------------------
-    -- Table `dbo`.`QualityAttribute`
+    -- Table `selectt`.`QualityAttribute`
     -- -----------------------------------------------------
-    DROP TABLE IF EXISTS `dbo`.`QualityAttribute`; 
+    DROP TABLE IF EXISTS `selectt`.`QualityAttribute`; 
 
-    CREATE TABLE IF NOT EXISTS `dbo`.`QualityAttribute` (
+    CREATE TABLE IF NOT EXISTS `selectt`.`QualityAttribute` (
       `id` INT NOT NULL AUTO_INCREMENT,
       `idTechnique` INT NOT NULL,
       `qualityAttribute` VARCHAR(255) NOT NULL,
@@ -432,27 +3492,207 @@
       INDEX `idTechnique_idx` (`idTechnique` ASC),
       CONSTRAINT `idTechnique_10`
         FOREIGN KEY (`idTechnique`)
-        REFERENCES `dbo`.`Technique` (`id`)
+        REFERENCES `selectt`.`Technique` (`id`)
         ON DELETE CASCADE
         ON UPDATE CASCADE)
     ENGINE = InnoDB;
 
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  1 ,'effectiveness');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  2 ,'effectiveness');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  2 ,'cost');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  2 ,'strength');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  3 ,'effectiveness');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  4 ,'effectiveness');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  5 ,'effectiveness');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  6 ,'Execution time');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  7 ,'effectiveness');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  7 ,'performance');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  7 ,'prediction capability');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  8 ,'effectiveness');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  9 ,'effectiveness');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  10  ,'effectiveness');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  10  ,'efficiency');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  10  ,'scalability');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  11  ,'effectiveness');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  12  ,'effectiveness');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  12  ,'efficiency');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  12  ,'performance');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  12  ,'reproducibility');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  13  ,'effectiveness');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  14  ,'lock manifestation');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  15  ,'correctness');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  15  ,'performances');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  15  ,'effectiveness');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  17  ,'coverage');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  17  ,'cost');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  17  ,'effectiveness');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  17  ,'coverage');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  18  ,'cost');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  18  ,'effectiveness');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  19  ,'performance');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  19  ,'effectiveness');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  19  ,'scalability');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  20  ,'effectiveness');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  20  ,'accuracy');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  20  ,'performance');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  21  ,'effectiveness');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  22  ,'effectiveness');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  23  ,'effectiveness');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  23  ,'performance');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  24  ,'accuracy');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  24  ,'execution time');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  25  ,'effectiveness');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  27  ,'efficiency');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  27  ,'effectiveness');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  29  ,'effectiveness');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  29  ,'effort');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  29  ,'state space reduction');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  30  ,'bug detection');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  31  ,'effectiveness');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  31  ,'efficiency');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  32  ,'effectiveness');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  32  ,'efficiency');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  32  ,'correctness');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  33  ,'effectiveness');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  33  ,'performance');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  33  ,'scalability');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  34  ,'cost');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  34  ,'effectiveness');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  35  ,'cost');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  35  ,'effectiveness');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  36  ,'feasibility');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  37  ,'performance');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  38  ,'functionality');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  38  ,'applicability');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  39  ,'accuracy');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  39  ,'execution time');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  40  ,'effectiveness');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  43  ,'effectiveness');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  43  ,'performance');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  44  ,'effectiveness');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  45  ,'performance');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  46  ,'effectiveness');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  46  ,'performance');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  47  ,'effectiveness');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  47  ,'adequacy');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  48  ,'effectiveness');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  49  ,'feasibility');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  50  ,'bug detection');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  51  ,'effectiveness');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  52  ,'effectiveness');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  53  ,'performance');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  53  ,'accuracy');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  54  ,'efficiency of detecting concurrency-related errors');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  55  ,'performance');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  56  ,'efficiency');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  57  ,'effectiveness');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  59  ,'performance');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  59  ,'reliability');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  59  ,'usability');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  60  ,'effectiveness');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  61  ,'effectiveness');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  61  ,'performance');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  62  ,'accuracy');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  62  ,'performance');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  63  ,'effectiveness');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  63  ,'scalability');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  64  ,'effectiveness');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  65  ,'efficiency');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  65  ,'efficacy');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  66  ,'effectiveness');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  67  ,'effectiveness');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  68  ,'effectiveness');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  68  ,'accuracy');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  68  ,'performance');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  69  ,'performance');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  69  ,'effectiveness');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  70  ,'accuracy');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  71  ,'effectiveness');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  71  ,'efficiency');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  71  ,'reproducibility');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  72  ,'performance');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  74  ,'effectiveness');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  74  ,'performance');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  74  ,'thrashing Rate');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  75  ,'bug detection');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  76  ,'usefulness');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  77  ,'determinism');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  77  ,'performance');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  77  ,'effectiveness');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  78  ,'effectiveness');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  78  ,'efficiency');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  78  ,'reproducibility');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  80  ,'efficacy');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  81  ,'performance');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  82  ,'effectiveness');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  82  ,'performance');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  84  ,'efficiency');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  84  ,'effectiveness');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  85  ,'effectiveness');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  87  ,'effectiveness');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  87  ,'performance');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  88  ,'performance');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  89  ,'effectiveness');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  90  ,'performance');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  91  ,'performance');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  92  ,'performance');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  92  ,'effectiveness');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  93  ,'usability');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  93  ,'accuracy');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  93  ,'performance');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  94  ,'performance');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  94  ,'effectiveness');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  95  ,'performance');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  95  ,'scalability');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  96  ,'performance');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  97  ,'performance');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  97  ,'effectiveness');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  99  ,'efficiency');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  101 ,'efficiency');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  102 ,'effectiveness');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  106 ,'effectiveness');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  107 ,'effectiveness');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  109 ,'effectiveness');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  109 ,'performance');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  110 ,'relevancy');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  111 ,'effectiveness');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  111 ,'performance');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  111 ,'false negatives');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  113 ,'bug detection');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  113 ,'scalability');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  114 ,'performance');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  114 ,'determinism');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  115 ,'performance');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  116 ,'performance');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  116 ,'effectiveness');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  117 ,'performance');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  117 ,'prediction capability');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  118 ,'effectiveness');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  118 ,'efficiency');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  118 ,'execution time');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  119 ,'effectiveness');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  119 ,'efficacy');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  120 ,'effectiveness');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  122 ,'effectiveness');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  124 ,'effectiveness');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  124 ,'performance');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  125 ,'efficience');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  126 ,'efficacy');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  126 ,'performance');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  126 ,'effectiveness');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  127 ,'performance');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  128 ,'efficacy');
+    INSERT INTO `selectt`.  `QualityAttribute`  (`idTechnique`,   `qualityAttribute`  ) VALUES (  128 ,'efficiency');
 
-
-    INSERT INTO `dbo`.`QualityAttribute` (`id`,  `idTechnique`,  `qualityAttribute`)  VALUES  (1,  1,  'Effectiveness');
-    INSERT INTO `dbo`.`QualityAttribute` (`id`,  `idTechnique`,  `qualityAttribute`)  VALUES  (2,  1,  'Cost');
-    INSERT INTO `dbo`.`QualityAttribute` (`id`,  `idTechnique`,  `qualityAttribute`)  VALUES  (3,  1,  'Strength');
-    INSERT INTO `dbo`.`QualityAttribute` (`id`,  `idTechnique`,  `qualityAttribute`)  VALUES  (4,  2,  'Efficiency');
-    INSERT INTO `dbo`.`QualityAttribute` (`id`,  `idTechnique`,  `qualityAttribute`)  VALUES  (5,  2,  'Effectiveness');
 
 
 
     -- -----------------------------------------------------
-    -- Table `dbo`.`TypeOfStudy`
+    -- Table `selectt`.`TypeOfStudy`
     -- -----------------------------------------------------
-    DROP TABLE IF EXISTS `dbo`.`TypeOfStudy`; 
+    DROP TABLE IF EXISTS `selectt`.`TypeOfStudy`; 
 
-    CREATE TABLE IF NOT EXISTS `dbo`.`TypeOfStudy` (
+    CREATE TABLE IF NOT EXISTS `selectt`.`TypeOfStudy` (
       `id` INT NOT NULL AUTO_INCREMENT,
       `idTechnique` INT NOT NULL,
       `typeOfStudy` VARCHAR(255) NOT NULL,
@@ -461,23 +3701,129 @@
       INDEX `idTechnique_idx` (`idTechnique` ASC),
       CONSTRAINT `idTechnique_11`
         FOREIGN KEY (`idTechnique`)
-        REFERENCES `dbo`.`Technique` (`id`)
+        REFERENCES `selectt`.`Technique` (`id`)
         ON DELETE CASCADE
         ON UPDATE CASCADE)
     ENGINE = InnoDB;
 
-
-    INSERT INTO `dbo`.`TypeOfStudy` (`id`,  `idTechnique`,  `typeOfStudy`)  VALUES  (1,  1,  'Experiment');
-    INSERT INTO `dbo`.`TypeOfStudy` (`id`,  `idTechnique`,  `typeOfStudy`)  VALUES  (2,  2,  'Experiment');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  1 ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  2 ,'Experiment');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  3 ,'Experiment');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  4 ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  5 ,'Experiment');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  6 ,'Experiment');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  7 ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  8 ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  9 ,'Survey');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  10  ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  11  ,'Experiment');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  12  ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  13  ,'Experiment');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  14  ,'Experiment');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  15  ,'Survey');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  17  ,'Experiment');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  18  ,'Experiment');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  19  ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  20  ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  21  ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  22  ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  23  ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  24  ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  25  ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  27  ,'Experiment');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  29  ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  30  ,'Survey');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  31  ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  32  ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  33  ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  34  ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  35  ,'Experiment');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  36  ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  37  ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  38  ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  39  ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  40  ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  43  ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  44  ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  45  ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  46  ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  47  ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  48  ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  49  ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  50  ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  51  ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  52  ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  53  ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  54  ,'Survey');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  55  ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  56  ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  57  ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  59  ,'Survey');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  60  ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  61  ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  62  ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  63  ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  64  ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  65  ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  66  ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  67  ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  68  ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  69  ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  70  ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  71  ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  72  ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  74  ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  75  ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  76  ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  77  ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  78  ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  80  ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  81  ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  82  ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  84  ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  85  ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  87  ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  88  ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  89  ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  90  ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  91  ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  92  ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  93  ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  94  ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  95  ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  96  ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  97  ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  99  ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  101 ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  102 ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  106 ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  107 ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  109 ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  110 ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  111 ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  113 ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  114 ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  115 ,'Experiment');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  116 ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  117 ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  118 ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  119 ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  120 ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  122 ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  124 ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  125 ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  126 ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  127 ,'Case study');
+    INSERT INTO `selectt`.  `TypeOfStudy` (`idTechnique`,   `typeOfStudy` ) VALUES (  128 ,'Case study');
 
 
 
     -- -----------------------------------------------------
-    -- Table `dbo`.`TestingAnalysis`
+    -- Table `selectt`.`TestingAnalysis`
     -- -----------------------------------------------------
-    DROP TABLE IF EXISTS `dbo`.`TestingAnalysis`; 
+    DROP TABLE IF EXISTS `selectt`.`TestingAnalysis`; 
 
-    CREATE TABLE IF NOT EXISTS `dbo`.`TestingAnalysis` (
+    CREATE TABLE IF NOT EXISTS `selectt`.`TestingAnalysis` (
       `id` INT NOT NULL AUTO_INCREMENT,
       `idTechnique` INT NOT NULL,
       `testingAnalysis` VARCHAR(255) NOT NULL,
@@ -486,28 +3832,147 @@
       INDEX `idTechnique_idx` (`idTechnique` ASC),
       CONSTRAINT `idTechnique_12`
         FOREIGN KEY (`idTechnique`)
-        REFERENCES `dbo`.`Technique` (`id`)
+        REFERENCES `selectt`.`Technique` (`id`)
         ON DELETE CASCADE
         ON UPDATE CASCADE)
     ENGINE = InnoDB;
 
 
-    INSERT INTO `dbo`.`TestingAnalysis` (`id`,  `idTechnique`,  `testingAnalysis`)  VALUES  (1,  1,  'Dynamic');
-    INSERT INTO `dbo`.`TestingAnalysis` (`id`,  `idTechnique`,  `testingAnalysis`)  VALUES  (2,  2,  'Static');
-    INSERT INTO `dbo`.`TestingAnalysis` (`id`,  `idTechnique`,  `testingAnalysis`)  VALUES  (3,  2,  'Dynamic');
-
-
-
-
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  1 ,'Dynamic');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  2 ,'Dynamic');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  3 ,'Dynamic');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  4 ,'Dynamic');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  5 ,'Dynamic');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  6 ,'Dynamic');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  7 ,'Static');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  7 ,'Dynamic');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  8 ,'Static');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  8 ,'Dynamic');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  9 ,'Static');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  10  ,'Static');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  10  ,'Dynamic');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  11  ,'Dynamic');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  12  ,'Static');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  13  ,'Dynamic');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  14  ,'Static');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  15  ,'Static');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  15  ,'Dynamic');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  17  ,'Dynamic');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  18  ,'Dynamic');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  19  ,'Static');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  19  ,'Dynamic');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  20  ,'Dynamic');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  21  ,'Dynamic');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  22  ,'Dynamic');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  23  ,'Dynamic');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  24  ,'Static');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  25  ,'Dynamic');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  27  ,'Static');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  27  ,'Dynamic');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  29  ,'Static');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  29  ,'Dynamic');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  30  ,'Dynamic');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  31  ,'Static');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  32  ,'Dynamic');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  33  ,'Dynamic');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  34  ,'Static');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  34  ,'Dynamic');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  35  ,'Dynamic');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  36  ,'Dynamic');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  37  ,'Dynamic');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  38  ,'Static');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  38  ,'Dynamic');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  39  ,'Static');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  39  ,'Dynamic');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  40  ,'Dynamic');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  43  ,'Dynamic');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  44  ,'Dynamic');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  45  ,'Dynamic');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  46  ,'Dynamic');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  47  ,'Dynamic');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  48  ,'Static');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  49  ,'Dynamic');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  50  ,'Static');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  50  ,'Dynamic');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  51  ,'Static');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  52  ,'Dynamic');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  53  ,'Dynamic');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  54  ,'Dynamic');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  55  ,'Dynamic');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  56  ,'Static');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  56  ,'Dynamic');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  57  ,'Static');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  57  ,'Dynamic');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  59  ,'Dynamic');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  60  ,'Static');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  60  ,'Dynamic');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  61  ,'Static');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  62  ,'Dynamic');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  63  ,'Static');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  64  ,'Dynamic');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  65  ,'Static');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  66  ,'Dynamic');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  67  ,'Static');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  68  ,'Dynamic');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  69  ,'Dynamic');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  70  ,'Static');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  70  ,'Dynamic');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  71  ,'Static');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  72  ,'Dynamic');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  74  ,'Dynamic');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  75  ,'Dynamic');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  76  ,'Static');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  76  ,'Dynamic');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  77  ,'Dynamic');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  78  ,'Static');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  80  ,'Static');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  81  ,'Static');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  81  ,'Dynamic');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  82  ,'Static');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  84  ,'Dynamic');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  85  ,'Dynamic');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  87  ,'Dynamic');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  88  ,'Dynamic');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  89  ,'Dynamic');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  90  ,'Static');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  91  ,'Dynamic');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  92  ,'Static');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  93  ,'Dynamic');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  94  ,'Dynamic');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  95  ,'Static');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  96  ,'Static');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  97  ,'Static');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  99  ,'Dynamic');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  101 ,'Dynamic');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  102 ,'Dynamic');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  106 ,'Static');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  107 ,'Dynamic');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  109 ,'Static');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  110 ,'Dynamic');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  111 ,'Static');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  113 ,'Dynamic');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  114 ,'Dynamic');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  115 ,'Dynamic');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  116 ,'Dynamic');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  117 ,'Dynamic');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  118 ,'Dynamic');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  119 ,'Dynamic');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  120 ,'Dynamic');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  122 ,'Dynamic');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  124 ,'Dynamic');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  125 ,'Dynamic');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  126 ,'Static');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  127 ,'Dynamic');
+    INSERT INTO `selectt`.  `TestingAnalysis` (`idTechnique`,   `testingAnalysis` ) VALUES (  128 ,'Dynamic');
 
 
 
     -- -----------------------------------------------------
-    -- Table `dbo`.`ConcurrentParadigm`
+    -- Table `selectt`.`ConcurrentParadigm`
     -- -----------------------------------------------------
-    DROP TABLE IF EXISTS `dbo`.`ConcurrentParadigm`; 
+    DROP TABLE IF EXISTS `selectt`.`ConcurrentParadigm`; 
 
-    CREATE TABLE IF NOT EXISTS `dbo`.`ConcurrentParadigm` (
+    CREATE TABLE IF NOT EXISTS `selectt`.`ConcurrentParadigm` (
       `id` INT NOT NULL AUTO_INCREMENT,
       `idTechnique` INT NOT NULL,
       `concurrentParadigm` VARCHAR(255) NOT NULL,
@@ -516,26 +3981,139 @@
       INDEX `idTechnique_idx` (`idTechnique` ASC),
       CONSTRAINT `idTechnique_13`
         FOREIGN KEY (`idTechnique`)
-        REFERENCES `dbo`.`Technique` (`id`)
+        REFERENCES `selectt`.`Technique` (`id`)
         ON DELETE CASCADE
         ON UPDATE CASCADE)
     ENGINE = InnoDB;
 
-
-    INSERT INTO `dbo`.`ConcurrentParadigm` (`id`,  `idTechnique`,  `concurrentParadigm`)  VALUES  (1,  1,  'Message passing');
-    INSERT INTO `dbo`.`ConcurrentParadigm` (`id`,  `idTechnique`,  `concurrentParadigm`)  VALUES  (2,  2,  'Message passing');
-
-
-
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  1 ,'Message passing');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  2 ,'Message passing');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  3 ,'Message passing');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  4 ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  5 ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  6 ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  7 ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  8 ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  9 ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  9 ,'Message passing');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  10  ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  11  ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  12  ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  13  ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  14  ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  15  ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  17  ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  18  ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  19  ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  20  ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  21  ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  22  ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  23  ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  24  ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  25  ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  27  ,'Message passing');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  29  ,'Message passing');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  30  ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  31  ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  32  ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  33  ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  34  ,'shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  35  ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  36  ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  37  ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  38  ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  39  ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  40  ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  43  ,'Message passing');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  44  ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  44  ,'Message passing');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  45  ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  46  ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  47  ,'Message passing');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  48  ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  49  ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  50  ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  51  ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  52  ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  53  ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  54  ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  55  ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  56  ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  56  ,'Message passing');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  57  ,'Message passing');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  59  ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  60  ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  60  ,'Message passing');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  61  ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  62  ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  62  ,'Message passing');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  63  ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  64  ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  65  ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  66  ,'Message passing');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  67  ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  68  ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  69  ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  70  ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  71  ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  72  ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  72  ,'Message passing');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  74  ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  75  ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  76  ,'Not informed');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  77  ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  78  ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  80  ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  80  ,'Message passing');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  81  ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  82  ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  84  ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  85  ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  87  ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  88  ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  89  ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  90  ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  91  ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  92  ,'Message passing');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  93  ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  94  ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  95  ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  96  ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  97  ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  99  ,'shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  101 ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  101 ,'Message passing');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  102 ,'Message passing');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  106 ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  107 ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  109 ,'Message passing');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  110 ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  111 ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  113 ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  114 ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  115 ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  116 ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  117 ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  118 ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  119 ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  120 ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  122 ,'Message passing');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  124 ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  125 ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  126 ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  127 ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  127 ,'Message passing');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  128 ,'Shared memory');
+    INSERT INTO `selectt`.  `ConcurrentParadigm`  (`idTechnique`,   `concurrentParadigm`  ) VALUES (  128 ,'Message passing');
 
 
 
     -- -----------------------------------------------------
-    -- Table `dbo`.`ReplayMechanism`
+    -- Table `selectt`.`ReplayMechanism`
     -- -----------------------------------------------------
-    DROP TABLE IF EXISTS `dbo`.`ReplayMechanism`; 
+    DROP TABLE IF EXISTS `selectt`.`ReplayMechanism`; 
 
-    CREATE TABLE IF NOT EXISTS `dbo`.`ReplayMechanism` (
+    CREATE TABLE IF NOT EXISTS `selectt`.`ReplayMechanism` (
       `id` INT NOT NULL AUTO_INCREMENT,
       `idTechnique` INT NOT NULL,
       `replayMechanism` VARCHAR(255) NOT NULL,
@@ -544,23 +4122,134 @@
       INDEX `idTechnique_idx` (`idTechnique` ASC),
       CONSTRAINT `idTechnique_14`
         FOREIGN KEY (`idTechnique`)
-        REFERENCES `dbo`.`Technique` (`id`)
+        REFERENCES `selectt`.`Technique` (`id`)
         ON DELETE CASCADE
         ON UPDATE CASCADE)
     ENGINE = InnoDB;
 
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  1 ,'deterministic execution');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  2 ,'controlled execution');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  3 ,'stateless exploration');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  4 ,'monitoring');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  5 ,'deterministic replay');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  6 ,'backtrackable JVM');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  7 ,'scheduling');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  8 ,'execution schedules');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  9 ,'Not required');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  10  ,'controlled thread schedule');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  11  ,'java thread scheduling');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  12  ,'scheduling');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  13  ,'runtime monitoring');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  14  ,'deterministic execution');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  15  ,'memory history');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  17  ,'random execution');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  18  ,'happens-before and locksets of memory access');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  19  ,'symbolic execution');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  20  ,'replay-based classification');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  21  ,'scheduling');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  22  ,'systematic concurrency testin');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  23  ,'should-happen-before');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  24  ,'monitoring');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  25  ,'scheduling');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  27  ,'SYN-sequences');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  29  ,'incremental reachability analysis');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  30  ,'transactional memory');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  31  ,'monitoring');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  32  ,'monitoring');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  32  ,'lock-set');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  32  ,'happens-before');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  33  ,'monitoring');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  34  ,'deterministic execution');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  35  ,'scheduling');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  36  ,'controlled scheduling');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  37  ,'regression scheduler');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  38  ,'scheduling');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  39  ,'record and replay');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  40  ,'deterministic  replay');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  43  ,'semantic order');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  44  ,'happens-before relation');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  45  ,'SAT solving');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  46  ,'happens-before relation');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  47  ,'SYN-sequences');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  48  ,'deterministic execution');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  49  ,'SYN-sequences');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  50  ,'executor plug-in of previously explored state space');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  51  ,'concolic execution');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  52  ,'scheduling');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  53  ,'happens-before relation');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  54  ,'deterministic execution');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  55  ,'deterministic replay');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  56  ,'happens-before');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  57  ,'deterministic replay');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  59  ,'monitoring');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  60  ,'scheduling');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  61  ,'symbolic execution');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  62  ,'No Information');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  63  ,'symbolic execution');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  64  ,'happens-before constraints');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  65  ,'concolic execution');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  66  ,'automata-based specifications');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  67  ,'deterministic replay');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  68  ,'symbolic execution');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  69  ,'control of a scheduler process');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  70  ,'interleaving scenarios');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  71  ,'controlled testing');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  72  ,'prefix-based execution');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  74  ,'happens-before relation');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  75  ,'happens-before');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  76  ,'Enforcer run-time library');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  77  ,'happens-before');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  78  ,'bug-triggering');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  80  ,'happens-before relation');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  81  ,'deterministic logical time');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  82  ,'hardware wachpoint register');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  84  ,'Thread interleaving  orchestration');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  85  ,'controlled thread schedule');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  87  ,'controlled thread schedule');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  88  ,'scheduling');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  89  ,'lock dependency relation');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  90  ,'siloed references');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  91  ,'happens-before relation');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  92  ,'prefix-based execution');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  93  ,'runtime monitoring');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  94  ,'monitoring lock usage');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  95  ,'monitoring');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  96  ,'recorded traces');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  97  ,'record-replay');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  99  ,'model reuse');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  101 ,'No Information');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  102 ,'No Information');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  106 ,'lock-based synchronization');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  107 ,'happens-before');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  109 ,'static analysis');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  110 ,'monitoring');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  111 ,'lock-set');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  111 ,'happens-before');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  113 ,'controlled execution');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  114 ,'deterministic replay');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  115 ,'backtrackable Java');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  116 ,'monitoring');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  117 ,'predictive analysis');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  118 ,'monitoring');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  119 ,'synchronization traces');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  120 ,'synchronization traces');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  122 ,'happens-before');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  122 ,'actor clocks');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  124 ,'scheduling point');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  125 ,'monitoring');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  126 ,'scheduling');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  127 ,'scheduling');
+    INSERT INTO `selectt`.  `ReplayMechanism` (`idTechnique`,   `replayMechanism` ) VALUES (  128 ,'preemption sealing'); 
 
-    INSERT INTO `dbo`.`ReplayMechanism` (`id`,  `idTechnique`,  `replayMechanism`)  VALUES  (1,  1,  'Controlled execution');
-    INSERT INTO `dbo`.`ReplayMechanism` (`id`,  `idTechnique`,  `replayMechanism`)  VALUES  (2,  2,  'SYN-sequences');
 
 
 
+    -- -----------------------------------------------------''
+    -- Table `selectt`.`ProgramRepresentation`
     -- -----------------------------------------------------
-    -- Table `dbo`.`ProgramRepresentation`
-    -- -----------------------------------------------------
-    DROP TABLE IF EXISTS `dbo`.`ProgramRepresentation`; 
+    DROP TABLE IF EXISTS `selectt`.`ProgramRepresentation`; 
 
-    CREATE TABLE IF NOT EXISTS `dbo`.`ProgramRepresentation` (
+    CREATE TABLE IF NOT EXISTS `selectt`.`ProgramRepresentation` (
       `id` INT NOT NULL AUTO_INCREMENT,
       `idTechnique` INT NOT NULL,
       `programRepresentation` VARCHAR(255) NOT NULL,
@@ -569,24 +4258,137 @@
       INDEX `idTechnique_idx` (`idTechnique` ASC),
       CONSTRAINT `idTechnique_15`
         FOREIGN KEY (`idTechnique`)
-        REFERENCES `dbo`.`Technique` (`id`)
+        REFERENCES `selectt`.`Technique` (`id`)
         ON DELETE CASCADE
         ON UPDATE CASCADE)
     ENGINE = InnoDB;
 
 
-    INSERT INTO `dbo`.`ProgramRepresentation` (`id`,  `idTechnique`,  `programRepresentation`)  VALUES  (1,  1,  'Parallel Control Flow Graph (PCFG)');
-    INSERT INTO `dbo`.`ProgramRepresentation` (`id`,  `idTechnique`,  `programRepresentation`)  VALUES  (2,  2,  'Parallel Control Flow Graph (PCFG)');
-
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  1 ,'abstract LTS model');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  2 ,'Parallel Control Flow Graph (PCFG)');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  3 ,'No Information');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  4 ,'No Information');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  5 ,'No Information');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  6 ,'No Information');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  7 ,'No Information');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  8 ,'control flow graph');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  9 ,'call graph');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  9 ,'lock graph');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  10  ,'control flow graph');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  11  ,'No Information');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  12  ,'No Information');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  13  ,'ICFG(Interprocedural control flow graph)');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  14  ,'control flow graph');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  14  ,'use-define chains');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  14  ,'control dependency graph');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  15  ,'No Information');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  17  ,'No Information');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  18  ,'No Information');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  19  ,'Generalized Interleaving Graph (GIG)');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  20  ,'happens-before graph');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  21  ,'No Information');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  22  ,'No Information');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  23  ,'No Information');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  24  ,'control-flow graph (CFG)');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  24  ,'inter-procedural control-flow graph(ICFG)');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  25  ,'No Information');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  27  ,'Parallel Control Flow Graph (PCFG)');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  29  ,'reachability graph');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  30  ,'No Information');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  31  ,'No Information');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  32  ,'No Information');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  33  ,'type-state automaton');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  34  ,'No Information');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  35  ,'No Information');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  36  ,'No Information');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  37  ,'No Information');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  38  ,'control-flow graph');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  39  ,'deterministic lazy release consistency model');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  40  ,'variant graph');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  43  ,'constraint graph');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  44  ,'No Information');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  45  ,'event graph');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  46  ,'transactional memory');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  47  ,'extended control-flow graph (ECFG)');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  48  ,'AbsList');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  48  ,'AryList');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  48  ,'Deadlock models');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  49  ,'reachable state graph');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  50  ,'No Information');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  51  ,'No Information');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  52  ,'No Information');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  53  ,'access tree');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  54  ,'No Information');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  55  ,'No Information');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  56  ,'No Information');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  57  ,'No Information');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  59  ,'No Information');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  60  ,'No Information');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  61  ,'TSO/PSO models');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  62  ,'No Information');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  63  ,'interference scenarios');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  64  ,'constraint model');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  65  ,'constraint model');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  66  ,'LKS labeled kripke structures');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  67  ,'No Information');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  68  ,'program dependence graphs');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  69  ,'No Information');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  70  ,'guarded lock graph');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  71  ,'No Information');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  72  ,'lts model program');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  74  ,'prediction model');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  75  ,'No Information');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  76  ,'No Information');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  77  ,'weak memory consistency models');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  78  ,'No Information');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  80  ,'coverage graph');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  81  ,'deterministic multithreading programming models');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  82  ,'No Information');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  84  ,'No Information');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  85  ,'No Information');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  87  ,'No Information');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  88  ,'No Information');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  89  ,'object-sensitive lock graph');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  90  ,'PCG graph');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  91  ,'happens-before graph');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  92  ,'graph-theoretic');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  93  ,'happens-before graph');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  94  ,'No Information');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  95  ,'No Information');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  96  ,'automaton');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  97  ,'happens-before graph');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  99  ,'state space graph');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  99  ,'ltl model');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  101 ,'No Information');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  102 ,'system specification');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  106 ,'No Information');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  107 ,'No Information');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  109 ,'control-flow graph');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  110 ,'No Information');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  111 ,'call graph');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  113 ,'skip lists');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  114 ,'No Information');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  115 ,'state space graph');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  116 ,'No Information');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  117 ,'No Information');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  118 ,'No Information');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  119 ,'No Information');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  120 ,'No Information');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  122 ,'state space graph');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  124 ,'Petri nets');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  125 ,'Büchi automaton');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  126 ,'priority graph');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  127 ,'directed graph');
+    INSERT INTO `selectt`.  `ProgramRepresentation` (`idTechnique`,   `programRepresentation` ) VALUES (  128 ,'No Information');
 
 
 
     -- -----------------------------------------------------
-    -- Table `dbo`.`Instrumentation`
+    -- Table `selectt`.`Instrumentation`
     -- -----------------------------------------------------
-    DROP TABLE IF EXISTS `dbo`.`Instrumentation`; 
+    DROP TABLE IF EXISTS `selectt`.`Instrumentation`; 
 
-    CREATE TABLE IF NOT EXISTS `dbo`.`Instrumentation` (
+    CREATE TABLE IF NOT EXISTS `selectt`.`Instrumentation` (
       `id` INT NOT NULL AUTO_INCREMENT,
       `idTechnique` INT NOT NULL,
       `instrumentation` VARCHAR(255) NOT NULL,
@@ -595,24 +4397,128 @@
       INDEX `idTechnique_idx` (`idTechnique` ASC),
       CONSTRAINT `idTechnique_16`
         FOREIGN KEY (`idTechnique`)
-        REFERENCES `dbo`.`Technique` (`id`)
+        REFERENCES `selectt`.`Technique` (`id`)
         ON DELETE CASCADE
         ON UPDATE CASCADE)
     ENGINE = InnoDB;
 
-
-    INSERT INTO `dbo`.`Instrumentation` (`id`,  `idTechnique`,  `instrumentation`)  VALUES  (1,  1,  'Check-point insertion');
-    INSERT INTO `dbo`.`Instrumentation` (`id`,  `idTechnique`,  `instrumentation`)  VALUES  (2,  2,  'Instrumentation');
-
-
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  1 ,'No Information');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  2 ,'check-point insertion');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  3 ,'No Information');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  4 ,'RoadRunner framework');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  5 ,'manual instrumentation');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  6 ,'No Information');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  7 ,'No Information');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  8 ,'Instrumentation with ConSuite');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  9 ,'No Information');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  10  ,'JPF instrumentator');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  11  ,'No Information');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  12  ,'instrumentation schema');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  13  ,'on time instrumentation');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  14  ,'No Information');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  15  ,'No Information');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  17  ,'No Information');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  18  ,'No Information');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  19  ,'LLVM instrumentation');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  20  ,'dynamic instrumentation');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  21  ,'No Information');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  22  ,'No Information');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  23  ,'Pin instrumented');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  24  ,'No Information');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  25  ,'CalFuzzer instrumentor');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  27  ,'instrumentation');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  29  ,'No Information');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  30  ,'No Information');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  31  ,'lockset instrumentation');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  32  ,'soot instrumentation');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  33  ,'llVM instrumentation');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  34  ,'No Information');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  35  ,'No Information');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  36  ,'CIL instrumentation');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  37  ,'No Information');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  38  ,'soot instrumentation');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  39  ,'RFDet compile-time instrumentation');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  40  ,'Aspectj tracing');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  43  ,'instumentation generated by PARROT');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  44  ,'Racfuzzer instumentation');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  45  ,'Instrumentation with satcheck');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  46  ,'Instrumentation of transactional accesses');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  47  ,'No Information');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  48  ,'Jlint instrumentation');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  49  ,'No Information');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  50  ,'Search-Bestie instrumentation');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  51  ,'Jcute trace');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  52  ,'PCT binary instrumentation');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  53  ,'pretty-print instrumentation');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  54  ,'Contest instrumentation');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  55  ,'Kendo instrumentation');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  56  ,'MTRAT instrumentation');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  57  ,'Pin instrumented');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  59  ,'ATEMES instrumentor');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  60  ,'Bita instrumentation');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  61  ,'CLAP instrumentation');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  62  ,'JIT instrumentation');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  63  ,'Concrest instrumentation');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  64  ,'CBMC traces');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  65  ,'LLVM instrumentation');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  66  ,'No Information');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  67  ,'PIN instrumentation');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  68  ,'Pin instrumented');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  69  ,'Fusion instrumentation');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  70  ,'Contest instrumentation');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  71  ,'Pin instrumented');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  72  ,'No Information');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  74  ,'DrFinder instrumentation');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  75  ,'LLVM instrumentation');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  76  ,'Enforcer instrumentation');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  77  ,'LLVM instrumentation');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  78  ,'Pin instrumentation');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  80  ,'No Information');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  81  ,'No Information');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  82  ,'thead trace');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  84  ,'Pin instrumentation');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  85  ,'DynInst instrumentation');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  87  ,'Pin instrumentation');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  88  ,'No Information');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  89  ,'soot instrumentation');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  90  ,'No Information');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  91  ,'Droidracer instrumentation');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  92  ,'No Information');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  93  ,'Kopi instrumentation');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  94  ,'Jikes RVM instrumentation');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  95  ,'FastTrack instrumentation');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  96  ,'Valgrind instrumentation');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  97  ,'Javassist library instrumentation');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  99  ,'No Information');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  101 ,'Aspectj instrumentation');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  102 ,'RAC instrumentation');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  106 ,'No Information');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  107 ,'Pin instrumentation');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  109 ,'No Information');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  110 ,'Pin instrumentation');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  111 ,'LLVM instrumentation');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  113 ,'UPC instrumentation');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  114 ,'Pin instrumentation');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  115 ,'No Information');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  116 ,'compile-time and run-time instrumentation');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  117 ,'RoadRunner instrumentation');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  118 ,'Pin instrumented');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  119 ,'Soot instrumentation');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  120 ,'Soot instrumentation');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  122 ,'No Information');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  124 ,'soot instrumentation');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  125 ,'Java debug interface');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  126 ,'No Information');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  127 ,'Inspect instrumentation');
+    INSERT INTO `selectt`.  `Instrumentation` (`idTechnique`,   `instrumentation` ) VALUES (  128 ,'chess instrumentation');
 
 
     -- -----------------------------------------------------
-    -- Table `dbo`.`StateSpaceReduction`
+    -- Table `selectt`.`StateSpaceReduction`
     -- -----------------------------------------------------
-    DROP TABLE IF EXISTS `dbo`.`StateSpaceReduction`; 
+    DROP TABLE IF EXISTS `selectt`.`StateSpaceReduction`; 
 
-    CREATE TABLE IF NOT EXISTS `dbo`.`StateSpaceReduction` (
+    CREATE TABLE IF NOT EXISTS `selectt`.`StateSpaceReduction` (
       `id` INT NOT NULL AUTO_INCREMENT,
       `idTechnique` INT NOT NULL,
       `stateSpaceReduction` VARCHAR(255) NOT NULL,
@@ -621,23 +4527,132 @@
       INDEX `idTechnique_idx` (`idTechnique` ASC),
       CONSTRAINT `idTechnique_17`
         FOREIGN KEY (`idTechnique`)
-        REFERENCES `dbo`.`Technique` (`id`)
+        REFERENCES `selectt`.`Technique` (`id`)
         ON DELETE CASCADE
         ON UPDATE CASCADE)
     ENGINE = InnoDB;
 
-    INSERT INTO `dbo`.`StateSpaceReduction` (`id`,  `idTechnique`,  `stateSpaceReduction`)  VALUES  (1,  1,  'Check point insertion');
-    INSERT INTO `dbo`.`StateSpaceReduction` (`id`,  `idTechnique`,  `stateSpaceReduction`)  VALUES  (2,  2,  'Feasible synchronization sequences');
-
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  1 ,'incremental reachability analysis and new ATL reduction algoritm');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  2 ,'check point insertion');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  3 ,'clustering');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  4 ,'probabilistic sampling');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  5 ,'parallel randomized state-space search');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  6 ,'StateSet technique');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  7 ,'selection patterns based on violation patterns');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  8 ,'meta-heuristic search');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  9 ,'No Information');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  10  ,'state transition coverage');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  11  ,'greedy test suite reduction');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  12  ,'static data race detection');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  13  ,'greedy test suite reduction');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  14  ,'common locking patterns analysi');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  15  ,'No Information');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  17  ,'greedy test suit eduction');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  18  ,'subspace partitioning');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  19  ,'minimization heuristics');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  19  ,'partial order reduction');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  20  ,'upper bound od primary paths explored');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  20  ,'reduct branches in the execution tree');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  21  ,'dynamic partial order reduction');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  22  ,'scheduling bounding');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  23  ,'reduction of constraints');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  24  ,'No Information');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  25  ,'random partial order reduction');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  27  ,'feasible synchronization sequences');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  29  ,'partial-order reduction');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  30  ,'exponential-sized all-interleaving testing sc');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  31  ,'false positive reduction');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  32  ,'delta of the interleaving space');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  33  ,'partial order reduction');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  34  ,'No Information');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  35  ,'selective mutation');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  36  ,'No Information');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  37  ,'call stack similarity');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  38  ,'partial order reduction');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  39  ,'happens-before slices');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  40  ,'partial order reduction');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  43  ,'conditional barriers');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  44  ,'minimal annotations');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  45  ,'partial order reduction');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  46  ,'No Information');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  47  ,'t-way reachability testing strategy');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  48  ,'partial order reduction');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  49  ,'on-the-fly partial order reduction');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  50  ,'state space reduction');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  51  ,'partial order reduction');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  52  ,'probabilistic bound');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  53  ,'reduction-based algoritm');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  54  ,'partial order reduction');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  55  ,'slice merging');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  56  ,'partial order reduction');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  57  ,'ASN');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  59  ,'TBB pipeline parallelism dimension');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  60  ,'dynamic partial order reduction');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  61  ,'preemption-bounding');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  62  ,'omitting inlined methods');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  63  ,'con2colic');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  64  ,'minimally unsatisfiable subformula');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  65  ,'Differential schedule projections');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  66  ,'abstractions and compositional reasoning');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  67  ,'effect-oriented approach');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  68  ,'suspicious interleaving');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  69  ,'Partial order reduction');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  69  ,'History-aware Predecessor-Set (HaPSet)');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  70  ,'saturation-based');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  71  ,'infeasible interleaving prunning');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  72  ,'t-way reachability testing strategy');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  74  ,'active scheduling');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  75  ,'lock free structures');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  76  ,'coverage metrics');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  77  ,'redistribution granularity');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  78  ,'Pruning infeasible interleavings');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  80  ,'iterative context-bounding');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  81  ,'No Information');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  82  ,'path-insensitive data-flow analysis (DFA)');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  84  ,'iRoots coverage');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  85  ,'No Information');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  87  ,'preemption-bounding');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  88  ,'grammar-contrained input');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  89  ,'constraint-based');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  90  ,'concurrency-type refinaments');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  91  ,'android runtime enviroments to reduce false positives');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  92  ,'partial order reduction');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  93  ,'commutativity properties of events');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  94  ,'stationary-object optimization');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  95  ,'GA algorithm');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  96  ,'No Information');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  97  ,'variable and thread ranking');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  99  ,'fitness functions, heuristic mechanisms');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  101 ,'value-deterministic search-based replay');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  102 ,'No Information');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  106 ,'No Information');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  107 ,'No Information');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  109 ,'control flow analysis');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  110 ,'relevancy analysis');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  111 ,'CFP-guided approach');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  113 ,'active testing');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  114 ,'state equatily check');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  115 ,'partial-order reduction');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  116 ,'avoid monitoring repeated events');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  117 ,'sound predictive');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  118 ,'sync pairs');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  119 ,'synthesizing racy');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  120 ,'data flow constraints');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  122 ,'partial order reduction');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  124 ,'dynamic partial order reduction');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  125 ,'runtime monitoring');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  126 ,'partial-order reduction');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  127 ,'partial order trace');
+    INSERT INTO `selectt`.  `StateSpaceReduction` (`idTechnique`,   `stateSpaceReduction` ) VALUES (  128 ,'preemption sealing');
 
 
 
     -- -----------------------------------------------------
-    -- Table `dbo`.`ConcurrentBugs`
+    -- Table `selectt`.`ConcurrentBugs`
     -- -----------------------------------------------------
-    DROP TABLE IF EXISTS `dbo`.`ConcurrentBugs`; 
+    DROP TABLE IF EXISTS `selectt`.`ConcurrentBugs`; 
 
-    CREATE TABLE IF NOT EXISTS `dbo`.`ConcurrentBugs` (
+    CREATE TABLE IF NOT EXISTS `selectt`.`ConcurrentBugs` (
       `id` INT NOT NULL AUTO_INCREMENT,
       `idTechnique` INT NOT NULL,
       `concurrentBugs` VARCHAR(255) NOT NULL,
@@ -646,28 +4661,211 @@
       INDEX `idTechnique_idx` (`idTechnique` ASC),
       CONSTRAINT `idTechnique_18`
         FOREIGN KEY (`idTechnique`)
-        REFERENCES `dbo`.`Technique` (`id`)
+        REFERENCES `selectt`.`Technique` (`id`)
         ON DELETE CASCADE
         ON UPDATE CASCADE)
     ENGINE = InnoDB;
 
 
-    INSERT INTO `dbo`.`ConcurrentBugs` (`id`,  `idTechnique`,  `concurrentBugs`)  VALUES  (1,  1,  'Mutation based errors');
-    INSERT INTO `dbo`.`ConcurrentBugs` (`id`,  `idTechnique`,  `concurrentBugs`)  VALUES  (2,  2,  'Mutation based errors');
 
 
-
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  1 ,'bugs inserted by the researcher');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  2 ,'mutation based errors');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  3 ,'bug-triggering interleavings');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  3 ,'deadlock');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  3 ,'exception');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  3 ,'starvation');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  4 ,'data race');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  5 ,'assertion violation');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  5 ,'deadlock');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  6 ,'atomicity violation');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  6 ,'data race');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  6 ,'deadlock');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  7 ,'data race');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  7 ,'atomicity violations');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  7 ,'null-pointer dereferences');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  8 ,'data race');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  8 ,'deadlock');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  9 ,'data race');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  9 ,'deadlock');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  9 ,'starvation');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  9 ,'bug patterns');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  10  ,'high-level concurrency errors');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  10  ,'atomicity violation');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  10  ,'refinement violations');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  10  ,'data race');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  11  ,'mutation based errors');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  12  ,'deadlock');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  12  ,'data race');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  12  ,'atomicity violation');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  13  ,'N');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  14  ,'data race');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  14  ,'deadlock');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  15  ,'data race');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  17  ,'mutation based errors');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  18  ,'atomicity violation');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  19  ,'N');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  20  ,'data race');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  21  ,'Hunting bugs');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  21  ,'data race');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  21  ,'deadlock');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  21  ,'atomicity violation');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  22  ,'deadlock, crashes');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  22  ,'assertion violation');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  22  ,'data race');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  23  ,'deadlock');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  24  ,'data race');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  25  ,'deadlock');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  25  ,'data race');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  25  ,'assertion violation');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  27  ,'mutation based errors');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  29  ,'interface-level synchronization');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  30  ,'atomicity violation');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  30  ,'order violation');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  31  ,'data race');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  32  ,'faulty interleaving');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  33  ,'type-state violations');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  34  ,'N');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  35  ,'concurrency bugs');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  36  ,'data race');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  37  ,'deadlock');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  37  ,'data race');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  38  ,'deadlock');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  38  ,'data race');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  39  ,'data race');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  40  ,'data race');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  43  ,'bottlenecks');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  44  ,'data race');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  44  ,'exeption');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  45  ,'N');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  46  ,'data race');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  47  ,'synchronization bugs');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  48  ,'real errors');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  49  ,'synchronization bugs');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  50  ,'synchronization bugs');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  50  ,'exeption');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  51  ,'data race');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  51  ,'deadlock');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  52  ,'atomicity violation');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  52  ,'deadlock');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  52  ,'preemption');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  53  ,'atomicity');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  53  ,'data race');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  53  ,'serializability');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  54  ,'noise problem');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  55  ,'data race');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  55  ,'synchronization');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  56  ,'data race');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  56  ,'atomicity');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  56  ,'bad optimization');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  57  ,'deadlock');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  59  ,'data race');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  60  ,'bugs inserted by the researcher');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  61  ,'data race');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  62  ,'code-communication invariants');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  63  ,'data race');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  63  ,'bugs inserted by the researcher');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  64  ,'assertion violation');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  64  ,'data race, order violation');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  65  ,'data race, atomicy violation');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  65  ,'bugs inserted by the researcher');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  66  ,'deadlock, SO bugs');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  67  ,'concurrency bugs');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  68  ,'data race');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  68  ,'atomicity violations');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  69  ,'deadlock');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  69  ,'atomicity violation');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  69  ,'order violation');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  70  ,'data race');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  70  ,'deadlock');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  70  ,'synchronization');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  70  ,'atomicity violation');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  71  ,'atomicity violation');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  72  ,'synchronization bugs');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  72  ,'data race');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  74  ,'Hidden races');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  74  ,'synchronization bugs');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  75  ,'data race');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  76  ,'bugs inserted by the researcher');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  77  ,'data race');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  77  ,'concurrency bugs');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  78  ,'atomicity violation');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  80  ,'data race');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  80  ,'synchronization');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  81  ,'data race');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  81  ,'deadlocks');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  81  ,'atomicity violation');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  81  ,'order violation');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  82  ,'atomicity violation');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  84  ,'data race');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  84  ,'atomicity violation');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  84  ,'deadlock');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  85  ,'synchronization bugs');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  87  ,'atomicity violation');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  87  ,'deadlock');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  87  ,'order violation');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  88  ,'atomicity violation');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  89  ,'deadlock');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  90  ,'data race');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  90  ,'synchronization bugs');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  91  ,'data race');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  92  ,'data race');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  92  ,'synchronization bugs');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  93  ,'atomicity violation');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  94  ,'data race');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  95  ,'bugs inserted by the researcher');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  96  ,'bugs inserted by the researcher');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  97  ,'bugs inserted by the researcher');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  99  ,'deadlock');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  99  ,'bugs inserted by the researcher');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  101 ,'data race');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  102 ,'data race');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  102 ,'deadlock');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  106 ,'data race');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  107 ,'Aaomicity violation');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  109 ,'synchronization bugs');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  110 ,'data race specific bugs');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  111 ,'data race');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  111 ,'atomicity violations');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  113 ,'data race');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  114 ,'data race');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  114 ,'atomicity violation');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  114 ,'deadlock');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  115 ,'data race');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  115 ,'atomicity violation');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  115 ,'deadlock');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  116 ,'data race');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  116 ,'atomicity violations');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  117 ,'data race');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  118 ,'data race');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  118 ,'synchronization');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  119 ,'data race');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  120 ,'atomicity violation');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  122 ,'data race');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  122 ,'deadlock');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  124 ,'data race');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  124 ,'deadlock');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  125 ,'deadlock');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  125 ,'bugs inserted by the researcher');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  126 ,'deadlock');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  126 ,'bugs inserted by the researcher');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  127 ,'deadlock');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  127 ,'data race');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  127 ,'assertion violation');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  128 ,'atomicity violation');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  128 ,'livelock');
+  INSERT INTO `selectt`.  `ConcurrentBugs`  (`idTechnique`,   `concurrentBugs`  ) VALUES (  128 ,'deadlock'); 
 
 
 
 
 
     -- -----------------------------------------------------
-    -- Table `dbo`.`ToolName`
+    -- Table `selectt`.`ToolName`
     -- -----------------------------------------------------
-    DROP TABLE IF EXISTS `dbo`.`ToolName`; 
+    DROP TABLE IF EXISTS `selectt`.`ToolName`; 
 
-    CREATE TABLE IF NOT EXISTS `dbo`.`ToolName` (
+    CREATE TABLE IF NOT EXISTS `selectt`.`ToolName` (
       `id` INT NOT NULL AUTO_INCREMENT,
       `idTechnique` INT NOT NULL,
       `toolName` VARCHAR(255) NOT NULL,
@@ -676,15 +4874,154 @@
       INDEX `idTechnique_idx` (`idTechnique` ASC),
       CONSTRAINT `idTechnique_19`
         FOREIGN KEY (`idTechnique`)
-        REFERENCES `dbo`.`Technique` (`id`)
+        REFERENCES `selectt`.`Technique` (`id`)
         ON DELETE CASCADE
         ON UPDATE CASCADE)
     ENGINE = InnoDB;
 
 
-
-    INSERT INTO `dbo`.`ToolName` (`id`,  `idTechnique`,  `toolName`)  VALUES  (1,  1,  'ValiMPI');
-    INSERT INTO `dbo`.`ToolName` (`id`,  `idTechnique`,  `toolName`)  VALUES  (2,  2,  'ValiMPI');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  1 ,'No Information');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  2 ,'ValiMPI');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  3 ,'Ballerina');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  4 ,'Carisma');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  5 ,'ExMan');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  5 ,'Contest');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  5 ,'JPF');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  6 ,'MutMut');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  7 ,'Penelope');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  8 ,'ConSuite');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  8 ,'EvoSuite');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  9 ,'FindBugs');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  9 ,'Jlint');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  9 ,'Chord');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  10  ,'Monitoring tool');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  10  ,'JavaPathfinder');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  11  ,'No Information');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  12  ,'Concrash');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  13  ,'No Information');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  14  ,'Lupa');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  15  ,'RaceFuzzer');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  15  ,'RacerAJ');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  15  ,'JCHORD');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  15  ,'RCC');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  15  ,'JRF');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  17  ,'PCT');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  17  ,'Ctrigger');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  18  ,'Maple');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  19  ,'Cloud9');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  20  ,'Portend+');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  21  ,'CalFuzzer');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  21  ,'ConTest');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  21  ,'CHESS');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  21  ,'Java Pathafinder (JPF)');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  22  ,'Maple');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  23  ,'MagicFuzzer');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  24  ,'DEvA');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  25  ,'CalFuzzer');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  27  ,'ValiMPI');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  29  ,'No Information');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  30  ,'No Information');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  31  ,'Racez');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  32  ,'Recontest');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  33  ,'LLVM framework');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  34  ,'No Information');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  35  ,'Comutation');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  36  ,'Relaxer');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  37  ,'RegressionMaple');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  38  ,'JPF');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  39  ,'RFDet');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  40  ,'AspectJ');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  43  ,'Pegasus');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  44  ,'RaceFuzzer');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  45  ,'SATCheck');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  46  ,'TRADE');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  47  ,'RichTest');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  48  ,'Jlint');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  49  ,'JPF');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  50  ,'Search Bestie, ConTest');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  51  ,'jCUTE');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  52  ,'PCT');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  53  ,'No Information');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  54  ,'No Information');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  55  ,'No Information');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  56  ,'MTRAT');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  56  ,'ConTest');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  56  ,'Jinx');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  56  ,'Jchord');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  56  ,'Enriched PUT');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  57  ,'No Information');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  59  ,'ATEMES');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  59  ,'Intel TBB');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  60  ,'No Information');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  61  ,'LLVM');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  61  ,'KLEE 2.9');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  61  ,'STP');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  61  ,'LEAP');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  62  ,'OshaJava');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  63  ,'ConCrest');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  64  ,'CBMC');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  64  ,'MSUnCore');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  64  ,'ConcBugAssist');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  65  ,'LLVM');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  65  ,'Soot');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  66  ,'MAGIC');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  67  ,'ConMem');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  68  ,'ConSeq');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  69  ,'Fusion');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  70  ,'No Information');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  71  ,'Ctrigger');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  72  ,'RichTest');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  74  ,'DrFinder');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  75  ,'ThreadSanitizer');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  75  ,'LLVM');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  76  ,'Enforcer');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  76  ,'Junit');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  77  ,'LLVM');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  77  ,'FPDet');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  78  ,'PIN');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  80  ,'Zing');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  80  ,'CHESS');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  81  ,'Kendo');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  82  ,'Kivati');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  84  ,'Maple');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  85  ,'DynInst');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  87  ,'NeedlePoint');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  88  ,'MultiOtter');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  89  ,'OMEN');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  90  ,'No Information');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  91  ,'DroidRacer');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  92  ,'RichTest');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  93  ,'No Information');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  94  ,'Jikes RVM 3.1.0');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  95  ,'No Information');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  96  ,'Tmunit');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  97  ,'RankChecker');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  99  ,'ECJ');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  99  ,'HSF-SPIN');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  101 ,'Dalvik Debug Monitor Server (DDMS)');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  102 ,'JML toolset');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  106 ,'RaceFreeJava');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  107 ,'AVIO-S');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  107 ,'AVIO-H');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  109 ,'Dialyzer');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  110 ,'DTAM');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  111 ,'PIN, LLVM');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  113 ,'Calfuzzer');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  114 ,'InstantCheck');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  115 ,'MutMut');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  116 ,'SAM');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  117 ,'No Information');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  118 ,'SyncTester');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  119 ,'Narada');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  119 ,'RaceFuzzer');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  120 ,'Intruder');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  122 ,'TransDPOR');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  122 ,'Basset');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  124 ,'Unamed prototype java');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  125 ,'TJT');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  126 ,'CHESS');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  127 ,'MCAPI');
+    INSERT INTO `selectt`.  `ToolName`  (`idTechnique`,   `toolName`  ) VALUES (  128 ,'CHESS');
 
 
 
@@ -693,11 +5030,11 @@
 
 
     -- -----------------------------------------------------
-    -- Table `dbo`.`Cost`
+    -- Table `selectt`.`Cost`
     -- -----------------------------------------------------
-    DROP TABLE IF EXISTS `dbo`.`Cost`; 
+    DROP TABLE IF EXISTS `selectt`.`Cost`; 
 
-    CREATE TABLE IF NOT EXISTS `dbo`.`Cost` (
+    CREATE TABLE IF NOT EXISTS `selectt`.`Cost` (
       `id` INT NOT NULL AUTO_INCREMENT,
       `idTechnique` INT NOT NULL,
       `cost` VARCHAR(255) NOT NULL,
@@ -706,194 +5043,277 @@
       INDEX `idTechnique_idx` (`idTechnique` ASC),
       CONSTRAINT `idTechnique_20`
         FOREIGN KEY (`idTechnique`)
-        REFERENCES `dbo`.`Technique` (`id`)
+        REFERENCES `selectt`.`Technique` (`id`)
         ON DELETE CASCADE
         ON UPDATE CASCADE)
     ENGINE = InnoDB;
 
-    INSERT INTO `dbo`.`Cost` (`id`,  `idTechnique`,  `cost`)  VALUES  (1,  1,  'Academic');
-    INSERT INTO `dbo`.`Cost` (`id`,  `idTechnique`,  `cost`)  VALUES  (2,  2,  'Academic');
 
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  1 ,'No Information');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  2 ,'Academic');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  3 ,'Academic');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  4 ,'Academic');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  5 ,'Academic');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  6 ,'Academic');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  7 ,'Academic');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  8 ,'Academic');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  9 ,'Academic');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  10  ,'Academic');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  11  ,'No Information');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  12  ,'Academic');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  13  ,'No Information');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  14  ,'Academic');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  15  ,'industry');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  17  ,'Academic');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  18  ,'Academic');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  19  ,'Academic');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  20  ,'Academic');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  21  ,'No Information');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  22  ,'Academic');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  23  ,'Academic');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  24  ,'Academic');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  25  ,'Academic');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  27  ,'Academic');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  29  ,'No Information');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  30  ,'No Information');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  31  ,'Academic');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  32  ,'Academic');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  33  ,'Academic');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  34  ,'No Information');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  35  ,'Academic');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  36  ,'Academic');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  37  ,'Academic');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  38  ,'Academic');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  39  ,'Academic');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  40  ,'Academic');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  43  ,'Academic');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  44  ,'Academic');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  45  ,'Academic');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  46  ,'Academic');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  47  ,'Academic');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  48  ,'Open source');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  49  ,'Open source');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  50  ,'Open source');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  51  ,'No Information');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  52  ,'No Information');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  53  ,'No Information');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  54  ,'No Information');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  55  ,'No Information');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  56  ,'No Information');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  57  ,'No Information');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  59  ,'No Information');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  60  ,'No Information');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  61  ,'No Information');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  62  ,'No Information');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  63  ,'No Information');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  64  ,'Academic');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  65  ,'Academic');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  66  ,'Academic');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  67  ,'Academic');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  68  ,'Academic');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  69  ,'Academic');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  70  ,'No Information');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  71  ,'Academic');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  72  ,'Academic');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  74  ,'Academic');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  75  ,'Academic');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  76  ,'No Information');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  77  ,'No Information');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  78  ,'No Information');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  80  ,'No Information');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  81  ,'No Information');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  82  ,'Academic');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  84  ,'Open source');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  85  ,'No Information');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  87  ,'Open source');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  88  ,'No Information');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  89  ,'No Information');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  90  ,'No Information');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  91  ,'No Information');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  92  ,'No Information');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  93  ,'No Information');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  94  ,'No Information');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  95  ,'No Information');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  96  ,'No Information');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  97  ,'Academic');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  99  ,'Academic');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  101 ,'No Information');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  102 ,'No Information');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  106 ,'No Information');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  107 ,'Academic');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  109 ,'No Information');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  110 ,'Academic');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  111 ,'No Information');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  113 ,'No Information');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  114 ,'No Information');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  115 ,'Academic');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  116 ,'Academic');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  117 ,'No Information');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  118 ,'No Information');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  119 ,'Academic');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  120 ,'Academic');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  122 ,'Open source');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  124 ,'Academic');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  125 ,'Academic');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  126 ,'No Information');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  127 ,'No Information');
+    INSERT INTO `selectt`.  `Cost`  (`idTechnique`,   `cost`  ) VALUES (  128 ,'No Information');
 
 
 
     -- -----------------------------------------------------
-    -- Table `dbo`.`PlatformTool`
+    -- Table `selectt`.`PlatformTool`
     -- -----------------------------------------------------
-    DROP TABLE IF EXISTS `dbo`.`PlatformTool`; 
+    DROP TABLE IF EXISTS `selectt`.`PlatformTool`; 
 
-    CREATE TABLE IF NOT EXISTS `dbo`.`PlatformTool` (
+    CREATE TABLE IF NOT EXISTS `selectt`.`PlatformTool` (
       `id` INT NOT NULL AUTO_INCREMENT,
       `idTechnique` INT NOT NULL,
-      `PlatformTool` VARCHAR(255) NOT NULL,
+      `platformTool` VARCHAR(255) NOT NULL,
       PRIMARY KEY (`id`),
       UNIQUE INDEX `id_UNIQUE` (`id` ASC),
       INDEX `idTechnique_idx` (`idTechnique` ASC),
       CONSTRAINT `idTechnique_21`
         FOREIGN KEY (`idTechnique`)
-        REFERENCES `dbo`.`Technique` (`id`)
+        REFERENCES `selectt`.`Technique` (`id`)
         ON DELETE CASCADE
         ON UPDATE CASCADE)
     ENGINE = InnoDB;
 
-
-    INSERT INTO `dbo`.`PlatformTool` (`id`,  `idTechnique`,  `platformTool`)  VALUES  (1,  1,  'Linux');
-    INSERT INTO `dbo`.`PlatformTool` (`id`,  `idTechnique`,  `platformTool`)  VALUES  (2,  2,  'Linux');
-
-
-    -- ID 3
-    INSERT INTO `Technique` (`id`,`title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (3, 'Comparative assessment of testing and model checking using program mutation', '2007', '@inproceedings{5,\r\nAuthor = {Jeremy S. Bradbury AND James R. Cordy AND Juergen Dingel},\r\nBooktitle = {Proc. of the 3rd Workshop on Mutation Analysis (Mutation 2007)},\r\nMonth = {Sept.},\r\nPages = {210-219},\r\nTitle = {Comparative Assessment of Testing and Model Checking Using Program Mutation},\r\nYear = {2007}}', 'ieeexplore.ieee.org/document/4344126/', 0, 'admin', '2017-07-30 11:51:07');
-    INSERT INTO `ExecutionPlatform` (`idTechnique`, `executionPlatform`) VALUES (3, 'Linux');
-    INSERT INTO `Objective` (`idTechnique`, `objective`) VALUES (3, 'Multithreading');
-    INSERT INTO `ProgrammingLanguage` (`idTechnique`, `programmingLanguage`) VALUES (3, 'Java');
-    INSERT INTO `TestingTechnique` (`idTechnique`, `testingTechnique`) VALUES (3, 'Fault-based testing');
-    INSERT INTO `TestDataGeneration` (`idTechnique`, `testDataGeneration`) VALUES (3, 'Mutation operators');
-    INSERT INTO `TestingLevel` (`idTechnique`, `testingLevel`) VALUES (3, 'Unit');
-    INSERT INTO `SynchronizationMechanism` (`idTechnique`, `synchronizationMechanism`) VALUES (3, 'Synchronization events');
-    INSERT INTO `SynchronizationMechanism` (`idTechnique`, `synchronizationMechanism`) VALUES (3, 'Thread schedules');
-    INSERT INTO `Input` (`idTechnique`, `input`) VALUES (3, 'Source code in Java');
-    INSERT INTO `Output` (`idTechnique`, `output`) VALUES (3, 'Number of faults detected');
-    INSERT INTO `QualityAttribute` (`idTechnique`, `qualityAttribute`) VALUES (3, 'Effectiveness');
-    INSERT INTO `TypeOfStudy` (`idTechnique`, `typeOfStudy`) VALUES (3, 'Experiment');
-    INSERT INTO `TestingAnalysis` (`idTechnique`, `testingAnalysis`) VALUES (3, 'Dynamic');
-    INSERT INTO `ConcurrentParadigm` (`idTechnique`, `concurrentParadigm`) VALUES (3, 'Shared memory');
-    INSERT INTO `ReplayMechanism` (`idTechnique`, `replayMechanism`) VALUES (3, 'Deterministic replay');
-    INSERT INTO `ProgramRepresentation` (`idTechnique`, `programRepresentation`) VALUES (3, 'No Information');
-    INSERT INTO `Instrumentation` (`idTechnique`, `instrumentation`) VALUES (3, 'Manual instrumentation');
-    INSERT INTO `StateSpaceReduction` (`idTechnique`, `stateSpaceReduction`) VALUES (3, 'Parallel randomized state-space search');
-    INSERT INTO `ConcurrentBugs` (`idTechnique`, `concurrentBugs`) VALUES (3, 'Assertion violation');
-    INSERT INTO `ConcurrentBugs` (`idTechnique`, `concurrentBugs`) VALUES (3, 'Deadlock');
-    INSERT INTO `ToolName` (`idTechnique`, `toolName`) VALUES (3, 'ExMan');
-    INSERT INTO `ToolName` (`idTechnique`, `toolName`) VALUES (3, 'Contest');
-    INSERT INTO `ToolName` (`idTechnique`, `toolName`) VALUES (3, 'JPF');
-    INSERT INTO `Cost` (`idTechnique`, `cost`) VALUES (3, 'Academic');
-    INSERT INTO `PlatformTool` (`idTechnique`, `platformTool`) VALUES (3, 'Linux');
-
-
-
-    -- ID 4
-    INSERT INTO `Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (4 ,'Location pairs: a test coverage metric for shared-memory concurrent programs', '2012', '\"@article{10,\r\n author = {Serdar Tasiran and\r\n M. Erkan Keremoglu and\r\n Kivan{\\c{c}} Muslu},\r\n title = {Location pairs: a test coverage metric for shared-memory concurrent\r\n programs},\r\n journal = {Empirical Software Engineering},\r\n volume = {17},\r\n number = {3},\r\n pages = {129--165},\r\n year = {2012},\r\n url = {http://dx.doi.org/10.1007/s10664-011-9166-8},\r\n doi = {10.1007/s10664-011-9166-8},\r\n timestamp = {Fri, 24 Feb 2012 00:00:00 +0100},\r\n biburl = {http://dblp.uni-trier.de/rec/bib/journals/ese/TasiranKM12},\r\n bibsource = {dblp computer science bibliography, http://dblp.org}\r\n}\"', 'link.springer.com/article/10.1007/s10664-011-9166-8', 0, 'admin', '2017-07-30 12:04:00');
-    INSERT INTO `ExecutionPlatform` (`idTechnique`, `executionPlatform`) VALUES (4, 'No Information');
-    INSERT INTO `Objective` (`idTechnique`, `objective`) VALUES (4, 'Multithreading');
-    INSERT INTO `ProgrammingLanguage` (`idTechnique`, `programmingLanguage`) VALUES (4, 'Java');
-    INSERT INTO `TestingTechnique` (`idTechnique`, `testingTechnique`) VALUES (4, 'Structural testing');
-    INSERT INTO `TestDataGeneration` (`idTechnique`, `testDataGeneration`) VALUES (4, 'Coverage metric');
-    INSERT INTO `TestDataGeneration` (`idTechnique`, `testDataGeneration`) VALUES (4, 'Location Pair (LP)');
-    INSERT INTO `TestingLevel` (`idTechnique`, `testingLevel`) VALUES (4, 'No Information');
-    INSERT INTO `SynchronizationMechanism` (`idTechnique`, `synchronizationMechanism`) VALUES (4, 'Location pairs');
-    INSERT INTO `Input` (`idTechnique`, `input`) VALUES (4, 'Java bytecode');
-    INSERT INTO `Output` (`idTechnique`, `output`) VALUES (4, 'Test adequacy: percentage of iterations for which a metric was successful');
-    INSERT INTO `QualityAttribute` (`idTechnique`, `qualityAttribute`) VALUES (4, 'Effectiveness');
-    INSERT INTO `QualityAttribute` (`idTechnique`, `qualityAttribute`) VALUES (4, 'Efficiency');
-    INSERT INTO `QualityAttribute` (`idTechnique`, `qualityAttribute`) VALUES (4, 'Scalability');
-    INSERT INTO `TypeOfStudy` (`idTechnique`, `typeOfStudy`) VALUES (4, 'Case study');
-    INSERT INTO `TestingAnalysis` (`idTechnique`, `testingAnalysis`) VALUES (4, 'Static');
-    INSERT INTO `TestingAnalysis` (`idTechnique`, `testingAnalysis`) VALUES (4, 'Dynamic');
-    INSERT INTO `ConcurrentParadigm` (`idTechnique`, `concurrentParadigm`) VALUES (4, 'Shared memory');
-    INSERT INTO `ReplayMechanism` (`idTechnique`, `replayMechanism`) VALUES (4, 'Controlled thread schedule');
-    INSERT INTO `ProgramRepresentation` (`idTechnique`, `programRepresentation`) VALUES (4, 'Control flow graph (CFG)');
-    INSERT INTO `Instrumentation` (`idTechnique`, `instrumentation`) VALUES (4, 'JPF instrumentator');
-    INSERT INTO `StateSpaceReduction` (`idTechnique`, `stateSpaceReduction`) VALUES (4, 'State transition coverage');
-    INSERT INTO `ConcurrentBugs` (`idTechnique`, `concurrentBugs`) VALUES (4, 'High-level concurrency errors');
-    INSERT INTO `ConcurrentBugs` (`idTechnique`, `concurrentBugs`) VALUES (4, 'Atomicity violation');
-    INSERT INTO `ConcurrentBugs` (`idTechnique`, `concurrentBugs`) VALUES (4, 'Refinement violations');
-    INSERT INTO `ConcurrentBugs` (`idTechnique`, `concurrentBugs`) VALUES (4, 'Data race');
-    INSERT INTO `ToolName` (`idTechnique`, `toolName`) VALUES (4, 'Monitoring tool');
-    INSERT INTO `ToolName` (`idTechnique`, `toolName`) VALUES (4, 'JavaPathfinder');
-    INSERT INTO `Cost` (`idTechnique`, `cost`) VALUES (4, 'Academic');
-    INSERT INTO `PlatformTool` (`idTechnique`, `platformTool`) VALUES (4, 'No Information');
-
-
-    -- ID 5
-    INSERT INTO `Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (5, 'Applications of Model Reuse When Using Estimation of Distribution Algorithms to Test Concurrent Software', '2011', '\"@inproceedings{99, \r\n author = {Staunton, Jan and Clark, John A.},\r\n title = {Applications of Model Reuse when Using Estimation of Distribution Algorithms to Test Concurrent Software},\r\n booktitle = {Proceedings of the Third International Conference on Search Based Software Engineering},\r\n series = {SSBSE\'11},\r\n year = {2011},\r\n isbn = {978-3-642-23715-7},\r\n location = {Szeged, Hungary},\r\n pages = {97--111},\r\n numpages = {15},\r\n url = {http://dl.acm.org/citation.cfm?id=2042243.2042260},\r\n acmid = {2042260},\r\n publisher = {Springer-Verlag},\r\n address = {Berlin, Heidelberg},\r\n} \r\n\"', 'www.ssbse.org/2011/presentations/.../Staunton_EDA.pdf', 0, 'admin', '2017-07-30 12:09:06');
-    INSERT INTO `ExecutionPlatform` (`idTechnique`, `executionPlatform`) VALUES (5, 'No Information');
-    INSERT INTO `Objective` (`idTechnique`, `objective`) VALUES (5, 'Distributed systems');
-    INSERT INTO `ProgrammingLanguage` (`idTechnique`, `programmingLanguage`) VALUES (5, 'Java');
-    INSERT INTO `TestingTechnique` (`idTechnique`, `testingTechnique`) VALUES (5, 'Model based testing');
-    INSERT INTO `TestDataGeneration` (`idTechnique`, `testDataGeneration`) VALUES (5, 'Search based testing');
-    INSERT INTO `TestingLevel` (`idTechnique`, `testingLevel`) VALUES (5, 'System');
-    INSERT INTO `SynchronizationMechanism` (`idTechnique`, `synchronizationMechanism`) VALUES (5, 'Model reuse');
-    INSERT INTO `SynchronizationMechanism` (`idTechnique`, `synchronizationMechanism`) VALUES (5, 'Estimation distributed algorithm (EDA)');
-    INSERT INTO `Input` (`idTechnique`, `input`) VALUES (5, 'System specification in LTL');
-    INSERT INTO `Output` (`idTechnique`, `output`) VALUES (5, 'Time in finding a error');
-    INSERT INTO `QualityAttribute` (`idTechnique`, `qualityAttribute`) VALUES (5, 'Efficiency');
-    INSERT INTO `TypeOfStudy` (`idTechnique`, `typeOfStudy`) VALUES (5, 'Case study');
-    INSERT INTO `TestingAnalysis` (`idTechnique`, `testingAnalysis`) VALUES (5, 'Dynamic');
-    INSERT INTO `ConcurrentParadigm` (`idTechnique`, `concurrentParadigm`) VALUES (5, 'Shared memory');
-    INSERT INTO `ReplayMechanism` (`idTechnique`, `replayMechanism`) VALUES (5, 'Model reuse');
-    INSERT INTO `ProgramRepresentation` (`idTechnique`, `programRepresentation`) VALUES (5, 'State space graph');
-    INSERT INTO `ProgramRepresentation` (`idTechnique`, `programRepresentation`) VALUES (5, 'ltl model');
-    INSERT INTO `Instrumentation` (`idTechnique`, `instrumentation`) VALUES (5, 'No Information');
-    INSERT INTO `StateSpaceReduction` (`idTechnique`, `stateSpaceReduction`) VALUES (5, 'Fitness functions');
-    INSERT INTO `StateSpaceReduction` (`idTechnique`, `stateSpaceReduction`) VALUES (5, 'Heuristic mechanisms');
-    INSERT INTO `ConcurrentBugs` (`idTechnique`, `concurrentBugs`) VALUES (5, 'Deadlock');
-    INSERT INTO `ConcurrentBugs` (`idTechnique`, `concurrentBugs`) VALUES (5, 'Bugs inserted by the researcher');
-    INSERT INTO `ToolName` (`idTechnique`, `toolName`) VALUES (5, 'ECJ');
-    INSERT INTO `ToolName` (`idTechnique`, `toolName`) VALUES (5, 'HSF-SPIN');
-    INSERT INTO `Cost` (`idTechnique`, `cost`) VALUES (5, 'No Information');
-    INSERT INTO `PlatformTool` (`idTechnique`, `platformTool`) VALUES (5, 'No Information');
-
-
-    -- ID 6
-    INSERT INTO `Technique` (`id`, `title`, `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (6, 'Race Detection for Android Applications', '2015', '\"@article{91,\r\n author = {Maiya, Pallavi and Kanade, Aditya and Majumdar, Rupak},\r\n title = {Race Detection for Android Applications},\r\n journal = {SIGPLAN Not.},\r\n issue_date = {June 2014},\r\n volume = {49},\r\n number = {6},\r\n month = jun,\r\n year = {2014},\r\n issn = {0362-1340},\r\n pages = {316--325},\r\n numpages = {10},\r\n url = {http://doi.acm.org/10.1145/2666356.2594311},\r\n doi = {10.1145/2666356.2594311},\r\n acmid = {2594311},\r\n publisher = {ACM},\r\n address = {New York, NY, USA},\r\n keywords = {Android concurrency semantics, data races, happens-before reasoning},\r\n} \"', 'dl.acm.org/citation.cfm?id=2594311', 0, 'admin', '2017-07-30 12:12:46');
-    INSERT INTO `ExecutionPlatform` (`idTechnique`, `executionPlatform`) VALUES (6, 'Android');
-    INSERT INTO `Objective` (`idTechnique`, `objective`) VALUES (6, 'Android applications');
-    INSERT INTO `ProgrammingLanguage` (`idTechnique`, `programmingLanguage`) VALUES (6, 'Java');
-    INSERT INTO `TestingTechnique` (`idTechnique`, `testingTechnique`) VALUES (6, 'Fault-based testing');
-    INSERT INTO `TestDataGeneration` (`idTechnique`, `testDataGeneration`) VALUES (6, 'Event driven programming model');
-    INSERT INTO `TestingLevel` (`idTechnique`, `testingLevel`) VALUES (6, 'System');
-    INSERT INTO `SynchronizationMechanism` (`idTechnique`, `synchronizationMechanism`) VALUES (6, 'Control flow');
-    INSERT INTO `Input` (`idTechnique`, `input`) VALUES (6, 'Android applications');
-    INSERT INTO `Output` (`idTechnique`, `output`) VALUES (6, 'Number of data races reported');
-    INSERT INTO `Output` (`idTechnique`, `output`) VALUES (6, 'Number of reports generated by DROIDRACER');
-    INSERT INTO `Output` (`idTechnique`, `output`) VALUES (6, 'Number of true and false positives');
-    INSERT INTO `QualityAttribute` (`idTechnique`, `qualityAttribute`) VALUES (6, 'Performance');
-    INSERT INTO `TypeOfStudy` (`idTechnique`, `typeOfStudy`) VALUES (6, 'Case study');
-    INSERT INTO `TestingAnalysis` (`idTechnique`, `testingAnalysis`) VALUES (6, 'Dynamic');
-    INSERT INTO `ConcurrentParadigm` (`idTechnique`, `concurrentParadigm`) VALUES (6, 'Shared memory');
-    INSERT INTO `ReplayMechanism` (`idTechnique`, `replayMechanism`) VALUES (6, 'Happens-before relations');
-    INSERT INTO `ProgramRepresentation` (`idTechnique`, `programRepresentation`) VALUES (6, 'Happens-before graph');
-    INSERT INTO `Instrumentation` (`idTechnique`, `instrumentation`) VALUES (6, 'Droidracer instrumentation');
-    INSERT INTO `StateSpaceReduction` (`idTechnique`, `stateSpaceReduction`) VALUES (6, 'Android runtime enviroments to reduce false positives');
-    INSERT INTO `ConcurrentBugs` (`idTechnique`, `concurrentBugs`) VALUES (6, 'Data race');
-    INSERT INTO `ToolName` (`idTechnique`, `toolName`) VALUES (6, 'No Information');
-    INSERT INTO `Cost` (`idTechnique`, `cost`) VALUES (6, 'No Information');
-    INSERT INTO `PlatformTool` (`idTechnique`, `platformTool`) VALUES (6, 'Android');
-
-    -- ID 7
-    INSERT INTO `Technique` (`id`, `title` , `year`, `bibTex`, `link`, `needApproval`, `insertedBy`, `insertedOn`) VALUES (7, 'Test-Data Generation for Testing Parallel Real-Time Systems', '2013', '\"@inproceedings{95,\r\n author = {Muhammad Waqar Aziz and\r\n Syed Abdul Baqi Shah},\r\n title = {Test-Data Generation for Testing Parallel Real-Time Systems},\r\n booktitle = {Testing Software and Systems - 27th {IFIP} {WG} 6.1 International\r\n Conference, {ICTSS} 2015, Sharjah and Dubai, United Arab Emirates,\r\n November 23-25, 2015, Proceedings},\r\n pages = {211--223},\r\n year = {2015},\r\n crossref = {DBLP:conf/pts/2015},\r\n url = {http://dx.doi.org/10.1007/978-3-319-25945-1_13},\r\n doi = {10.1007/978-3-319-25945-1_13},\r\n timestamp = {Mon, 09 Nov 2015 13:21:44 +0100},\r\n biburl = {http://dblp2.uni-trier.de/rec/bib/conf/pts/AzizS15},\r\n bibsource = {dblp computer science bibliography, http://dblp.org}\r\n}\"', 'link.springer.com/chapter/10.1007/978-3-319-25945-1_13', 0, 'admin', '2017-07-30 12:21:49');
-    INSERT INTO `ExecutionPlatform` (`idTechnique`, `executionPlatform`) VALUES (7, 'Unix');
-    INSERT INTO `ExecutionPlatform` (`idTechnique`, `executionPlatform`) VALUES (7, 'Linux');
-    INSERT INTO `Objective` (`idTechnique`, `objective`) VALUES (7, 'HPC');
-    INSERT INTO `ProgrammingLanguage` (`idTechnique`, `programmingLanguage`) VALUES (7, 'C');
-    INSERT INTO `ProgrammingLanguage` (`idTechnique`, `programmingLanguage`) VALUES (7, 'Pthread');
-    INSERT INTO `TestingTechnique` (`idTechnique`, `testingTechnique`) VALUES (7, 'Functional testing');
-    INSERT INTO `TestDataGeneration` (`idTechnique`, `testDataGeneration`) VALUES (7, 'Search based testing');
-    INSERT INTO `TestingLevel` (`idTechnique`, `testingLevel`) VALUES (7, 'System');
-    INSERT INTO `SynchronizationMechanism` (`idTechnique`, `synchronizationMechanism`) VALUES (7, 'Worst case execution time');
-    INSERT INTO `Input` (`idTechnique`, `input`) VALUES (7, 'Real-time systems');
-    INSERT INTO `Output` (`idTechnique`, `output`) VALUES (7, 'End-to-end execution time');
-    INSERT INTO `QualityAttribute` (`idTechnique`, `qualityAttribute`) VALUES (7, 'Performance');
-    INSERT INTO `QualityAttribute` (`idTechnique`, `qualityAttribute`) VALUES (7, 'Scalability');
-    INSERT INTO `TypeOfStudy` (`idTechnique`, `typeOfStudy`) VALUES (7, 'Case study');
-    INSERT INTO `TestingAnalysis` (`idTechnique`, `testingAnalysis`) VALUES (7, 'Static');
-    INSERT INTO `ConcurrentParadigm` (`idTechnique`, `concurrentParadigm`) VALUES (7, 'Shared memory');
-    INSERT INTO `ReplayMechanism` (`idTechnique`, `replayMechanism`) VALUES (7, 'No Information');
-    INSERT INTO `ProgramRepresentation` (`idTechnique`, `programRepresentation`) VALUES (7, 'No Information');
-    INSERT INTO `Instrumentation` (`idTechnique`, `instrumentation`) VALUES (7, 'No Information');
-    INSERT INTO `StateSpaceReduction` (`idTechnique`, `stateSpaceReduction`) VALUES (7, 'GA algorithm');
-    INSERT INTO `ConcurrentBugs` (`idTechnique`, `concurrentBugs`) VALUES (7, 'Bugs inserted by the researcher');
-    INSERT INTO `ToolName` (`idTechnique`, `toolName`) VALUES (7, 'No Information');
-    INSERT INTO `Cost` (`idTechnique`, `cost`) VALUES (7, 'No Information');
-    INSERT INTO `PlatformTool` (`idTechnique`, `platformTool`) VALUES (7, 'Linux');
+  
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  1 ,'No Information');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  2 ,'Linux');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  3 ,'No Information');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  4 ,'Unix');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  5 ,'Linux');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  6 ,'Linux');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  7 ,'No Information');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  8 ,'No Information');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  9 ,'No Information');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  10  ,'No Information');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  11  ,'No Information');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  12  ,'Windows');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  13  ,'No Information');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  14  ,'Unix');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  15  ,'No Information');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  17  ,'No Information');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  18  ,'Linux');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  19  ,'No Information');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  20  ,'Linux');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  21  ,'No Information');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  22  ,'Linux');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  23  ,'Linux');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  24  ,'Windows');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  25  ,'No Information');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  27  ,'Linux');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  29  ,'No Information');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  30  ,'No Information');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  31  ,'Linux');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  32  ,'No Information');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  33  ,'Linux');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  34  ,'No Information');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  35  ,'Linux');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  36  ,'No Information');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  37  ,'No Information');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  38  ,'Windows');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  39  ,'Linux');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  40  ,'No Information');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  43  ,'Linux');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  44  ,'Sun');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  45  ,'Linux');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  46  ,'No Information');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  47  ,'No Information');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  48  ,'No Information');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  49  ,'Windows');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  50  ,'No Information');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  51  ,'Windows');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  52  ,'Windows');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  53  ,'No Information');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  54  ,'No Information');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  55  ,'No Information');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  56  ,'Windows');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  56  ,'Unix');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  57  ,'No Information');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  59  ,'Linux');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  60  ,'No Information');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  61  ,'No Information');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  62  ,'Linux');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  63  ,'Linux');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  64  ,'Linux');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  65  ,'Linux');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  65  ,'Unix');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  66  ,'Linux');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  67  ,'Linux');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  68  ,'Linux');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  69  ,'Linux');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  70  ,'Linux');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  71  ,'No Information');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  72  ,'Linux');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  74  ,'Unix');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  75  ,'Linux');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  76  ,'Unix');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  77  ,'Linux');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  78  ,'No Information');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  80  ,'Windows');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  81  ,'Linux');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  82  ,'Linux');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  84  ,'Linux');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  85  ,'No Information');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  87  ,'Linux');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  88  ,'Unix');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  89  ,'Linux');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  90  ,'No Information');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  91  ,'Android');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  92  ,'Windows');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  92  ,'Solaris');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  92  ,'Unix');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  93  ,'No Information');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  94  ,'No Information');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  95  ,'Linux');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  96  ,'Linux');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  97  ,'No Information');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  99  ,'No Information');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  101 ,'Linux');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  102 ,'No Information');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  106 ,'Unix');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  107 ,'No Information');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  109 ,'Linux');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  110 ,'Linux');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  111 ,'Linux');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  113 ,'No Information');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  114 ,'No Information');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  115 ,'Linux');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  116 ,'Windows');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  117 ,'No Information');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  118 ,'No Information');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  119 ,'Linux');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  120 ,'Linux');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  122 ,'Unix');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  124 ,'No Information');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  125 ,'No Information');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  126 ,'Windows');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  127 ,'Linux');
+    INSERT INTO `selectt`.  `PlatformTool`  (`idTechnique`,   `platformTool`  ) VALUES (  128 ,'Windows');
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+   -- -----------------------------------------------------
+    -- Table `selectt`.`ResultTechnique`
     -- -----------------------------------------------------
-    -- Table `dbo`.`ResultTechnique`
-    -- -----------------------------------------------------
-    DROP TABLE IF EXISTS `dbo`.`ResultTechnique`; 
+    DROP TABLE IF EXISTS `selectt`.`ResultTechnique`; 
 
-    CREATE TABLE IF NOT EXISTS `dbo`.`ResultTechnique` (
+    CREATE TABLE IF NOT EXISTS `selectt`.`ResultTechnique` (
       `id` INT NOT NULL AUTO_INCREMENT,
       `title` VARCHAR(255) NOT NULL,
       `insertedBy` VARCHAR(128) NOT NULL DEFAULT 'admin',
@@ -904,11 +5324,11 @@
 
 
     -- -----------------------------------------------------
-    -- Table `dbo`.`ResultExecutionPlatform`
+    -- Table `selectt`.`ResultExecutionPlatform`
     -- -----------------------------------------------------
-    DROP TABLE IF EXISTS `dbo`.`ResultExecutionPlatform`; 
+    DROP TABLE IF EXISTS `selectt`.`ResultExecutionPlatform`; 
 
-    CREATE TABLE IF NOT EXISTS `dbo`.`ResultExecutionPlatform` (
+    CREATE TABLE IF NOT EXISTS `selectt`.`ResultExecutionPlatform` (
       `id` INT NOT NULL AUTO_INCREMENT,
       `idTechniqueResult` INT NOT NULL,
       `executionPlatform` VARCHAR(255) NOT NULL,
@@ -917,17 +5337,17 @@
       INDEX `idTechniqueResult_idx` (`idTechniqueResult` ASC),
       CONSTRAINT `idTechniqueResult_1`
         FOREIGN KEY (`idTechniqueResult`)
-        REFERENCES `dbo`.`ResultTechnique` (`id`)
+        REFERENCES `selectt`.`ResultTechnique` (`id`)
         ON DELETE CASCADE
         ON UPDATE CASCADE)
     ENGINE = InnoDB;
 
     -- -----------------------------------------------------
-    -- Table `dbo`.`ResultObjective`
+    -- Table `selectt`.`ResultObjective`
     -- -----------------------------------------------------
-    DROP TABLE IF EXISTS `dbo`.`ResultObjective`; 
+    DROP TABLE IF EXISTS `selectt`.`ResultObjective`; 
 
-    CREATE TABLE IF NOT EXISTS `dbo`.`ResultObjective` (
+    CREATE TABLE IF NOT EXISTS `selectt`.`ResultObjective` (
       `id` INT NOT NULL AUTO_INCREMENT,
       `idTechniqueResult` INT NOT NULL,
       `objective` VARCHAR(255) NOT NULL,
@@ -936,17 +5356,17 @@
       INDEX `idTechniqueResult_idx` (`idTechniqueResult` ASC),
       CONSTRAINT `idTechniqueResult_2`
         FOREIGN KEY (`idTechniqueResult`)
-        REFERENCES `dbo`.`ResultTechnique` (`id`)
+        REFERENCES `selectt`.`ResultTechnique` (`id`)
         ON DELETE CASCADE
         ON UPDATE CASCADE)
     ENGINE = InnoDB;
 
     -- -----------------------------------------------------
-    -- Table `dbo`.`ResultProgrammingLanguage`
+    -- Table `selectt`.`ResultProgrammingLanguage`
     -- -----------------------------------------------------
-    DROP TABLE IF EXISTS `dbo`.`ResultProgrammingLanguage`; 
+    DROP TABLE IF EXISTS `selectt`.`ResultProgrammingLanguage`; 
 
-    CREATE TABLE IF NOT EXISTS `dbo`.`ResultProgrammingLanguage` (
+    CREATE TABLE IF NOT EXISTS `selectt`.`ResultProgrammingLanguage` (
       `id` INT NOT NULL AUTO_INCREMENT,
       `idTechniqueResult` INT NOT NULL,
       `programmingLanguage` VARCHAR(255) NOT NULL,
@@ -955,17 +5375,17 @@
       INDEX `idTechniqueResult_idx` (`idTechniqueResult` ASC),
       CONSTRAINT `idTechniqueResult_3`
         FOREIGN KEY (`idTechniqueResult`)
-        REFERENCES `dbo`.`ResultTechnique` (`id`)
+        REFERENCES `selectt`.`ResultTechnique` (`id`)
         ON DELETE CASCADE
         ON UPDATE CASCADE)
     ENGINE = InnoDB;
 
     -- -----------------------------------------------------
-    -- Table `dbo`.`ResultTestingTechnique`
+    -- Table `selectt`.`ResultTestingTechnique`
     -- -----------------------------------------------------
-    DROP TABLE IF EXISTS `dbo`.`ResultTestingTechnique`; 
+    DROP TABLE IF EXISTS `selectt`.`ResultTestingTechnique`; 
 
-    CREATE TABLE IF NOT EXISTS `dbo`.`ResultTestingTechnique` (
+    CREATE TABLE IF NOT EXISTS `selectt`.`ResultTestingTechnique` (
       `id` INT NOT NULL AUTO_INCREMENT,
       `idTechniqueResult` INT NOT NULL,
       `testingTechnique` VARCHAR(255) NOT NULL,
@@ -974,18 +5394,18 @@
       INDEX `idTechniqueResult_idx` (`idTechniqueResult` ASC),
       CONSTRAINT `idTechniqueResult_4`
         FOREIGN KEY (`idTechniqueResult`)
-        REFERENCES `dbo`.`ResultTechnique` (`id`)
+        REFERENCES `selectt`.`ResultTechnique` (`id`)
         ON DELETE CASCADE
         ON UPDATE CASCADE)
     ENGINE = InnoDB;
 
 
     -- -----------------------------------------------------
-    -- Table `dbo`.`ResultTestDataGeneration`
+    -- Table `selectt`.`ResultTestDataGeneration`
     -- -----------------------------------------------------
-    DROP TABLE IF EXISTS `dbo`.`ResultTestDataGeneration`; 
+    DROP TABLE IF EXISTS `selectt`.`ResultTestDataGeneration`; 
 
-    CREATE TABLE IF NOT EXISTS `dbo`.`ResultTestDataGeneration` (
+    CREATE TABLE IF NOT EXISTS `selectt`.`ResultTestDataGeneration` (
       `id` INT NOT NULL AUTO_INCREMENT,
       `idTechniqueResult` INT NOT NULL,
       `testDataGeneration` VARCHAR(255) NOT NULL,
@@ -994,17 +5414,17 @@
       INDEX `idTechniqueResult_idx` (`idTechniqueResult` ASC),
       CONSTRAINT `idTechniqueResult_5`
         FOREIGN KEY (`idTechniqueResult`)
-        REFERENCES `dbo`.`ResultTechnique` (`id`)
+        REFERENCES `selectt`.`ResultTechnique` (`id`)
         ON DELETE CASCADE
         ON UPDATE CASCADE)
     ENGINE = InnoDB;
 
     -- -----------------------------------------------------
-    -- Table `dbo`.`ResultTestingLevel`
+    -- Table `selectt`.`ResultTestingLevel`
     -- -----------------------------------------------------
-    DROP TABLE IF EXISTS `dbo`.`ResultTestingLevel`; 
+    DROP TABLE IF EXISTS `selectt`.`ResultTestingLevel`; 
 
-    CREATE TABLE IF NOT EXISTS `dbo`.`ResultTestingLevel` (
+    CREATE TABLE IF NOT EXISTS `selectt`.`ResultTestingLevel` (
       `id` INT NOT NULL AUTO_INCREMENT,
       `idTechniqueResult` INT NOT NULL,
       `testingLevel` VARCHAR(255) NOT NULL,
@@ -1013,17 +5433,17 @@
       INDEX `idTechniqueResult_idx` (`idTechniqueResult` ASC),
       CONSTRAINT `idTechniqueResult_6`
         FOREIGN KEY (`idTechniqueResult`)
-        REFERENCES `dbo`.`ResultTechnique` (`id`)
+        REFERENCES `selectt`.`ResultTechnique` (`id`)
         ON DELETE CASCADE
         ON UPDATE CASCADE)
     ENGINE = InnoDB;
 
     -- -----------------------------------------------------
-    -- Table `dbo`.`ResultSynchronizationMechanism`
+    -- Table `selectt`.`ResultSynchronizationMechanism`
     -- -----------------------------------------------------
-    DROP TABLE IF EXISTS `dbo`.`ResultSynchronizationMechanism`; 
+    DROP TABLE IF EXISTS `selectt`.`ResultSynchronizationMechanism`; 
 
-    CREATE TABLE IF NOT EXISTS `dbo`.`ResultSynchronizationMechanism` (
+    CREATE TABLE IF NOT EXISTS `selectt`.`ResultSynchronizationMechanism` (
       `id` INT NOT NULL AUTO_INCREMENT,
       `idTechniqueResult` INT NOT NULL,
       `synchronizationMechanism` VARCHAR(255) NOT NULL,
@@ -1032,17 +5452,17 @@
       INDEX `idTechniqueResult_idx` (`idTechniqueResult` ASC),
       CONSTRAINT `idTechniqueResult_7`
         FOREIGN KEY (`idTechniqueResult`)
-        REFERENCES `dbo`.`ResultTechnique` (`id`)
+        REFERENCES `selectt`.`ResultTechnique` (`id`)
         ON DELETE CASCADE
         ON UPDATE CASCADE)
     ENGINE = InnoDB;
 
     -- -----------------------------------------------------
-    -- Table `dbo`.`ResultInput`
+    -- Table `selectt`.`ResultInput`
     -- -----------------------------------------------------
-    DROP TABLE IF EXISTS `dbo`.`ResultInput`; 
+    DROP TABLE IF EXISTS `selectt`.`ResultInput`; 
 
-    CREATE TABLE IF NOT EXISTS `dbo`.`ResultInput` (
+    CREATE TABLE IF NOT EXISTS `selectt`.`ResultInput` (
       `id` INT NOT NULL AUTO_INCREMENT,
       `idTechniqueResult` INT NOT NULL,
       `input` VARCHAR(255) NOT NULL,
@@ -1051,17 +5471,17 @@
       INDEX `idTechniqueResult_idx` (`idTechniqueResult` ASC),
       CONSTRAINT `idTechniqueResult_8`
         FOREIGN KEY (`idTechniqueResult`)
-        REFERENCES `dbo`.`ResultTechnique` (`id`)
+        REFERENCES `selectt`.`ResultTechnique` (`id`)
         ON DELETE CASCADE
         ON UPDATE CASCADE)
     ENGINE = InnoDB;
 
     -- -----------------------------------------------------
-    -- Table `dbo`.`ResultOutput`
+    -- Table `selectt`.`ResultOutput`
     -- -----------------------------------------------------
-    DROP TABLE IF EXISTS `dbo`.`ResultOutput`; 
+    DROP TABLE IF EXISTS `selectt`.`ResultOutput`; 
 
-    CREATE TABLE IF NOT EXISTS `dbo`.`ResultOutput` (
+    CREATE TABLE IF NOT EXISTS `selectt`.`ResultOutput` (
       `id` INT NOT NULL AUTO_INCREMENT,
       `idTechniqueResult` INT NOT NULL,
       `output` VARCHAR(255) NOT NULL,
@@ -1070,17 +5490,17 @@
       INDEX `idTechniqueResult_idx` (`idTechniqueResult` ASC),
       CONSTRAINT `idTechniqueResult_9`
         FOREIGN KEY (`idTechniqueResult`)
-        REFERENCES `dbo`.`ResultTechnique` (`id`)
+        REFERENCES `selectt`.`ResultTechnique` (`id`)
         ON DELETE CASCADE
         ON UPDATE CASCADE)
     ENGINE = InnoDB;
 
     -- -----------------------------------------------------
-    -- Table `dbo`.`ResultQualityAttribute`
+    -- Table `selectt`.`ResultQualityAttribute`
     -- -----------------------------------------------------
-    DROP TABLE IF EXISTS `dbo`.`ResultQualityAttribute`; 
+    DROP TABLE IF EXISTS `selectt`.`ResultQualityAttribute`; 
 
-    CREATE TABLE IF NOT EXISTS `dbo`.`ResultQualityAttribute` (
+    CREATE TABLE IF NOT EXISTS `selectt`.`ResultQualityAttribute` (
       `id` INT NOT NULL AUTO_INCREMENT,
       `idTechniqueResult` INT NOT NULL,
       `qualityAttribute` VARCHAR(255) NOT NULL,
@@ -1089,18 +5509,18 @@
       INDEX `idTechniqueResult_idx` (`idTechniqueResult` ASC),
       CONSTRAINT `idTechniqueResult_10`
         FOREIGN KEY (`idTechniqueResult`)
-        REFERENCES `dbo`.`ResultTechnique` (`id`)
+        REFERENCES `selectt`.`ResultTechnique` (`id`)
         ON DELETE CASCADE
         ON UPDATE CASCADE)
     ENGINE = InnoDB;
 
 
     -- -----------------------------------------------------
-    -- Table `dbo`.`ResultTypeOfStudy`
+    -- Table `selectt`.`ResultTypeOfStudy`
     -- -----------------------------------------------------
-    DROP TABLE IF EXISTS `dbo`.`ResultTypeOfStudy`; 
+    DROP TABLE IF EXISTS `selectt`.`ResultTypeOfStudy`; 
 
-    CREATE TABLE IF NOT EXISTS `dbo`.`ResultTypeOfStudy` (
+    CREATE TABLE IF NOT EXISTS `selectt`.`ResultTypeOfStudy` (
       `id` INT NOT NULL AUTO_INCREMENT,
       `idTechniqueResult` INT NOT NULL,
       `typeOfStudy` VARCHAR(255) NOT NULL,
@@ -1109,17 +5529,17 @@
       INDEX `idTechniqueResult_idx` (`idTechniqueResult` ASC),
       CONSTRAINT `idTechniqueResult_11`
         FOREIGN KEY (`idTechniqueResult`)
-        REFERENCES `dbo`.`ResultTechnique` (`id`)
+        REFERENCES `selectt`.`ResultTechnique` (`id`)
         ON DELETE CASCADE
         ON UPDATE CASCADE)
     ENGINE = InnoDB;
 
     -- -----------------------------------------------------
-    -- Table `dbo`.`ResultTestingAnalysis`
+    -- Table `selectt`.`ResultTestingAnalysis`
     -- -----------------------------------------------------
-    DROP TABLE IF EXISTS `dbo`.`ResultTestingAnalysis`; 
+    DROP TABLE IF EXISTS `selectt`.`ResultTestingAnalysis`; 
 
-    CREATE TABLE IF NOT EXISTS `dbo`.`ResultTestingAnalysis` (
+    CREATE TABLE IF NOT EXISTS `selectt`.`ResultTestingAnalysis` (
       `id` INT NOT NULL AUTO_INCREMENT,
       `idTechniqueResult` INT NOT NULL,
       `testingAnalysis` VARCHAR(255) NOT NULL,
@@ -1128,17 +5548,17 @@
       INDEX `idTechniqueResult_idx` (`idTechniqueResult` ASC),
       CONSTRAINT `idTechniqueResult_12`
         FOREIGN KEY (`idTechniqueResult`)
-        REFERENCES `dbo`.`ResultTechnique` (`id`)
+        REFERENCES `selectt`.`ResultTechnique` (`id`)
         ON DELETE CASCADE
         ON UPDATE CASCADE)
     ENGINE = InnoDB;
 
     -- -----------------------------------------------------
-    -- Table `dbo`.`ResultConcurrentParadigm`
+    -- Table `selectt`.`ResultConcurrentParadigm`
     -- -----------------------------------------------------
-    DROP TABLE IF EXISTS `dbo`.`ResultConcurrentParadigm`; 
+    DROP TABLE IF EXISTS `selectt`.`ResultConcurrentParadigm`; 
 
-    CREATE TABLE IF NOT EXISTS `dbo`.`ResultConcurrentParadigm` (
+    CREATE TABLE IF NOT EXISTS `selectt`.`ResultConcurrentParadigm` (
       `id` INT NOT NULL AUTO_INCREMENT,
       `idTechniqueResult` INT NOT NULL,
       `concurrentParadigm` VARCHAR(255) NOT NULL,
@@ -1147,17 +5567,17 @@
       INDEX `idTechniqueResult_idx` (`idTechniqueResult` ASC),
       CONSTRAINT `idTechniqueResult_13`
         FOREIGN KEY (`idTechniqueResult`)
-        REFERENCES `dbo`.`ResultTechnique` (`id`)
+        REFERENCES `selectt`.`ResultTechnique` (`id`)
         ON DELETE CASCADE
         ON UPDATE CASCADE)
     ENGINE = InnoDB;
 
     -- -----------------------------------------------------
-    -- Table `dbo`.`ResultReplayMechanism`
+    -- Table `selectt`.`ResultReplayMechanism`
     -- -----------------------------------------------------
-    DROP TABLE IF EXISTS `dbo`.`ResultReplayMechanism`; 
+    DROP TABLE IF EXISTS `selectt`.`ResultReplayMechanism`; 
 
-    CREATE TABLE IF NOT EXISTS `dbo`.`ResultReplayMechanism` (
+    CREATE TABLE IF NOT EXISTS `selectt`.`ResultReplayMechanism` (
       `id` INT NOT NULL AUTO_INCREMENT,
       `idTechniqueResult` INT NOT NULL,
       `replayMechanism` VARCHAR(255) NOT NULL,
@@ -1166,17 +5586,17 @@
       INDEX `idTechniqueResult_idx` (`idTechniqueResult` ASC),
       CONSTRAINT `idTechniqueResult_14`
         FOREIGN KEY (`idTechniqueResult`)
-        REFERENCES `dbo`.`ResultTechnique` (`id`)
+        REFERENCES `selectt`.`ResultTechnique` (`id`)
         ON DELETE CASCADE
         ON UPDATE CASCADE)
     ENGINE = InnoDB;
 
     -- -----------------------------------------------------
-    -- Table `dbo`.`ResultProgramRepresentation`
+    -- Table `selectt`.`ResultProgramRepresentation`
     -- -----------------------------------------------------
-    DROP TABLE IF EXISTS `dbo`.`ResultProgramRepresentation`; 
+    DROP TABLE IF EXISTS `selectt`.`ResultProgramRepresentation`; 
 
-    CREATE TABLE IF NOT EXISTS `dbo`.`ResultProgramRepresentation` (
+    CREATE TABLE IF NOT EXISTS `selectt`.`ResultProgramRepresentation` (
       `id` INT NOT NULL AUTO_INCREMENT,
       `idTechniqueResult` INT NOT NULL,
       `programRepresentation` VARCHAR(255) NOT NULL,
@@ -1185,18 +5605,18 @@
       INDEX `idTechniqueResult_idx` (`idTechniqueResult` ASC),
       CONSTRAINT `idTechniqueResult_15`
         FOREIGN KEY (`idTechniqueResult`)
-        REFERENCES `dbo`.`ResultTechnique` (`id`)
+        REFERENCES `selectt`.`ResultTechnique` (`id`)
         ON DELETE CASCADE
         ON UPDATE CASCADE)
     ENGINE = InnoDB;
 
 
     -- -----------------------------------------------------
-    -- Table `dbo`.`ResultInstrumentation`
+    -- Table `selectt`.`ResultInstrumentation`
     -- -----------------------------------------------------
-    DROP TABLE IF EXISTS `dbo`.`ResultInstrumentation`; 
+    DROP TABLE IF EXISTS `selectt`.`ResultInstrumentation`; 
 
-    CREATE TABLE IF NOT EXISTS `dbo`.`ResultInstrumentation` (
+    CREATE TABLE IF NOT EXISTS `selectt`.`ResultInstrumentation` (
       `id` INT NOT NULL AUTO_INCREMENT,
       `idTechniqueResult` INT NOT NULL,
       `instrumentation` VARCHAR(255) NOT NULL,
@@ -1205,17 +5625,17 @@
       INDEX `idTechniqueResult_idx` (`idTechniqueResult` ASC),
       CONSTRAINT `idTechniqueResult_16`
         FOREIGN KEY (`idTechniqueResult`)
-        REFERENCES `dbo`.`ResultTechnique` (`id`)
+        REFERENCES `selectt`.`ResultTechnique` (`id`)
         ON DELETE CASCADE
         ON UPDATE CASCADE)
     ENGINE = InnoDB;
 
     -- -----------------------------------------------------
-    -- Table `dbo`.`ResultStateSpaceReduction`
+    -- Table `selectt`.`ResultStateSpaceReduction`
     -- -----------------------------------------------------
-    DROP TABLE IF EXISTS `dbo`.`ResultStateSpaceReduction`; 
+    DROP TABLE IF EXISTS `selectt`.`ResultStateSpaceReduction`; 
 
-    CREATE TABLE IF NOT EXISTS `dbo`.`ResultStateSpaceReduction` (
+    CREATE TABLE IF NOT EXISTS `selectt`.`ResultStateSpaceReduction` (
       `id` INT NOT NULL AUTO_INCREMENT,
       `idTechniqueResult` INT NOT NULL,
       `stateSpaceReduction` VARCHAR(255) NOT NULL,
@@ -1224,17 +5644,17 @@
       INDEX `idTechniqueResult_idx` (`idTechniqueResult` ASC),
       CONSTRAINT `idTechniqueResult_17`
         FOREIGN KEY (`idTechniqueResult`)
-        REFERENCES `dbo`.`ResultTechnique` (`id`)
+        REFERENCES `selectt`.`ResultTechnique` (`id`)
         ON DELETE CASCADE
         ON UPDATE CASCADE)
     ENGINE = InnoDB;
 
     -- -----------------------------------------------------
-    -- Table `dbo`.`ResultConcurrentBugs`
+    -- Table `selectt`.`ResultConcurrentBugs`
     -- -----------------------------------------------------
-    DROP TABLE IF EXISTS `dbo`.`ResultConcurrentBugs`; 
+    DROP TABLE IF EXISTS `selectt`.`ResultConcurrentBugs`; 
 
-    CREATE TABLE IF NOT EXISTS `dbo`.`ResultConcurrentBugs` (
+    CREATE TABLE IF NOT EXISTS `selectt`.`ResultConcurrentBugs` (
       `id` INT NOT NULL AUTO_INCREMENT,
       `idTechniqueResult` INT NOT NULL,
       `concurrentBugs` VARCHAR(255) NOT NULL,
@@ -1243,17 +5663,17 @@
       INDEX `idTechniqueResult_idx` (`idTechniqueResult` ASC),
       CONSTRAINT `idTechniqueResult_18`
         FOREIGN KEY (`idTechniqueResult`)
-        REFERENCES `dbo`.`ResultTechnique` (`id`)
+        REFERENCES `selectt`.`ResultTechnique` (`id`)
         ON DELETE CASCADE
         ON UPDATE CASCADE)
     ENGINE = InnoDB;
 
     -- -----------------------------------------------------
-    -- Table `dbo`.`ResultToolName`
+    -- Table `selectt`.`ResultToolName`
     -- -----------------------------------------------------
-    DROP TABLE IF EXISTS `dbo`.`ResultToolName`; 
+    DROP TABLE IF EXISTS `selectt`.`ResultToolName`; 
 
-    CREATE TABLE IF NOT EXISTS `dbo`.`ResultToolName` (
+    CREATE TABLE IF NOT EXISTS `selectt`.`ResultToolName` (
       `id` INT NOT NULL AUTO_INCREMENT,
       `idTechniqueResult` INT NOT NULL,
       `toolName` VARCHAR(255) NOT NULL,
@@ -1262,17 +5682,17 @@
       INDEX `idTechniqueResult_idx` (`idTechniqueResult` ASC),
       CONSTRAINT `idTechniqueResult_19`
         FOREIGN KEY (`idTechniqueResult`)
-        REFERENCES `dbo`.`ResultTechnique` (`id`)
+        REFERENCES `selectt`.`ResultTechnique` (`id`)
         ON DELETE CASCADE
         ON UPDATE CASCADE)
     ENGINE = InnoDB;
 
     -- -----------------------------------------------------
-    -- Table `dbo`.`ResultCost`
+    -- Table `selectt`.`ResultCost`
     -- -----------------------------------------------------
-    DROP TABLE IF EXISTS `dbo`.`ResultCost`; 
+    DROP TABLE IF EXISTS `selectt`.`ResultCost`; 
 
-    CREATE TABLE IF NOT EXISTS `dbo`.`ResultCost` (
+    CREATE TABLE IF NOT EXISTS `selectt`.`ResultCost` (
       `id` INT NOT NULL AUTO_INCREMENT,
       `idTechniqueResult` INT NOT NULL,
       `cost` VARCHAR(255) NOT NULL,
@@ -1281,17 +5701,17 @@
       INDEX `idTechniqueResult_idx` (`idTechniqueResult` ASC),
       CONSTRAINT `idTechniqueResult_20`
         FOREIGN KEY (`idTechniqueResult`)
-        REFERENCES `dbo`.`ResultTechnique` (`id`)
+        REFERENCES `selectt`.`ResultTechnique` (`id`)
         ON DELETE CASCADE
         ON UPDATE CASCADE)
     ENGINE = InnoDB;
 
     -- -----------------------------------------------------
-    -- Table `dbo`.`ResultPlatformTool`
+    -- Table `selectt`.`ResultPlatformTool`
     -- -----------------------------------------------------
-    DROP TABLE IF EXISTS `dbo`.`ResultPlatformTool`; 
+    DROP TABLE IF EXISTS `selectt`.`ResultPlatformTool`; 
 
-    CREATE TABLE IF NOT EXISTS `dbo`.`ResultPlatformTool` (
+    CREATE TABLE IF NOT EXISTS `selectt`.`ResultPlatformTool` (
       `id` INT NOT NULL AUTO_INCREMENT,
       `idTechniqueResult` INT NOT NULL,
       `PlatformTool` VARCHAR(255) NOT NULL,
@@ -1300,7 +5720,7 @@
       INDEX `idTechniqueResult_idx` (`idTechniqueResult` ASC),
       CONSTRAINT `idTechniqueResult_21`
         FOREIGN KEY (`idTechniqueResult`)
-        REFERENCES `dbo`.`ResultTechnique` (`id`)
+        REFERENCES `selectt`.`ResultTechnique` (`id`)
         ON DELETE CASCADE
         ON UPDATE CASCADE)
     ENGINE = InnoDB;

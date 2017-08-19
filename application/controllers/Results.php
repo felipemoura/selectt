@@ -34,7 +34,13 @@ class Results extends MY_Controller {
 		foreach ($allTechniques as $technique) {
 			$result[$count]['id']	 = $technique['id']; 
 			$result[$count]['title'] = $technique['title'];
+
 			$resultWeight = floatval(0.000);
+
+			$result[$count]['Programming model'] = floatval(0.000);
+			$result[$count]['General testing characteristics'] = floatval(0.000);
+			$result[$count]['Concurrent testing characteristics'] = floatval(0.000);
+			$result[$count]['Testing tool support'] = floatval(0.000);
 
 			foreach ($allWeights['fields'] as $weight) {
 				// just to help reading the code ...
@@ -45,8 +51,13 @@ class Results extends MY_Controller {
 
 				$result[$count][$idTemp] = $this->utility->generateFieldsForCompare ($originalField, $compareField, $weightValue );
 				$resultWeight += floatval($result[$count][$idTemp]['max_value']);
+
+				// category progress bar each category has a limit !
+				$result[$count][$weight['category']] += floatval($result[$count][$idTemp]['max_value']);
+
 				$result[$count][$idTemp]['atribute'] = $weight['atribute'];
 				$result[$count][$idTemp]['match'] = $result[$count][$idTemp]['isMatch'];
+				
 			}
 			$result[$count]['result_weight'] = $resultWeight;
 
@@ -64,6 +75,10 @@ class Results extends MY_Controller {
 			}
 		}
 
+		// echo "<pre>";
+		// print_r($result);
+		// echo "<pre>";
+		
 		$data['info'] 	= $resultTechnique;
 		$data['result'] = $result;
 		
