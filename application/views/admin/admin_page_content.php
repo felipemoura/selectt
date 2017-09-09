@@ -1,8 +1,6 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
 
-<? $this->load->view('templates/header_logged'); ?>
-
-
+<? $this->load->view('templates/header'); ?>
 
 <div class="container animated fadeIn">
     <h1>Admin Section</h1>

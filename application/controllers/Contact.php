@@ -19,18 +19,20 @@ class Contact extends CI_Controller {
         $this->form_validation->set_rules('inputEmail', 'Email', 'trim|required|valid_email');
         $this->form_validation->set_rules('inputPhoneNumber', 'Phone Number', 'trim|alpha_numeric_spaces');
         $this->form_validation->set_rules('inputInstitution', 'Institution', 'trim|alpha_numeric_spaces');
+        $this->form_validation->set_rules('inputSubject', 'Subject', 'trim|alpha_numeric_spaces|max_length[1024]');
         $this->form_validation->set_rules('inputMessage', 'Message', 'trim|alpha_numeric_spaces|required|min_length[10]|max_length[1024]');
         $this->form_validation->set_rules('g-recaptcha-response','Captcha','callback_recaptcha');
  
         //validate form input
         if ($this->form_validation->run() == FALSE) {
-			$this->load->view('contact_page');
+			$this->load->view('home/contact_page');
 
 		} else {
 			// prepare message
 			$data = array(
                 'name' 			=> $this->input->post('inputName'),
                 'email' 		=> $this->input->post('inputEmail'),
+                'subject' 		=> $this->input->post('inputSubject'),
                 'phoneNumber' 	=> $this->input->post('inputPhoneNumber'),
                 'institution' 	=> $this->input->post('inputInstitution'),
                 'message' 		=> $this->input->post('inputMessage')
@@ -50,7 +52,7 @@ class Contact extends CI_Controller {
 			//configure email settings
 			$this->email->from($data['email'], $data['name']);
 			$this->email->to('selectttool@gmail.com');
-			$this->email->subject('Contact form from ' . $data['name']);
+			$this->email->subject('Contact form from ' . $data['name'] . ' - ' . $data['subject']);
 			$this->email->message($data['message']);
 			
 			if ($this->email->send()) {

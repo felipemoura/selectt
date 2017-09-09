@@ -1,0 +1,10 @@
+git clone https://felipemoura@github.com/felipemoura/selectt.git
+rm -rf public_html/application/controllers/
+rm -rf public_html/application/views/
+rm -rf public_html/application/models/
+rm -rf public_html/assets/
+cp -R selectt/assets/ public_html/assets/
+cp -R selectt/application/controllers/ public_html/application/controllers/
+cp -R selectt/application/views/ public_html/application/views/
+cp -R selectt/application/models/ public_html/application/models/
+mysql < selectt.sql 

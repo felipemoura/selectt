@@ -32,6 +32,22 @@
     </div>
 
     <div class="form-group">
+      <label for="inputSubject">Subject</label>
+      <select class="form-control" id="inputSubject" name="inputSubject">
+        <option value=""></option>
+        <option value="Bug reports">Bug report</option>
+        <option value="Contributing">Contributing</option>
+        <option value="Features requests">Features requests</option>
+        <option value="Mailing lists">Mailing lists</option>
+        <option value="Project suggestions">Project suggestions</option>
+        <option value="Other">Other</option>
+      </select>
+      <span class="text-danger">
+        <?php echo form_error('inputSubject'); ?>
+      </span>
+    </div>
+
+    <div class="form-group">
       <label for="inputPhoneNumber">Phone Number</label>
       <input class="form-control" id="inputPhoneNumber" name="inputPhoneNumber" aria-describedby="numberHelp" placeholder="Phone Number">
       <span class="text-danger">
@@ -71,6 +87,27 @@
 <!-- START OF FOOTER -->
 <?  $this->load->view('templates/footer'); ?>
 <!-- END OF FOOTER  -->
+
+<script src="<?= base_url('assets/js/tinymce/tinymce.min.js'); ?>" type="text/javascript"></script>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    tinymce.init({ 
+      selector:"textarea" ,
+      height: 300 ,
+      theme: 'modern',
+      plugins: [
+      'advlist autolink lists link image charmap print preview hr anchor pagebreak',
+      'searchreplace wordcount visualblocks visualchars code fullscreen',
+      'insertdatetime media nonbreaking save table contextmenu directionality',
+      'emoticons template paste textcolor colorpicker textpattern imagetools codesample toc help'
+      ],
+      toolbar1: 'undo redo | insert | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
+      toolbar2: 'print preview media | forecolor backcolor emoticons | codesample help',
+      image_advtab: true
+    });
+  });
+</script>
 
 </body>
 </html>

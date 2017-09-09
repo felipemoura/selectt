@@ -59,7 +59,7 @@ class Login extends CI_Controller {
 				// update last login
 				$this->login_model->updateLastLogin($answer['ID']);
 				
-				redirect(base_url('logged'));
+				redirect(base_url('home'));
 			}
 
 		} else {
