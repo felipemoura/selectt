@@ -32,7 +32,21 @@ class Form extends MY_Controller {
         foreach($data['category'] as $fields) {
             $count2 = 0;
             foreach($fields as $field) {
-                $data['category'][$count][$count2++]['typeheadJS'] = $this->technique->singleTableInfo (ucfirst($field['html_id']));
+                $data['category'][$count][$count2]['typeheadJS'] = $this->technique->singleTableInfo (ucfirst($field['html_id']));
+
+                $tempExample = $this->technique->singleTableInfo (ucfirst($field['html_id']));
+                $countExample = 0;
+                $example = "";
+
+                foreach ($tempExample as $value) {
+                    if (strcasecmp($value, "No Information") != 0 && strcasecmp($value, "Not informed") != 0) {
+                        $example .= ucfirst($value) . ', ';
+                        if ($countExample++ >= 3) break;
+                    }
+                }
+                $data['category'][$count][$count2]['example']=rtrim($example,", ");
+
+                $count2++;
                 // echo "<pre>";
                 // print_r($field['typeheadJS']);
                 // echo "</pre>";

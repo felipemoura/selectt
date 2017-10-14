@@ -136,7 +136,7 @@
             <ul class="dropdown-menu">
               <li><a href="<?= base_url('insert_test');?>"><i class="glyphicon glyphicon-pencil"></i> Insert new Technique</a></li>
               <li class="divider"></li>
-              <li><a href="<?= base_url('form');?>"><i class="glyphicon glyphicon-search"></i> Fill Form</a></li>
+              <li><a href="<?= base_url('form');?>"><i class="glyphicon glyphicon-search"></i> Software Project Information</a></li>
               <li class="divider"></li>
               <li><a href="<?= base_url('results');?>"><i class="glyphicon glyphicon-pencil"></i> Results</a></li>
             </ul>

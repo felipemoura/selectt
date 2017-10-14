@@ -14,7 +14,7 @@
 	}
 
 	.jumbotron {
-		min-height: 250px;
+		min-height: 260px;
 	}
 
 	.jumbotron h4 {
@@ -58,7 +58,8 @@
 			<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
 				<div class="jumbotron" align="center">
 					<i class="fa fa-puzzle-piece fa-5x" aria-hidden="true"></i>
-					<h4>SelecTT is free and can help to reduces your project costs</h4>
+					<h4>Help contribute to maintain our project actualized.
+					</h4>
 					<a class="btn btn-primary btn-block" href="<?= base_url('contact'); ?>">Contribute</a>
 				</div>
 			</div>

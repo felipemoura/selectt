@@ -16,7 +16,7 @@
 	.post-thumb img {
 		display: block;
 		max-width: 200px;
-		max-height: 400px;
+		max-height: 500px;
 	}
 	.post-content {
 		margin-left: 210px;
@@ -24,7 +24,7 @@
 </style>
 
 <div class="container animated fadeIn">
-	<div class="row" style="padding-top: 20px;">
+	<div class="row" style="padding-top: 40px;">
 		<!-- Paulo -->
 		<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
 			<div class="post-container">                
@@ -50,7 +50,7 @@
 		</div>
 	</div>
 
-	<div class="row" style="padding-top: 20px;">
+	<div class="row" style="padding-top: 40px;">
 		<!-- Silvana -->
 		<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
 			<div class="post-container">                
@@ -70,7 +70,7 @@
 					<img src="<? echo base_url("assets/photos/felipe.png");?>">
 				</div>
 				<div class="post-content">		
-					<strong>Felipe Moreira Moura</strong> is currently a Bachelor in Computer Engineering student in the Institute of Mathematics and Computer Science (ICMC/USP) and  Sao Carlos School of Engineering(EESC/USP), Brazil. Her research interests include software testing, concurrent programming, concurrente software testing, and web applications.
+					<strong>Felipe Moreira Moura</strong> is currently a Bachelor in Computer Engineering student in the Institute of Mathematics and Computer Science (ICMC/USP) and  Sao Carlos School of Engineering(EESC/USP), Brazil. His research interests include software testing, concurrent programming, concurrente software testing, and web applications.
 				</div>
 			</div>
 		</div>

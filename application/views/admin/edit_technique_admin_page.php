@@ -161,11 +161,11 @@
         <!-- <?= $field['atribute']; ?> -->
         <div class="col-lg-9 col-md-8 cold-sm-12 cold-xs-12">
           <div class="form-group <?= $field['html_id']; ?>">
-            <label for="<?= $field['html_id']; ?>"><?= $field['html_label']; ?></label>    
+            <label for="<?= $field['html_id']; ?>"><?= $field['html_label']; ?> ?</label>    
 
             <input type="text" class="form-control typeahead" id="<?= $field['html_id']; ?>" name="<?= $field['html_name']; ?>" rows="<?= $field['html_row_count']; ?>" data-role="tagsinput"></input>
 
-            <small><?= $field['html_info']; ?></small>
+            <small><strong>Example: </strong><?= $field['example']; ?></small>
             <span class="text-danger"><?php echo form_error($field['html_id']); ?></span>
           </div>
         </div>
@@ -253,7 +253,7 @@
       }
     };
 
-    httpRequest.open('GET', window.location.origin + '/selectt/api/technique/id/' + id, true);
+    httpRequest.open('GET', window.location.origin + '/~selectt/api/technique/id/' + id, true);
     httpRequest.send(null);
 
   });

@@ -24,7 +24,7 @@
 
 <div class="container animated fadeIn">
 	<div class="container center-block">
-		<h1>Publications</h1>		
+		<h1>Publication</h1>		
 	</div>
 </div>
 

@@ -84,7 +84,7 @@
           }
         };
 
-        httpRequest.open('GET', window.location.origin + '/selectt/api/user/id/' + id, true);
+        httpRequest.open('GET', window.location.origin + '/~selectt/api/user/id/' + id, true);
         httpRequest.send(null);
 
       });

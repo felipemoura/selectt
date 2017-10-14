@@ -222,7 +222,7 @@
             }
         };
 
-        httpRequest.open('GET', window.location.origin + '/selectt/api/technique/id/' + id, false);
+        httpRequest.open('GET', window.location.origin + '/~selectt/api/technique/id/' + id, false);
         httpRequest.send(null);
         $("#myInfo").modal('show');
     }

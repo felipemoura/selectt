@@ -46,7 +46,7 @@
     <label for="title">Title</label>
     <input type="text" class="form-control" id="title" name="title" aria-describedby="titleHelp" placeholder="Enter the Title of the project published" required focus>
 
-    <small style="font-weight: 900;">Just to label</small>
+    <small style="font-weight: 900;">Just to label this technique search</small>
     <span class="text-danger"><?php echo form_error('title'); ?></span>
 
   </div>
@@ -66,11 +66,11 @@
         <!-- <?= $field['atribute']; ?> -->
         <div class="col-lg-9 col-md-8 cold-sm-12 cold-xs-12">
           <div class="form-group <?= $field['html_id']; ?>">
-            <label for="<?= $field['html_id']; ?>"><?= $field['html_label']; ?></label>    
+            <label for="<?= $field['html_id']; ?>"><?= $field['html_label']; ?> ?</label>    
 
             <input type="text" class="form-control typeahead" id="<?= $field['html_id']; ?>" name="<?= $field['html_name']; ?>" rows="<?= $field['html_row_count']; ?>" data-role="tagsinput"></input>
 
-            <small><?= $field['html_info']; ?></small>
+            <small><strong>Example: </strong><?= $field['example']; ?></small>
             <span class="text-danger"><?php echo form_error($field['html_id']); ?></span>
           </div>
         </div>
