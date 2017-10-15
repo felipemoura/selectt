@@ -8,6 +8,26 @@
 		cursor: pointer;
 	}
 
+	/* unvisited link */
+	a:link {
+		color: blue;
+	}
+
+	/* visited link */
+	a:visited {
+		color: green;
+	}
+
+	/* mouse over link */
+	a:hover {
+		color: hotpink;
+	}
+
+	/* selected link */
+	a:active {
+		color: blue;
+	}
+
 	.clickable .glyphicon
 	{
 		background: rgba(0, 0, 0, 0.1);
@@ -55,11 +75,23 @@
 	}
 
 	.box {
-		margin: auto;
-		height: 20px;
+		margin: 5px;
+		height: 25px;
 		display: inline-block;
 		padding-top: 10px;
-		width: 20px;
+		width: 25px;
+	}
+ 
+	.panel-default {
+		font-size: 10pt;
+		/*max-width: 500px;*/
+		min-width: 500px;
+		min-height: 100px;
+		max-height: 200px;
+	}
+
+	.panel-body {
+		font-size: 10pt;
 	}
 </style>
 
@@ -68,15 +100,43 @@
 <div class="container animated fadeIn">
 
 	<h1>Results Page</h1>
+	<br>
+	<br>
+	<? 
+		$ci =&get_instance();
+		$ci->load->model('Result_model', 'result');
+		$userResults = $ci->result->getUserResults($this->session->userdata("username"));  	
+	?>
 
+
+	<?	if (count($userResults) > 0) : ?>
+		<div class="panel panel-default" style="overflow-y: scroll; height: 200px">
+			<div class="panel-heading">Results History</div>
+				<div class="mid-width wrapItems" style="height:<?= count($userResults)  * 40 ?>px">
+					<ul>
+						<? foreach ($userResults as $user) : ?>
+							<li>
+								<a href="<?= base_url('results/setNow/'. $user['id']); ?>">
+									<?= $user['insertedOn'] ?> 
+									<?= $user['title'] ?> 
+								</a>
+							</li>
+						<? endforeach; ?>
+					</ul>
+				</div>
+		</div>
+
+		<? unset($userResults); ?>
+	<? endif; ?> 
+
+	<hr>
 	<h3 align="center">Results from <?= $info['title']; ?></h3>
 
 	<h3>Legend</h3>
-
 	<!-- View button -->
-	<div style="font-size: 14pt;line-height: 24px;border-style: solid; font-weight: normal;background-color: white;padding: 0;margin: 0; width: 30%">
+	<div style="font-size: 14pt; line-height: 24px;border-style: solid; font-weight: normal;background-color: white;padding: 5px ;margin: 5px ; width: 40%">
 
-		<p><span class="box" style="background-color: #5cb85c"></span> - Programming model</p>
+		<p><span class="box" style="background-color: #5cb85c"></span>- Programming model</p>
 		<p><span class="box" style="background-color: #5bc0de"></span> - General testing characteristics</p>
 		<p><span class="box" style="background-color: #f0ad4e"></span> - Concurrent testing characteristics</p>
 		<p><span class="box" style="background-color: #d9534f"></span> - Testing tool support</p>
@@ -98,15 +158,20 @@
 			<div class="panel panel-warning" <?= ($count >= 5) ? "hidden" : "" ?>>
 		<? else : ?>
 			<div class="panel panel-danger" <?= ($count >= 5) ? "hidden" : "" ?>>
-		<? endif; ?>
-		<? $count++; ?> 
-				<div class="clickable panel-heading">
-					<h3 class="panel-title">
-						<?= $technique['title']; ?>
-						<span class="pull-right">
-							<strong>MATCH: </strong><?= $resultWeight; ?>% 
-							<i class="glyphicon glyphicon-minus"></i>
-						</span>
+			<? endif; ?>
+			<? $count++; ?> 
+			<div class="clickable panel-heading">
+				<h3 class="panel-title">
+					<span style="font-size: 16pt;">
+					<?= $technique['testingTechnique'][0]['baseValue']; ?> - 
+					<?= $technique['testDataGeneration'][0]['baseValue']; ?>
+					</span>
+					<span class="pull-right">
+						<strong>MATCH: </strong><?= $resultWeight; ?>% 
+						<i class="glyphicon glyphicon-minus"></i>
+					</span>
+					<br>
+					  	<a href="http://<?= $technique['link']; ?>" target="_blank" ><?= $technique['link']; ?></a>
 					</h3>
 					<br>
 
@@ -137,6 +202,7 @@
 					unset($technique['General testing characteristics']);
 					unset($technique['Concurrent testing characteristics']);
 					unset($technique['Testing tool support']);
+					unset($technique['link']);
 				?>
 
 				<div class="panel-body" align="center">

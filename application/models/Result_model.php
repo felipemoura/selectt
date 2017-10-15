@@ -8,6 +8,40 @@ class Result_model extends CI_Model
         parent::__construct();
     }
       
+    // GET ALL USER RESULTS
+    function getUserResults ($username)
+    {
+      $this->db->select('*')->from('ResultTechnique')->where('insertedBy', $username);
+      $query = $this->db->get();
+
+      $list = array();
+      $count = 0;
+
+      foreach ($query->result() as $row) {    
+        $list[$count++] = array ( 
+          'id'             => $row->id,
+          'title'          => $row->title,
+          'insertedBy'     => $row->insertedBy,
+          'insertedOn'     => $row->insertedOn
+        );
+      } 
+
+      return $list;
+    }
+
+    // CHECK IF RUN EXISTS
+    function checkIfExistResult ($idResult)
+    {
+      $this->db->select('*')->from('ResultTechnique')->where('id', $idResult)->limit(1);
+      $query = $this->db->get();
+
+      if($query->num_rows() == 1) {
+        return 1;
+      } else {
+       return 0;
+      }  
+    }
+
     // INSERT all info into technique result table
     function insertTechniqueResult ($data) 
     {

@@ -26,9 +26,9 @@
 		    
 		    <thead>
 		    	<tr>
-			    	<th>Technique name</th>
+			        <th>Testing Technique</th>
 			        <th>Title</th>
-			        <th>Technique</th>
+			    	<th>Testing Approach</th>
 			        <th>Language</th>
 			        <th>Actions</th>
 		        </tr>
@@ -39,9 +39,9 @@
 			<? if (isset($info)): ?>
 				<?php foreach($info as $var) { ?>
 					<tr>
-						<td><?php echo $var['Approach']; ?></td>
-						<td><?php echo $var['Title']; ?></td>
 						<td><?php echo $var['Technique']; ?></td>
+						<td><?php echo $var['Title']; ?></td>
+						<td><?php echo $var['Approach']; ?></td>
 						<td><?php echo $var['Language']; ?></td>
 						<td>
 					 	<!-- View button -->

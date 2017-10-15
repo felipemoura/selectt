@@ -11,14 +11,26 @@ class Results extends MY_Controller {
     }
 
 	public function index()
-	{
+	{	
 		if ( !$this->session->has_userdata('result_user') ) {
-			$this->load->view('form/results_page_none');
+			$data['userResults'] = $this->result->getUserResults($this->session->userdata("username"));
+			$this->load->view('form/results_page_none', $data);
 
 		} else {
 			$idResult = $this->session->userdata('result_user');
 			$this->resultsTechniques($idResult);
 		}
+	}
+
+	public function setNow ($id)
+	{
+		$answer = $this->result->checkIfExistResult ($id);
+		if ($answer === 1) {
+			$this->session->set_userdata( 
+				array('result_user' => $id)
+			);
+		}
+		redirect(base_url('results'));
 	}
 
 	protected function resultsTechniques ($id)
@@ -34,6 +46,8 @@ class Results extends MY_Controller {
 		foreach ($allTechniques as $technique) {
 			$result[$count]['id']	 = $technique['id']; 
 			$result[$count]['title'] = $technique['title'];
+			$result[$count]['link'] = $technique['link'];
+
 
 			$resultWeight = floatval(0.000);
 
@@ -75,13 +89,14 @@ class Results extends MY_Controller {
 			}
 		}
 
-		// echo "<pre>";
-		// print_r($result);
-		// echo "<pre>";
-		
 		$data['info'] 	= $resultTechnique;
 		$data['result'] = $result;
 		
+		
+		// echo "<pre>";
+		// print_r($data);
+		// echo "<pre>";
+
 		$this->load->view('form/results_page', $data);
 	}
 }

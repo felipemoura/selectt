@@ -77,6 +77,9 @@ class Login extends CI_Controller {
 		$this->session->unset_userdata('logged_in');
 		$this->session->unset_userdata('result_user');
 		
+		$this->session->set_flashdata('msg','<div class="alert alert-success text-center">You logged out successfully, please come back again soon !!</div>');
+
+
 		redirect(base_url('login'));	
 	}
 }
