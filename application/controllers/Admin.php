@@ -24,6 +24,7 @@ class Admin extends MY_Controller {
 
     public function dash () 
     {
+        $data = $this->utility->getUsersRegisters();
         $data['technique'] = $this->utility->getInsertByMonth();
         $data['resultTechnique'] = $this->utility->getUserSubmission();
         $this->load->view('admin/admin_page_dash', $data);

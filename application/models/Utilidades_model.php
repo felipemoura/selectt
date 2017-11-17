@@ -218,6 +218,22 @@ class Utilidades_model extends CI_Model
 		return $data;
 	}
 
+
+	function getUsersRegisters ()
+	{
+		$year = date("Y");
+		$data;
+		for ($i=1; $i <= 12; $i++) { 
+			$query = $this->db->select('id')->from('user')->where("(YEAR(CREATED)=".$year." AND MONTH(CREATED)=".$i.")", NULL, FALSE)->get();
+			$data['numberUsers'][$i] = $query->num_rows();
+		}
+		for ($i=1; $i <= 12; $i++) { 
+			$query = $this->db->select('id')->from('user')->where("(YEAR(LASTLOGIN)=".$year." AND MONTH(LASTLOGIN)=".$i.")", NULL, FALSE)->get();
+			$data['lastLogin'][$i] = $query->num_rows();
+		}
+		
+		return $data;
+	}
 	
 }
 
