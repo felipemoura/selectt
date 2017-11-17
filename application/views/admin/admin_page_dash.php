@@ -39,40 +39,55 @@
 
 
 <script type="text/javascript">
+  var year = new Date().getFullYear();
   Morris.Area({
     element: 'numberTechnique',
     data: [
-    { y: '2000', a:-900 },
-    { y: '2006', a: 100 },
-    { y: '2007', a: 75 },
-    { y: '2008', a: 50 },
-    { y: '2009', a: 75 },
-    { y: '2010', a: 50 },
-    { y: '2011', a: 75 },
-    { y: '2012', a: 100 }
-    ],
-    xkey: 'y',
-    ykeys: ['a'],
-    labels: ['Number of Techniques Inserted in ' + new Date().getFullYear() + ' by Month' ]
-  });
+    { y: year + '-01', a: <?= $technique[1]; ?> },
+    { y: year + '-02', a: <?= $technique[2]; ?> },
+    { y: year + '-03', a: <?= $technique[3]; ?> },
+    { y: year + '-04', a: <?= $technique[4]; ?> },
+    { y: year + '-05', a: <?= $technique[5]; ?> },
+    { y: year + '-06', a: <?= $technique[6]; ?> },
+    { y: year + '-07', a: <?= $technique[7]; ?> },
+    { y: year + '-08', a: <?= $technique[8]; ?> },
+    { y: year + '-09', a: <?= $technique[9]; ?> },
+    { y: year + '-10', a: <?= $technique[10]; ?> },
+    { y: year + '-11', a: <?= $technique[11]; ?> },
+    { y: year + '-12', a: <?= $technique[12]; ?> }],
+      xkey: 'y',
+      ykeys: ['a'],
+      hoverCallback: function(index, options, content) {
+          return(content);
+      },
+      parseTime: false,
+      labels: ['Number of Techniques Inserted in ' + year + ' by Month' ]
+    });
 
 
     Morris.Area({
     element: 'numberSearch',
     data: [
-    { y: '2000', b: 100 },
-    { y: '2006', b: 90  },
-    { y: '2007', b: 65  },
-    { y: '2008', b: 40  },
-    { y: '2009', b: 65  },
-    { y: '2010', b: 40  },
-    { y: '2011', b: 65  },
-    { y: '2012', b: 90  }
-    ],
-    xkey: 'y',
-    ykeys: ['b'],
-    labels: ['Number of techniques searches in ' + new Date().getFullYear() + ' by Month']
-  });
+    { y: year + '-01', a: <?= $resultTechnique[1]; ?>  },
+    { y: year + '-02', a: <?= $resultTechnique[2]; ?>  },
+    { y: year + '-03', a: <?= $resultTechnique[3]; ?>  },
+    { y: year + '-04', a: <?= $resultTechnique[4]; ?>  },
+    { y: year + '-05', a: <?= $resultTechnique[5]; ?>  },
+    { y: year + '-06', a: <?= $resultTechnique[6]; ?>  },
+    { y: year + '-07', a: <?= $resultTechnique[7]; ?>  },
+    { y: year + '-08', a: <?= $resultTechnique[8]; ?>  },
+    { y: year + '-09', a: <?= $resultTechnique[9]; ?>  },
+    { y: year + '-10', a: <?= $resultTechnique[10]; ?> },
+    { y: year + '-11', a: <?= $resultTechnique[11]; ?> },
+    { y: year + '-12', a: <?= $resultTechnique[12]; ?> }],
+      xkey: 'y',
+      hoverCallback: function(index, options, content) {
+          return(content);
+      },
+      ykeys: ['a'],
+      parseTime: false,
+      labels: ['Number of techniques searches in ' + year + ' by Month']
+    });
 </script>
 <!-- END OF IT -->
 </body>

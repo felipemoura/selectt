@@ -193,6 +193,32 @@ class Utilidades_model extends CI_Model
 		$this->db->where('ID', $id);
 		$this->db->update('logado', $data); 
 	}
+
+
+	// estatisticas
+	function getInsertByMonth ()
+	{
+		$year = date("Y");
+		$data;
+		for ($i=1; $i <= 12; $i++) { 
+			$query = $this->db->select('id')->from('Technique')->where("(YEAR(insertedOn)=".$year." AND MONTH(insertedOn)=".$i." AND needApproval=0)", NULL, FALSE)->get();
+			$data[$i] = $query->num_rows();
+		}
+		return $data;
+	}
+
+	function getUserSubmission ()
+	{
+		$year = date("Y");
+		$data;
+		for ($i=1; $i <= 12; $i++) { 
+			$query = $this->db->select('id')->from('ResultTechnique')->where("(YEAR(insertedOn)=".$year." AND MONTH(insertedOn)=".$i.")", NULL, FALSE)->get();
+			$data[$i] = $query->num_rows();
+		}
+		return $data;
+	}
+
+	
 }
 
 ?>

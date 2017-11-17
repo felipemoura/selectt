@@ -92,7 +92,7 @@ class Results extends MY_Controller {
 		$data['info'] 	= $resultTechnique;
 		$data['result'] = $result;
 		
-		
+			
 		// echo "<pre>";
 		// print_r($data);
 		// echo "<pre>";

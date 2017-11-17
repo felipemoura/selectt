@@ -6,6 +6,7 @@ class Content extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('Available_techniques_model');
+		$this->load->model('Utilidades_model', 'utility');
 	}
 
 	public function techniques ()
@@ -21,7 +22,9 @@ class Content extends CI_Controller {
 
 	public function statistics ()
 	{
-		$this->load->view('content/statistics_page');
+		$data['technique'] = $this->utility->getInsertByMonth();
+		$data['resultTechnique'] = $this->utility->getUserSubmission();
+		$this->load->view('content/statistics_page', $data);
 	}
 
 	public function screenshots ()
